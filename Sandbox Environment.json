@@ -1,0 +1,57 @@
+{
+  "id": "6ee676c3-39b2-458e-ae20-81bc2e60b50e",
+  "name": "Sandbox",
+  "values": [
+    {
+      "key": "client_id",
+      "value": "YOUR_CLIENT_ID",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "public_key",
+      "value": "YOUR_PUBLIC_KEY",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "secret_key",
+      "value": "YOUR_SECRET_KEY",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "public_token",
+      "value": "",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "access_token",
+      "value": "",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "asset_report_token",
+      "value": "",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "env_url",
+      "value": "sandbox.plaid.com",
+      "enabled": true,
+      "type": "text"
+    },
+    {
+      "key": "account_id",
+      "value": "",
+      "enabled": true,
+      "type": "text"
+    }
+  ],
+  "_postman_variable_scope": "environment",
+  "_postman_exported_at": "2018-08-29T23:24:45.982Z",
+  "_postman_exported_using": "Postman/6.0.10"
+}

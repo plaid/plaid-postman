@@ -1,0 +1,1209 @@
+{
+  "report": {
+      "asset_report_id": "d9761ca9-e02f-4fa3-b741-a4fe9899e59d",
+      "client_report_id": "example_report_id",
+      "date_generated": "2018-06-22T18:15:49Z",
+      "days_requested": 30,
+      "items": [
+          {
+              "accounts": [
+                  {
+                      "account_id": "K7axBNn7V3sk5mGXVp78SWlqQLkbBkiVQK1Gg",
+                      "balances": {
+                          "available": 200,
+                          "current": 210,
+                          "iso_currency_code": "USD",
+                          "unofficial_currency_code": null
+                      },
+                      "days_available": 30,
+                      "historical_balances": [
+                          {
+                              "current": 210,
+                              "date": "2018-06-21",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 210,
+                              "date": "2018-06-20",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-19",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-18",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-17",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-16",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-15",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-14",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-13",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-12",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-11",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-10",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-09",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-08",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-07",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-06",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-05",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-04",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-03",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-02",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-06-01",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-05-31",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-05-30",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-05-29",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-05-28",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-05-27",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 205.78,
+                              "date": "2018-05-26",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 230.78,
+                              "date": "2018-05-25",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 230.78,
+                              "date": "2018-05-24",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 230.78,
+                              "date": "2018-05-23",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          }
+                      ],
+                      "mask": "1111",
+                      "name": "Plaid Saving",
+                      "official_name": "Plaid Silver Standard 0.1% Interest Saving",
+                      "owners": [
+                          {
+                              "addresses": [
+                                  {
+                                      "data": {
+                                          "city": "Malakoff",
+                                          "state": "NY",
+                                          "street": "2992 Cameron Road",
+                                          "zip": "14236"
+                                      },
+                                      "primary": true
+                                  },
+                                  {
+                                      "data": {
+                                          "city": "San Matias",
+                                          "state": "CA",
+                                          "street": "2493 Leisure Lane",
+                                          "zip": "93405-2255"
+                                      },
+                                      "primary": false
+                                  }
+                              ],
+                              "emails": [
+                                  {
+                                      "data": "accountholder0@example.com",
+                                      "primary": true,
+                                      "type": "primary"
+                                  },
+                                  {
+                                      "data": "accountholder1@example.com",
+                                      "primary": false,
+                                      "type": "secondary"
+                                  },
+                                  {
+                                      "data": "extraordinarily.long.email.username.123456@reallylonghostname.com",
+                                      "primary": false,
+                                      "type": "other"
+                                  }
+                              ],
+                              "names": [
+                                  "Alberta Bobbeth Charleson"
+                              ],
+                              "phone_numbers": [
+                                  {
+                                      "data": "1112223333",
+                                      "primary": false,
+                                      "type": "home"
+                                  },
+                                  {
+                                      "data": "1112224444",
+                                      "primary": false,
+                                      "type": "work"
+                                  },
+                                  {
+                                      "data": "1112225555",
+                                      "primary": false,
+                                      "type": "mobile1"
+                                  }
+                              ]
+                          }
+                      ],
+                      "subtype": "savings",
+                      "transactions": [
+                          {
+                              "account_id": "K7axBNn7V3sk5mGXVp78SWlqQLkbBkiVQK1Gg",
+                              "amount": 25,
+                              "date": "2018-05-26",
+                              "iso_currency_code": "USD",
+                              "original_description": "CREDIT CARD 3333 PAYMENT *//",
+                              "pending": false,
+                              "transaction_id": "vo5aLWqoRehl4wZ5vEraCDzo763z7xCWdn79Z",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "account_id": "K7axBNn7V3sk5mGXVp78SWlqQLkbBkiVQK1Gg",
+                              "amount": -4.22,
+                              "date": "2018-06-20",
+                              "iso_currency_code": "USD",
+                              "original_description": "INTRST PYMNT",
+                              "pending": false,
+                              "transaction_id": "RpV7Py8p1jSV5LEvoQeWfWEwRXmERNCREX1mN",
+                              "unofficial_currency_code": null
+                          }
+                      ],
+                      "type": "depository"
+                  },
+                  {
+                      "account_id": "qZXze1RZj4IbnyzBvWjLIqv3nD6dx6hd3LRNv",
+                      "balances": {
+                          "available": 100,
+                          "current": 110,
+                          "iso_currency_code": "USD",
+                          "unofficial_currency_code": null
+                      },
+                      "days_available": 30,
+                      "historical_balances": [
+                          {
+                              "current": 126.33,
+                              "date": "2018-06-21",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-20",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-19",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-18",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-17",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-16",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-15",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-14",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-13",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-12",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-11",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-10",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-09",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 215.73,
+                              "date": "2018-06-08",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-06-07",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-06-06",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-06-05",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-06-04",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-06-03",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-06-02",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-06-01",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-05-31",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-05-30",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-05-29",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-05-28",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-05-27",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 222.06,
+                              "date": "2018-05-26",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 227.46,
+                              "date": "2018-05-25",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 227.46,
+                              "date": "2018-05-24",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -272.54,
+                              "date": "2018-05-23",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          }
+                      ],
+                      "mask": "0000",
+                      "name": "Plaid Checking",
+                      "official_name": "Plaid Gold Standard 0% Interest Checking",
+                      "owners": [
+                          {
+                              "addresses": [
+                                  {
+                                      "data": {
+                                          "city": "Malakoff",
+                                          "state": "NY",
+                                          "street": "2992 Cameron Road",
+                                          "zip": "14236"
+                                      },
+                                      "primary": true
+                                  },
+                                  {
+                                      "data": {
+                                          "city": "San Matias",
+                                          "state": "CA",
+                                          "street": "2493 Leisure Lane",
+                                          "zip": "93405-2255"
+                                      },
+                                      "primary": false
+                                  }
+                              ],
+                              "emails": [
+                                  {
+                                      "data": "accountholder0@example.com",
+                                      "primary": true,
+                                      "type": "primary"
+                                  },
+                                  {
+                                      "data": "accountholder1@example.com",
+                                      "primary": false,
+                                      "type": "secondary"
+                                  },
+                                  {
+                                      "data": "extraordinarily.long.email.username.123456@reallylonghostname.com",
+                                      "primary": false,
+                                      "type": "other"
+                                  }
+                              ],
+                              "names": [
+                                  "Alberta Bobbeth Charleson"
+                              ],
+                              "phone_numbers": [
+                                  {
+                                      "data": "1112223333",
+                                      "primary": false,
+                                      "type": "home"
+                                  },
+                                  {
+                                      "data": "1112224444",
+                                      "primary": false,
+                                      "type": "work"
+                                  },
+                                  {
+                                      "data": "1112225555",
+                                      "primary": false,
+                                      "type": "mobile1"
+                                  }
+                              ]
+                          }
+                      ],
+                      "subtype": "checking",
+                      "transactions": [
+                          {
+                              "account_id": "qZXze1RZj4IbnyzBvWjLIqv3nD6dx6hd3LRNv",
+                              "amount": -500,
+                              "date": "2018-05-24",
+                              "iso_currency_code": "USD",
+                              "original_description": "United Airlines **** REFUND ****",
+                              "pending": false,
+                              "transaction_id": "G43rqxQ4kKh65NjmdK8ycVM4ANDMAPC1dAjzQ",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "account_id": "qZXze1RZj4IbnyzBvWjLIqv3nD6dx6hd3LRNv",
+                              "amount": 5.4,
+                              "date": "2018-05-26",
+                              "iso_currency_code": "USD",
+                              "original_description": "Uber 063015 SF**POOL**",
+                              "pending": false,
+                              "transaction_id": "n7pqPQ57Jxs1KxVovGQNTBe16aJe6Ei64KmLN",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "account_id": "qZXze1RZj4IbnyzBvWjLIqv3nD6dx6hd3LRNv",
+                              "amount": 6.33,
+                              "date": "2018-06-08",
+                              "iso_currency_code": "USD",
+                              "original_description": "Uber 072515 SF**POOL**",
+                              "pending": false,
+                              "transaction_id": "bK3blzxKjPHo4a6RVGrmhDeR5q3e5KCVeNvMQ",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "account_id": "qZXze1RZj4IbnyzBvWjLIqv3nD6dx6hd3LRNv",
+                              "amount": 89.4,
+                              "date": "2018-06-21",
+                              "iso_currency_code": "USD",
+                              "original_description": "SparkFun",
+                              "pending": false,
+                              "transaction_id": "mjLlNX5j93sLqB3GvE4mc5mLodjmoNCLaM3Vd",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "account_id": "qZXze1RZj4IbnyzBvWjLIqv3nD6dx6hd3LRNv",
+                              "amount": 4.33,
+                              "date": "2018-06-22",
+                              "iso_currency_code": "USD",
+                              "original_description": "Starbucks",
+                              "pending": false,
+                              "transaction_id": "9mVbeM8mwyU8aWpvPNG6twVZnWNVnLFR6VJXg",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "account_id": "qZXze1RZj4IbnyzBvWjLIqv3nD6dx6hd3LRNv",
+                              "amount": 12,
+                              "date": "2018-06-22",
+                              "iso_currency_code": "USD",
+                              "original_description": "McDonalds #3322",
+                              "pending": false,
+                              "transaction_id": "yE3PgWVEbJc6jgMaw9DVcQ3M7yr37dTyBWv7A",
+                              "unofficial_currency_code": null
+                          }
+                      ],
+                      "type": "depository"
+                  },
+                  {
+                      "account_id": "rMRBQWJM5Nu931MkVGXpUqWdZpz8ozhlzp1ay",
+                      "balances": {
+                          "available": null,
+                          "current": 1000,
+                          "iso_currency_code": "USD",
+                          "unofficial_currency_code": null
+                      },
+                      "days_available": 30,
+                      "historical_balances": [
+                          {
+                              "current": 1000,
+                              "date": "2018-06-21",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-20",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-19",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-18",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-17",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-16",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-15",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-14",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-13",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-12",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-11",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-10",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-09",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-08",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-07",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-06",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-05",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-04",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-03",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-02",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-06-01",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-05-31",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-05-30",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-05-29",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-05-28",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-05-27",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-05-26",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 1000,
+                              "date": "2018-05-25",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 2000,
+                              "date": "2018-05-24",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 2000,
+                              "date": "2018-05-23",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          }
+                      ],
+                      "mask": "2222",
+                      "name": "Plaid CD",
+                      "official_name": "Plaid Bronze Standard 0.2% Interest CD",
+                      "owners": [
+                          {
+                              "addresses": [
+                                  {
+                                      "data": {
+                                          "city": "Malakoff",
+                                          "state": "NY",
+                                          "street": "2992 Cameron Road",
+                                          "zip": "14236"
+                                      },
+                                      "primary": true
+                                  },
+                                  {
+                                      "data": {
+                                          "city": "San Matias",
+                                          "state": "CA",
+                                          "street": "2493 Leisure Lane",
+                                          "zip": "93405-2255"
+                                      },
+                                      "primary": false
+                                  }
+                              ],
+                              "emails": [
+                                  {
+                                      "data": "accountholder0@example.com",
+                                      "primary": true,
+                                      "type": "primary"
+                                  },
+                                  {
+                                      "data": "accountholder1@example.com",
+                                      "primary": false,
+                                      "type": "secondary"
+                                  },
+                                  {
+                                      "data": "extraordinarily.long.email.username.123456@reallylonghostname.com",
+                                      "primary": false,
+                                      "type": "other"
+                                  }
+                              ],
+                              "names": [
+                                  "Alberta Bobbeth Charleson"
+                              ],
+                              "phone_numbers": [
+                                  {
+                                      "data": "1112223333",
+                                      "primary": false,
+                                      "type": "home"
+                                  },
+                                  {
+                                      "data": "1112224444",
+                                      "primary": false,
+                                      "type": "work"
+                                  },
+                                  {
+                                      "data": "1112225555",
+                                      "primary": false,
+                                      "type": "mobile1"
+                                  }
+                              ]
+                          }
+                      ],
+                      "subtype": "cd",
+                      "transactions": [
+                          {
+                              "account_id": "rMRBQWJM5Nu931MkVGXpUqWdZpz8ozhlzp1ay",
+                              "amount": 1000,
+                              "date": "2018-05-25",
+                              "iso_currency_code": "USD",
+                              "original_description": "CD DEPOSIT .INITIAL.",
+                              "pending": false,
+                              "transaction_id": "6GmAPbgGBytJ3GvmaBRVTADygplDgWfg5bAVK",
+                              "unofficial_currency_code": null
+                          }
+                      ],
+                      "type": "depository"
+                  },
+                  {
+                      "account_id": "zWMj8wmW5oUDkn4aQMg1IoZ67LjEbjtonMQwo",
+                      "balances": {
+                          "available": null,
+                          "current": 410,
+                          "iso_currency_code": "USD",
+                          "unofficial_currency_code": null
+                      },
+                      "days_available": 30,
+                      "historical_balances": [
+                          {
+                              "current": 410,
+                              "date": "2018-06-21",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 410,
+                              "date": "2018-06-20",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 410,
+                              "date": "2018-06-19",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 410,
+                              "date": "2018-06-18",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 410,
+                              "date": "2018-06-17",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 410,
+                              "date": "2018-06-16",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 410,
+                              "date": "2018-06-15",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 410,
+                              "date": "2018-06-14",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 410,
+                              "date": "2018-06-13",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 410,
+                              "date": "2018-06-12",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 410,
+                              "date": "2018-06-11",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": 410,
+                              "date": "2018-06-10",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -90,
+                              "date": "2018-06-09",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -90,
+                              "date": "2018-06-08",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -90,
+                              "date": "2018-06-07",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -90,
+                              "date": "2018-06-06",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -90,
+                              "date": "2018-06-05",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -590,
+                              "date": "2018-06-04",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1590,
+                              "date": "2018-06-03",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1590,
+                              "date": "2018-06-02",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1590,
+                              "date": "2018-06-01",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1590,
+                              "date": "2018-05-31",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1590,
+                              "date": "2018-05-30",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1590,
+                              "date": "2018-05-29",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1590,
+                              "date": "2018-05-28",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1590,
+                              "date": "2018-05-27",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1590,
+                              "date": "2018-05-26",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1590,
+                              "date": "2018-05-25",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1590,
+                              "date": "2018-05-24",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "current": -1668.5,
+                              "date": "2018-05-23",
+                              "iso_currency_code": "USD",
+                              "unofficial_currency_code": null
+                          }
+                      ],
+                      "mask": "3333",
+                      "name": "Plaid Credit Card",
+                      "official_name": "Plaid Diamond 12.5% APR Interest Credit Card",
+                      "owners": [
+                          {
+                              "addresses": [
+                                  {
+                                      "data": {
+                                          "city": "Malakoff",
+                                          "state": "NY",
+                                          "street": "2992 Cameron Road",
+                                          "zip": "14236"
+                                      },
+                                      "primary": true
+                                  },
+                                  {
+                                      "data": {
+                                          "city": "San Matias",
+                                          "state": "CA",
+                                          "street": "2493 Leisure Lane",
+                                          "zip": "93405-2255"
+                                      },
+                                      "primary": false
+                                  }
+                              ],
+                              "emails": [
+                                  {
+                                      "data": "accountholder0@example.com",
+                                      "primary": true,
+                                      "type": "primary"
+                                  },
+                                  {
+                                      "data": "accountholder1@example.com",
+                                      "primary": false,
+                                      "type": "secondary"
+                                  },
+                                  {
+                                      "data": "extraordinarily.long.email.username.123456@reallylonghostname.com",
+                                      "primary": false,
+                                      "type": "other"
+                                  }
+                              ],
+                              "names": [
+                                  "Alberta Bobbeth Charleson"
+                              ],
+                              "phone_numbers": [
+                                  {
+                                      "data": "1112223333",
+                                      "primary": false,
+                                      "type": "home"
+                                  },
+                                  {
+                                      "data": "1112224444",
+                                      "primary": false,
+                                      "type": "work"
+                                  },
+                                  {
+                                      "data": "1112225555",
+                                      "primary": false,
+                                      "type": "mobile1"
+                                  }
+                              ]
+                          }
+                      ],
+                      "subtype": "credit card",
+                      "transactions": [
+                          {
+                              "account_id": "zWMj8wmW5oUDkn4aQMg1IoZ67LjEbjtonMQwo",
+                              "amount": 78.5,
+                              "date": "2018-05-24",
+                              "iso_currency_code": "USD",
+                              "original_description": "Touchstone Climbing",
+                              "pending": false,
+                              "transaction_id": "XA1LMV8AwKuQlkqzGbPeINPqZnJPZ8CdaPlwK",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "account_id": "zWMj8wmW5oUDkn4aQMg1IoZ67LjEbjtonMQwo",
+                              "amount": 500,
+                              "date": "2018-06-04",
+                              "iso_currency_code": "USD",
+                              "original_description": "KFC",
+                              "pending": false,
+                              "transaction_id": "VE1MQyWEgkca5v91qy6JhbGJlx8GlQCWrpA3B",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "account_id": "zWMj8wmW5oUDkn4aQMg1IoZ67LjEbjtonMQwo",
+                              "amount": 500,
+                              "date": "2018-06-04",
+                              "iso_currency_code": "USD",
+                              "original_description": "Madison Bicycle Shop",
+                              "pending": false,
+                              "transaction_id": "DkRlWz8kwyid5nR94E7kcBWjGnDWGgivMEpKq",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "account_id": "zWMj8wmW5oUDkn4aQMg1IoZ67LjEbjtonMQwo",
+                              "amount": 500,
+                              "date": "2018-06-05",
+                              "iso_currency_code": "USD",
+                              "original_description": "Tectra Inc",
+                              "pending": false,
+                              "transaction_id": "wkA4pXKk5QiRVB49vGbPC6DPge3Dg4Cr8qdB6",
+                              "unofficial_currency_code": null
+                          },
+                          {
+                              "account_id": "zWMj8wmW5oUDkn4aQMg1IoZ67LjEbjtonMQwo",
+                              "amount": 500,
+                              "date": "2018-06-10",
+                              "iso_currency_code": "USD",
+                              "original_description": "United Airlines",
+                              "pending": false,
+                              "transaction_id": "5AxWNMoAVyuVEQKzdRXofmKZGLQKGohZm3LqP",
+                              "unofficial_currency_code": null
+                          }
+                      ],
+                      "type": "credit"
+                  }
+              ],
+              "date_last_updated": "2018-06-22T18:15:47Z",
+              "institution_id": "ins_3",
+              "institution_name": "Chase",
+              "item_id": "eBa9rxvBJeI3jyKeVGAxHjKJQv31eWiLQ6Qgy"
+          }
+      ],
+      "user": {
+          "client_user_id": "example_user_id",
+          "email": "john@doe.com",
+          "first_name": "John",
+          "last_name": "Doe",
+          "middle_name": "Deere",
+          "phone_number": "3214560987",
+          "ssn": "123-45-7890"
+      }
+  },
+  "request_id": "hCa9r",
+  "warnings": []
+}

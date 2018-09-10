@@ -1,0 +1,141 @@
+{
+  "accounts": [
+      {
+          "account_id": "qZXze1RZj4IbnyzBvWjLIqv3nD6dx6hd3LRNv",
+          "balances": {
+              "available": 100,
+              "current": 110,
+              "limit": null
+          },
+          "mask": "0000",
+          "name": "Plaid Checking",
+          "official_name": "Plaid Gold Standard 0% Interest Checking",
+          "subtype": "checking",
+          "type": "depository"
+      },
+      {
+          "account_id": "K7axBNn7V3sk5mGXVp78SWlqQLkbBkiVQK1Gg",
+          "balances": {
+              "available": 200,
+              "current": 210,
+              "limit": null
+          },
+          "mask": "1111",
+          "name": "Plaid Saving",
+          "official_name": "Plaid Silver Standard 0.1% Interest Saving",
+          "subtype": "savings",
+          "type": "depository"
+      },
+      {
+          "account_id": "rMRBQWJM5Nu931MkVGXpUqWdZpz8ozhlzp1ay",
+          "balances": {
+              "available": null,
+              "current": 1000,
+              "limit": null
+          },
+          "mask": "2222",
+          "name": "Plaid CD",
+          "official_name": "Plaid Bronze Standard 0.2% Interest CD",
+          "subtype": "cd",
+          "type": "depository"
+      },
+      {
+          "account_id": "zWMj8wmW5oUDkn4aQMg1IoZ67LjEbjtonMQwo",
+          "balances": {
+              "available": null,
+              "current": 410,
+              "limit": 2000
+          },
+          "mask": "3333",
+          "name": "Plaid Credit Card",
+          "official_name": "Plaid Diamond 12.5% APR Interest Credit Card",
+          "subtype": "credit card",
+          "type": "credit"
+      }
+  ],
+  "identity": {
+      "addresses": [
+          {
+              "accounts": [
+                  "Plaid Checking 0000",
+                  "Plaid Saving 1111",
+                  "Plaid CD 2222"
+              ],
+              "data": {
+                  "city": "Malakoff",
+                  "state": "NY",
+                  "street": "2992 Cameron Road",
+                  "zip": "14236"
+              },
+              "primary": true
+          },
+          {
+              "accounts": [
+                  "Plaid Credit Card 3333"
+              ],
+              "data": {
+                  "city": "San Matias",
+                  "state": "CA",
+                  "street": "2493 Leisure Lane",
+                  "zip": "93405-2255"
+              },
+              "primary": false
+          }
+      ],
+      "emails": [
+          {
+              "data": "accountholder0@example.com",
+              "primary": true,
+              "type": "primary"
+          },
+          {
+              "data": "accountholder1@example.com",
+              "primary": false,
+              "type": "secondary"
+          },
+          {
+              "data": "extraordinarily.long.email.username.123456@reallylonghostname.com",
+              "primary": false,
+              "type": "other"
+          }
+      ],
+      "names": [
+          "Alberta Bobbeth Charleson"
+      ],
+      "phone_numbers": [
+          {
+              "data": "1112223333",
+              "primary": false,
+              "type": "home"
+          },
+          {
+              "data": "1112224444",
+              "primary": false,
+              "type": "work"
+          },
+          {
+              "data": "1112225555",
+              "primary": false,
+              "type": "mobile1"
+          }
+      ]
+  },
+  "item": {
+      "available_products": [
+          "assets",
+          "balance",
+          "credit_details",
+          "income"
+      ],
+      "billed_products": [
+          "auth",
+          "identity",
+          "transactions"
+      ],
+      "error": null,
+      "institution_id": "ins_3",
+      "item_id": "eBa9rxvBJeI3jyKeVGAxHjKJQv31eWiLQ6Qgy",
+      "webhook": "https://webhook.site/0f24119d-f5a5-4c2d-9756-bda54eb995ab"
+  },
+  "request_id": "HNw3A"
+}

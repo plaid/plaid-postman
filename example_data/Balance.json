@@ -1,0 +1,86 @@
+{
+  "accounts": [
+      {
+          "account_id": "mk56Nr1AGQUaol53rQmMSP8aJglAeWfLmzvK4",
+          "balances": {
+              "available": 100,
+              "current": 110,
+              "limit": null
+          },
+          "mask": "0000",
+          "name": "Plaid Checking",
+          "official_name": "Plaid Gold Standard 0% Interest Checking",
+          "subtype": "checking",
+          "type": "depository"
+      },
+      {
+          "account_id": "yeV6gAmrXGSnEmZM8xVyfLokjmJg1Kty3eq1W",
+          "balances": {
+              "available": 200,
+              "current": 210,
+              "limit": null
+          },
+          "mask": "1111",
+          "name": "Plaid Saving",
+          "official_name": "Plaid Silver Standard 0.1% Interest Saving",
+          "subtype": "savings",
+          "type": "depository"
+      },
+      {
+          "account_id": "9A8oeG36aqtg7JEpzj6yUKq4XMaG6kSRGaWeE",
+          "balances": {
+              "available": null,
+              "current": 1000,
+              "limit": null
+          },
+          "mask": "2222",
+          "name": "Plaid CD",
+          "official_name": "Plaid Bronze Standard 0.2% Interest CD",
+          "subtype": "cd",
+          "type": "depository"
+      },
+      {
+          "account_id": "vPq6LpGlwEIe1bDZgzapHLdl8BPVmWtWzA3Gl",
+          "balances": {
+              "available": null,
+              "current": 410,
+              "limit": 2000
+          },
+          "mask": "3333",
+          "name": "Plaid Credit Card",
+          "official_name": "Plaid Diamond 12.5% APR Interest Credit Card",
+          "subtype": "credit card",
+          "type": "credit"
+      },
+      {
+          "account_id": "R58lPRmGaWHNKqGE7bWzhrbQGLPeD7iRl3vxw",
+          "balances": {
+              "available": 43200,
+              "current": 43200,
+              "limit": null
+          },
+          "mask": "4444",
+          "name": "Plaid Money Market",
+          "official_name": "Plaid Platinum Standard 1.85% Interest Money Market",
+          "subtype": "money market",
+          "type": "depository"
+      }
+  ],
+  "item": {
+      "available_products": [
+          "assets",
+          "balance",
+          "identity",
+          "income",
+          "transactions"
+      ],
+      "billed_products": [
+          "auth"
+      ],
+      "error": null,
+      "institution_id": "ins_43",
+      "item_id": "jlbRdwQ79jSeyB3JgVjpHKzPgP7ob9t17d7Wz",
+      "webhook": "https://asdfadsf.com"
+  },
+  "request_id": "OMu8P"
+}
