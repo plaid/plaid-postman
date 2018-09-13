@@ -4,54 +4,46 @@
   "values": [
     {
       "key": "client_id",
-      "value": "YOUR_CLIENT_ID",
-      "enabled": true,
-      "type": "text"
+      "value": "",
+      "enabled": true
     },
     {
       "key": "public_key",
-      "value": "YOUR_PUBLIC_KEY",
-      "enabled": true,
-      "type": "text"
+      "value": "",
+      "enabled": true
     },
     {
       "key": "secret_key",
-      "value": "YOUR_SECRET_KEY",
-      "enabled": true,
-      "type": "text"
+      "value": "",
+      "enabled": true
     },
     {
       "key": "public_token",
       "value": "",
-      "enabled": true,
-      "type": "text"
+      "enabled": true
     },
     {
       "key": "access_token",
       "value": "",
-      "enabled": true,
-      "type": "text"
+      "enabled": true
     },
     {
       "key": "asset_report_token",
       "value": "",
-      "enabled": true,
-      "type": "text"
+      "enabled": true
     },
     {
       "key": "env_url",
-      "value": "sandbox.plaid.com",
-      "enabled": true,
-      "type": "text"
+      "value": "",
+      "enabled": true
     },
     {
       "key": "account_id",
       "value": "",
-      "enabled": true,
-      "type": "text"
+      "enabled": true
     }
   ],
   "_postman_variable_scope": "environment",
-  "_postman_exported_at": "2018-08-29T23:24:45.982Z",
-  "_postman_exported_using": "Postman/6.0.10"
+  "_postman_exported_at": "2018-09-13T17:46:00.507Z",
+  "_postman_exported_using": "Postman/6.3.0"
 }

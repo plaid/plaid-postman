@@ -11,12 +11,12 @@ If you would like to learn more about each of our endpoints, please refer to the
 
 ## Initial Setup
 
-1. Clone or download the repo so you have all the files. After you download the Postman app, import your **‘Plaid API Endpoints Collection.json’** and **‘Sandbox Environment.json’** files.
+1. Clone or download the repo so you have all the files. After you download the Postman app, import your **‘Plaid API Endpoints Collection.json’** and **‘Sandbox Environment.json’** files. Make sure the hidebar is not hidden!
 
 ![import_file.png](./images/ImportFile.png)
 ![import.png](./images/Import.png)
 
-2. After importing both the collection and the environment, set your environment variables for Sandbox. This can be done by clicking on the eye icon as shown below and then clicking on ‘edit’. You can find your `public_key`, `client_id`, and `secret` on your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Leave the `env_url` as it is.
+2. After importing both the collection and the environment, make sure the Sandbox environment is selected in order to set your environment variables. This can be done by clicking on the eye icon as shown below and then clicking on ‘edit’. You can find your `public_key`, `client_id`, and `secret` on your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Leave the `env_url` as it is. Please input your variables under the "Current Value" fields. 
 
 ![eye.png](./images/Eye.png)
 ![keys.png](./images/keys.png)
