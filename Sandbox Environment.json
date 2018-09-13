@@ -4,17 +4,17 @@
   "values": [
     {
       "key": "client_id",
-      "value": "",
+      "value": "YOUR_CLIENT_ID",
       "enabled": true
     },
     {
       "key": "public_key",
-      "value": "",
+      "value": "YOUR_PUBLIC_KEY",
       "enabled": true
     },
     {
       "key": "secret_key",
-      "value": "",
+      "value": "YOUR_SECRET_KEY",
       "enabled": true
     },
     {
@@ -34,7 +34,7 @@
     },
     {
       "key": "env_url",
-      "value": "",
+      "value": "sandbox.plaid.com",
       "enabled": true
     },
     {
