@@ -4,6 +4,8 @@
 ## Introduction 
 
 Welcome to the Postman Collections Quickstart Guide! This quickstart is a step-by-step guide that will get you up and running with Postman and the Plaid’s Postman [collection](https://www.getpostman.com/docs/v6/postman/collections/intro_to_collections). 
+
+If you haven't already done so, please [download](https://www.getpostman.com/apps) the Postman app.
 		
 We created this in order to make it as simple as possible for you to make  requests to Plaid’s API and visualize the responses in a friendly format. Please make sure to read all the steps. There aren’t many, so we promise the setup will be quick!
 
