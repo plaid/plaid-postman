@@ -1,40 +1,64 @@
 # plaid-postman
 
-
 ## Introduction 
 
 Welcome to the Postman Collections Quickstart Guide! This quickstart is a step-by-step guide that will get you up and running with Postman and the Plaid’s Postman [collection](https://www.getpostman.com/docs/v6/postman/collections/intro_to_collections). 
 
 If you haven't already done so, please [download](https://www.getpostman.com/apps) the Postman app.
 		
-We created this in order to make it as simple as possible for you to make  requests to Plaid’s API and visualize the responses in a friendly format. Please make sure to read all the steps. There aren’t many, so we promise the setup will be quick!
+We created this in order to make it as simple as possible for you to make requests to Plaid’s API and visualize the responses in a friendly format. Please make sure to read all the steps. There aren’t many, so we promise the setup will be quick!
 
 If you would like to learn more about each of our endpoints, please refer to the API [documentation](https://plaid.com/docs/api).
 
-## Initial Setup
 
-1. Clone or download the repo so you have all the files. After you download the Postman app, import your **‘Plaid API Endpoints Collection.json’** and **‘Sandbox Environment.json’** files. Make sure the hidebar is not hidden!
+## Plaid API
 
-![import_file.png](./images/ImportFile.png)
-![import.png](./images/Import.png)
+* **Items** 
+  * **Create Item [Sandbox Only]** - Creates an Item by generateing a public token. This endpoint only works in the Sandbox environment. Items can only be created through Plaid Link in the development and production environments.
+  * **Exchange Token** - Exchanges a public token for an access token.
+  * **Retrieve Item** - Retrieves information about an Item.
+  * **Retrieve an Item's Accounts** - Retrieves all available accounts for an Item.  
+  * **Rotate Access Token** - Returns a new access token and invalidates the old one.
+  * **Update an Item's Webhook** - Updates an Item's webhook url. 
+  * **Simulate ITEM_LOGIN_REQUIRED [Sandbox Only]** - Sets an Item in an ITEM_LOGIN_REQUIRED state. Check our [Errors](https://plaid.com/docs/#errors-overview) section in our docs for more information.
+  * **Remove Item** - Deletes an Item using its access token.
 
-2. After importing both the collection and the environment, make sure the Sandbox environment is selected in order to set your environment variables. This can be done by clicking on the eye icon as shown below and then clicking on ‘edit’. You can find your `public_key`, `client_id`, and `secret` on your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Leave the `env_url` as it is. Please input your variables under the "Current Value" fields. 
+* **Auth** 
+  * **Retrieve Auth** - Retrieves the bank account and routing numbers associated with an Item’s checking and savings accounts, along with high-level account data and balances.
 
-![eye.png](./images/Eye.png)
-![keys.png](./images/keys.png)
+* **Transactions** 
+  * **Retrieve Transactions** - Retrieves user-authorized transaction data for credit and depository-type Accounts. Transaction data is standardized across financial institutions, and in many cases transactions are linked to a clean name, entity type, location, and category. Similarly, account data is standardized and returned with a clean name, number, balance, and other meta information where available.
 
-3. In the ‘Body’ tab, input values as necessary. From here on out, anything surrounded by double curly brackets {{ }} will be replaced by the value of its respective environment variable. For example, {{client_id}} will take on the value of your client_id key that was set earlier in step 2. 
+* **Balance**
+  * **Retrieve Balance** - Retrieves the real-time balance for each of an Item’s accounts.
 
-![json.png](./images/Json.png)
+* **Identity**
+  * **Retrieve Identity** -  Retrieves various account holder information on file with the financial institution, including names, emails, phone numbers, and addresses.
 
-Anything in CAPS_SEPARATED_BY_UNDERSCORES means that you have to manually enter the value in the body. For example, when you see ENTER_WEBHOOK_URL, you must add a valid webhook url such as ‘https://randomwebdomain.com/webhook’. 
+* **Income**
+  * **Retrieve Income** - Retrieves information pertaining to a Item’s income. In addition to the annual income, detailed information will be provided for each contributing income stream (or job).
 
-4. You’re all set! You can now start sending requests to the Plaid server using Postman. Just choose an endpoint and click ‘Send’ and you will receive a response from Plaid.
+* **Assets**
+  * **Create Asset Report** - Creates an Asset Report.
+  * **Retrieve an Asset Report (JSON)** - Retrieves an Asset Report in JSON.
+  * **Retrieve an Asset Report (PDF)** - Retrieves an Asset Report in PDF.
+  * **Create Audit Copy** - Plaid can provide an Audit Copy of any Asset Report directly to a participating third party on your behalf. This endpoint creates that Audit Copy.
+  * **Remove Asset Report** - Removes an Asset Report.
+  * **Remove Audit Copy** - Removes an Audit Copy.
+  * **Refresh Asset Report** - Create a new Asset Report based on the old one, but with the most recent data available from the financial institution(s).
 
-## Examples
-You can see pre-written example requests & responses for each endpoint by clicking on the ‘examples’ dropdown.
+* **Institutions**
+  * **Search Institution by Name** - Retrieves information about a specific institution by name.
+  * **Search Institution by ID** - Retrieves information about a specific institution by ID. 
+  * **Retrieve Institution List** - Retrieves a list of all supported institutions.
 
-![Examples.png](./images/Examples.png)
+* **Categories** 
+  * **Retrieve Categories** - Retrieves detailed information on categories returned by Plaid. This endpoint does not require authentication.
+
+
+Click the button below to start testing Plaid Sandbox endpoints using Postman! There is no additional setup required as the collection and environment files should be imported automatically.
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/9a5bdac107f4d21edbc1)
+
 
 ## Useful Tools
 [Webhook Tester](https://webhook.site/) is a great tool for receiving webhook calls. Generate a webhook url on this site and use that url for any Postman requests that require you to specify a webhook url. You can go on Webhook Tester to see a list of all requests being made to that url.
@@ -42,4 +66,6 @@ You can see pre-written example requests & responses for each endpoint by clicki
 
 ## Important Note
 The `/public_token/create` endpoint is only available in the `sandbox` environment. It exists only for testing purposes and simulates an Item Creation via the Plaid Link module. Items cannot be created directly via an endpoint for the `development` and `production` environments and can only be created through Plaid Link.
+
+
 
