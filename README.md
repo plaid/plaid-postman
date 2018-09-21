@@ -11,7 +11,11 @@ We created this in order to make it as simple as possible for you to make reques
 If you would like to learn more about each of our endpoints, please refer to the API [documentation](https://plaid.com/docs/api).
 
 
-## Plaid API
+## [Plaid API](https://www.plaid.com/docs)
+
+Click the button below to start testing Plaid Sandbox endpoints using Postman! There is no additional setup required as the collection and environment files should be imported automatically.
+
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/9a5bdac107f4d21edbc1)
 
 * **Items** 
   * **Create Item [Sandbox Only]** - Creates an Item by generateing a public token. This endpoint only works in the Sandbox environment. Items can only be created through Plaid Link in the development and production environments.
@@ -54,10 +58,6 @@ If you would like to learn more about each of our endpoints, please refer to the
 
 * **Categories** 
   * **Retrieve Categories** - Retrieves detailed information on categories returned by Plaid. This endpoint does not require authentication.
-
-
-Click the button below to start testing Plaid Sandbox endpoints using Postman! There is no additional setup required as the collection and environment files should be imported automatically.
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://www.getpostman.com/collections/9a5bdac107f4d21edbc1)
 
 
 ## Useful Tools
