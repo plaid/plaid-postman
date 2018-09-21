@@ -13,7 +13,7 @@ If you would like to learn more about each of our endpoints, please refer to the
 
 ## [Plaid API](https://www.plaid.com/docs)
 
-Click the button below to start testing Plaid Sandbox endpoints using Postman! Please make sure the `Sandbox` environment is selected in the upper right hand corner of the screen and that the `public_key`, `client_id`, and `secret` are set. These values can be found on your Plaid [dashboard](https://dashboard.plaid.com/account/keys).
+Click the button below to start testing Plaid Sandbox endpoints using Postman! Please make sure the `Sandbox` environment is selected in the upper right hand corner of the screen and that the `public_key`, `client_id`, and `secret` are set under `Current Value`. These values can be found on your Plaid [dashboard](https://dashboard.plaid.com/account/keys).
 
 ![eye.png](./images/Eye.png)
 
