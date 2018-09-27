@@ -8,11 +8,9 @@
 	"item": [
 		{
 			"name": "Items",
-			"description": "An `Item` is a set of credentials (map of key-value pairs) associated with a financial institution. Each `Item` can have many associated `Accounts`. For each `Account`, Plaid returns high-level information such as balance, name, and account type. Credit and depository `Accounts` may also have transactions associated with them.  \n<br/>\nIt is important to note that a single end-user of your application might have accounts at different financial institutions, which means they would have multiple different `Items` within your application. \n",
 			"item": [
 				{
 					"name": "Item Creation",
-					"description": null,
 					"item": [
 						{
 							"name": "Create Item [Sandbox Only]",
@@ -22,6 +20,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -52,6 +54,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -74,7 +80,6 @@
 							},
 							"response": [
 								{
-									"id": "28fc83fe-e393-47eb-a24d-62b9a06d8b6c",
 									"name": "Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -189,7 +194,6 @@
 				},
 				{
 					"name": "Item Management",
-					"description": "This folder contains all the endpoints for managing your `Item`s.",
 					"item": [
 						{
 							"name": "Retrieve Item",
@@ -199,6 +203,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -220,7 +228,6 @@
 							},
 							"response": [
 								{
-									"id": "18ac5a1c-5a27-47dd-a8c6-ca747cbe6b25",
 									"name": "Retrieve Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -337,6 +344,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -358,7 +369,6 @@
 							},
 							"response": [
 								{
-									"id": "b7708925-28e1-4ec0-b690-d05f12b01222",
 									"name": "Retrieve an Item's Accounts Example",
 									"originalRequest": {
 										"method": "POST",
@@ -475,6 +485,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -497,7 +511,6 @@
 							},
 							"response": [
 								{
-									"id": "87a26ea0-bde0-4e3c-9d8f-77d2bbbe2d9e",
 									"name": "Rotate Access Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -615,6 +628,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -637,7 +654,6 @@
 							},
 							"response": [
 								{
-									"id": "62e6f82b-fea3-4e3a-86ae-4b75dffaa6cf",
 									"name": "Update an Item's Webhook Example",
 									"originalRequest": {
 										"method": "POST",
@@ -755,6 +771,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -777,7 +797,6 @@
 							},
 							"response": [
 								{
-									"id": "9e69933c-6f7e-4129-a2e0-e7413ceea88e",
 									"name": "Simulate ITEM_LOGIN_REQUIRED [Sandbox Only] Example",
 									"originalRequest": {
 										"method": "POST",
@@ -895,6 +914,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -916,7 +939,6 @@
 							},
 							"response": [
 								{
-									"id": "d0c805a9-255c-4724-88da-7c159954406b",
 									"name": "Remove Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -1024,7 +1046,6 @@
 									"body": "{\n  \"removed\": true,\n  \"request_id\": \"emqzg\"\n}"
 								},
 								{
-									"id": "e124028d-e934-4ebc-b2bb-44dfc8b1c79b",
 									"name": "Remove Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -1134,6 +1155,7 @@
 							]
 						}
 					],
+					"description": "This folder contains all the endpoints for managing your `Item`s.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1159,6 +1181,7 @@
 					"_postman_isSubFolder": true
 				}
 			],
+			"description": "An `Item` is a set of credentials (map of key-value pairs) associated with a financial institution. Each `Item` can have many associated `Accounts`. For each `Account`, Plaid returns high-level information such as balance, name, and account type. Credit and depository `Accounts` may also have transactions associated with them.  \n<br/>\nIt is important to note that a single end-user of your application might have accounts at different financial institutions, which means they would have multiple different `Items` within your application. \n",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1184,7 +1207,6 @@
 		},
 		{
 			"name": "Auth",
-			"description": null,
 			"item": [
 				{
 					"name": "Retrieve Auth",
@@ -1194,6 +1216,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -1215,7 +1241,6 @@
 					},
 					"response": [
 						{
-							"id": "5b9c3074-c67c-4e38-a686-b925b7602477",
 							"name": "Retrieve Auth EFT Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1323,7 +1348,6 @@
 							"body": "{\n  \"accounts\": [\n    {\n      \"account_id\": \"PnpkZlD1rDtQZ7oxk97kSd3xJxz1pwf7bgeLk\",\n      \"balances\": {\n        \"available\": 100,\n        \"current\": 110,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"0000\",\n      \"name\": \"Plaid Checking\",\n      \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n      \"subtype\": \"checking\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"eNVMxpWB6WFpQmr8gvmgi3woAoQP5aHLKpbvG\",\n      \"balances\": {\n        \"available\": 200,\n        \"current\": 210,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"1111\",\n      \"name\": \"Plaid Saving\",\n      \"official_name\": \"Plaid Silver Standard 0.1% Interest Saving\",\n      \"subtype\": \"savings\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"jQVLmWn4pnCokXGzlpXlSEKkXkd6AbT1kD7K4\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 1000,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"2222\",\n      \"name\": \"Plaid CD\",\n      \"official_name\": \"Plaid Bronze Standard 0.2% Interest CD\",\n      \"subtype\": \"cd\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"QbopGqDLzDCmZp7aM9pMhoeywyR1xnSpLvgPn\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 410,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": 2000,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"3333\",\n      \"name\": \"Plaid Credit Card\",\n      \"official_name\": \"Plaid Diamond 12.5% APR Interest Credit Card\",\n      \"subtype\": \"credit card\",\n      \"type\": \"credit\"\n    },\n    {\n      \"account_id\": \"7zAR5KDnPDfybrlMj9rjUrQGNGVMBpCgze5bP\",\n      \"balances\": {\n        \"available\": 43200,\n        \"current\": 43200,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"4444\",\n      \"name\": \"Plaid Money Market\",\n      \"official_name\": \"Plaid Platinum Standard 1.85% Interest Money Market\",\n      \"subtype\": \"money market\",\n      \"type\": \"depository\"\n    }\n  ],\n  \"item\": {\n    \"available_products\": [\n      \"assets\",\n      \"balance\",\n      \"identity\",\n      \"income\",\n      \"transactions\"\n    ],\n    \"billed_products\": [\n      \"auth\"\n    ],\n    \"error\": null,\n    \"institution_id\": \"ins_43\",\n    \"item_id\": \"wnVRXPmk3mt3wepjXEeXsbN4NWe5V9FrNeEN1\",\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  },\n  \"numbers\": {\n    \"ach\": [],\n    \"eft\": [\n      {\n        \"account\": \"111122220000\",\n        \"account_id\": \"PnpkZlD1rDtQZ7oxk97kSd3xJxz1pwf7bgeLk\",\n        \"branch\": \"01533\",\n        \"institution\": \"114\"\n      },\n      {\n        \"account\": \"111122221111\",\n        \"account_id\": \"eNVMxpWB6WFpQmr8gvmgi3woAoQP5aHLKpbvG\",\n        \"branch\": \"01533\",\n        \"institution\": \"114\"\n      }\n    ]\n  },\n  \"request_id\": \"X5W6V\"\n}"
 						},
 						{
-							"id": "860c3dba-9900-482b-b011-bdc2f80f89c0",
 							"name": "Retrieve Auth ACH Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1436,7 +1460,6 @@
 		},
 		{
 			"name": "Transactions",
-			"description": null,
 			"item": [
 				{
 					"name": "Retrieve Transactions",
@@ -1458,6 +1481,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -1479,7 +1506,6 @@
 					},
 					"response": [
 						{
-							"id": "47e65068-145b-428f-b873-b158547938f4",
 							"name": "Retrieve Transactions Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1592,7 +1618,6 @@
 		},
 		{
 			"name": "Balance",
-			"description": null,
 			"item": [
 				{
 					"name": "Retrieve Balance",
@@ -1602,6 +1627,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -1624,7 +1653,6 @@
 					},
 					"response": [
 						{
-							"id": "f4349216-a146-4570-9775-7abdce03e624",
 							"name": "Retrieve Balance Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1738,7 +1766,6 @@
 		},
 		{
 			"name": "Identity",
-			"description": null,
 			"item": [
 				{
 					"name": "Retrieve Identity",
@@ -1748,6 +1775,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -1769,7 +1800,6 @@
 					},
 					"response": [
 						{
-							"id": "d7daae0b-e8e5-4498-8dd9-73833c4b2c3d",
 							"name": "Retrieve Identity Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1882,7 +1912,6 @@
 		},
 		{
 			"name": "Income",
-			"description": null,
 			"item": [
 				{
 					"name": "Retrieve Income",
@@ -1892,6 +1921,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -1913,7 +1946,6 @@
 					},
 					"response": [
 						{
-							"id": "809a24b0-b49f-4843-9b25-66309b8c7538",
 							"name": "Retrieve Income Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2026,7 +2058,6 @@
 		},
 		{
 			"name": "Assets",
-			"description": null,
 			"item": [
 				{
 					"name": "Create Asset Report",
@@ -2036,6 +2067,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -2057,7 +2092,6 @@
 					},
 					"response": [
 						{
-							"id": "6459415c-6f7d-4a2c-a11e-3f63879ff66b",
 							"name": "Create Asset Report Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2186,6 +2220,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -2207,7 +2245,6 @@
 					},
 					"response": [
 						{
-							"id": "441e4c47-aa7f-4809-b915-9b61a3aafc99",
 							"name": "Retrieve an Asset Report (JSON) Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2324,6 +2361,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -2354,6 +2395,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -2376,7 +2421,6 @@
 					},
 					"response": [
 						{
-							"id": "840233ae-eda3-4fbe-ab07-c55e9ec9fea9",
 							"name": "Create Audit Copy Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2494,6 +2538,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -2515,7 +2563,6 @@
 					},
 					"response": [
 						{
-							"id": "34ec64ba-6e5a-431b-9454-4d114a225fc7",
 							"name": "Remove Asset Report Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2632,6 +2679,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -2654,7 +2705,6 @@
 					},
 					"response": [
 						{
-							"id": "f4307121-a589-4565-89a7-c26c243d82e6",
 							"name": "Remove Audit Copy Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2763,12 +2813,152 @@
 							"body": "{\n  \"removed\": true,\n  \"request_id\": \"Rvr6D\"\n}"
 						}
 					]
+				},
+				{
+					"name": "Refresh Asset Report ",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"client_id\": \"{{client_id}}\",\n   \"secret\": \"{{secret_key}}\",\n   \"asset_report_token\": \"ENTER_ASSET_REPORT_TOKEN_HERE\",\n   \"days_requested\": 30,\n   \"options\": {\n      \"client_report_id\": \"ENTER_CLIENT_REPORT_ID_HERE\",\n      \"webhook\": \"ENTER_WEBHOOK_URL_HERE\",\n      \"user\": {\n        \"client_user_id\": \"ENTER_USER_ID_HERE\",\n        \"first_name\": \"ENTER_FIRST_NAME_HERE\",\n        \"middle_name\": \"ENTER_MIDDLE_NAME_HERE\",\n        \"last_name\": \"ENTER_LAST_NAME_HERE\",\n        \"ssn\": \"ENTER_SSN_HERE\",\n        \"phone_number\": \"ENTER_PHONE_NUMBER_HERE\",\n        \"email\": \"ENTER_EMAIL_HERE\"\n      }\n   }\n }"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/asset_report/refresh",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"asset_report",
+								"refresh"
+							]
+						},
+						"description": "Create a new Asset Report based on the old one, but with the most recent data available from the financial institution(s)."
+					},
+					"response": [
+						{
+							"name": "Refresh Asset Report Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"disabled": false
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"client_id\": \"{{client_id}}\",\n   \"secret\": \"{{secret_key}}\",\n   \"asset_report_token\": \"assets-sandbox-915f0a0b-3168-4be9-84ab-84f03b721caf\",\n   \"days_requested\": 30\n   \n }"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/asset_report/refresh",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"asset_report",
+										"refresh"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"key": "Content-Length",
+									"value": "151",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 18 Sep 2018 00:39:20 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Plaid-Version",
+									"value": "2018-05-22",
+									"name": "Plaid-Version",
+									"description": "Custom header"
+								},
+								{
+									"key": "Server",
+									"value": "nginx",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload",
+									"name": "Strict-Transport-Security",
+									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding",
+									"name": "Vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"name": "X-Frame-Options",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": "Cross-site scripting (XSS) filter"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"asset_report_id\": \"d688fccd-ea25-441c-8432-da7ad149d272\",\n  \"asset_report_token\": \"assets-sandbox-0334b31a-177f-4f4e-9764-ed20d217ef9b\",\n  \"request_id\": \"Nzrib\"\n}"
+						}
+					]
 				}
 			]
 		},
 		{
 			"name": "Institutions",
-			"description": "Plaid supports thousands of financial institutions, and we’re always working to add support for more. We have a couple `institution` endpoints that help you to search for institutions as well as to retrieve a complete list of institutions supported by Plaid",
 			"item": [
 				{
 					"name": "Search Institution by Name",
@@ -2778,6 +2968,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -2799,7 +2993,6 @@
 					},
 					"response": [
 						{
-							"id": "7c39d585-8dd4-4a2f-91c3-3dc521f5f88e",
 							"name": "Search Institution by Name Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2910,6 +3103,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -2930,7 +3127,6 @@
 					},
 					"response": [
 						{
-							"id": "ee0dee5c-e8ca-4748-800e-b39ce703199c",
 							"name": "Search Institution by ID Example",
 							"originalRequest": {
 								"method": "POST",
@@ -3041,6 +3237,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -3062,7 +3262,6 @@
 					},
 					"response": [
 						{
-							"id": "434318e0-4c10-41a9-b83e-936ead0ced1b",
 							"name": "Retrieve Insitution List Example",
 							"originalRequest": {
 								"method": "POST",
@@ -3172,6 +3371,7 @@
 					]
 				}
 			],
+			"description": "Plaid supports thousands of financial institutions, and we’re always working to add support for more. We have a couple `institution` endpoints that help you to search for institutions as well as to retrieve a complete list of institutions supported by Plaid",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -3197,7 +3397,6 @@
 		},
 		{
 			"name": "Categories",
-			"description": "Send a request to the `/categories/get` endpoint to get detailed information on categories returned by Plaid. This endpoint does not require authentication.",
 			"item": [
 				{
 					"name": "Retrieve Categories",
@@ -3207,6 +3406,10 @@
 							{
 								"key": "Content-Type",
 								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
 							}
 						],
 						"body": {
@@ -3224,11 +3427,10 @@
 								"get"
 							]
 						},
-						"description": "This endpoint allows you to get to get detailed information on categories returned by Plaid. This endpoint does not require authentication."
+						"description": "This endpoint allows you to get detailed information on categories returned by Plaid. This endpoint does not require authentication."
 					},
 					"response": [
 						{
-							"id": "a39da13b-dab8-46b1-b8ff-22b9fc7dc6bb",
 							"name": "Retrieve Categories Example",
 							"originalRequest": {
 								"method": "POST",
@@ -3331,15 +3533,14 @@
 						}
 					]
 				}
-			]
+			],
+			"description": "Send a request to the `/categories/get` endpoint to get detailed information on categories returned by Plaid. This endpoint does not require authentication."
 		},
 		{
 			"name": "Use Cases",
-			"description": "Use cases for `Auth`, `Transactions`, `Balance`, `Identity`, `Income`, `Assets`.",
 			"item": [
 				{
 					"name": "Auth Use Case",
-					"description": "Use case for `Auth`. An example of a series of requests for how the `Auth` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -3369,6 +3570,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -3391,7 +3596,6 @@
 							},
 							"response": [
 								{
-									"id": "4ff43964-ec99-4cf4-94fc-6117f4a46c10",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -3531,6 +3735,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -3553,7 +3761,6 @@
 							},
 							"response": [
 								{
-									"id": "4563860a-10e7-45fd-b949-6aaf79dc5b58",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -3689,6 +3896,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -3710,7 +3921,6 @@
 							},
 							"response": [
 								{
-									"id": "b8bcb787-f1a9-408a-b811-3022c0f8d936",
 									"name": "3. Retrieve Auth Example",
 									"originalRequest": {
 										"method": "POST",
@@ -3820,6 +4030,7 @@
 							]
 						}
 					],
+					"description": "Use case for `Auth`. An example of a series of requests for how the `Auth` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -3846,7 +4057,6 @@
 				},
 				{
 					"name": "Transactions Use Case",
-					"description": "Use case for `Transactions`. An example of a series of requests for how the `Transactions` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -3876,6 +4086,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -3898,7 +4112,6 @@
 							},
 							"response": [
 								{
-									"id": "b81e3851-f13a-4b74-aced-bc87f799d15c",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4030,6 +4243,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -4052,7 +4269,6 @@
 							},
 							"response": [
 								{
-									"id": "3637aed9-0c92-4e6f-bc10-aba21c12da5c",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4198,6 +4414,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -4219,7 +4439,6 @@
 							},
 							"response": [
 								{
-									"id": "bb42a95a-2a79-4751-8613-0eecb68d98f4",
 									"name": "3. Retrieve Transactions Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4329,6 +4548,7 @@
 							]
 						}
 					],
+					"description": "Use case for `Transactions`. An example of a series of requests for how the `Transactions` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -4355,7 +4575,6 @@
 				},
 				{
 					"name": "Balance Use Case",
-					"description": "Use case for `Balance`. An example of a series of requests for how the `Balance` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -4384,6 +4603,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -4406,7 +4629,6 @@
 							},
 							"response": [
 								{
-									"id": "69bb295b-c5ce-472a-98ac-d857d89442e3",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4536,6 +4758,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -4558,7 +4784,6 @@
 							},
 							"response": [
 								{
-									"id": "211c8d1d-bc43-492c-815f-d775601370d9",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4694,6 +4919,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -4716,7 +4945,6 @@
 							},
 							"response": [
 								{
-									"id": "cc716225-4502-4c21-968a-7992b53c9464",
 									"name": "3. Retrieve Balance Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4827,6 +5055,7 @@
 							]
 						}
 					],
+					"description": "Use case for `Balance`. An example of a series of requests for how the `Balance` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -4853,7 +5082,6 @@
 				},
 				{
 					"name": "Identity Use Case",
-					"description": "Use case for `Identity`. An example of a series of requests for how the `Identity` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -4882,6 +5110,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -4904,7 +5136,6 @@
 							},
 							"response": [
 								{
-									"id": "3b6fa684-bcec-4905-b2aa-fd53a794dc88",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5034,6 +5265,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -5056,7 +5291,6 @@
 							},
 							"response": [
 								{
-									"id": "4a503845-7fbb-47c3-9872-9d118962c38b",
 									"name": "Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5154,7 +5388,6 @@
 									"body": "{\n  \"access_token\": \"access-sandbox-a3078e1d-fc0d-4523-8217-cef05891007e\",\n  \"item_id\": \"g1Jdpr6Lnyc9MALa4K6oUleWErol9mugB3BxR\",\n  \"request_id\": \"du06R\"\n}"
 								},
 								{
-									"id": "fda3aba8-96eb-411c-8c47-19150704313a",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5290,6 +5523,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -5311,7 +5548,6 @@
 							},
 							"response": [
 								{
-									"id": "9d0ab970-09c4-4f89-976d-ef6885c9cbd7",
 									"name": "3. Retrieve Identity Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5421,6 +5657,7 @@
 							]
 						}
 					],
+					"description": "Use case for `Identity`. An example of a series of requests for how the `Identity` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -5447,7 +5684,6 @@
 				},
 				{
 					"name": "Income Use Case",
-					"description": "Use case for `Income`. An example of a series of requests for how the `Income` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -5476,6 +5712,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -5498,7 +5738,6 @@
 							},
 							"response": [
 								{
-									"id": "c224db05-3d18-43ed-b80d-b7f6f91727e1",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5630,6 +5869,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -5652,7 +5895,6 @@
 							},
 							"response": [
 								{
-									"id": "9a7b155b-14e2-4553-9867-b261717550a9",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5788,6 +6030,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -5809,7 +6055,6 @@
 							},
 							"response": [
 								{
-									"id": "ab701b33-061c-4c4b-999a-02b6db530143",
 									"name": "3. Retrieve Income Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5919,6 +6164,7 @@
 							]
 						}
 					],
+					"description": "Use case for `Income`. An example of a series of requests for how the `Income` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -5945,7 +6191,6 @@
 				},
 				{
 					"name": "Assets Use Case",
-					"description": "Use case for `Assets`. An example of a series of requests for how the `Assets` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -5974,6 +6219,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -5996,7 +6245,6 @@
 							},
 							"response": [
 								{
-									"id": "afe0ce20-1f7c-4c9c-82b4-c4bd55f9633f",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6128,6 +6376,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -6150,7 +6402,6 @@
 							},
 							"response": [
 								{
-									"id": "4b3d9f1d-6efc-4c21-85b6-041fc9bb3ff9",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6288,6 +6539,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -6309,7 +6564,6 @@
 							},
 							"response": [
 								{
-									"id": "6b6667b6-b46b-4df8-bdc2-a5b59f34f648",
 									"name": "3. Create Asset Report Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6451,6 +6705,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -6472,7 +6730,6 @@
 							},
 							"response": [
 								{
-									"id": "bf8713ff-1aed-4d25-a71e-22ac0d9a0f08",
 									"name": "4. Retrieve an Asset Report (JSON) Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6610,6 +6867,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -6632,7 +6893,6 @@
 							},
 							"response": [
 								{
-									"id": "7188cd29-6087-4fbd-acbb-aa7c8e59add2",
 									"name": "5. Create Audit Copy Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6743,6 +7003,7 @@
 							]
 						}
 					],
+					"description": "Use case for `Assets`. An example of a series of requests for how the `Assets` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -6769,7 +7030,6 @@
 				},
 				{
 					"name": "Plaid + APEX Use Case",
-					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -6799,6 +7059,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -6821,7 +7085,6 @@
 							},
 							"response": [
 								{
-									"id": "4e14cad9-13c9-4fec-ab80-7543476fc22c",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6961,6 +7224,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -6983,7 +7250,6 @@
 							},
 							"response": [
 								{
-									"id": "ea067dfe-22d6-409f-922a-e6e385fa2819",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7115,6 +7381,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -7136,7 +7406,6 @@
 							},
 							"response": [
 								{
-									"id": "d2e040a0-e3ef-4143-ac45-8187f964f705",
 									"name": "3. Retrieve an Item's Accounts Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7253,6 +7522,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -7276,7 +7549,6 @@
 							},
 							"response": [
 								{
-									"id": "a878ad00-3225-43fc-aa81-2f9da8a9a82f",
 									"name": "4. Create APEX Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7388,6 +7660,7 @@
 							]
 						}
 					],
+					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -7414,7 +7687,6 @@
 				},
 				{
 					"name": "Plaid + Stripe Use Case",
-					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -7444,6 +7716,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -7466,7 +7742,6 @@
 							},
 							"response": [
 								{
-									"id": "0f79282a-1834-48e2-bb61-44d976a7d201",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7606,6 +7881,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -7628,7 +7907,6 @@
 							},
 							"response": [
 								{
-									"id": "ab835830-9004-4fdf-b1fc-e6131c7e4619",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7760,6 +8038,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -7781,7 +8063,6 @@
 							},
 							"response": [
 								{
-									"id": "489143ee-fdd0-488b-8c87-f49694b98ef3",
 									"name": "3. Retrieve an Item's Accounts Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7898,6 +8179,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -7921,7 +8206,6 @@
 							},
 							"response": [
 								{
-									"id": "2902dfea-4ce9-454d-9935-95cb9ea47cc2",
 									"name": "4. Create Stripe Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8032,11 +8316,11 @@
 							]
 						}
 					],
+					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"_postman_isSubFolder": true
 				},
 				{
 					"name": "Plaid + Dwolla Use Case",
-					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -8066,6 +8350,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -8088,7 +8376,6 @@
 							},
 							"response": [
 								{
-									"id": "d610e479-fd3a-4d93-8788-075ec55bae29",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8228,6 +8515,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -8250,7 +8541,6 @@
 							},
 							"response": [
 								{
-									"id": "a3be1693-91bd-4b9c-8c14-8f5383db4e60",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8382,6 +8672,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -8403,7 +8697,6 @@
 							},
 							"response": [
 								{
-									"id": "8db79d17-6324-44d7-8fd3-1d4b45b26a35",
 									"name": "Retrieve an Item's Accounts Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8506,7 +8799,6 @@
 									"body": "{\n  \"accounts\": [\n    {\n      \"account_id\": \"MrvdAVX31KsGQkqjLn8qhxB4PjjePxF96v31g\",\n      \"balances\": {\n        \"available\": 100,\n        \"current\": 110,\n        \"limit\": null\n      },\n      \"mask\": \"0000\",\n      \"name\": \"Plaid Checking\",\n      \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n      \"subtype\": \"checking\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"ZQXzNAR1xmtG6EmJbwBmhLQ9411y4LigqpMGq\",\n      \"balances\": {\n        \"available\": 200,\n        \"current\": 210,\n        \"limit\": null\n      },\n      \"mask\": \"1111\",\n      \"name\": \"Plaid Saving\",\n      \"official_name\": \"Plaid Silver Standard 0.1% Interest Saving\",\n      \"subtype\": \"savings\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"1Nd7GB8ke9TWElpPDwxpSjq6bEE9bju5jR4r8\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 1000,\n        \"limit\": null\n      },\n      \"mask\": \"2222\",\n      \"name\": \"Plaid CD\",\n      \"official_name\": \"Plaid Bronze Standard 0.2% Interest CD\",\n      \"subtype\": \"cd\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"LKvxWwXBRqUjzZlR1E7lC8VewRRWw8fPjM1EJ\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 410,\n        \"limit\": 2000\n      },\n      \"mask\": \"3333\",\n      \"name\": \"Plaid Credit Card\",\n      \"official_name\": \"Plaid Diamond 12.5% APR Interest Credit Card\",\n      \"subtype\": \"credit card\",\n      \"type\": \"credit\"\n    }\n  ],\n  \"item\": {\n    \"available_products\": [\n      \"assets\",\n      \"balance\",\n      \"credit_details\",\n      \"identity\",\n      \"income\",\n      \"transactions\"\n    ],\n    \"billed_products\": [\n      \"auth\"\n    ],\n    \"error\": null,\n    \"institution_id\": \"ins_3\",\n    \"item_id\": \"5ePyra8Qw9h9DJe1LpGehdgjzZKL3RfZPzw5m\",\n    \"webhook\": \"https://sdfdsf.com\"\n  },\n  \"request_id\": \"pnEMv\"\n}"
 								},
 								{
-									"id": "01d94ded-0c96-438d-a1e2-c1fb0acde070",
 									"name": "3. Retrieve an Item's Accounts Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8623,6 +8915,10 @@
 									{
 										"key": "Content-Type",
 										"value": "application/json"
+									},
+									{
+										"key": "User-Agent",
+										"value": "Plaid Postman"
 									}
 								],
 								"body": {
@@ -8646,7 +8942,6 @@
 							},
 							"response": [
 								{
-									"id": "c3cfefd1-b993-40ef-aa21-f9e1b864698d",
 									"name": "4. Create Dwolla Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8758,9 +9053,11 @@
 							]
 						}
 					],
+					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"_postman_isSubFolder": true
 				}
-			]
+			],
+			"description": "Use cases for `Auth`, `Transactions`, `Balance`, `Identity`, `Income`, `Assets`."
 		}
 	],
 	"event": [
@@ -8790,8 +9087,7 @@
 			"id": "dea9d5e1-4e1c-447e-91cf-b4b8e5ea7890",
 			"key": "origin",
 			"value": "https://sandbox.plaid.com (Sandbox)",
-			"type": "string",
-			"description": ""
+			"type": "string"
 		}
 	]
 }
