@@ -18,7 +18,7 @@ Click the "Run with Postman" button below to start testing Plaid Sandbox endpoin
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/9a5bdac107f4d21edbc1#?env%5BSandbox%5D=W3sia2V5IjoiY2xpZW50X2lkIiwidmFsdWUiOiJZT1VSX0NMSUVOVF9JRCIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoicHVibGljX2tleSIsInZhbHVlIjoiWU9VUl9QVUJMSUNfS0VZIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJzZWNyZXRfa2V5IiwidmFsdWUiOiJZT1VSX1NFQ1JFVF9LRVkiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InB1YmxpY190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJhY2Nlc3NfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXNzZXRfcmVwb3J0X3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImVudl91cmwiLCJ2YWx1ZSI6InNhbmRib3gucGxhaWQuY29tIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJhY2NvdW50X2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfV0=)
 
 * **Items** 
-  * **Create Item [Sandbox Only]** - Creates an Item by generateing a public token. This endpoint only works in the Sandbox environment. Items can only be created through Plaid Link in the development and production environments.
+  * **Create Item [Sandbox Only]** - Creates an Item by generating a public token. This endpoint only works in the Sandbox environment. Items can only be created through Plaid Link in the development and production environments.
   * **Exchange Token** - Exchanges a public token for an access token.
   * **Retrieve Item** - Retrieves information about an Item.
   * **Retrieve an Item's Accounts** - Retrieves all available accounts for an Item.  
