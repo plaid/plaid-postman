@@ -8,9 +8,11 @@
 	"item": [
 		{
 			"name": "Items",
+			"description": "An `Item` is a set of credentials (map of key-value pairs) associated with a financial institution. Each `Item` can have many associated `Accounts`. For each `Account`, Plaid returns high-level information such as balance, name, and account type. Credit and depository `Accounts` may also have transactions associated with them.  \n<br/>\nIt is important to note that a single end-user of your application might have accounts at different financial institutions, which means they would have multiple different `Items` within your application. \n",
 			"item": [
 				{
 					"name": "Item Creation",
+					"description": null,
 					"item": [
 						{
 							"name": "Create Item [Sandbox Only]",
@@ -62,7 +64,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"public_token\": \"ENTER_PUBLIC_TOKEN_HERE\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"ENTER_PUBLIC_TOKEN_HERE\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/item/public_token/exchange",
@@ -80,6 +82,7 @@
 							},
 							"response": [
 								{
+									"id": "944d019e-ac34-4b40-9f0b-578241368d59",
 									"name": "Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -194,6 +197,7 @@
 				},
 				{
 					"name": "Item Management",
+					"description": "This folder contains all the endpoints for managing your `Item`s.",
 					"item": [
 						{
 							"name": "Retrieve Item",
@@ -211,7 +215,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/item/get",
@@ -228,6 +232,7 @@
 							},
 							"response": [
 								{
+									"id": "97d24346-92c7-4209-8b0f-5b76e7793392",
 									"name": "Retrieve Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -352,7 +357,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/accounts/get",
@@ -369,6 +374,7 @@
 							},
 							"response": [
 								{
+									"id": "2988a289-e5e6-48ff-ad9d-be4ffe281ed6",
 									"name": "Retrieve an Item's Accounts Example",
 									"originalRequest": {
 										"method": "POST",
@@ -511,6 +517,7 @@
 							},
 							"response": [
 								{
+									"id": "45fceb70-0f27-4867-a749-d87f60df2855",
 									"name": "Rotate Access Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -654,6 +661,7 @@
 							},
 							"response": [
 								{
+									"id": "41640e74-5ddf-41ef-bcd9-62ba27c7189a",
 									"name": "Update an Item's Webhook Example",
 									"originalRequest": {
 										"method": "POST",
@@ -797,6 +805,7 @@
 							},
 							"response": [
 								{
+									"id": "d9cf9566-b2f6-4e97-aab1-61412cefc283",
 									"name": "Simulate ITEM_LOGIN_REQUIRED [Sandbox Only] Example",
 									"originalRequest": {
 										"method": "POST",
@@ -939,6 +948,7 @@
 							},
 							"response": [
 								{
+									"id": "3ecde87e-3229-448d-8cf8-d9f52585a3cb",
 									"name": "Remove Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -1046,6 +1056,7 @@
 									"body": "{\n  \"removed\": true,\n  \"request_id\": \"emqzg\"\n}"
 								},
 								{
+									"id": "a5a698ba-defd-4e2c-a119-2b557e15a4b4",
 									"name": "Remove Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -1155,7 +1166,6 @@
 							]
 						}
 					],
-					"description": "This folder contains all the endpoints for managing your `Item`s.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -1181,7 +1191,6 @@
 					"_postman_isSubFolder": true
 				}
 			],
-			"description": "An `Item` is a set of credentials (map of key-value pairs) associated with a financial institution. Each `Item` can have many associated `Accounts`. For each `Account`, Plaid returns high-level information such as balance, name, and account type. Credit and depository `Accounts` may also have transactions associated with them.  \n<br/>\nIt is important to note that a single end-user of your application might have accounts at different financial institutions, which means they would have multiple different `Items` within your application. \n",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -1207,6 +1216,7 @@
 		},
 		{
 			"name": "Auth",
+			"description": null,
 			"item": [
 				{
 					"name": "Retrieve Auth",
@@ -1224,7 +1234,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/auth/get",
@@ -1241,6 +1251,7 @@
 					},
 					"response": [
 						{
+							"id": "3ad00dd4-5a37-43c3-ab16-064a48ad3474",
 							"name": "Retrieve Auth EFT Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1348,6 +1359,7 @@
 							"body": "{\n  \"accounts\": [\n    {\n      \"account_id\": \"PnpkZlD1rDtQZ7oxk97kSd3xJxz1pwf7bgeLk\",\n      \"balances\": {\n        \"available\": 100,\n        \"current\": 110,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"0000\",\n      \"name\": \"Plaid Checking\",\n      \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n      \"subtype\": \"checking\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"eNVMxpWB6WFpQmr8gvmgi3woAoQP5aHLKpbvG\",\n      \"balances\": {\n        \"available\": 200,\n        \"current\": 210,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"1111\",\n      \"name\": \"Plaid Saving\",\n      \"official_name\": \"Plaid Silver Standard 0.1% Interest Saving\",\n      \"subtype\": \"savings\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"jQVLmWn4pnCokXGzlpXlSEKkXkd6AbT1kD7K4\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 1000,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"2222\",\n      \"name\": \"Plaid CD\",\n      \"official_name\": \"Plaid Bronze Standard 0.2% Interest CD\",\n      \"subtype\": \"cd\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"QbopGqDLzDCmZp7aM9pMhoeywyR1xnSpLvgPn\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 410,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": 2000,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"3333\",\n      \"name\": \"Plaid Credit Card\",\n      \"official_name\": \"Plaid Diamond 12.5% APR Interest Credit Card\",\n      \"subtype\": \"credit card\",\n      \"type\": \"credit\"\n    },\n    {\n      \"account_id\": \"7zAR5KDnPDfybrlMj9rjUrQGNGVMBpCgze5bP\",\n      \"balances\": {\n        \"available\": 43200,\n        \"current\": 43200,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"4444\",\n      \"name\": \"Plaid Money Market\",\n      \"official_name\": \"Plaid Platinum Standard 1.85% Interest Money Market\",\n      \"subtype\": \"money market\",\n      \"type\": \"depository\"\n    }\n  ],\n  \"item\": {\n    \"available_products\": [\n      \"assets\",\n      \"balance\",\n      \"identity\",\n      \"income\",\n      \"transactions\"\n    ],\n    \"billed_products\": [\n      \"auth\"\n    ],\n    \"error\": null,\n    \"institution_id\": \"ins_43\",\n    \"item_id\": \"wnVRXPmk3mt3wepjXEeXsbN4NWe5V9FrNeEN1\",\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  },\n  \"numbers\": {\n    \"ach\": [],\n    \"eft\": [\n      {\n        \"account\": \"111122220000\",\n        \"account_id\": \"PnpkZlD1rDtQZ7oxk97kSd3xJxz1pwf7bgeLk\",\n        \"branch\": \"01533\",\n        \"institution\": \"114\"\n      },\n      {\n        \"account\": \"111122221111\",\n        \"account_id\": \"eNVMxpWB6WFpQmr8gvmgi3woAoQP5aHLKpbvG\",\n        \"branch\": \"01533\",\n        \"institution\": \"114\"\n      }\n    ]\n  },\n  \"request_id\": \"X5W6V\"\n}"
 						},
 						{
+							"id": "15d27aa8-1a60-4ae6-9ad4-d0f7e906b80e",
 							"name": "Retrieve Auth ACH Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1460,6 +1472,7 @@
 		},
 		{
 			"name": "Transactions",
+			"description": null,
 			"item": [
 				{
 					"name": "Retrieve Transactions",
@@ -1489,7 +1502,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"ENTER_ACCESS_TOKEN_HERE\",\n\t\"start_date\": \"2017-01-01\",\n\t\"end_date\": \"2018-01-01\",\n\t\"options\": {\n\t\t\"count\": 250,\n\t\t\"offset\": 100\n\t}\n}"
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\",\n  \"start_date\": \"2017-01-01\",\n  \"end_date\": \"2018-01-01\",\n  \"options\": {\n    \"count\": 250,\n    \"offset\": 100\n  }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/transactions/get",
@@ -1506,6 +1519,7 @@
 					},
 					"response": [
 						{
+							"id": "c3c93f5a-5a94-4689-8c0f-8a412d75460c",
 							"name": "Retrieve Transactions Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1618,6 +1632,7 @@
 		},
 		{
 			"name": "Balance",
+			"description": null,
 			"item": [
 				{
 					"name": "Retrieve Balance",
@@ -1653,6 +1668,7 @@
 					},
 					"response": [
 						{
+							"id": "a6d10730-c017-4420-9787-7b72362fcee7",
 							"name": "Retrieve Balance Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1766,6 +1782,7 @@
 		},
 		{
 			"name": "Identity",
+			"description": null,
 			"item": [
 				{
 					"name": "Retrieve Identity",
@@ -1800,6 +1817,7 @@
 					},
 					"response": [
 						{
+							"id": "425b01b6-9f37-4e8b-9f63-171cfb855cfe",
 							"name": "Retrieve Identity Example",
 							"originalRequest": {
 								"method": "POST",
@@ -1912,6 +1930,7 @@
 		},
 		{
 			"name": "Income",
+			"description": null,
 			"item": [
 				{
 					"name": "Retrieve Income",
@@ -1946,6 +1965,7 @@
 					},
 					"response": [
 						{
+							"id": "7dd272cd-b8e7-4efa-8ab0-d42c7bb746d7",
 							"name": "Retrieve Income Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2058,6 +2078,7 @@
 		},
 		{
 			"name": "Assets",
+			"description": null,
 			"item": [
 				{
 					"name": "Create Asset Report",
@@ -2092,6 +2113,7 @@
 					},
 					"response": [
 						{
+							"id": "f741d0df-ecbd-44d1-ad76-80e836dfc9ca",
 							"name": "Create Asset Report Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2245,6 +2267,7 @@
 					},
 					"response": [
 						{
+							"id": "c12e303e-65f0-4817-8134-d7d6709f12dc",
 							"name": "Retrieve an Asset Report (JSON) Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2421,6 +2444,7 @@
 					},
 					"response": [
 						{
+							"id": "4ad00b9f-880e-4e4c-90ea-6ca1fdf4647e",
 							"name": "Create Audit Copy Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2563,6 +2587,7 @@
 					},
 					"response": [
 						{
+							"id": "68542f90-c258-4251-92a3-b731fd836187",
 							"name": "Remove Asset Report Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2705,6 +2730,7 @@
 					},
 					"response": [
 						{
+							"id": "afc17024-732a-4fa5-aa02-b55782a9c00f",
 							"name": "Remove Audit Copy Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2847,6 +2873,7 @@
 					},
 					"response": [
 						{
+							"id": "62f0cdb7-5e74-4935-b1f8-eec9651dd392",
 							"name": "Refresh Asset Report Example",
 							"originalRequest": {
 								"method": "POST",
@@ -2954,11 +2981,46 @@
 							"body": "{\n  \"asset_report_id\": \"d688fccd-ea25-441c-8432-da7ad149d272\",\n  \"asset_report_token\": \"assets-sandbox-0334b31a-177f-4f4e-9764-ed20d217ef9b\",\n  \"request_id\": \"Nzrib\"\n}"
 						}
 					]
+				},
+				{
+					"name": "Retrieve Audit Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Plaid Postman"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\", \n\t\"secret\": \"{{secret_key}}\", \n\t\"audit_copy_token\": \"ENTER_AUDIT_COPY_TOKEN_HERE\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/asset_report/audit_copy/get",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"asset_report",
+								"audit_copy",
+								"get"
+							]
+						},
+						"description": "Retrieves an audit copy (copy of an asset report) using an audit copy token."
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "Institutions",
+			"description": "Plaid supports thousands of financial institutions, and we’re always working to add support for more. We have a couple `institution` endpoints that help you to search for institutions as well as to retrieve a complete list of institutions supported by Plaid",
 			"item": [
 				{
 					"name": "Search Institution by Name",
@@ -2993,6 +3055,7 @@
 					},
 					"response": [
 						{
+							"id": "4b08049f-3762-4a30-adae-7c2ce6a26e7f",
 							"name": "Search Institution by Name Example",
 							"originalRequest": {
 								"method": "POST",
@@ -3127,6 +3190,7 @@
 					},
 					"response": [
 						{
+							"id": "224107b4-6ff8-4c4d-8748-c8a6e0ae5f30",
 							"name": "Search Institution by ID Example",
 							"originalRequest": {
 								"method": "POST",
@@ -3245,7 +3309,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\":\"{{secret_key}}\",\n\t\"count\": 200,\n\t\"offset\": 0\n}"
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\":\"{{secret_key}}\",\n  \"count\": 200,\n  \"offset\": 0\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/institutions/get",
@@ -3262,6 +3326,7 @@
 					},
 					"response": [
 						{
+							"id": "0ca52dbb-2d23-409f-9112-b15659f5e1d3",
 							"name": "Retrieve Insitution List Example",
 							"originalRequest": {
 								"method": "POST",
@@ -3371,7 +3436,6 @@
 					]
 				}
 			],
-			"description": "Plaid supports thousands of financial institutions, and we’re always working to add support for more. We have a couple `institution` endpoints that help you to search for institutions as well as to retrieve a complete list of institutions supported by Plaid",
 			"event": [
 				{
 					"listen": "prerequest",
@@ -3397,6 +3461,7 @@
 		},
 		{
 			"name": "Categories",
+			"description": "Send a request to the `/categories/get` endpoint to get detailed information on categories returned by Plaid. This endpoint does not require authentication.",
 			"item": [
 				{
 					"name": "Retrieve Categories",
@@ -3431,6 +3496,7 @@
 					},
 					"response": [
 						{
+							"id": "1775c4d4-dea8-4ced-b4e7-c9d7cde4256f",
 							"name": "Retrieve Categories Example",
 							"originalRequest": {
 								"method": "POST",
@@ -3533,14 +3599,15 @@
 						}
 					]
 				}
-			],
-			"description": "Send a request to the `/categories/get` endpoint to get detailed information on categories returned by Plaid. This endpoint does not require authentication."
+			]
 		},
 		{
 			"name": "Use Cases",
+			"description": "Use cases for `Auth`, `Transactions`, `Balance`, `Identity`, `Income`, `Assets`.",
 			"item": [
 				{
 					"name": "Auth Use Case",
+					"description": "Use case for `Auth`. An example of a series of requests for how the `Auth` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -3596,6 +3663,7 @@
 							},
 							"response": [
 								{
+									"id": "8517eecc-d379-4993-a752-93211087ffea",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -3743,7 +3811,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"public_token\": \"{{public_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"{{public_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/item/public_token/exchange",
@@ -3761,6 +3829,7 @@
 							},
 							"response": [
 								{
+									"id": "ee9934cb-8e1c-4749-a84f-a970cda79049",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -3904,7 +3973,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/auth/get",
@@ -3921,6 +3990,7 @@
 							},
 							"response": [
 								{
+									"id": "43226154-9e03-49c0-b042-a2186a070f52",
 									"name": "3. Retrieve Auth Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4030,7 +4100,6 @@
 							]
 						}
 					],
-					"description": "Use case for `Auth`. An example of a series of requests for how the `Auth` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -4057,6 +4126,7 @@
 				},
 				{
 					"name": "Transactions Use Case",
+					"description": "Use case for `Transactions`. An example of a series of requests for how the `Transactions` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -4094,7 +4164,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"public_key\": \"{{public_key}}\",\n\t\"institution_id\": \"ins_3\",\n\t\"initial_products\": [\"transactions\"],\n\t\"options\": {\n\t\t\"webhook\": \"https://www.randomdomain.com/webhook_url\"\n\t}\n}"
+									"raw": "{\n  \"public_key\": \"{{public_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"transactions\"],\n  \"options\": {\n    \"webhook\": \"https://www.randomdomain.com/webhook_url\"\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",
@@ -4112,6 +4182,7 @@
 							},
 							"response": [
 								{
+									"id": "212ba297-bf46-43a6-9690-40a2625f492a",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4251,7 +4322,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"public_token\": \"{{public_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"{{public_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/item/public_token/exchange",
@@ -4269,6 +4340,7 @@
 							},
 							"response": [
 								{
+									"id": "1528495c-d8be-403d-8913-c1ee266e5de8",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4422,7 +4494,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\",\n\t\"start_date\": \"2017-01-01\",\n\t\"end_date\": \"2018-01-01\",\n\t\"options\": {\n\t    \"count\": 250,\n\t    \"offset\": 100\n\t}\n}\n"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\",\n  \"start_date\": \"2017-01-01\",\n  \"end_date\": \"2018-01-01\",\n  \"options\": {\n      \"count\": 250,\n      \"offset\": 100\n  }\n}\n"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/transactions/get",
@@ -4439,6 +4511,7 @@
 							},
 							"response": [
 								{
+									"id": "4fc3a70e-4290-4b9b-b133-0c5cc21ec1db",
 									"name": "3. Retrieve Transactions Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4548,7 +4621,6 @@
 							]
 						}
 					],
-					"description": "Use case for `Transactions`. An example of a series of requests for how the `Transactions` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -4575,6 +4647,7 @@
 				},
 				{
 					"name": "Balance Use Case",
+					"description": "Use case for `Balance`. An example of a series of requests for how the `Balance` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -4611,7 +4684,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"public_key\": \"{{public_key}}\",\n\t\"institution_id\": \"ins_3\",\n\t\"initial_products\": [\"auth\"],\n\t\"options\": {\n\t\t\"webhook\": \"https://www.randomdomain.com/webhook_url\"\n\t}\n}"
+									"raw": "{\n  \"public_key\": \"{{public_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.randomdomain.com/webhook_url\"\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",
@@ -4629,6 +4702,7 @@
 							},
 							"response": [
 								{
+									"id": "98f94dd0-767d-4194-b896-55b673ced3c6",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4766,7 +4840,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"public_token\": \"{{public_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"{{public_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/item/public_token/exchange",
@@ -4784,6 +4858,7 @@
 							},
 							"response": [
 								{
+									"id": "e61f0f07-d572-4dbd-93ce-5eec47061d82",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -4927,7 +5002,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/accounts/balance/get",
@@ -4945,6 +5020,7 @@
 							},
 							"response": [
 								{
+									"id": "8c368145-cb98-47f7-afe4-ceacd90f0b78",
 									"name": "3. Retrieve Balance Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5055,7 +5131,6 @@
 							]
 						}
 					],
-					"description": "Use case for `Balance`. An example of a series of requests for how the `Balance` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -5082,6 +5157,7 @@
 				},
 				{
 					"name": "Identity Use Case",
+					"description": "Use case for `Identity`. An example of a series of requests for how the `Identity` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -5118,7 +5194,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"public_key\": \"{{public_key}}\",\n\t\"institution_id\": \"ins_3\",\n\t\"initial_products\": [\"identity\"],\n\t\"options\": {\n\t\t\"webhook\": \"https://www.randomdomain.com/webhook_url\"\n\t}\n}"
+									"raw": "{\n  \"public_key\": \"{{public_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"identity\"],\n  \"options\": {\n    \"webhook\": \"https://www.randomdomain.com/webhook_url\"\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",
@@ -5136,6 +5212,7 @@
 							},
 							"response": [
 								{
+									"id": "e5374707-1561-4e7a-9364-ecfd272558ad",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5273,7 +5350,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"public_token\": \"{{public_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"{{public_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/item/public_token/exchange",
@@ -5291,6 +5368,7 @@
 							},
 							"response": [
 								{
+									"id": "02ed93ff-3363-4130-9512-f7e095bc85e7",
 									"name": "Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5388,6 +5466,7 @@
 									"body": "{\n  \"access_token\": \"access-sandbox-a3078e1d-fc0d-4523-8217-cef05891007e\",\n  \"item_id\": \"g1Jdpr6Lnyc9MALa4K6oUleWErol9mugB3BxR\",\n  \"request_id\": \"du06R\"\n}"
 								},
 								{
+									"id": "d5714774-d1c4-4c16-af16-855df31d0adf",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5531,7 +5610,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/identity/get",
@@ -5548,6 +5627,7 @@
 							},
 							"response": [
 								{
+									"id": "35803d4b-28d1-4c56-a2dc-c0bfcef90da7",
 									"name": "3. Retrieve Identity Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5657,7 +5737,6 @@
 							]
 						}
 					],
-					"description": "Use case for `Identity`. An example of a series of requests for how the `Identity` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -5684,6 +5763,7 @@
 				},
 				{
 					"name": "Income Use Case",
+					"description": "Use case for `Income`. An example of a series of requests for how the `Income` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -5720,7 +5800,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"public_key\": \"{{public_key}}\",\n\t\"institution_id\": \"ins_3\",\n\t\"initial_products\": [\"income\"],\n\t\"options\": {\n\t\t\"webhook\": \"https://www.randomdomain.com/webhook_url\"\n\t}\n}"
+									"raw": "{\n  \"public_key\": \"{{public_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"income\"],\n  \"options\": {\n    \"webhook\": \"https://www.randomdomain.com/webhook_url\"\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",
@@ -5738,6 +5818,7 @@
 							},
 							"response": [
 								{
+									"id": "f02edf94-ed65-462a-83eb-a16da2a3f95f",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -5877,7 +5958,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"public_token\": \"{{public_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"{{public_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/item/public_token/exchange",
@@ -5895,6 +5976,7 @@
 							},
 							"response": [
 								{
+									"id": "e151430b-ac33-4444-9591-5a662fa321f8",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6038,7 +6120,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/income/get",
@@ -6055,6 +6137,7 @@
 							},
 							"response": [
 								{
+									"id": "140c6d9f-f0ec-49e7-b96b-79cc3de613e6",
 									"name": "3. Retrieve Income Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6164,7 +6247,6 @@
 							]
 						}
 					],
-					"description": "Use case for `Income`. An example of a series of requests for how the `Income` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -6191,6 +6273,7 @@
 				},
 				{
 					"name": "Assets Use Case",
+					"description": "Use case for `Assets`. An example of a series of requests for how the `Assets` product can be used.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -6227,7 +6310,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"public_key\": \"{{public_key}}\",\n\t\"institution_id\": \"ins_3\",\n\t\"initial_products\": [\"assets\"],\n\t\"options\": {\n\t\t\"webhook\": \"https://www.randomdomain.com/webhook_url\"\n\t}\n}"
+									"raw": "{\n  \"public_key\": \"{{public_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"assets\"],\n  \"options\": {\n    \"webhook\": \"https://www.randomdomain.com/webhook_url\"\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",
@@ -6245,6 +6328,7 @@
 							},
 							"response": [
 								{
+									"id": "bd3f56ee-f7a5-4060-a454-a1b859550999",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6384,7 +6468,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"public_token\": \"{{public_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"{{public_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/item/public_token/exchange",
@@ -6402,6 +6486,7 @@
 							},
 							"response": [
 								{
+									"id": "c7b10e6e-5e76-4304-a8e5-45cf3ec920bc",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6564,6 +6649,7 @@
 							},
 							"response": [
 								{
+									"id": "bd4b73ba-e0fa-46bb-b508-24741f6815b7",
 									"name": "3. Create Asset Report Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6730,6 +6816,7 @@
 							},
 							"response": [
 								{
+									"id": "ce16128b-8f39-433f-8373-936c9231e3f7",
 									"name": "4. Retrieve an Asset Report (JSON) Example",
 									"originalRequest": {
 										"method": "POST",
@@ -6893,6 +6980,7 @@
 							},
 							"response": [
 								{
+									"id": "ba4f7fc5-f497-4ddd-b6de-340e59872439",
 									"name": "5. Create Audit Copy Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7003,7 +7091,6 @@
 							]
 						}
 					],
-					"description": "Use case for `Assets`. An example of a series of requests for how the `Assets` product can be used.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -7030,6 +7117,7 @@
 				},
 				{
 					"name": "Plaid + APEX Use Case",
+					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -7085,6 +7173,7 @@
 							},
 							"response": [
 								{
+									"id": "db10d076-2034-41e8-b42f-dcda402aeeb8",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7232,7 +7321,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"public_token\": \"{{public_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"{{public_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/item/public_token/exchange",
@@ -7250,6 +7339,7 @@
 							},
 							"response": [
 								{
+									"id": "3a023aea-a1c2-4739-800e-42ace2933d28",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7389,7 +7479,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/accounts/get",
@@ -7406,6 +7496,7 @@
 							},
 							"response": [
 								{
+									"id": "544df980-81e1-47e0-8ad3-55e4ac3ba424",
 									"name": "3. Retrieve an Item's Accounts Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7549,6 +7640,7 @@
 							},
 							"response": [
 								{
+									"id": "b71b662f-b5d4-403d-a267-7274ad6ce879",
 									"name": "4. Create APEX Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7660,7 +7752,6 @@
 							]
 						}
 					],
-					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -7687,6 +7778,7 @@
 				},
 				{
 					"name": "Plaid + Stripe Use Case",
+					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -7742,6 +7834,7 @@
 							},
 							"response": [
 								{
+									"id": "a4784750-1f32-4076-a55f-b9ea1d5c7da7",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -7889,7 +7982,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"public_token\": \"{{public_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"{{public_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/item/public_token/exchange",
@@ -7907,6 +8000,7 @@
 							},
 							"response": [
 								{
+									"id": "640b1411-a0b6-48f9-913d-76e173b6090a",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8046,7 +8140,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/accounts/get",
@@ -8063,6 +8157,7 @@
 							},
 							"response": [
 								{
+									"id": "1c14186d-9d4e-4ad8-a05d-8745117f67c8",
 									"name": "3. Retrieve an Item's Accounts Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8206,6 +8301,7 @@
 							},
 							"response": [
 								{
+									"id": "27865a94-f06b-42a8-bb46-96c581850acf",
 									"name": "4. Create Stripe Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8316,11 +8412,11 @@
 							]
 						}
 					],
-					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"_postman_isSubFolder": true
 				},
 				{
 					"name": "Plaid + Dwolla Use Case",
+					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"item": [
 						{
 							"name": "1. Create Item",
@@ -8376,6 +8472,7 @@
 							},
 							"response": [
 								{
+									"id": "bfc90239-2f0e-4995-b65c-4d604388d163",
 									"name": "1. Create Item Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8523,7 +8620,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"public_token\": \"{{public_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"{{public_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/item/public_token/exchange",
@@ -8541,6 +8638,7 @@
 							},
 							"response": [
 								{
+									"id": "d6440e74-e81e-4ceb-95a2-eed9543ab9bd",
 									"name": "2. Exchange Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8680,7 +8778,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/accounts/get",
@@ -8697,6 +8795,7 @@
 							},
 							"response": [
 								{
+									"id": "a07244fd-8716-49c9-9531-0802c9b27f35",
 									"name": "Retrieve an Item's Accounts Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8799,6 +8898,7 @@
 									"body": "{\n  \"accounts\": [\n    {\n      \"account_id\": \"MrvdAVX31KsGQkqjLn8qhxB4PjjePxF96v31g\",\n      \"balances\": {\n        \"available\": 100,\n        \"current\": 110,\n        \"limit\": null\n      },\n      \"mask\": \"0000\",\n      \"name\": \"Plaid Checking\",\n      \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n      \"subtype\": \"checking\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"ZQXzNAR1xmtG6EmJbwBmhLQ9411y4LigqpMGq\",\n      \"balances\": {\n        \"available\": 200,\n        \"current\": 210,\n        \"limit\": null\n      },\n      \"mask\": \"1111\",\n      \"name\": \"Plaid Saving\",\n      \"official_name\": \"Plaid Silver Standard 0.1% Interest Saving\",\n      \"subtype\": \"savings\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"1Nd7GB8ke9TWElpPDwxpSjq6bEE9bju5jR4r8\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 1000,\n        \"limit\": null\n      },\n      \"mask\": \"2222\",\n      \"name\": \"Plaid CD\",\n      \"official_name\": \"Plaid Bronze Standard 0.2% Interest CD\",\n      \"subtype\": \"cd\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"LKvxWwXBRqUjzZlR1E7lC8VewRRWw8fPjM1EJ\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 410,\n        \"limit\": 2000\n      },\n      \"mask\": \"3333\",\n      \"name\": \"Plaid Credit Card\",\n      \"official_name\": \"Plaid Diamond 12.5% APR Interest Credit Card\",\n      \"subtype\": \"credit card\",\n      \"type\": \"credit\"\n    }\n  ],\n  \"item\": {\n    \"available_products\": [\n      \"assets\",\n      \"balance\",\n      \"credit_details\",\n      \"identity\",\n      \"income\",\n      \"transactions\"\n    ],\n    \"billed_products\": [\n      \"auth\"\n    ],\n    \"error\": null,\n    \"institution_id\": \"ins_3\",\n    \"item_id\": \"5ePyra8Qw9h9DJe1LpGehdgjzZKL3RfZPzw5m\",\n    \"webhook\": \"https://sdfdsf.com\"\n  },\n  \"request_id\": \"pnEMv\"\n}"
 								},
 								{
+									"id": "a07d0559-6133-4d89-8c62-0011ba1d5fa4",
 									"name": "3. Retrieve an Item's Accounts Example",
 									"originalRequest": {
 										"method": "POST",
@@ -8942,6 +9042,7 @@
 							},
 							"response": [
 								{
+									"id": "4ddfde2b-dd3c-4e05-b628-aaeb1f28675e",
 									"name": "4. Create Dwolla Token Example",
 									"originalRequest": {
 										"method": "POST",
@@ -9053,11 +9154,9 @@
 							]
 						}
 					],
-					"description": "Use case for creating Stripe bank account tokens to instantly enable ACH payments via Stripe's API.",
 					"_postman_isSubFolder": true
 				}
-			],
-			"description": "Use cases for `Auth`, `Transactions`, `Balance`, `Identity`, `Income`, `Assets`."
+			]
 		}
 	],
 	"event": [
@@ -9087,7 +9186,8 @@
 			"id": "dea9d5e1-4e1c-447e-91cf-b4b8e5ea7890",
 			"key": "origin",
 			"value": "https://sandbox.plaid.com (Sandbox)",
-			"type": "string"
+			"type": "string",
+			"description": ""
 		}
 	]
 }
