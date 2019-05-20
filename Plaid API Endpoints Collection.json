@@ -492,37 +492,6 @@
 							]
 						},
 						{
-							"name": "Create a Public Token",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
-								},
-								"url": {
-									"raw": "https://{{env_url}}/item/public_token/create",
-									"protocol": "https",
-									"host": [
-										"{{env_url}}"
-									],
-									"path": [
-										"item",
-										"public_token",
-										"create"
-									]
-								},
-								"description": "Over time, Items may need to refresh authentication information. This can happen if the user changes a password, if MFA requirements change, or if the login becomes locked. Link’s update mode makes the reauthentication process secure and painless, generate a `public_token` using this endpoint."
-							},
-							"response": []
-						},
-						{
 							"name": "Rotate Access Token",
 							"request": {
 								"method": "POST",
@@ -564,7 +533,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"access-sandbox-3f3181d2-76de-40c2-8f3b-152d2c6726d7\"\n}"
+											"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"Eaccess-sandbox-3f3181d2-76de-40c2-8f3b-152d2c6726d7\"\n}"
 										},
 										"url": {
 											"raw": "https://{{env_url}}/item/access_token/invalidate",

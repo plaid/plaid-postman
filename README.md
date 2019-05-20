@@ -41,7 +41,10 @@ Click the "Run with Postman" button below to start testing Plaid Sandbox endpoin
   * **Retrieve Identity** -  Retrieves various account holder information on file with the financial institution, including names, emails, phone numbers, and addresses.
 
 * **Income**
-  * **Retrieve Income** - Retrieves information pertaining to a Item’s income. In addition to the annual income, detailed information will be provided for each contributing income stream (or job).
+  * **Retrieve Income** - Retrieves information pertaining to an Item’s income. In addition to the annual income, detailed information will be provided for each contributing income stream (or job).
+  
+  * **Liabilities**
+    * **Retrieve Liabilities** - Retrieves information pertaining to an Item's liabilities.
 
 * **Assets**
   * **Create Asset Report** - Creates an Asset Report.
