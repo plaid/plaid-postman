@@ -21,7 +21,8 @@ Click the "Run with Postman" button below to start testing Plaid Sandbox endpoin
   * **Create Item [Sandbox Only]** - Creates an Item by generating a public token. This endpoint only works in the Sandbox environment. Items can only be created through Plaid Link in the development and production environments.
   * **Exchange Token** - Exchanges a public token for an access token.
   * **Retrieve Item** - Retrieves information about an Item.
-  * **Retrieve an Item's Accounts** - Retrieves all available accounts for an Item.  
+  * **Retrieve an Item's Accounts** - Retrieves all available accounts for an Item. 
+  * **Create a `public_token`** - Generates a `public_token` for an existing Item for use in Plaid Link's [update mode](https://plaid.com/docs/#updating-items-via-link).
   * **Rotate Access Token** - Returns a new access token and invalidates the old one.
   * **Update an Item's Webhook** - Updates an Item's webhook url. 
   * **Simulate ITEM_LOGIN_REQUIRED [Sandbox Only]** - Sets an Item in an ITEM_LOGIN_REQUIRED state. Check our [Errors](https://plaid.com/docs/#errors-overview) section in our docs for more information.
