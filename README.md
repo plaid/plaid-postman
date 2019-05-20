@@ -43,8 +43,8 @@ Click the "Run with Postman" button below to start testing Plaid Sandbox endpoin
 * **Income**
   * **Retrieve Income** - Retrieves information pertaining to an Item’s income. In addition to the annual income, detailed information will be provided for each contributing income stream (or job).
   
-  * **Liabilities**
-    * **Retrieve Liabilities** - Retrieves information pertaining to an Item's liabilities.
+* **Liabilities**
+  * **Retrieve Liabilities** - Retrieves information pertaining to an Item's liabilities.
 
 * **Assets**
   * **Create Asset Report** - Creates an Asset Report.
