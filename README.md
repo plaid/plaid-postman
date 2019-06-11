@@ -45,6 +45,10 @@ Click the "Run with Postman" button below to start testing Plaid Sandbox endpoin
   
 * **Liabilities**
   * **Retrieve Liabilities** - Retrieves information pertaining to an Item's liabilities.
+  
+* **Investments**
+  * **Retrieve Investments Holdings** - Retrieves information pertaining to an Item's Holdings for the Investments product.
+  * **Retrieve Investments Transactions** - Retrieves information pertaining to an Item's Transactions for the Investments product.
 
 * **Assets**
   * **Create Asset Report** - Creates an Asset Report.
