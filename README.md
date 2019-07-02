@@ -26,9 +26,9 @@ The Plaid Postman collection uses [Postman environment variables](https://learni
 1. Select the `Sandbox Public` environment in the top right corner
 2. Click the `eye` icon to open the environment settings
 3. Copy in your [Plaid API keys from your Plaid Dashboard](https://dashboard.plaid.com/account/keys), into each field:
- - `client_id`
- - `public_key`
- - `secret`
+  - `client_id`
+  - `public_key`
+  - `secret`
 4. Save your changes and start making Plaid API requests!
 
 ## Collection endpoints
