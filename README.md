@@ -1,23 +1,38 @@
-# plaid-postman
-
-![plaid-postman-overview][images/plaid-postman-overview.png]
-
-## Introduction
+# Plaid Postman Collections
 
 Welcome to the Postman Collections Quickstart Guide! This quickstart is a step-by-step guide that will get you up and running with Postman and the Plaid’s Postman [collection](https://www.getpostman.com/docs/v6/postman/collections/intro_to_collections).
 
-If you haven't already done so, please [download](https://www.getpostman.com/apps) the Postman app.
+If you are looking for a more in-depth guide and reference, please refer to the [Plaid API documentation](https://plaid.com/docs/api).
 
-We created this in order to make it as simple as possible for you to make requests to Plaid’s API and visualize the responses in a friendly format. Please make sure to read all the steps. There aren’t many, so we promise the setup will be quick!
+![plaid-postman-overview](/images/plaid-postman-overview.png)
 
-If you would like to learn more about each of our endpoints, please refer to the API [documentation](https://plaid.com/docs/api).
+## Getting started
+Follow the following steps to quickly get started testing the [Plaid API](https://plaid.com/docs):
+
+1. **Download and install the [Postman app](https://www.getpostman.com/downloads/)**
+2. **Install the Plaid Postman Collection**
+
+  Click the "Run with Postman" button below to install the Plaid collection!
+
+  [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3be113931c9508734a55#?env%5BSandbox%20Public%5D=W3sia2V5IjoiY2xpZW50X2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InB1YmxpY19rZXkiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic2VjcmV0X2tleSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJwdWJsaWNfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZW52X3VybCIsInZhbHVlIjoic2FuZGJveC5wbGFpZC5jb20iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfaWQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXNzZXRfcmVwb3J0X3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX1d)
 
 
-## [Plaid API](https://www.plaid.com/docs)
+### Configuration
+The Plaid Postman collection uses [Postman environment variables](https://learning.getpostman.com/docs/postman/environments_and_globals/intro_to_environments_and_globals/) to simplify each API request. More information on managing Postman environments can be found at [Setting up an environment with variables](https://learning.getpostman.com/docs/postman/environments_and_globals/manage_environments/).
 
-Click the "Run with Postman" button below to start testing Plaid Sandbox endpoints using Postman! **Please make sure the `Sandbox` environment is selected in the upper right hand corner of the screen and that the `public_key`, `client_id`, and `secret` are set under `Current Value`. These values can be found on your Plaid [dashboard](https://dashboard.plaid.com/account/keys).**
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3be113931c9508734a55#?env%5BSandbox%20Public%5D=W3sia2V5IjoiY2xpZW50X2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InB1YmxpY19rZXkiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic2VjcmV0X2tleSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJwdWJsaWNfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZW52X3VybCIsInZhbHVlIjoic2FuZGJveC5wbGFpZC5jb20iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfaWQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXNzZXRfcmVwb3J0X3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX1d)
+![plaid-postman-configuration](/images/plaid-postman-configuration.png)
+
+1. Select the `Sandbox Public` environment in the top right corner
+2. Click the `eye` icon to open the environment settings
+3. Copy in your [Plaid API keys from your Plaid Dashboard](https://dashboard.plaid.com/account/keys), into each field:
+ - `client_id`
+ - `public_key`
+ - `secret`
+4. Save your changes and start making Plaid API requests!
+
+## Collection endpoints
+The following collection is a fully-featured set of pre-filled requests that allow you to test the [Plaid API](https://plaid.com/docs), and visualize the responses in a friendly format.
 
 * **Items**
   * **Create Item [Sandbox Only]** - Creates an Item by generating a public token. This endpoint only works in the Sandbox environment. Items can only be created through Plaid Link in the development and production environments.
@@ -68,7 +83,6 @@ Click the "Run with Postman" button below to start testing Plaid Sandbox endpoin
 
 * **Categories**
   * **Retrieve Categories** - Retrieves detailed information on categories returned by Plaid. This endpoint does not require authentication.
-
 
 ## Useful Tools
 [Webhook Tester](https://webhook.site/) is a great tool for receiving webhook calls. Generate a webhook url on this site and use that url for any Postman requests that require you to specify a webhook url. You can go on Webhook Tester to see a list of all requests being made to that url.
