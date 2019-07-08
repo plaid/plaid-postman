@@ -1,37 +1,54 @@
-# plaid-postman
+# Plaid Postman Collections
 
-## Introduction 
+Welcome to the Postman Collections Quickstart Guide! This quickstart is a step-by-step guide that will get you up and running with Postman and the Plaid’s Postman [collection](https://www.getpostman.com/docs/v6/postman/collections/intro_to_collections).
 
-Welcome to the Postman Collections Quickstart Guide! This quickstart is a step-by-step guide that will get you up and running with Postman and the Plaid’s Postman [collection](https://www.getpostman.com/docs/v6/postman/collections/intro_to_collections). 
+If you are looking for a more in-depth guide and reference, please refer to the [Plaid API documentation](https://plaid.com/docs/api).
 
-If you haven't already done so, please [download](https://www.getpostman.com/apps) the Postman app.
-		
-We created this in order to make it as simple as possible for you to make requests to Plaid’s API and visualize the responses in a friendly format. Please make sure to read all the steps. There aren’t many, so we promise the setup will be quick!
+![plaid-postman-overview](/images/plaid-postman-overview.png)
 
-If you would like to learn more about each of our endpoints, please refer to the API [documentation](https://plaid.com/docs/api).
+## Getting started
+Follow the following steps to quickly get started testing the [Plaid API](https://plaid.com/docs):
+
+1. **Download and install the [Postman app](https://www.getpostman.com/downloads/)**
+2. **Install the Plaid Postman Collection**
+
+  Click the "Run with Postman" button below to install the Plaid collection!
+
+  [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3be113931c9508734a55#?env%5BSandbox%20Public%5D=W3sia2V5IjoiY2xpZW50X2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InB1YmxpY19rZXkiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic2VjcmV0X2tleSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJwdWJsaWNfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZW52X3VybCIsInZhbHVlIjoic2FuZGJveC5wbGFpZC5jb20iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfaWQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXNzZXRfcmVwb3J0X3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX1d)
 
 
-## [Plaid API](https://www.plaid.com/docs)
+### Configuration
+The Plaid Postman collection uses [Postman environment variables](https://learning.getpostman.com/docs/postman/environments_and_globals/intro_to_environments_and_globals/) to simplify each API request. More information on managing Postman environments can be found at [Setting up an environment with variables](https://learning.getpostman.com/docs/postman/environments_and_globals/manage_environments/).
 
-Click the "Run with Postman" button below to start testing Plaid Sandbox endpoints using Postman! **Please make sure the `Sandbox` environment is selected in the upper right hand corner of the screen and that the `public_key`, `client_id`, and `secret` are set under `Current Value`. These values can be found on your Plaid [dashboard](https://dashboard.plaid.com/account/keys).**
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3be113931c9508734a55#?env%5BSandbox%20Public%5D=W3sia2V5IjoiY2xpZW50X2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InB1YmxpY19rZXkiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic2VjcmV0X2tleSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJwdWJsaWNfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZW52X3VybCIsInZhbHVlIjoic2FuZGJveC5wbGFpZC5jb20iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfaWQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXNzZXRfcmVwb3J0X3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX1d)
+![plaid-postman-configuration](/images/plaid-postman-configuration.png)
 
-* **Items** 
+1. Select the `Sandbox Public` environment in the top right corner
+2. Click the `eye` icon to open the environment settings
+3. Copy in your [Plaid API keys from your Plaid Dashboard](https://dashboard.plaid.com/account/keys), into each field:
+  - `client_id`
+  - `public_key`
+  - `secret`
+4. Save your changes and start making Plaid API requests!
+
+## Collection endpoints
+The following collection is a fully-featured set of pre-filled requests that allow you to test the [Plaid API](https://plaid.com/docs), and visualize the responses in a friendly format.
+
+* **Items**
   * **Create Item [Sandbox Only]** - Creates an Item by generating a public token. This endpoint only works in the Sandbox environment. Items can only be created through Plaid Link in the development and production environments.
   * **Exchange Token** - Exchanges a public token for an access token.
   * **Retrieve Item** - Retrieves information about an Item.
-  * **Retrieve an Item's Accounts** - Retrieves all available accounts for an Item. 
+  * **Retrieve an Item's Accounts** - Retrieves all available accounts for an Item.
   * **Create a `public_token`** - Generates a `public_token` for an existing Item for use in Plaid Link's [update mode](https://plaid.com/docs/#updating-items-via-link).
   * **Rotate Access Token** - Returns a new access token and invalidates the old one.
-  * **Update an Item's Webhook** - Updates an Item's webhook url. 
+  * **Update an Item's Webhook** - Updates an Item's webhook url.
   * **Simulate ITEM_LOGIN_REQUIRED [Sandbox Only]** - Sets an Item in an ITEM_LOGIN_REQUIRED state. Check our [Errors](https://plaid.com/docs/#errors-overview) section in our docs for more information.
   * **Remove Item** - Deletes an Item using its access token.
 
-* **Auth** 
+* **Auth**
   * **Retrieve Auth** - Retrieves the bank account and routing numbers associated with an Item’s checking and savings accounts, along with high-level account data and balances.
 
-* **Transactions** 
+* **Transactions**
   * **Retrieve Transactions** - Retrieves user-authorized transaction data for credit and depository-type Accounts. Transaction data is standardized across financial institutions, and in many cases transactions are linked to a clean name, entity type, location, and category. Similarly, account data is standardized and returned with a clean name, number, balance, and other meta information where available.
 
 * **Balance**
@@ -42,10 +59,10 @@ Click the "Run with Postman" button below to start testing Plaid Sandbox endpoin
 
 * **Income**
   * **Retrieve Income** - Retrieves information pertaining to an Item’s income. In addition to the annual income, detailed information will be provided for each contributing income stream (or job).
-  
+
 * **Liabilities**
   * **Retrieve Liabilities** - Retrieves information pertaining to an Item's liabilities.
-  
+
 * **Investments**
   * **Retrieve Investments Holdings** - Retrieves information pertaining to an Item's Holdings for the Investments product.
   * **Retrieve Investments Transactions** - Retrieves information pertaining to an Item's Transactions for the Investments product.
@@ -61,12 +78,11 @@ Click the "Run with Postman" button below to start testing Plaid Sandbox endpoin
 
 * **Institutions**
   * **Search Institution by Name** - Retrieves information about a specific institution by name.
-  * **Search Institution by ID** - Retrieves information about a specific institution by ID. 
+  * **Search Institution by ID** - Retrieves information about a specific institution by ID.
   * **Retrieve Institution List** - Retrieves a list of all supported institutions.
 
-* **Categories** 
+* **Categories**
   * **Retrieve Categories** - Retrieves detailed information on categories returned by Plaid. This endpoint does not require authentication.
-
 
 ## Useful Tools
 [Webhook Tester](https://webhook.site/) is a great tool for receiving webhook calls. Generate a webhook url on this site and use that url for any Postman requests that require you to specify a webhook url. You can go on Webhook Tester to see a list of all requests being made to that url.
@@ -74,6 +90,3 @@ Click the "Run with Postman" button below to start testing Plaid Sandbox endpoin
 
 ## Important Note
 The `/public_token/create` endpoint is only available in the `sandbox` environment. It exists only for testing purposes and simulates an Item Creation via the Plaid Link module. Items cannot be created directly via an endpoint for the `development` and `production` environments and can only be created through Plaid Link.
-
-
-
