@@ -1,25 +1,21 @@
 # Plaid Postman Collections
+Welcome to the Postman Collections Quickstart Guide! If you're looking for a quick and easy way to get started with the Plaid API with no additional code, this is the place for you. [Postman](https://www.getpostman.com/product/api-client) is a great tool that allows users explore API functionality by manually sending API requests and receiving responses. We have created a collection of pre-populated HTTP requests that can be sent to the Plaid API. This quickstart is a step-by-step guide that will get you up and running with Postman and the Plaid’s Postman [collection](https://www.getpostman.com/docs/v6/postman/collections/intro_to_collections) to enable you for ad-hoc exploration and testing.
 
-Welcome to the Postman Collections Quickstart Guide! This quickstart is a step-by-step guide that will get you up and running with Postman and the Plaid’s Postman [collection](https://www.getpostman.com/docs/v6/postman/collections/intro_to_collections).
-
-If you are looking for a more in-depth guide and reference, please refer to the [Plaid API documentation](https://plaid.com/docs/api).
+If you are looking for a more in-depth guide and reference for the Plaid API, please refer to the [Plaid API documentation](https://plaid.com/docs/api).
 
 ![plaid-postman-overview](/images/plaid-postman-overview.png)
 
 ## Getting started
-Follow the following steps to quickly get started testing the [Plaid API](https://plaid.com/docs):
+Follow these steps to quickly get started with the [Plaid API](https://plaid.com/docs):
 
-1. **Download and install the [Postman app](https://www.getpostman.com/downloads/)**
-2. **Install the Plaid Postman Collection**
-
-  Click the "Run with Postman" button below to install the Plaid collection!
-
+1. [Sign up](https://dashboard.plaid.com/signup) with Plaid to get a set of API keys that are required for interacting with the API. [Here](https://plaid.com/docs/quickstart/#api-keys) is some documentation explaining what these keys are.
+2. Download and install the [Postman app](https://www.getpostman.com/downloads/)
+3. Install the Plaid Postman Collection. Click the "Run with Postman" button below to install the Plaid collection!
   [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/3be113931c9508734a55#?env%5BSandbox%20Public%5D=W3sia2V5IjoiY2xpZW50X2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InB1YmxpY19rZXkiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic2VjcmV0X2tleSIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJwdWJsaWNfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZW52X3VybCIsInZhbHVlIjoic2FuZGJveC5wbGFpZC5jb20iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfaWQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiYXNzZXRfcmVwb3J0X3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX1d)
-
+4. Once both the collection and the environment variables are imported into Postman, see the [Configuration](https://github.com/plaid/plaid-postman#configuration) section on how to correctly configure API keys with the collection.
 
 ### Configuration
 The Plaid Postman collection uses [Postman environment variables](https://learning.getpostman.com/docs/postman/environments_and_globals/intro_to_environments_and_globals/) to simplify each API request. More information on managing Postman environments can be found at [Setting up an environment with variables](https://learning.getpostman.com/docs/postman/environments_and_globals/manage_environments/).
-
 
 ![plaid-postman-configuration](/images/plaid-postman-configuration.png)
 
