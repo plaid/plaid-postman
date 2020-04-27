@@ -24,7 +24,7 @@ The Plaid Postman collection uses [Postman environment variables](https://learni
 3. Copy in your [Plaid API keys from your Plaid Dashboard](https://dashboard.plaid.com/account/keys), into each field:
   - `client_id`
   - `public_key`
-  - `secret`
+  - `secret` (if you are using the Sandbox Public environment, this will be your Sandbox secret key)
 4. Save your changes and start making Plaid API requests!
 
 ## Collection endpoints
@@ -79,6 +79,110 @@ The following collection is a fully-featured set of pre-filled requests that all
 
 * **Categories**
   * **Retrieve Categories** - Retrieves detailed information on categories returned by Plaid. This endpoint does not require authentication.
+
+## Making API calls
+
+Most API calls require a [Plaid Token](https://plaid.com/docs/#plaid-tokens-public_token-access_token-or-asset_report_token)
+in the form of an `access_token` (or an `asset_report_token` when dealing with
+a [Plaid Asset](plaid.com/docs/#assets)).
+
+Once you have imported and configured the requests, if, for example, you open
+up the Retrieve Auth request and click "Send", you will get the following error:
+
+![retrieve-auth-no-access-token](/images/retrieve-auth-no-access-token.png)
+
+Opening up the Body tab of the request will reveal the issue:
+
+![retrieve-auth-default-body](/images/retrieve-auth-default-body.png)
+
+You can see that the supplied `access_token` is invalid, leading to the request
+failing. How can you use the Postman Collection to generate a valid
+`access_token`? You will need to emulate the
+[Exchange Token Flow](https://plaid.com/docs/#exchange-token-flow) by first
+using the following APIs:
+
+- Create Item [Sandbox Only]
+- Exchange Token
+
+Then, you can begin using the generated `access_token` to make other API
+requests.
+
+### Create a Public Token
+
+First, you need to [create a `public_token`](https://plaid.com/docs/#creating-public-tokens)
+using the Create Item request. Simply open it up and click the "Send" button,
+and you should see a response similar to the following:
+
+![create-public-token](/images/create-public-token.png)
+
+If you are going to need to use the [Assets API](https://plaid.com/docs/#assets),
+then make sure you open up the Body tab of the request and add `"assets"` to the
+`initial_products` array, and _then_ generate your token. Otherwise, your
+`public_token` will not have the correct permissions set to use Assets:
+
+![create-public-token-with-assets-product](/images/create-public-token-with-assets-product.png)
+
+### Create an Access Token
+
+Next, use the `public_token` you generated in the previous step to generate an
+`access_token` with the Exchange Token request. Paste your `public_token` into
+the `"public_token"` field into the Body section of the request. Click the
+"Send" button, and you should see a response similar to the following:
+
+![create-access-token-from-public-token](/images/create-access-token-from-public-token.png)
+
+An `access_token` associated to an Item does not expire, so you can use it in
+all of your requests. The Postman Collection has an `access_token` environment
+variable field available where you can store your generated access token:
+
+![add-access-token-to-env-variables](/images/add-access-token-to-env-variables.png)
+
+### Use Access Token in API Calls
+
+Now, go back to the Retrieve Auth request that failed earlier, open up the Body
+of the request, and set the `access_token` field to be a reference to the access
+token set in your environment variables by changing the value to be
+`{{access_token}}`. Then, click the "Send" button, and you should see a
+successful response.
+
+![retrieve-auth-with-access-token](/images/retrieve-auth-with-access-token.png)
+
+You can now repeat this step for any other Plaid API that requires an
+`access_token`.
+
+### Create an Asset Report Token
+
+As well as using `access_tokens`, Plaid Asset Reports have their own
+`asset_report_token` that need to be used when using the Retrieve an Asset
+Report request. You generate an `asset_report_token` using the Create Asset
+Report request.
+
+Open up the Body tab of the request, and add the reference to your access token
+(`{{access_token}}`) to the array in the `access_tokens` field. Then, click the
+"Send" button, and you should see a response similar to the following:
+
+![create-asset-report-token-with-access-token](/images/create-asset-report-token-with-access-token.png)
+
+(The `options` object that is included by default in the Body was removed here
+for brevity).
+
+Similar to an `access_token`, an `asset_report_token` also does not expire, so
+you can use it in all of your asset report-related requests. The Postman
+Collection has an `asset_report_token` environment variable field available
+where you can store your generated token:
+
+![add-asset-report-token-to-env-variables](/images/add-asset-report-token-to-env-variables.png)
+
+### Use Asset Report Token in API Calls
+
+Now, you can try an API request like the Retrieve an Asset Report (JSON) request,
+which requires an `asset_report_token`. Open up the Body of the request, and set
+the `asset_report_token` field to be a reference to the asset report token set
+in your environment variables by changing the value to be
+`{{asset_report_token}}`. Then, click the "Send" button, and you should see a
+successful response.
+
+![retrieve-asset-report-with-asset-report-token](/images/retrieve-asset-report-with-asset-report-token.png)
 
 ## Useful Tools
 [Webhook Tester](https://webhook.site/) is a great tool for receiving webhook calls. Generate a webhook url on this site and use that url for any Postman requests that require you to specify a webhook url. You can go on Webhook Tester to see a list of all requests being made to that url.
