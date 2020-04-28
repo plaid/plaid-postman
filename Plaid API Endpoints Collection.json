@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "bb7ed763-397b-4424-a078-50a924c07159",
+		"_postman_id": "11f650f8-76e7-471a-ad85-154e6cce283e",
 		"name": "Plaid API Endpoints - Sandbox",
 		"description": "A collection of Plaid API endpoints for the `sandbox` environment. Each endpoint request comes with an example request & response. It also contains 'use cases' for each product.  \n<br />\nBefore you begin, please set your `public_key`, `client_id`, and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -108,8 +108,7 @@
 										"header": [
 											{
 												"key": "Content-Type",
-												"value": "application/json",
-												"disabled": false
+												"value": "application/json"
 											}
 										],
 										"body": {
@@ -212,6 +211,7 @@
 							]
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				},
 				{
@@ -252,8 +252,7 @@
 										"header": [
 											{
 												"key": "Content-Type",
-												"value": "application/json",
-												"disabled": false
+												"value": "application/json"
 											}
 										],
 										"body": {
@@ -389,8 +388,7 @@
 										"header": [
 											{
 												"key": "Content-Type",
-												"value": "application/json",
-												"disabled": false
+												"value": "application/json"
 											}
 										],
 										"body": {
@@ -527,8 +525,7 @@
 										"header": [
 											{
 												"key": "Content-Type",
-												"value": "application/json",
-												"disabled": false
+												"value": "application/json"
 											}
 										],
 										"body": {
@@ -666,8 +663,7 @@
 										"header": [
 											{
 												"key": "Content-Type",
-												"value": "application/json",
-												"disabled": false
+												"value": "application/json"
 											}
 										],
 										"body": {
@@ -805,8 +801,7 @@
 										"header": [
 											{
 												"key": "Content-Type",
-												"value": "application/json",
-												"disabled": false
+												"value": "application/json"
 											}
 										],
 										"body": {
@@ -943,8 +938,7 @@
 										"header": [
 											{
 												"key": "Content-Type",
-												"value": "application/json",
-												"disabled": false
+												"value": "application/json"
 											}
 										],
 										"body": {
@@ -1050,8 +1044,7 @@
 										"header": [
 											{
 												"key": "Content-Type",
-												"value": "application/json",
-												"disabled": false
+												"value": "application/json"
 											}
 										],
 										"body": {
@@ -1234,6 +1227,7 @@
 							}
 						}
 					],
+					"protocolProfileBehavior": {},
 					"_postman_isSubFolder": true
 				}
 			],
@@ -1259,7 +1253,8 @@
 						]
 					}
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Auth",
@@ -1293,121 +1288,13 @@
 					},
 					"response": [
 						{
-							"name": "Retrieve Auth EFT Example",
-							"originalRequest": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"access-sandbox-3f3181d2-76de-40c2-8f3b-152d2c6726d7\"\n}"
-								},
-								"url": {
-									"raw": "https://{{env_url}}/auth/get",
-									"protocol": "https",
-									"host": [
-										"{{env_url}}"
-									],
-									"path": [
-										"auth",
-										"get"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip",
-									"name": "Content-Encoding",
-									"description": "The type of encoding used on the data."
-								},
-								{
-									"key": "Content-Length",
-									"value": "827",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 Aug 2018 23:06:24 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Plaid-Version",
-									"value": "2018-05-22",
-									"name": "Plaid-Version",
-									"description": "Custom header"
-								},
-								{
-									"key": "Server",
-									"value": "nginx",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains; preload",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding",
-									"name": "Vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
-								}
-							],
-							"cookie": [],
-							"body": "{\n  \"accounts\": [\n    {\n      \"account_id\": \"PnpkZlD1rDtQZ7oxk97kSd3xJxz1pwf7bgeLk\",\n      \"balances\": {\n        \"available\": 100,\n        \"current\": 110,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"0000\",\n      \"name\": \"Plaid Checking\",\n      \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n      \"subtype\": \"checking\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"eNVMxpWB6WFpQmr8gvmgi3woAoQP5aHLKpbvG\",\n      \"balances\": {\n        \"available\": 200,\n        \"current\": 210,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"1111\",\n      \"name\": \"Plaid Saving\",\n      \"official_name\": \"Plaid Silver Standard 0.1% Interest Saving\",\n      \"subtype\": \"savings\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"jQVLmWn4pnCokXGzlpXlSEKkXkd6AbT1kD7K4\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 1000,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"2222\",\n      \"name\": \"Plaid CD\",\n      \"official_name\": \"Plaid Bronze Standard 0.2% Interest CD\",\n      \"subtype\": \"cd\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"QbopGqDLzDCmZp7aM9pMhoeywyR1xnSpLvgPn\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 410,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": 2000,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"3333\",\n      \"name\": \"Plaid Credit Card\",\n      \"official_name\": \"Plaid Diamond 12.5% APR Interest Credit Card\",\n      \"subtype\": \"credit card\",\n      \"type\": \"credit\"\n    },\n    {\n      \"account_id\": \"7zAR5KDnPDfybrlMj9rjUrQGNGVMBpCgze5bP\",\n      \"balances\": {\n        \"available\": 43200,\n        \"current\": 43200,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"4444\",\n      \"name\": \"Plaid Money Market\",\n      \"official_name\": \"Plaid Platinum Standard 1.85% Interest Money Market\",\n      \"subtype\": \"money market\",\n      \"type\": \"depository\"\n    }\n  ],\n  \"item\": {\n    \"available_products\": [\n      \"assets\",\n      \"balance\",\n      \"identity\",\n      \"income\",\n      \"transactions\"\n    ],\n    \"billed_products\": [\n      \"auth\"\n    ],\n    \"error\": null,\n    \"institution_id\": \"ins_43\",\n    \"item_id\": \"wnVRXPmk3mt3wepjXEeXsbN4NWe5V9FrNeEN1\",\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  },\n  \"numbers\": {\n    \"ach\": [],\n    \"eft\": [\n      {\n        \"account\": \"111122220000\",\n        \"account_id\": \"PnpkZlD1rDtQZ7oxk97kSd3xJxz1pwf7bgeLk\",\n        \"branch\": \"01533\",\n        \"institution\": \"114\"\n      },\n      {\n        \"account\": \"111122221111\",\n        \"account_id\": \"eNVMxpWB6WFpQmr8gvmgi3woAoQP5aHLKpbvG\",\n        \"branch\": \"01533\",\n        \"institution\": \"114\"\n      }\n    ]\n  },\n  \"request_id\": \"X5W6V\"\n}"
-						},
-						{
 							"name": "Retrieve Auth ACH Example",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -1505,10 +1392,117 @@
 							],
 							"cookie": [],
 							"body": "{\n  \"accounts\": [\n    {\n      \"account_id\": \"wp5rJy31NMfyEJNDvoqXhbwLlRaEGyCrwWWdy\",\n      \"balances\": {\n        \"available\": 100,\n        \"current\": 110,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"0000\",\n      \"name\": \"Plaid Checking\",\n      \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n      \"subtype\": \"checking\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"l418dp7olxiDAaok8E1pi5Q7n9NGkzfZQbbAp\",\n      \"balances\": {\n        \"available\": 200,\n        \"current\": 210,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"1111\",\n      \"name\": \"Plaid Saving\",\n      \"official_name\": \"Plaid Silver Standard 0.1% Interest Saving\",\n      \"subtype\": \"savings\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"5NVq637arPcAbDxWd7GZUd3g5pjXPWFZlNNLz\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 1000,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"2222\",\n      \"name\": \"Plaid CD\",\n      \"official_name\": \"Plaid Bronze Standard 0.2% Interest CD\",\n      \"subtype\": \"cd\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"kamgkLwoG3iMQPzlvEaZSGnMVR36rLiWnZZRW\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 410,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": 2000,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"3333\",\n      \"name\": \"Plaid Credit Card\",\n      \"official_name\": \"Plaid Diamond 12.5% APR Interest Credit Card\",\n      \"subtype\": \"credit card\",\n      \"type\": \"credit\"\n    },\n    {\n      \"account_id\": \"Jzbo9AkW8vcleKXgyPJ4cjva1KQw7qid3RRNb\",\n      \"balances\": {\n        \"available\": 43200,\n        \"current\": 43200,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"4444\",\n      \"name\": \"Plaid Money Market\",\n      \"official_name\": \"Plaid Platinum Standard 1.85% Interest Money Market\",\n      \"subtype\": \"money market\",\n      \"type\": \"depository\"\n    }\n  ],\n  \"item\": {\n    \"available_products\": [\n      \"assets\",\n      \"balance\",\n      \"credit_details\"\n    ],\n    \"billed_products\": [\n      \"auth\",\n      \"identity\",\n      \"income\",\n      \"transactions\"\n    ],\n    \"error\": null,\n    \"institution_id\": \"ins_3\",\n    \"item_id\": \"QNWnmvzAKwcx9RwPXqVMSoRBjkroVnhpge7bq\",\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  },\n  \"numbers\": {\n    \"ach\": [\n      {\n        \"account\": \"1111222233330000\",\n        \"account_id\": \"wp5rJy31NMfyEJNDvoqXhbwLlRaEGyCrwWWdy\",\n        \"routing\": \"011401533\",\n        \"wire_routing\": \"021000021\"\n      },\n      {\n        \"account\": \"1111222233331111\",\n        \"account_id\": \"l418dp7olxiDAaok8E1pi5Q7n9NGkzfZQbbAp\",\n        \"routing\": \"011401533\",\n        \"wire_routing\": \"021000021\"\n      }\n    ],\n    \"eft\": []\n  },\n  \"request_id\": \"snosJ\"\n}"
+						},
+						{
+							"name": "Retrieve Auth EFT Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"access-sandbox-3f3181d2-76de-40c2-8f3b-152d2c6726d7\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/auth/get",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"auth",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"name": "Connection",
+									"description": "Options that are desired for the connection"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip",
+									"name": "Content-Encoding",
+									"description": "The type of encoding used on the data."
+								},
+								{
+									"key": "Content-Length",
+									"value": "827",
+									"name": "Content-Length",
+									"description": "The length of the response body in octets (8-bit bytes)"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"name": "Content-Type",
+									"description": "The mime type of this content"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 28 Aug 2018 23:06:24 GMT",
+									"name": "Date",
+									"description": "The date and time that the message was sent"
+								},
+								{
+									"key": "Plaid-Version",
+									"value": "2018-05-22",
+									"name": "Plaid-Version",
+									"description": "Custom header"
+								},
+								{
+									"key": "Server",
+									"value": "nginx",
+									"name": "Server",
+									"description": "A name for the server"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload",
+									"name": "Strict-Transport-Security",
+									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding",
+									"name": "Vary",
+									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff",
+									"name": "X-Content-Type-Options",
+									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY",
+									"name": "X-Frame-Options",
+									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block",
+									"name": "X-XSS-Protection",
+									"description": "Cross-site scripting (XSS) filter"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"accounts\": [\n    {\n      \"account_id\": \"PnpkZlD1rDtQZ7oxk97kSd3xJxz1pwf7bgeLk\",\n      \"balances\": {\n        \"available\": 100,\n        \"current\": 110,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"0000\",\n      \"name\": \"Plaid Checking\",\n      \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n      \"subtype\": \"checking\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"eNVMxpWB6WFpQmr8gvmgi3woAoQP5aHLKpbvG\",\n      \"balances\": {\n        \"available\": 200,\n        \"current\": 210,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"1111\",\n      \"name\": \"Plaid Saving\",\n      \"official_name\": \"Plaid Silver Standard 0.1% Interest Saving\",\n      \"subtype\": \"savings\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"jQVLmWn4pnCokXGzlpXlSEKkXkd6AbT1kD7K4\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 1000,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"2222\",\n      \"name\": \"Plaid CD\",\n      \"official_name\": \"Plaid Bronze Standard 0.2% Interest CD\",\n      \"subtype\": \"cd\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"QbopGqDLzDCmZp7aM9pMhoeywyR1xnSpLvgPn\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 410,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": 2000,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"3333\",\n      \"name\": \"Plaid Credit Card\",\n      \"official_name\": \"Plaid Diamond 12.5% APR Interest Credit Card\",\n      \"subtype\": \"credit card\",\n      \"type\": \"credit\"\n    },\n    {\n      \"account_id\": \"7zAR5KDnPDfybrlMj9rjUrQGNGVMBpCgze5bP\",\n      \"balances\": {\n        \"available\": 43200,\n        \"current\": 43200,\n        \"iso_currency_code\": \"CAD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"4444\",\n      \"name\": \"Plaid Money Market\",\n      \"official_name\": \"Plaid Platinum Standard 1.85% Interest Money Market\",\n      \"subtype\": \"money market\",\n      \"type\": \"depository\"\n    }\n  ],\n  \"item\": {\n    \"available_products\": [\n      \"assets\",\n      \"balance\",\n      \"identity\",\n      \"income\",\n      \"transactions\"\n    ],\n    \"billed_products\": [\n      \"auth\"\n    ],\n    \"error\": null,\n    \"institution_id\": \"ins_43\",\n    \"item_id\": \"wnVRXPmk3mt3wepjXEeXsbN4NWe5V9FrNeEN1\",\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  },\n  \"numbers\": {\n    \"ach\": [],\n    \"eft\": [\n      {\n        \"account\": \"111122220000\",\n        \"account_id\": \"PnpkZlD1rDtQZ7oxk97kSd3xJxz1pwf7bgeLk\",\n        \"branch\": \"01533\",\n        \"institution\": \"114\"\n      },\n      {\n        \"account\": \"111122221111\",\n        \"account_id\": \"eNVMxpWB6WFpQmr8gvmgi3woAoQP5aHLKpbvG\",\n        \"branch\": \"01533\",\n        \"institution\": \"114\"\n      }\n    ]\n  },\n  \"request_id\": \"X5W6V\"\n}"
 						}
 					]
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Transactions",
@@ -1560,8 +1554,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -1662,7 +1655,8 @@
 						}
 					]
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Balance",
@@ -1703,8 +1697,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -1806,7 +1799,8 @@
 						}
 					]
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Identity",
@@ -1846,8 +1840,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -1948,7 +1941,8 @@
 						}
 					]
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Income",
@@ -1988,8 +1982,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -2090,7 +2083,8 @@
 						}
 					]
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Assets",
@@ -2130,8 +2124,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -2279,8 +2272,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -2386,8 +2378,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -2554,8 +2545,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -2692,8 +2682,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -2830,8 +2819,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -2968,8 +2956,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -3070,7 +3057,8 @@
 						}
 					]
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Liabilities",
@@ -3104,7 +3092,8 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Investments",
@@ -3170,7 +3159,8 @@
 					"response": []
 				}
 			],
-			"description": "Endpoints for Plaid's Investments product."
+			"description": "Endpoints for Plaid's Investments product.",
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Institutions",
@@ -3210,8 +3200,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -3340,8 +3329,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -3471,8 +3459,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -3596,7 +3583,8 @@
 						]
 					}
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Categories",
@@ -3636,8 +3624,7 @@
 								"header": [
 									{
 										"key": "Content-Type",
-										"value": "application/json",
-										"disabled": false
+										"value": "application/json"
 									}
 								],
 								"body": {
@@ -3733,7 +3720,8 @@
 					]
 				}
 			],
-			"description": "Send a request to the `/categories/get` endpoint to get detailed information on categories returned by Plaid. This endpoint does not require authentication."
+			"description": "Send a request to the `/categories/get` endpoint to get detailed information on categories returned by Plaid. This endpoint does not require authentication.",
+			"protocolProfileBehavior": {}
 		},
 		{
 			"name": "Webhooks",
@@ -3801,7 +3789,251 @@
 					},
 					"response": []
 				}
-			]
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Payment Initiation (UK only)",
+			"item": [
+				{
+					"name": "Create Payment Recipient",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"name\": \"Wonder Wallet\",\n  \"iban\": \"GB29NWBK60161331926819\",\n  \"address\": {\n    \"street\": [\n      \"96 Guild Street\",\n      \"9th Floor\"\n    ],\n    \"city\": \"London\",\n    \"postal_code\": \"SE14 8JW\",\n    \"country\": \"GB\"\n  }\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/recipient/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"recipient",
+								"create"
+							]
+						},
+						"description": "In the sandbox environment, you can use the `/payment_initiation/recipient/create` endpoint to generate recipients. Programmatic recipient creation in the development and production environments can be done after approval by our compliance team.\n\nThe endpoint is idempotent: if a developer has already made a request with the same payment details, Plaid will return the same recipient_id. Recipients are scoped per environment."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Payment",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"recipient_id\": \"ENTER_RECIPIENT_ID_HERE\",\n  \"reference\": \"Test Account Funding\",\n  \"amount\": {\n    \"currency\": \"GBP\",\n    \"value\": 100.00\n  }\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/payment/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"payment",
+								"create"
+							]
+						},
+						"description": "Create and configure a payment by specifying a `recipient_id`, `reference`, `amount`, and `currency` to create a Plaid payment resource. The Plaid API returns a `payment_id` to identify the created payment."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Payment Token",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"payment_id\": \"ENTER_PAYMENT_ID_HERE\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/payment/token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"payment",
+								"token",
+								"create"
+							]
+						},
+						"description": "In order to actually initiate a Payment, you must use the `payment_id` returned from `payment_initiation/payment/create` and create a `payment_token`.\n\nThe `payment_token` will allow for at most one payment initiation. If this attempt fails, the end user aborts the flow, or the token expires, the developer will need to create a new payment token. Creating a new payment token does not require end user input."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"payment_id\": \"ENTER_PAYMENT_ID_HERE\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/payment/get",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"payment",
+								"get"
+							]
+						},
+						"description": "The endpoint `payment_initiation/payment/get` takes a `payment_id` and returns all of the payment details for a previously created payment."
+					},
+					"response": []
+				},
+				{
+					"name": "List Payments",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"count\": 5\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/payment/list",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"payment",
+								"list"
+							]
+						},
+						"description": "The endpoint `payment_initiation/payment/get` list payment details for all of your previously created payments.\n\nThis endpoint accepts `count` and `cursor` as optional parameters in order to support pagination. `count` limits how many payments are returned and can be set between 0 and 200. `cursor` should be a string in RFC 3339 format (i.e. `\"2019-12-06T22:35:49Z\"`). Only payments created before the `cursor` will be returned."
+					},
+					"response": []
+				},
+				{
+					"name": "Get Payment Recipient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"recipient_id\": \"ENTER_RECIPIENT_ID_HERE\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/recipient/get",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"recipient",
+								"get"
+							]
+						},
+						"description": "The `/payment_initiation/recipient/get` endpoint allows you to retrieve all of the details for a recipient that you have created."
+					},
+					"response": []
+				},
+				{
+					"name": "List Payment Recipients",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/recipient/list",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"recipient",
+								"list"
+							]
+						},
+						"description": "The `/payment_initiation/recipient/list` endpoint allows you to retrieve details for all recipients that you have created."
+					},
+					"response": []
+				}
+			],
+			"description": "The UK Payment Initiation API enables payment transfers within your app. Plaid supports both domestic payments denominated in pound sterling (typically via the Faster Payments network, although this is up to the institution) and international payments denominated in euro (typically via SEPA Credit Transfer). Each time a client wants to receive a payment, the end user must authorize the payment in Link before the payment can be initiated.\n\n**Note:** The revised EU Directive on Payment Services (\"PSD2\") regulations require strong customer authentication (\"SCA\") for each payment order.",
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
@@ -3833,5 +4065,6 @@
 			"value": "https://sandbox.plaid.com (Sandbox)",
 			"type": "string"
 		}
-	]
+	],
+	"protocolProfileBehavior": {}
 }
