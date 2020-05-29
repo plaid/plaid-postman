@@ -54,7 +54,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"public_key\": \"{{public_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_custom\",\n    \"overrride_password\": {\"force_error\": \"USER_SETUP_REQUIRED\"}\n  }\n}"
+									"raw": "{\n  \"public_key\": \"{{public_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_custom\",\n    \"override_password\": \"{\\"force_error\\": \\"USER_SETUP_REQUIRED\\"}\"\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",
