@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "11f650f8-76e7-471a-ad85-154e6cce283e",
-		"name": "Plaid API Endpoints - Sandbox",
+		"_postman_id": "1fef3902-ae6c-42ee-ab5c-788c2716427c",
+		"name": "Plaid API Endpoints - Sandbox copy",
 		"description": "A collection of Plaid API endpoints for the `sandbox` environment. Each endpoint request comes with an example request & response. It also contains 'use cases' for each product.  \n<br />\nBefore you begin, please set your `public_key`, `client_id`, and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1209,7 +1209,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "69b1adb9-b8b9-4002-802d-41e4195d1b9d",
+								"id": "9f3d66f2-2985-4306-8cfe-e68682808231",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1219,7 +1219,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "ee7a50d4-0df7-4de3-afea-7e5ac2261c7b",
+								"id": "fe7dc4c9-f9a9-42e0-b566-ca81d3bf2f2f",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1236,7 +1236,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "dda4ea34-3df4-46e3-98f1-e484182dafa8",
+						"id": "3a4b7225-b337-49e3-bb17-def43b994476",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1246,7 +1246,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "5526ee60-c5c8-47c6-8de4-bf91d8062849",
+						"id": "be944928-a0b3-4699-97b2-7422a978d782",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1513,7 +1513,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e98a9b22-c182-4c9d-96ee-ae861e69085c",
+								"id": "50adae45-bccd-4051-bce0-9380f610bdad",
 								"exec": [
 									""
 								],
@@ -2231,7 +2231,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "a33e8dda-94e7-4e5b-87fc-0edd9810d22d",
+								"id": "7ccd44bb-f0e4-4060-a07e-5a810da9d585",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -3566,7 +3566,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "7367f675-bf8e-4d8b-b0d7-c0244764f631",
+						"id": "ad5653c6-55b5-43cb-ad2b-b4c18c38727c",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3576,7 +3576,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "41e631b9-89ba-4736-bc9d-e5675a3b5319",
+						"id": "f3d848b1-4acf-44d5-b564-ed1fdaa5d72d",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -4040,7 +4040,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "f228ad94-00c5-4b8b-98aa-8b5784351e42",
+				"id": "8d20e091-64a7-420d-b30a-f111a0c0b0c4",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -4050,7 +4050,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "863d1da0-d4b8-4887-8153-5a32fefefaa9",
+				"id": "969724ad-285b-4719-a9f5-66749eaa3dba",
 				"type": "text/javascript",
 				"exec": [
 					""
