@@ -1,11 +1,77 @@
 {
 	"info": {
-		"_postman_id": "1fef3902-ae6c-42ee-ab5c-788c2716427c",
-		"name": "Plaid API Endpoints - Sandbox copy",
+		"_postman_id": "11c18352-80d0-47e1-8fd8-709be8531f4a",
+		"name": "Plaid API Endpoints",
 		"description": "A collection of Plaid API endpoints for the `sandbox` environment. Each endpoint request comes with an example request & response. It also contains 'use cases' for each product.  \n<br />\nBefore you begin, please set your `public_key`, `client_id`, and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.\n",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Link Tokens",
+			"item": [
+				{
+					"name": "Create Link Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"US\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"auth\"]\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/link/token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"link",
+								"token",
+								"create"
+							]
+						},
+						"description": "Creates a link token with options. The link token can then be used to initialize Plaid Link."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Link Token - OAuth",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"GB\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"auth\"],\n  \"redirect_uri\": \"http://example.com/redirect\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/link/token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"link",
+								"token",
+								"create"
+							]
+						},
+						"description": "Creates a link token with options. The link token can then be used to initialize Plaid Link."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
 		{
 			"name": "Items",
 			"item": [
@@ -943,112 +1009,6 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"access-sandbox-3f3181d2-76de-40c2-8f3b-152d2c6726d7\"\n}"
-										},
-										"url": {
-											"raw": "https://{{env_url}}/item/remove",
-											"protocol": "https",
-											"host": [
-												"{{env_url}}"
-											],
-											"path": [
-												"item",
-												"remove"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Connection",
-											"value": "keep-alive",
-											"name": "Connection",
-											"description": "Options that are desired for the connection"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip",
-											"name": "Content-Encoding",
-											"description": "The type of encoding used on the data."
-										},
-										{
-											"key": "Content-Length",
-											"value": "64",
-											"name": "Content-Length",
-											"description": "The length of the response body in octets (8-bit bytes)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "The mime type of this content"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 28 Aug 2018 23:08:14 GMT",
-											"name": "Date",
-											"description": "The date and time that the message was sent"
-										},
-										{
-											"key": "Plaid-Version",
-											"value": "2018-05-22",
-											"name": "Plaid-Version",
-											"description": "Custom header"
-										},
-										{
-											"key": "Server",
-											"value": "nginx",
-											"name": "Server",
-											"description": "A name for the server"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000; includeSubDomains; preload",
-											"name": "Strict-Transport-Security",
-											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding",
-											"name": "Vary",
-											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff",
-											"name": "X-Content-Type-Options",
-											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "DENY",
-											"name": "X-Frame-Options",
-											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block",
-											"name": "X-XSS-Protection",
-											"description": "Cross-site scripting (XSS) filter"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"removed\": true,\n  \"request_id\": \"emqzg\"\n}"
-								},
-								{
-									"name": "Remove Item Example",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
 											"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
 										},
 										"url": {
@@ -1142,6 +1102,112 @@
 									],
 									"cookie": [],
 									"body": "{\n  \"removed\": true,\n  \"request_id\": \"rIjWv\"\n}"
+								},
+								{
+									"name": "Remove Item Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"access-sandbox-3f3181d2-76de-40c2-8f3b-152d2c6726d7\"\n}"
+										},
+										"url": {
+											"raw": "https://{{env_url}}/item/remove",
+											"protocol": "https",
+											"host": [
+												"{{env_url}}"
+											],
+											"path": [
+												"item",
+												"remove"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive",
+											"name": "Connection",
+											"description": "Options that are desired for the connection"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip",
+											"name": "Content-Encoding",
+											"description": "The type of encoding used on the data."
+										},
+										{
+											"key": "Content-Length",
+											"value": "64",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 Aug 2018 23:08:14 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "Plaid-Version",
+											"value": "2018-05-22",
+											"name": "Plaid-Version",
+											"description": "Custom header"
+										},
+										{
+											"key": "Server",
+											"value": "nginx",
+											"name": "Server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload",
+											"name": "Strict-Transport-Security",
+											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding",
+											"name": "Vary",
+											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff",
+											"name": "X-Content-Type-Options",
+											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY",
+											"name": "X-Frame-Options",
+											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block",
+											"name": "X-XSS-Protection",
+											"description": "Cross-site scripting (XSS) filter"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"removed\": true,\n  \"request_id\": \"emqzg\"\n}"
 								}
 							]
 						},
@@ -1209,7 +1275,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "9f3d66f2-2985-4306-8cfe-e68682808231",
+								"id": "641f106c-7ff9-40a1-8cea-6ea17ab130f5",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1219,7 +1285,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fe7dc4c9-f9a9-42e0-b566-ca81d3bf2f2f",
+								"id": "f41e082c-fd0c-4674-ac3b-396c603590e0",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1236,7 +1302,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "3a4b7225-b337-49e3-bb17-def43b994476",
+						"id": "5f4f00f8-f607-4aee-b6f3-7e527fb6620c",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1246,7 +1312,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "be944928-a0b3-4699-97b2-7422a978d782",
+						"id": "723a78e4-a31e-4f5d-b3e4-674fa933d686",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1513,7 +1579,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "50adae45-bccd-4051-bce0-9380f610bdad",
+								"id": "2034c692-8e0a-4277-ad7e-136b7a1b90aa",
 								"exec": [
 									""
 								],
@@ -2231,7 +2297,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "7ccd44bb-f0e4-4060-a07e-5a810da9d585",
+								"id": "94e97c69-62af-4efb-b33e-cb279a0595fe",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -3566,7 +3632,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "ad5653c6-55b5-43cb-ad2b-b4c18c38727c",
+						"id": "7fb3babf-d1d9-4d87-a476-75b8e4b10091",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3576,7 +3642,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f3d848b1-4acf-44d5-b564-ed1fdaa5d72d",
+						"id": "18680db4-7162-44da-98ff-2ae5a6fc6955",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3847,7 +3913,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"recipient_id\": \"ENTER_RECIPIENT_ID_HERE\",\n  \"reference\": \"Test Account Funding\",\n  \"amount\": {\n    \"currency\": \"GBP\",\n    \"value\": 100.00\n  }\n}"
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"recipient_id\": \"ENTER_RECIPIENT_ID_HERE\",\n  \"reference\": \"Test Funding\",\n  \"amount\": {\n    \"currency\": \"GBP\",\n    \"value\": 100.00\n  }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/payment_initiation/payment/create",
@@ -3862,6 +3928,36 @@
 							]
 						},
 						"description": "Create and configure a payment by specifying a `recipient_id`, `reference`, `amount`, and `currency` to create a Plaid payment resource. The Plaid API returns a `payment_id` to identify the created payment."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Link Token - Payment Initiation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"GB\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"payment_initiation\"],\n  \"payment_initiation\": {\n    \"payment_id\": \"insert payment ID here\"\n  }\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/link/token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"link",
+								"token",
+								"create"
+							]
+						},
+						"description": "Creates a link token with options. The `payment_id` from `Create Payment` is passed with the creation of the link token. The link token can then be used to initialize Plaid Link."
 					},
 					"response": []
 				},
@@ -4040,7 +4136,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8d20e091-64a7-420d-b30a-f111a0c0b0c4",
+				"id": "82c62cf6-b6fa-4c74-a9be-d001bd998b57",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -4050,7 +4146,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "969724ad-285b-4719-a9f5-66749eaa3dba",
+				"id": "81549f95-2002-47ef-bf74-6aaa72f707ee",
 				"type": "text/javascript",
 				"exec": [
 					""
