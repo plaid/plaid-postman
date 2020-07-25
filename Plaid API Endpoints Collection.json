@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "11c18352-80d0-47e1-8fd8-709be8531f4a",
+		"_postman_id": "a8d44ba8-3f64-4fec-96d9-d0994b001708",
 		"name": "Plaid API Endpoints",
-		"description": "A collection of Plaid API endpoints for the `sandbox` environment. Each endpoint request comes with an example request & response. It also contains 'use cases' for each product.  \n<br />\nBefore you begin, please set your `public_key`, `client_id`, and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.\n",
+		"description": "A collection of Plaid API endpoints for the `sandbox` environment. Each endpoint request comes with an example request & response. It also contains 'use cases' for each product.  \n<br />\nBefore you begin, please set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -22,6 +22,66 @@
 						"body": {
 							"mode": "raw",
 							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"US\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"auth\"]\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/link/token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"link",
+								"token",
+								"create"
+							]
+						},
+						"description": "Creates a link token with options. The link token can then be used to initialize Plaid Link."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Link Token - Update Mode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"US\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/link/token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"link",
+								"token",
+								"create"
+							]
+						},
+						"description": "Creates a link token with options. The link token can then be used to initialize Plaid Link."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Link Token - Payment Initiation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"GB\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"payment_initiation\"],\n  \"payment_initiation\": {\n    \"payment_id\": \"INSERT_PAYMENT_ID_HERE\"\n  }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/link/token/create",
@@ -90,7 +150,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"public_key\": \"{{public_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",
@@ -120,7 +180,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"public_key\": \"{{public_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_custom\",\n    \"overrride_password\": {\"force_error\": \"USER_SETUP_REQUIRED\"}\n  }\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_custom\",\n    \"override_password\": \"{\\\"force_error\\\": \\\"USER_SETUP_REQUIRED\\\"}\"\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",
@@ -1009,112 +1069,6 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
-										},
-										"url": {
-											"raw": "https://{{env_url}}/item/remove",
-											"protocol": "https",
-											"host": [
-												"{{env_url}}"
-											],
-											"path": [
-												"item",
-												"remove"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Connection",
-											"value": "keep-alive",
-											"name": "Connection",
-											"description": "Options that are desired for the connection"
-										},
-										{
-											"key": "Content-Encoding",
-											"value": "gzip",
-											"name": "Content-Encoding",
-											"description": "The type of encoding used on the data."
-										},
-										{
-											"key": "Content-Length",
-											"value": "64",
-											"name": "Content-Length",
-											"description": "The length of the response body in octets (8-bit bytes)"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/json",
-											"name": "Content-Type",
-											"description": "The mime type of this content"
-										},
-										{
-											"key": "Date",
-											"value": "Tue, 28 Aug 2018 22:56:41 GMT",
-											"name": "Date",
-											"description": "The date and time that the message was sent"
-										},
-										{
-											"key": "Plaid-Version",
-											"value": "2018-05-22",
-											"name": "Plaid-Version",
-											"description": "Custom header"
-										},
-										{
-											"key": "Server",
-											"value": "nginx",
-											"name": "Server",
-											"description": "A name for the server"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000; includeSubDomains; preload",
-											"name": "Strict-Transport-Security",
-											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-										},
-										{
-											"key": "Vary",
-											"value": "Accept-Encoding",
-											"name": "Vary",
-											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-										},
-										{
-											"key": "X-Content-Type-Options",
-											"value": "nosniff",
-											"name": "X-Content-Type-Options",
-											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-										},
-										{
-											"key": "X-Frame-Options",
-											"value": "DENY",
-											"name": "X-Frame-Options",
-											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-										},
-										{
-											"key": "X-XSS-Protection",
-											"value": "1; mode=block",
-											"name": "X-XSS-Protection",
-											"description": "Cross-site scripting (XSS) filter"
-										}
-									],
-									"cookie": [],
-									"body": "{\n  \"removed\": true,\n  \"request_id\": \"rIjWv\"\n}"
-								},
-								{
-									"name": "Remove Item Example",
-									"originalRequest": {
-										"method": "POST",
-										"header": [
-											{
-												"key": "Content-Type",
-												"value": "application/json"
-											}
-										],
-										"body": {
-											"mode": "raw",
 											"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"access-sandbox-3f3181d2-76de-40c2-8f3b-152d2c6726d7\"\n}"
 										},
 										"url": {
@@ -1208,6 +1162,112 @@
 									],
 									"cookie": [],
 									"body": "{\n  \"removed\": true,\n  \"request_id\": \"emqzg\"\n}"
+								},
+								{
+									"name": "Remove Item Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
+										},
+										"url": {
+											"raw": "https://{{env_url}}/item/remove",
+											"protocol": "https",
+											"host": [
+												"{{env_url}}"
+											],
+											"path": [
+												"item",
+												"remove"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Connection",
+											"value": "keep-alive",
+											"name": "Connection",
+											"description": "Options that are desired for the connection"
+										},
+										{
+											"key": "Content-Encoding",
+											"value": "gzip",
+											"name": "Content-Encoding",
+											"description": "The type of encoding used on the data."
+										},
+										{
+											"key": "Content-Length",
+											"value": "64",
+											"name": "Content-Length",
+											"description": "The length of the response body in octets (8-bit bytes)"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"name": "Content-Type",
+											"description": "The mime type of this content"
+										},
+										{
+											"key": "Date",
+											"value": "Tue, 28 Aug 2018 22:56:41 GMT",
+											"name": "Date",
+											"description": "The date and time that the message was sent"
+										},
+										{
+											"key": "Plaid-Version",
+											"value": "2018-05-22",
+											"name": "Plaid-Version",
+											"description": "Custom header"
+										},
+										{
+											"key": "Server",
+											"value": "nginx",
+											"name": "Server",
+											"description": "A name for the server"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload",
+											"name": "Strict-Transport-Security",
+											"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
+										},
+										{
+											"key": "Vary",
+											"value": "Accept-Encoding",
+											"name": "Vary",
+											"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff",
+											"name": "X-Content-Type-Options",
+											"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY",
+											"name": "X-Frame-Options",
+											"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block",
+											"name": "X-XSS-Protection",
+											"description": "Cross-site scripting (XSS) filter"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"removed\": true,\n  \"request_id\": \"rIjWv\"\n}"
 								}
 							]
 						},
@@ -1241,7 +1301,7 @@
 							"response": []
 						},
 						{
-							"name": "Create Public Token for Update Copy",
+							"name": "Create Public Token for Update",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1275,7 +1335,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "641f106c-7ff9-40a1-8cea-6ea17ab130f5",
+								"id": "3a056a14-becf-438b-86f4-3bfccd3c472a",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1285,7 +1345,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f41e082c-fd0c-4674-ac3b-396c603590e0",
+								"id": "48f1ca94-ac73-4b60-9f31-a4322fae640a",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1302,7 +1362,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "5f4f00f8-f607-4aee-b6f3-7e527fb6620c",
+						"id": "a396f026-894a-4f2a-b1e3-f942156bd3d7",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1312,7 +1372,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "723a78e4-a31e-4f5d-b3e4-674fa933d686",
+						"id": "551f0663-4f64-449b-8db8-0780e3823354",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1579,7 +1639,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "2034c692-8e0a-4277-ad7e-136b7a1b90aa",
+								"id": "9f41c5a2-265e-40a7-b8d8-7d5964e1a338",
 								"exec": [
 									""
 								],
@@ -2297,7 +2357,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "94e97c69-62af-4efb-b33e-cb279a0595fe",
+								"id": "6154497d-f344-444e-a86c-1a44a68782e8",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -3243,7 +3303,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"query\": \"delta schools\",\n    \"products\": [\"auth\"],\n    \"public_key\": \"{{public_key}}\"\n }"
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"query\": \"delta schools\",\n    \"products\": [\"auth\"]\n }"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/institutions/search",
@@ -3373,7 +3433,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"institution_id\": \"ENTER_INSTITUTION_ID_HERE\",\n    \"public_key\": \"{{public_key}}\"\n}"
+							"raw": "{\n    \"institution_id\": \"ENTER_INSTITUTION_ID_HERE\",\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\"\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/institutions/get_by_id",
@@ -3632,7 +3692,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "7fb3babf-d1d9-4d87-a476-75b8e4b10091",
+						"id": "b8d926f5-73c5-4156-8e8c-c216aaa3239c",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3642,7 +3702,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "18680db4-7162-44da-98ff-2ae5a6fc6955",
+						"id": "712bfb46-3ef0-4948-b0ba-ff26398eb51c",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3943,7 +4003,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"GB\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"payment_initiation\"],\n  \"payment_initiation\": {\n    \"payment_id\": \"insert payment ID here\"\n  }\n}"
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"GB\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"payment_initiation\"],\n  \"payment_initiation\": {\n    \"payment_id\": \"INSERT_PAYMENT_ID_HERE\"\n  }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/link/token/create",
@@ -4136,7 +4196,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "82c62cf6-b6fa-4c74-a9be-d001bd998b57",
+				"id": "1123c70e-6bf7-45f1-af14-dcc5a75a0623",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -4146,7 +4206,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "81549f95-2002-47ef-bf74-6aaa72f707ee",
+				"id": "7a991c0c-ab7b-4582-a736-674e5e0f4f43",
 				"type": "text/javascript",
 				"exec": [
 					""
