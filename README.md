@@ -23,12 +23,17 @@ The Plaid Postman collection uses [Postman environment variables](https://learni
 2. Click the `eye` icon to open the environment settings
 3. Copy in your [Plaid API keys from your Plaid Dashboard](https://dashboard.plaid.com/account/keys), into each field:
   - `client_id`
-  - `public_key`
   - `secret`
 4. Save your changes and start making Plaid API requests!
 
 ## Collection endpoints
 The following collection is a fully-featured set of pre-filled requests that allow you to test the [Plaid API](https://plaid.com/docs), and visualize the responses in a friendly format.
+
+* **Link Tokens**
+  * **Create Link Token** - Creates a `link_token` for the default Link flow.
+  * **Create Link Token - Update Mode ** - Creates a `link_token` for the update mode Link flow.
+  * **Create Link Token - Payment Initiation ** - Creates a `link_token` for the payment initiation Link flow.
+  * **Create Link Token - OAuth ** - Creates a `link_token` for the OAuth Link flow.
 
 * **Items**
   * **Create Item [Sandbox Only]** - Creates an Item by generating a public token. This endpoint only works in the Sandbox environment. Items can only be created through Plaid Link in the development and production environments.
