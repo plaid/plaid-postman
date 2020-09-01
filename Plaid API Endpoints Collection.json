@@ -1,11 +1,137 @@
 {
 	"info": {
-		"_postman_id": "1fef3902-ae6c-42ee-ab5c-788c2716427c",
-		"name": "Plaid API Endpoints - Sandbox copy",
-		"description": "A collection of Plaid API endpoints for the `sandbox` environment. Each endpoint request comes with an example request & response. It also contains 'use cases' for each product.  \n<br />\nBefore you begin, please set your `public_key`, `client_id`, and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.\n",
+		"_postman_id": "a8d44ba8-3f64-4fec-96d9-d0994b001708",
+		"name": "Plaid API Endpoints",
+		"description": "A collection of Plaid API endpoints for the `sandbox` environment. Each endpoint request comes with an example request & response. It also contains 'use cases' for each product.  \n<br />\nBefore you begin, please set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
+		{
+			"name": "Link Tokens",
+			"item": [
+				{
+					"name": "Create Link Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"US\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"auth\"]\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/link/token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"link",
+								"token",
+								"create"
+							]
+						},
+						"description": "Creates a link token with options. The link token can then be used to initialize Plaid Link."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Link Token - Update Mode",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"US\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/link/token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"link",
+								"token",
+								"create"
+							]
+						},
+						"description": "Creates a link token with options. The link token can then be used to initialize Plaid Link."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Link Token - Payment Initiation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"GB\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"payment_initiation\"],\n  \"payment_initiation\": {\n    \"payment_id\": \"INSERT_PAYMENT_ID_HERE\"\n  }\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/link/token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"link",
+								"token",
+								"create"
+							]
+						},
+						"description": "Creates a link token with options. The link token can then be used to initialize Plaid Link."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Link Token - OAuth",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"GB\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"auth\"],\n  \"redirect_uri\": \"http://example.com/redirect\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/link/token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"link",
+								"token",
+								"create"
+							]
+						},
+						"description": "Creates a link token with options. The link token can then be used to initialize Plaid Link."
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
 		{
 			"name": "Items",
 			"item": [
@@ -24,7 +150,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"public_key\": \"{{public_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",
@@ -54,7 +180,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"public_key\": \"{{public_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_custom\",\n    \"overrride_password\": {\"force_error\": \"USER_SETUP_REQUIRED\"}\n  }\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_custom\",\n    \"override_password\": \"{\\\"force_error\\\": \\\"USER_SETUP_REQUIRED\\\"}\"\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",
@@ -943,7 +1069,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"access-sandbox-3f3181d2-76de-40c2-8f3b-152d2c6726d7\"\n}"
+											"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
 										},
 										"url": {
 											"raw": "https://{{env_url}}/item/remove",
@@ -1175,7 +1301,7 @@
 							"response": []
 						},
 						{
-							"name": "Create Public Token for Update Copy",
+							"name": "Create Public Token for Update",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -1209,7 +1335,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "9f3d66f2-2985-4306-8cfe-e68682808231",
+								"id": "3a056a14-becf-438b-86f4-3bfccd3c472a",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1219,7 +1345,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "fe7dc4c9-f9a9-42e0-b566-ca81d3bf2f2f",
+								"id": "48f1ca94-ac73-4b60-9f31-a4322fae640a",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1236,7 +1362,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "3a4b7225-b337-49e3-bb17-def43b994476",
+						"id": "a396f026-894a-4f2a-b1e3-f942156bd3d7",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1246,7 +1372,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "be944928-a0b3-4699-97b2-7422a978d782",
+						"id": "551f0663-4f64-449b-8db8-0780e3823354",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1513,7 +1639,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "50adae45-bccd-4051-bce0-9380f610bdad",
+								"id": "9f41c5a2-265e-40a7-b8d8-7d5964e1a338",
 								"exec": [
 									""
 								],
@@ -2231,7 +2357,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "7ccd44bb-f0e4-4060-a07e-5a810da9d585",
+								"id": "6154497d-f344-444e-a86c-1a44a68782e8",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -3177,7 +3303,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"query\": \"delta schools\",\n    \"products\": [\"auth\"],\n    \"public_key\": \"{{public_key}}\"\n }"
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"query\": \"delta schools\",\n    \"products\": [\"auth\"]\n }"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/institutions/search",
@@ -3307,7 +3433,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"institution_id\": \"ENTER_INSTITUTION_ID_HERE\",\n    \"public_key\": \"{{public_key}}\"\n}"
+							"raw": "{\n    \"institution_id\": \"ENTER_INSTITUTION_ID_HERE\",\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\"\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/institutions/get_by_id",
@@ -3566,7 +3692,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "ad5653c6-55b5-43cb-ad2b-b4c18c38727c",
+						"id": "b8d926f5-73c5-4156-8e8c-c216aaa3239c",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3576,7 +3702,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "f3d848b1-4acf-44d5-b564-ed1fdaa5d72d",
+						"id": "712bfb46-3ef0-4948-b0ba-ff26398eb51c",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -3847,7 +3973,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"recipient_id\": \"ENTER_RECIPIENT_ID_HERE\",\n  \"reference\": \"Test Account Funding\",\n  \"amount\": {\n    \"currency\": \"GBP\",\n    \"value\": 100.00\n  }\n}"
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"recipient_id\": \"ENTER_RECIPIENT_ID_HERE\",\n  \"reference\": \"Test Funding\",\n  \"amount\": {\n    \"currency\": \"GBP\",\n    \"value\": 100.00\n  }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/payment_initiation/payment/create",
@@ -3862,6 +3988,36 @@
 							]
 						},
 						"description": "Create and configure a payment by specifying a `recipient_id`, `reference`, `amount`, and `currency` to create a Plaid payment resource. The Plaid API returns a `payment_id` to identify the created payment."
+					},
+					"response": []
+				},
+				{
+					"name": "Create Link Token - Payment Initiation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"GB\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"payment_initiation\"],\n  \"payment_initiation\": {\n    \"payment_id\": \"INSERT_PAYMENT_ID_HERE\"\n  }\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/link/token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"link",
+								"token",
+								"create"
+							]
+						},
+						"description": "Creates a link token with options. The `payment_id` from `Create Payment` is passed with the creation of the link token. The link token can then be used to initialize Plaid Link."
 					},
 					"response": []
 				},
@@ -4040,7 +4196,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "8d20e091-64a7-420d-b30a-f111a0c0b0c4",
+				"id": "1123c70e-6bf7-45f1-af14-dcc5a75a0623",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -4050,7 +4206,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "969724ad-285b-4719-a9f5-66749eaa3dba",
+				"id": "7a991c0c-ab7b-4582-a736-674e5e0f4f43",
 				"type": "text/javascript",
 				"exec": [
 					""
