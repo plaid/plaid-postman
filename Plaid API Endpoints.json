@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "6fa481e9-25e7-4237-bbf8-8d27001f37cf",
-		"name": "Plaid API Endpoints",
+		"_postman_id": "7eb3cbde-b5f7-4873-8c9c-07e578924cdc",
+		"name": "Plaid API Endpoints Copy 2",
 		"description": "A collection of Plaid API endpoints for the `sandbox` environment. Each endpoint request comes with an example request & response. It also contains 'use cases' for each product.  \n<br />\nBefore you begin, please set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -1113,7 +1113,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 28 Aug 2018 22:56:41 GMT",
+											"value": "Tue, 28 Aug 2018 23:08:14 GMT",
 											"name": "Date",
 											"description": "The date and time that the message was sent"
 										},
@@ -1161,7 +1161,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"removed\": true,\n  \"request_id\": \"rIjWv\"\n}"
+									"body": "{\n  \"removed\": true,\n  \"request_id\": \"emqzg\"\n}"
 								},
 								{
 									"name": "Remove Item Example",
@@ -1219,7 +1219,7 @@
 										},
 										{
 											"key": "Date",
-											"value": "Tue, 28 Aug 2018 23:08:14 GMT",
+											"value": "Tue, 28 Aug 2018 22:56:41 GMT",
 											"name": "Date",
 											"description": "The date and time that the message was sent"
 										},
@@ -1267,7 +1267,7 @@
 										}
 									],
 									"cookie": [],
-									"body": "{\n  \"removed\": true,\n  \"request_id\": \"emqzg\"\n}"
+									"body": "{\n  \"removed\": true,\n  \"request_id\": \"rIjWv\"\n}"
 								}
 							]
 						},
@@ -1335,7 +1335,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "d9a96716-4281-4960-bd6b-038bc9ff1320",
+								"id": "ecb05158-152e-4816-848b-ee6366e25050",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1345,7 +1345,7 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "251c9678-95a5-4959-84ac-b42fe73ca006",
+								"id": "f95365c7-a3c0-41cd-ac66-489799985ec8",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -1362,7 +1362,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "3839e635-38fc-4d8b-9653-b9a692b554e0",
+						"id": "99e8c91f-dce2-481b-9183-7624115c554d",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1372,7 +1372,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d0d98a29-2325-4a40-a950-b6c97198500a",
+						"id": "89ec36dd-c8a6-476e-a578-dfd0edbb3d09",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -1639,7 +1639,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "3e57edea-99cf-489c-93c6-d1c8693a86a7",
+								"id": "52d700c8-5ad9-4705-b969-3c62b96a6ef1",
 								"exec": [
 									""
 								],
@@ -2357,7 +2357,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "bc2bed3a-0706-4133-b838-0b4e181c71a6",
+								"id": "59074214-5458-4121-985f-4daa4f9385df",
 								"type": "text/javascript",
 								"exec": [
 									""
@@ -3303,7 +3303,7 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "be11c908-4ac9-4511-8df1-5f32442fa31f",
+								"id": "7ebf0bcc-66ed-4c46-8a59-e67737d55493",
 								"exec": [
 									""
 								],
@@ -4040,7 +4040,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "77e3f812-0c18-4982-a5d6-2797845f7d95",
+						"id": "c852d830-0f96-4129-a2a5-b1393a5c697e",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -4050,7 +4050,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "d1921dbf-9f5d-4efe-a942-3c5563cfc956",
+						"id": "4802f787-5f9e-4777-aae7-4e7f5d355f0a",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -4271,11 +4271,6 @@
 			"item": [
 				{
 					"name": "Create Payment Recipient",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {
-							"content-type": true
-						}
-					},
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4306,11 +4301,6 @@
 				},
 				{
 					"name": "Create Payment",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {
-							"content-type": true
-						}
-					},
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4371,11 +4361,6 @@
 				},
 				{
 					"name": "Create Payment Token",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {
-							"content-type": true
-						}
-					},
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4407,11 +4392,6 @@
 				},
 				{
 					"name": "Get Payment",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {
-							"content-type": true
-						}
-					},
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4442,11 +4422,6 @@
 				},
 				{
 					"name": "List Payments",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {
-							"content-type": true
-						}
-					},
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4538,13 +4513,72 @@
 			],
 			"description": "The UK Payment Initiation API enables payment transfers within your app. Plaid supports both domestic payments denominated in pound sterling (typically via the Faster Payments network, although this is up to the institution) and international payments denominated in euro (typically via SEPA Credit Transfer). Each time a client wants to receive a payment, the end user must authorize the payment in Link before the payment can be initiated.\n\n**Note:** The revised EU Directive on Payment Services (\"PSD2\") regulations require strong customer authentication (\"SCA\") for each payment order.",
 			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Stripe Token",
+			"item": [
+				{
+					"name": "Stripe Token",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"client_id\": \"{{client_id}}\",\n   \"secret\": \"{{secret_key}}\",\n   \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\",\n   \"account_id\": \"ENTER_ACCOUNT_ID_HERE\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/processor/stripe/bank_account_token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"processor",
+								"stripe",
+								"bank_account_token",
+								"create"
+							]
+						},
+						"description": "Create a Stripe bank account token."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "aa85aeea-dc7b-464a-835e-a2c1f6e49591",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a37d92a3-7723-4957-9d0f-193c58bb68f4",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "1a458a67-3b9d-44a0-bf3c-f09de7203255",
+				"id": "e0634fe1-a724-4286-b1e3-2d9dca1882de",
 				"type": "text/javascript",
 				"exec": [
 					""
@@ -4554,7 +4588,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "914dd55d-5537-4ab6-9fa8-86b49fb9cc18",
+				"id": "ad5994e9-1c37-4427-b9ec-4244c81ff027",
 				"type": "text/javascript",
 				"exec": [
 					""
