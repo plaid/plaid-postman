@@ -144,7 +144,8 @@
 							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"link_token\": \"ENTER_LINK_TOKEN_HERE\"\n}"
 						},
 						"url": {
-							"raw": "{{env_url}}/link/token/get",
+							"raw": "https://{{env_url}}/link/token/get",
+							"protocol": "https",
 							"host": [
 								"{{env_url}}"
 							],
@@ -1741,9 +1742,10 @@
 							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/transactions/refresh",
+							"raw": "https://{{env_url}}/transactions/refresh",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"{{env_url}}"
 							],
 							"path": [
 								"transactions",
@@ -4577,7 +4579,8 @@
 							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n    \"institution_id\": \"ins_3\",\n    \"options\": {\n        \"override_username\": \"user_good\",\n        \"override_password\": \"pass_good\"\n    }\n}"
 						},
 						"url": {
-							"raw": "{{env_url}}/sandbox/processor_token/create",
+							"raw": "https://{{env_url}}/sandbox/processor_token/create",
+							"protocol": "https",
 							"host": [
 								"{{env_url}}"
 							],
@@ -4640,9 +4643,10 @@
 							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n    \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"processor\": \"dwolla\"\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/processor/token/create",
+							"raw": "https://{{env_url}}/processor/token/create",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"{{env_url}}"
 							],
 							"path": [
 								"processor",
@@ -4703,9 +4707,10 @@
 							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n    \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\"\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/processor/stripe/bank_account_token/create",
+							"raw": "https://{{env_url}}/processor/stripe/bank_account_token/create",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"{{env_url}}"
 							],
 							"path": [
 								"processor",
@@ -4768,7 +4773,8 @@
 							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n    \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\"\n}"
 						},
 						"url": {
-							"raw": "{{env_url}}/processor/apex/processor_token/create",
+							"raw": "https://{{env_url}}/processor/apex/processor_token/create",
+							"protocol": "https",
 							"host": [
 								"{{env_url}}"
 							],
@@ -4819,7 +4825,7 @@
 					]
 				},
 				{
-					"name": "Get Auth data",
+					"name": "Get Auth data (for processors only)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4833,7 +4839,8 @@
 							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"processor_token\": \"ENTER_PROCESSOR_TOKEN_HERE\"\n}"
 						},
 						"url": {
-							"raw": "{{env_url}}/processor/auth/get",
+							"raw": "https://{{env_url}}/processor/auth/get",
+							"protocol": "https",
 							"host": [
 								"{{env_url}}"
 							],
@@ -4882,7 +4889,7 @@
 					]
 				},
 				{
-					"name": "Get Identity data",
+					"name": "Get Identity data (for processors only)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4896,7 +4903,8 @@
 							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"processor_token\": \"ENTER_PROCESSOR_TOKEN_HERE\"\n}"
 						},
 						"url": {
-							"raw": "{{env_url}}/processor/identity/get",
+							"raw": "https://{{env_url}}/processor/identity/get",
+							"protocol": "https",
 							"host": [
 								"{{env_url}}"
 							],
@@ -4945,7 +4953,7 @@
 					]
 				},
 				{
-					"name": "Get Balance data",
+					"name": "Get Balance data (for processors only)",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4959,7 +4967,8 @@
 							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"processor_token\": \"ENTER_PROCESSOR_TOKEN_HERE\"\n}"
 						},
 						"url": {
-							"raw": "{{env_url}}/processor/balance/get",
+							"raw": "https://{{env_url}}/processor/balance/get",
+							"protocol": "https",
 							"host": [
 								"{{env_url}}"
 							],
@@ -5030,9 +5039,10 @@
 									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n\n    \"start_date\": \"2017-01-01\",\n    \"end_date\": \"2019-05-10\",\n    \"bank_transfer_type\": \"credit\",\n    \"event_types\": [\n        \"pending\",\n        \"posted\"\n    ],\n    \"direction\": \"outbound\",\n    \"count\": 25,\n    \"offset\": 0\n}"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/bank_transfer/event/list",
+									"raw": "https://{{env_url}}/bank_transfer/event/list",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"{{env_url}}"
 									],
 									"path": [
 										"bank_transfer",
@@ -5093,9 +5103,10 @@
 									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"after_id\": 0,\n    \"count\": 25\n}"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/bank_transfer/event/sync",
+									"raw": "https://{{env_url}}/bank_transfer/event/sync",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"{{env_url}}"
 									],
 									"path": [
 										"bank_transfer",
@@ -5191,9 +5202,10 @@
 							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"bank_transfer_id\": \"ENTER_BANK_TRANSFER_ID_HERE\"\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/bank_transfer/get",
+							"raw": "https://{{env_url}}/bank_transfer/get",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"{{env_url}}"
 							],
 							"path": [
 								"bank_transfer",
@@ -5252,9 +5264,10 @@
 							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"idempotency_key\": \"WiEWwZCBB9Jhr9R\", // a unique random string\n    \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"amount\": \".50\",\n    \"iso_currency_code\": \"USD\",\n    \"description\": \"test\",\n    \"user\": {\n        \"legal_name\": \"Anna Bobbeth Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    },\n    \"ach_class\": \"web\"\n}"
 						},
 						"url": {
-							"raw": "{{baseUrl}}/bank_transfer/create",
+							"raw": "https://{{env_url}}/bank_transfer/create",
+							"protocol": "https",
 							"host": [
-								"{{baseUrl}}"
+								"{{env_url}}"
 							],
 							"path": [
 								"bank_transfer",
@@ -5313,7 +5326,8 @@
 							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"start_date\": \"2017-01-01\",\n    \"end_date\": \"2019-05-10\",\n    \"count\": 25,\n    \"offset\": 0,\n    \"direction\": \"credit\"\n}"
 						},
 						"url": {
-							"raw": "{{env_url}}/bank_transfer/list",
+							"raw": "https://{{env_url}}/bank_transfer/list",
+							"protocol": "https",
 							"host": [
 								"{{env_url}}"
 							],
@@ -5374,7 +5388,8 @@
 							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"bank_transfer_id\": \"ENTER_BANK_TRANSFER_ID_HERE\"\n}"
 						},
 						"url": {
-							"raw": "{{env_url}}/bank_transfer/cancel",
+							"raw": "https://{{env_url}}/bank_transfer/cancel",
+							"protocol": "https",
 							"host": [
 								"{{env_url}}"
 							],
@@ -5467,7 +5482,8 @@
 							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\"\n}"
 						},
 						"url": {
-							"raw": "{{env_url}}/bank_transfer/balance/get",
+							"raw": "https://{{env_url}}/bank_transfer/balance/get",
+							"protocol": "https",
 							"host": [
 								"{{env_url}}"
 							],
@@ -5530,7 +5546,8 @@
 							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"account_number\": \"00145349346565\",\n    \"routing_number\": \"021000021\",\n    \"account_type\": \"checking\"\n}"
 						},
 						"url": {
-							"raw": "{{env_url}}/bank_transfer/migrate_account",
+							"raw": "https://{{env_url}}/bank_transfer/migrate_account",
+							"protocol": "https",
 							"host": [
 								"{{env_url}}"
 							],
@@ -5591,7 +5608,8 @@
 							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n    \"bank_transfer_id\": \"ENTER_BANK_TRANSFER_ID\",\n    \"event_type\": \"failed\",\n    \"failure_reason\": {\n        \"ach_return_code\": \"R02\",\n        \"description\": \"account closed\"\n    }\n}"
 						},
 						"url": {
-							"raw": "{{env_url}}/sandbox/bank_transfer/simulate",
+							"raw": "https://{{env_url}}/sandbox/bank_transfer/simulate",
+							"protocol": "https",
 							"host": [
 								"{{env_url}}"
 							],

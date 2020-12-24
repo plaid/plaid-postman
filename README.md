@@ -10,7 +10,7 @@ Follow these steps to quickly get started with the [Plaid API](https://plaid.com
 
 1. [Sign up](https://dashboard.plaid.com/signup) with Plaid to get a set of API keys that are required for interacting with the API. [Here](https://plaid.com/docs/quickstart/#api-keys) is some documentation explaining what these keys are.
 2. Download and install the [Postman app](https://www.getpostman.com/downloads/)
-3. Install the Plaid Postman Collection. Click the "Run with Postman" button below to install the Plaid collection!
+3. Install the Plaid Postman Collection. Click the "Run in Postman" button below to install the Plaid collection!
   
     [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/19cf5537e9e28bdd851e)
 
