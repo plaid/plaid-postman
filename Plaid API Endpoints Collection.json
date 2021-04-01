@@ -5261,7 +5261,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"idempotency_key\": \"WiEWwZCBB9Jhr9R\", // a unique random string\n    \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"amount\": \".50\",\n    \"iso_currency_code\": \"USD\",\n    \"description\": \"test\",\n    \"user\": {\n        \"legal_name\": \"Anna Bobbeth Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    },\n    \"ach_class\": \"web\"\n}"
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"idempotency_key\": \"WiEWwZCBB9Jhr9R\",\n    \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"amount\": \"00.50\",\n    \"iso_currency_code\": \"USD\",\n    \"description\": \"test\",\n    \"user\": {\n        \"legal_name\": \"Anna Bobbeth Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    },\n    \"ach_class\": \"web\"\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/bank_transfer/create",
