@@ -9,23 +9,24 @@ If you are looking for a more in-depth guide and reference for the Plaid API, pl
 Follow these steps to quickly get started with the [Plaid API](https://plaid.com/docs):
 
 1. [Sign up](https://dashboard.plaid.com/signup) with Plaid to get a set of API keys that are required for interacting with the API. [Here](https://plaid.com/docs/quickstart/#api-keys) is some documentation explaining what these keys are.
-2. Download and install the [Postman app](https://www.getpostman.com/downloads/)
-3. Install the Plaid Postman Collection. Click the "Run in Postman" button below to install the Plaid collection!
+2. Download and install the [Postman app](https://www.getpostman.com/downloads/).
+3. Create or log into your Postman account to gain access to the "workspaces" feature, and then use the `Workspaces` dropdown to add a new workspace. For this example, we called ours `Plaid Workspace`.
+3. Install the Plaid Postman Collection. Click the "Run in Postman" button below to install the Plaid collection to the workspace you created!
   
     [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/81eba2745efca62ea5b7#?env%5BSandbox%20Public%5D=W3sidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlLCJrZXkiOiJjbGllbnRfaWQiLCJ2YWx1ZSI6IiJ9LHsidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlLCJrZXkiOiJwdWJsaWNfa2V5IiwidmFsdWUiOiIifSx7InR5cGUiOiJ0ZXh0IiwiZW5hYmxlZCI6dHJ1ZSwia2V5Ijoic2VjcmV0X2tleSIsInZhbHVlIjoiIn0seyJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWUsImtleSI6InB1YmxpY190b2tlbiIsInZhbHVlIjoiIn0seyJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWUsImtleSI6ImVudl91cmwiLCJ2YWx1ZSI6InNhbmRib3gucGxhaWQuY29tIn0seyJ0eXBlIjoidGV4dCIsImVuYWJsZWQiOnRydWUsImtleSI6ImFjY291bnRfaWQiLCJ2YWx1ZSI6IiJ9LHsidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlLCJrZXkiOiJhc3NldF9yZXBvcnRfdG9rZW4iLCJ2YWx1ZSI6IiJ9LHsidHlwZSI6InRleHQiLCJlbmFibGVkIjp0cnVlLCJrZXkiOiJhY2Nlc3NfdG9rZW4iLCJ2YWx1ZSI6IiJ9XQ==)
 
-4. Once both the collection and the environment variables are imported into Postman, see the [Configuration](https://github.com/plaid/plaid-postman#configuration) section on how to correctly configure API keys with the collection.
+4. Once the collection is imported into Postman, continue to [Configuration](https://github.com/plaid/plaid-postman#configuration) steps to correctly configure API keys with the collection.
 
 ### Configuration
 The Plaid Postman collection uses [Postman environment variables](https://learning.getpostman.com/docs/postman/environments_and_globals/intro_to_environments_and_globals/) to simplify each API request. More information on managing Postman environments can be found at [Setting up an environment with variables](https://learning.getpostman.com/docs/postman/environments_and_globals/manage_environments/).
 
 ![plaid-postman-configuration](/images/plaid-postman-config.png)
 
-1. Select the `Sandbox Public` environment in the top right corner
-2. Click the `eye` icon to open the environment settings
-3. Copy in your [Plaid API keys from your Plaid Dashboard](https://dashboard.plaid.com/account/keys), into each field:
+1. Click on the `Environments` tab, and then on the `Sandbox Public` environment name.
+2. Copy in your [Plaid API keys from your Plaid Dashboard](https://dashboard.plaid.com/account/keys), into new environment variables with these names:
   - `client_id`
-  - `secret`
+  - `secret_key`
+3. Hover over the name of your environment in the list of environments, and click the `check` mark to `Set active`.
 4. Save your changes and start making Plaid API requests!
 
 ## Collection endpoints
@@ -86,6 +87,7 @@ The following collection is a fully-featured set of pre-filled requests that all
 
 * **Categories**
   * **Retrieve Categories** - Retrieves detailed information on categories returned by Plaid. This endpoint does not require authentication.
+
 
 ## Useful Tools
 [Webhook Tester](https://webhook.site/) is a great tool for receiving webhook calls. Generate a webhook url on this site and use that url for any Postman requests that require you to specify a webhook url. You can go on Webhook Tester to see a list of all requests being made to that url.
