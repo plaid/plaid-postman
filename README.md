@@ -95,3 +95,16 @@ The following collection is a fully-featured set of pre-filled requests that all
 
 ## Important Note
 The `/public_token/create` endpoint is only available in the `sandbox` environment. It exists only for testing purposes and simulates an Item Creation via the Plaid Link module. Items cannot be created directly via an endpoint for the `development` and `production` environments and can only be created through Plaid Link.
+
+## Contributing and Updating Process
+1. A contributor will make a change to the collection or environment and create a pull request.
+
+NEVER COMMIT OR PUBLISH YOUR `CLIENT_ID` OR `SECRET_KEY`.
+
+2. Maintainers will review the proposed change and give feedback or accept.
+
+3. Once the change is approved, maintainers will:
+- load the changed code in Postman
+- export a new "Run in Postman" link (see [Creating Run in Postman buttons](https://learning.postman.com/docs/publishing-your-api/run-in-postman/creating-run-button/)).
+- update this README on the PR branch with the new link
+- merge the PR
