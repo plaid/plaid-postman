@@ -5036,7 +5036,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n\n    \"start_date\": \"2017-01-01\",\n    \"end_date\": \"2019-05-10\",\n    \"bank_transfer_type\": \"credit\",\n    \"event_types\": [\n        \"pending\",\n        \"posted\"\n    ],\n    \"direction\": \"outbound\",\n    \"count\": 25,\n    \"offset\": 0\n}"
+									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n\n    \"start_date\": \"2017-01-01T00:01:01Z\",\n    \"end_date\": \"2020-12-06T17:27:15Z\",\n    \"bank_transfer_type\": \"credit\",\n    \"event_types\": [\n        \"pending\",\n        \"posted\"\n    ],\n    \"direction\": \"outbound\",\n    \"count\": 25,\n    \"offset\": 0\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/bank_transfer/event/list",
