@@ -33,9 +33,9 @@ The following collection is a fully-featured set of pre-filled requests that all
 
 * **Link Tokens**
   * **Create Link Token** - Creates a `link_token` for the default Link flow.
-  * **Create Link Token - Update Mode ** - Creates a `link_token` for the update mode Link flow.
-  * **Create Link Token - Payment Initiation ** - Creates a `link_token` for the payment initiation Link flow.
-  * **Create Link Token - OAuth ** - Creates a `link_token` for the OAuth Link flow.
+  * **Create Link Token - Update Mode** - Creates a `link_token` for the update mode Link flow.
+  * **Create Link Token - Payment Initiation** - Creates a `link_token` for the payment initiation Link flow.
+  * **Create Link Token - OAuth** - Creates a `link_token` for the OAuth Link flow.
 
 * **Items**
   * **Create Item [Sandbox Only]** - Creates an Item by generating a public token. This endpoint only works in the Sandbox environment. Items can only be created through Plaid Link in the development and production environments.
