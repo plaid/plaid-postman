@@ -5911,7 +5911,7 @@
 					]
 				},
 				{
-					"name": "Create a transfer",
+					"name": "Initiate a transfer",
 					"request": {
 						"method": "POST",
 						"header": [
