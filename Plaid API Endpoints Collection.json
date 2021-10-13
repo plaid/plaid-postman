@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "551996e3-4dd5-49d9-9698-2d2627ff7e6d",
+		"_postman_id": "0a99b523-2e64-40cc-ad07-ca27b203560c",
 		"name": "Plaid API Endpoints",
 		"description": "A collection of Plaid API endpoints for the `sandbox` environment. Each endpoint request comes with an example request & response. It also contains 'use cases' for each product.  \n<br />\nBefore you begin, please set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -2108,39 +2108,14 @@
 			]
 		},
 		{
-			"name": "Income",
+			"name": "Income / Employment",
 			"item": [
 				{
-					"name": "Retrieve Income",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
-						},
-						"url": {
-							"raw": "https://{{env_url}}/income/get",
-							"protocol": "https",
-							"host": [
-								"{{env_url}}"
-							],
-							"path": [
-								"income",
-								"get"
-							]
-						},
-						"description": "The `/income/get` endpoint allows you to retrieve information pertaining to a `Item`’s income. In addition to the annual income, detailed information will be provided for each contributing income stream (or job). Details on each of these fields can be found below.  \n<br />\nJust like retrieving `transaction` data, you need to wait several seconds to retrieve `income` data after `Item` creation. A good practice is to retrieve the data when you are notified that it's ready via webhook."
-					},
-					"response": [
+					"name": "Income Item Creation",
+					"item": [
 						{
-							"name": "Retrieve Income Example",
-							"originalRequest": {
+							"name": "Create Income Item [Sandbox Only]",
+							"request": {
 								"method": "POST",
 								"header": [
 									{
@@ -2150,99 +2125,503 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"access-sandbox-00a30504-0eb2-4fb5-8af9-b7eb5c5f23f7\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_129640\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
 								},
 								"url": {
-									"raw": "https://{{env_url}}/income/get",
+									"raw": "https://{{env_url}}/sandbox/public_token/create",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"sandbox",
+										"public_token",
+										"create"
+									]
+								},
+								"description": "Creates an `Item` in the `sandbox` environment. You will get back a `public_token` and a `request_id`."
+							},
+							"response": [
+								{
+									"name": "Create Income Item [Sandbox Only]",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_92\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
+										},
+										"url": {
+											"raw": "https://{{env_url}}/sandbox/public_token/create",
+											"protocol": "https",
+											"host": [
+												"{{env_url}}"
+											],
+											"path": [
+												"sandbox",
+												"public_token",
+												"create"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 22 Sep 2021 23:51:27 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "124"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "content-encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "plaid-version",
+											"value": "2017-03-08"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"public_token\": \"public-sandbox-6aea7634-efd4-473a-8240-e262fe108225\",\n    \"request_id\": \"Sj2U10wQBNotf4L\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Exchange Token",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"ENTER_PUBLIC_TOKEN_HERE\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/item/public_token/exchange",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"item",
+										"public_token",
+										"exchange"
+									]
+								},
+								"description": "Goes through the exchange token process where the `public_token` is exchanged for an `access_token`."
+							},
+							"response": [
+								{
+									"name": "Exchange Token",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"public_token\": \"public-sandbox-6aea7634-efd4-473a-8240-e262fe108225\"\n}"
+										},
+										"url": {
+											"raw": "https://{{env_url}}/item/public_token/exchange",
+											"protocol": "https",
+											"host": [
+												"{{env_url}}"
+											],
+											"path": [
+												"item",
+												"public_token",
+												"exchange"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 22 Sep 2021 23:51:43 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "166"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "content-encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "plaid-version",
+											"value": "2017-03-08"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"access_token\": \"access-sandbox-6d76be81-f47c-43ff-bd45-36717d174306\",\n    \"item_id\": \"Rn3637v1adCNj5Dl1LG6idQBzqBLwRcRZLbgM\",\n    \"request_id\": \"jdhC1Ot0OwyO067\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Retrieve Paystubs Info",
+					"item": [
+						{
+							"name": "Get Paystubs Data",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/income/verification/paystubs/get",
 									"protocol": "https",
 									"host": [
 										"{{env_url}}"
 									],
 									"path": [
 										"income",
+										"verification",
+										"paystubs",
 										"get"
 									]
-								}
+								},
+								"description": "This endpoint allows you to retrieve all available `Account`s associated with an `Item`."
 							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
+							"response": [
 								{
-									"key": "Connection",
-									"value": "keep-alive",
-									"name": "Connection",
-									"description": "Options that are desired for the connection"
-								},
-								{
-									"key": "Content-Encoding",
-									"value": "gzip",
-									"name": "Content-Encoding",
-									"description": "The type of encoding used on the data."
-								},
-								{
-									"key": "Content-Length",
-									"value": "245",
-									"name": "Content-Length",
-									"description": "The length of the response body in octets (8-bit bytes)"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json",
-									"name": "Content-Type",
-									"description": "The mime type of this content"
-								},
-								{
-									"key": "Date",
-									"value": "Tue, 28 Aug 2018 23:02:19 GMT",
-									"name": "Date",
-									"description": "The date and time that the message was sent"
-								},
-								{
-									"key": "Plaid-Version",
-									"value": "2018-05-22",
-									"name": "Plaid-Version",
-									"description": "Custom header"
-								},
-								{
-									"key": "Server",
-									"value": "nginx",
-									"name": "Server",
-									"description": "A name for the server"
-								},
-								{
-									"key": "Strict-Transport-Security",
-									"value": "max-age=31536000; includeSubDomains; preload",
-									"name": "Strict-Transport-Security",
-									"description": "A HSTS Policy informing the HTTP client how long to cache the HTTPS only policy and whether this applies to subdomains."
-								},
-								{
-									"key": "Vary",
-									"value": "Accept-Encoding",
-									"name": "Vary",
-									"description": "Tells downstream proxies how to match future request headers to decide whether the cached response can be used rather than requesting a fresh one from the origin server."
-								},
-								{
-									"key": "X-Content-Type-Options",
-									"value": "nosniff",
-									"name": "X-Content-Type-Options",
-									"description": "The only defined value, \"nosniff\", prevents Internet Explorer from MIME-sniffing a response away from the declared content-type"
-								},
-								{
-									"key": "X-Frame-Options",
-									"value": "DENY",
-									"name": "X-Frame-Options",
-									"description": "Clickjacking protection: \"deny\" - no rendering within a frame, \"sameorigin\" - no rendering if origin mismatch"
-								},
-								{
-									"key": "X-XSS-Protection",
-									"value": "1; mode=block",
-									"name": "X-XSS-Protection",
-									"description": "Cross-site scripting (XSS) filter"
+									"name": "Get Paystubs Data",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"access-sandbox-2251b1ed-a1bb-4050-ac3a-25ddbd161951\"\n}"
+										},
+										"url": {
+											"raw": "https://{{env_url}}/income/verification/paystubs/get",
+											"protocol": "https",
+											"host": [
+												"{{env_url}}"
+											],
+											"path": [
+												"income",
+												"verification",
+												"paystubs",
+												"get"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Oct 2021 23:14:55 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "687"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "content-encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "plaid-version",
+											"value": "2017-03-08"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"document_metadata\": [\n        {\n            \"doc_id\": \"QVYKwd5YNj\",\n            \"doc_type\": \"PAYSTUB\",\n            \"name\": \"d21ec71b-5aef-43ed-b619-9be81713586e.pdf\",\n            \"status\": \"DOCUMENT_STATUS_PROCESSING_COMPLETE\"\n        },\n        {\n            \"doc_id\": \"jnYrXD80w3\",\n            \"doc_type\": \"US_TAX_W2\",\n            \"name\": \"2edfad8b-8f82-49e6-ad4b-b55a05bb4c00.pdf\",\n            \"status\": \"DOCUMENT_STATUS_PROCESSING_COMPLETE\"\n        }\n    ],\n    \"paystubs\": [\n        {\n            \"deductions\": {},\n            \"doc_id\": \"QVYKwd5YNj\",\n            \"earnings\": {},\n            \"employee\": {\n                \"address\": {\n                    \"city\": \"Oakland\",\n                    \"country\": \"US\",\n                    \"postal_code\": \"94103\",\n                    \"region\": \"CA\",\n                    \"street\": \"1234 Grand \"\n                },\n                \"name\": \"Josie Georgia Harrison\",\n                \"taxpayer_id\": {}\n            },\n            \"employer\": {\n                \"address\": {},\n                \"name\": \"Platypus Industry LLC\"\n            },\n            \"employment_details\": {\n                \"annual_salary\": {}\n            },\n            \"income_breakdown\": [\n                {\n                    \"hours\": 40,\n                    \"rate\": 25.15,\n                    \"total\": 1006,\n                    \"type\": \"regular\"\n                },\n                {\n                    \"hours\": null,\n                    \"rate\": null,\n                    \"total\": 1000,\n                    \"type\": \"bonus\"\n                },\n                {\n                    \"hours\": 10,\n                    \"rate\": 32,\n                    \"total\": 320,\n                    \"type\": \"overtime\"\n                }\n            ],\n            \"net_pay\": {\n                \"total\": {\n                    \"current_pay\": {},\n                    \"ytd_pay\": {}\n                }\n            },\n            \"pay_period_details\": {\n                \"check_amount\": 3425.1,\n                \"end_date\": \"2021-09-27\",\n                \"gross_earnings\": 2306,\n                \"pay_day\": \"2021-09-27\",\n                \"start_date\": \"2021-09-28\"\n            },\n            \"paystub_details\": {},\n            \"ytd_earnings\": {\n                \"gross_earnings\": 2306\n            }\n        }\n    ],\n    \"request_id\": \"wXY6haajEbBxfNn\"\n}"
 								}
-							],
-							"cookie": [],
-							"body": "{\n  \"income\": {\n    \"income_streams\": [\n      {\n        \"confidence\": 0.99,\n        \"days\": 720,\n        \"monthly_income\": 500,\n        \"name\": \"UNITED AIRLINES\"\n      }\n    ],\n    \"last_year_income\": 6000,\n    \"last_year_income_before_tax\": 7285,\n    \"max_number_of_overlapping_income_streams\": 1,\n    \"number_of_income_streams\": 1,\n    \"projected_yearly_income\": 6085,\n    \"projected_yearly_income_before_tax\": 7389\n  },\n  \"request_id\": \"lnaxi\"\n}"
+							]
+						}
+					],
+					"description": "This folder contains all the endpoints for managing your `Item`s.",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Retrieve Employment Info",
+					"item": [
+						{
+							"name": "Get Employment Data",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/employment/verification/get",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"employment",
+										"verification",
+										"get"
+									]
+								},
+								"description": "This endpoint allows you to retrieve all available `Account`s associated with an `Item`."
+							},
+							"response": [
+								{
+									"name": "Get Employment Data",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"access-sandbox-2251b1ed-a1bb-4050-ac3a-25ddbd161951\"\n}"
+										},
+										"url": {
+											"raw": "https://{{env_url}}/employment/verification/get",
+											"protocol": "https",
+											"host": [
+												"{{env_url}}"
+											],
+											"path": [
+												"employment",
+												"verification",
+												"get"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 13 Oct 2021 23:18:56 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "248"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "content-encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "plaid-version",
+											"value": "2017-03-08"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"employments\": [\n        {\n            \"employer\": {\n                \"name\": \"Company, Inc\"\n            },\n            \"platform_ids\": {\n                \"employee_id\": \"123456\",\n                \"payroll_id\": \"123456\",\n                \"position_id\": \"8888\"\n            },\n            \"start_date\": \"2020-01-01\",\n            \"status\": \"EMPLOYMENT_STATUS_ACTIVE\",\n            \"title\": \"Software Engineer\"\n        }\n    ],\n    \"request_id\": \"m1gBBLDOhCzXw6l\"\n}"
+								}
+							]
+						}
+					],
+					"description": "This folder contains all the endpoints for managing your `Item`s.",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
 						}
 					]
 				}
