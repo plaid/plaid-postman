@@ -2389,7 +2389,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"access-sandbox-2251b1ed-a1bb-4050-ac3a-25ddbd161951\"\n}"
+											"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
 										},
 										"url": {
 											"raw": "https://{{env_url}}/income/verification/paystubs/get",
