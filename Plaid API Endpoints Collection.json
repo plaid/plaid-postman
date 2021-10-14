@@ -2341,7 +2341,8 @@
 								}
 							]
 						}
-					]
+					],
+					"description": "Simulate creating an Income `Item` instantly in sandbox environment"
 				},
 				{
 					"name": "Retrieve Paystubs Info",
@@ -2463,7 +2464,7 @@
 							]
 						}
 					],
-					"description": "This folder contains all the endpoints for managing your `Item`s.",
+					"description": "Retrieve income information from the income verification",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -2603,7 +2604,7 @@
 							]
 						}
 					],
-					"description": "This folder contains all the endpoints for managing your `Item`s.",
+					"description": "Retrieve employment information from the income verification",
 					"event": [
 						{
 							"listen": "prerequest",
@@ -2625,7 +2626,8 @@
 						}
 					]
 				}
-			]
+			],
+			"description": "Verify anyone’s income and employment in seconds instead of days"
 		},
 		{
 			"name": "Assets",
