@@ -60,8 +60,11 @@ The following collection is a fully-featured set of pre-filled requests that all
 * **Identity**
   * **Retrieve Identity** -  Retrieves various account holder information on file with the financial institution, including names, emails, phone numbers, and addresses.
 
-* **Income**
-  * **Retrieve Income** - Retrieves information pertaining to an Item’s income. In addition to the annual income, detailed information will be provided for each contributing income stream (or job).
+* **Income / Employment**
+  * **Income Item Creation** - Simulate creating an Income Item in Sandbox without going through the actual user Link experience.
+  * **Retrieve Paystubs Info** - Retrieve paystubs related data from user's income verification
+  * **Retrieve Taxform Data** - Retrieve taxforms (W2, etc.) related data from user's income verification
+  * **Retrieve Employment Info** - Retrieve employment related data (job title, starting date) from user's payroll information
 
 * **Liabilities**
   * **Retrieve Liabilities** - Retrieves information pertaining to an Item's liabilities.

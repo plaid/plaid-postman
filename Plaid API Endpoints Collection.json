@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0a99b523-2e64-40cc-ad07-ca27b203560c",
+		"_postman_id": "99adf38b-18e6-40ce-b032-ce23071fc46c",
 		"name": "Plaid API Endpoints",
 		"description": "A collection of Plaid API endpoints for the `sandbox` environment. Each endpoint request comes with an example request & response. It also contains 'use cases' for each product.  \n<br />\nBefore you begin, please set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -2465,6 +2465,148 @@
 						}
 					],
 					"description": "Retrieve income information from the income verification",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "Retrieve Taxform Data",
+					"item": [
+						{
+							"name": "Get Taxform Data",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/income/verification/paystubs/get",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"income",
+										"verification",
+										"paystubs",
+										"get"
+									]
+								},
+								"description": "Retrieve taxform data for income verification"
+							},
+							"response": [
+								{
+									"name": "Get Taxform Data",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"ENTER_ACCESS_TOKEN_HERE\"\n}"
+										},
+										"url": {
+											"raw": "https://{{env_url}}/income/verification/taxforms/get",
+											"protocol": "https",
+											"host": [
+												"{{env_url}}"
+											],
+											"path": [
+												"income",
+												"verification",
+												"taxforms",
+												"get"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 20 Oct 2021 22:53:20 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "786"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "content-encoding",
+											"value": "gzip"
+										},
+										{
+											"key": "plaid-version",
+											"value": "2017-03-08"
+										},
+										{
+											"key": "vary",
+											"value": "Accept-Encoding"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "X-Content-Type-Options",
+											"value": "nosniff"
+										},
+										{
+											"key": "X-Frame-Options",
+											"value": "DENY"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"document_metadata\": [\n        {\n            \"doc_id\": \"vwYRJ3gYpW\",\n            \"doc_type\": \"DOCUMENT_TYPE_PAYSTUB\",\n            \"name\": \"ea1e5d36-d462-4e46-8133-52ecfc33e015.pdf\",\n            \"status\": \"DOCUMENT_STATUS_PROCESSING_COMPLETE\"\n        },\n        {\n            \"doc_id\": \"wNO6JlKObV\",\n            \"doc_type\": \"DOCUMENT_TYPE_US_TAX_W2\",\n            \"name\": \"be02e85e-cb47-4a40-a98c-5f8e9781ac94.pdf\",\n            \"status\": \"DOCUMENT_STATUS_PROCESSING_COMPLETE\"\n        }\n    ],\n    \"error\": {\n        \"display_message\": null,\n        \"error_code\": \"\",\n        \"error_message\": \"\",\n        \"error_type\": \"\"\n    },\n    \"request_id\": \"abtKUccLoOIvQ18\",\n    \"taxforms\": [\n        {\n            \"document_type\": \"W2\",\n            \"w2\": {\n                \"allocated_tips\": \"1000\",\n                \"box_12\": [\n                    {\n                        \"amount\": \"200\"\n                    }\n                ],\n                \"box_9\": \"box9\",\n                \"dependent_care_benefits\": \"1000\",\n                \"employee\": {\n                    \"address\": {\n                        \"city\": \"Oakland\",\n                        \"postal_code\": \"94103\",\n                        \"region\": \"CA\",\n                        \"street\": \"1234 Grand \"\n                    },\n                    \"name\": \"Josie Georgia Harrison\",\n                    \"taxpayer_id\": {}\n                },\n                \"employer\": {\n                    \"address\": {},\n                    \"name\": \"Platypus Industry LLC\"\n                },\n                \"employer_id_number\": \"12-1234567\",\n                \"federal_income_tax_withheld\": \"1000\",\n                \"medicare_tax_withheld\": \"1000\",\n                \"medicare_wages_and_tips\": \"1000\",\n                \"nonqualified_plans\": \"1000\",\n                \"other\": \"other\",\n                \"retirement_plan\": \"CHECKED\",\n                \"social_security_tax_withheld\": \"1000\",\n                \"social_security_tips\": \"1000\",\n                \"social_security_wages\": \"1000\",\n                \"state_and_local_wages\": [\n                    {\n                        \"employer_state_id_number\": \"11111111111AAA\",\n                        \"local_income_tax\": \"200\",\n                        \"local_wages_tips\": \"200\",\n                        \"locality_name\": \"local\",\n                        \"state\": \"UT\",\n                        \"state_income_tax\": \"200\",\n                        \"state_wages_tips\": \"200\"\n                    }\n                ],\n                \"statutory_employee\": \"CHECKED\",\n                \"tax_year\": \"2020\",\n                \"third_party_sick_pay\": \"CHECKED\",\n                \"wages_tips_other_comp\": \"1000\"\n            }\n        }\n    ]\n}"
+								}
+							]
+						}
+					],
+					"description": "Retrieve taxform data from the income verification",
 					"event": [
 						{
 							"listen": "prerequest",
