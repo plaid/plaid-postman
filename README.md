@@ -1,9 +1,7 @@
 # Plaid Postman Collections
-Welcome to the Postman Collections Quickstart Guide! If you're looking for a quick and easy way to get started with the Plaid API with no additional code, this is the place for you. [Postman](https://www.getpostman.com/product/api-client) is a great tool that allows users explore API functionality by manually sending API requests and receiving responses. We have created a collection of pre-populated HTTP requests that can be sent to the Plaid API. This quickstart is a step-by-step guide that will get you up and running with Postman and the Plaid’s Postman [collection](https://learning.postman.com/docs/postman/collections/intro-to-collections/) to enable you for ad-hoc exploration and testing.
+Welcome to the Postman Collections Quickstart Guide! If you're looking for a quick and easy way to get started with the Plaid API with no additional code, this is the place for you.
 
-If you are looking for a more in-depth guide and reference for the Plaid API, please refer to the [Plaid API documentation](https://plaid.com/docs/api).
-
-![plaid-postman-overview](/images/plaid-postman-overview.png)
+For the Plaid Quickstart guide that uses code, see the [Plaid Quickstart](https://github.com/plaid/quickstart).
 
 ## Getting started
 Follow these steps to quickly get started with the [Plaid API](https://plaid.com/docs):
