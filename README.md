@@ -10,18 +10,7 @@ Follow these steps to quickly get started with the [Plaid API](https://plaid.com
 2. Download and install the [Postman app](https://www.getpostman.com/downloads/)
 3. Install the Plaid Postman Collection. Click the "Run in Postman" button below to install the Plaid collection!
   
-<div class="postman-run-button"
-data-postman-action="collection/import"
-data-postman-var-1="300b6d41be01cbd6a882"></div>
-<script type="text/javascript">
-  (function (p,o,s,t,m,a,n) {
-    !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
-    !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
-      (n = o.createElement("script")),
-      (n.id = s+t), (n.async = 1), (n.src = m), n
-    ));
-  }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
-</script>
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/300b6d41be01cbd6a882?action=collection%2Fimport)
 
 4. Once both the collection and the environment variables are imported into Postman, see the [Configuration](https://github.com/plaid/plaid-postman#configuration) section on how to correctly configure API keys with the collection.
 
