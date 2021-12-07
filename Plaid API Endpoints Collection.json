@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "99adf38b-18e6-40ce-b032-ce23071fc46c",
+		"_postman_id": "52c18bea-b9c5-4c5e-a38b-4c92113363c7",
 		"name": "Plaid API Endpoints",
 		"description": "A collection of Plaid API endpoints for the `sandbox` environment. Each endpoint request comes with an example request & response. It also contains 'use cases' for each product.  \n<br />\nBefore you begin, please set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -2765,6 +2765,41 @@
 									""
 								]
 							}
+						}
+					]
+				},
+				{
+					"name": "Income Precheck",
+					"item": [
+						{
+							"name": "Precheck Income",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n    \"user\": {\n        \"first_name\": \"Jane\",\n        \"last_name\": \"Doe\",\n        \"email_address\": \"janedoe@example.com\",\n        \"home_address\": {\n            \"street\": \"234 First St.\",\n            \"city\": \"Anytown\",\n            \"region\": \"CA\",\n            \"postal_code\": \"12345\",\n            \"country\": \"US\"\n        }\n    },\n    \"employer\": {\n        \"name\": \"Plaid Inc.\",\n        \"tax_id\": \"123-45-6709\",\n        \"address\": {\n            \"street\": \"155 Work St.\",\n            \"city\": \"Anytown\",\n            \"region\": \"CA\",\n            \"postal_code\": \"12345\",\n            \"country\": \"US\"\n        },\n        \"url\": \"http://www.employer.com\"\n    },\n    \"us_military_info\": {\n        \"is_active_duty\": false,\n        \"branch\": \"AIR_FORCE\"\n    },\n    \"transactions_access_tokens\": []\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/income/verification/precheck",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"income",
+										"verification",
+										"precheck"
+									]
+								}
+							},
+							"response": []
 						}
 					]
 				}
@@ -5641,39 +5676,6 @@
 							},
 							"response": [
 								{
-									"name": "Error response",
-									"originalRequest": {
-										"method": "POST",
-										"header": [],
-										"body": {
-											"mode": "raw",
-											"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"after_id\": \"<number>\",\n    \"count\": 25\n}"
-										},
-										"url": {
-											"raw": "{{baseUrl}}/bank_transfer/event/sync",
-											"host": [
-												"{{baseUrl}}"
-											],
-											"path": [
-												"bank_transfer",
-												"event",
-												"sync"
-											]
-										}
-									},
-									"status": "Internal Server Error",
-									"code": 500,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Content-Type",
-											"value": "application/json"
-										}
-									],
-									"cookie": [],
-									"body": "{\n \"error_type\": \"RATE_LIMIT_EXCEEDED\",\n \"error_code\": \"nulla nisi\",\n \"error_message\": \"officia consequat\",\n \"display_message\": \"cupidatat sint minim in sit\",\n \"request_id\": \"aliqua reprehenderit\",\n \"status\": -64147566.75044932,\n \"documentation_url\": \"pariatur voluptate ut labore\",\n \"suggested_action\": \"non occaecat consequat\"\n}"
-								},
-								{
 									"name": "OK",
 									"originalRequest": {
 										"method": "POST",
@@ -5705,6 +5707,39 @@
 									],
 									"cookie": [],
 									"body": "{\n \"bank_transfer_events\": [\n  {\n   \"account_id\": \"6qL6lWoQkAfNE3mB8Kk5tAnvpX81qefrvvl7B\",\n   \"bank_transfer_amount\": \"12.34\",\n   \"bank_transfer_id\": \"460cbe92-2dcc-8eae-5ad6-b37d0ec90fd9\",\n   \"bank_transfer_iso_currency_code\": \"USD\",\n   \"bank_transfer_type\": \"credit\",\n   \"direction\": \"outbound\",\n   \"event_id\": 1,\n   \"event_type\": \"pending\",\n   \"failure_reason\": null,\n   \"origination_account_id\": null,\n   \"receiver_details\": null,\n   \"timestamp\": \"2020-08-06T17:27:15Z\"\n  }\n ],\n \"request_id\": \"mdqfuVxeoza6mhu\"\n}"
+								},
+								{
+									"name": "Error response",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"after_id\": \"<number>\",\n    \"count\": 25\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/bank_transfer/event/sync",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"bank_transfer",
+												"event",
+												"sync"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"error_type\": \"RATE_LIMIT_EXCEEDED\",\n \"error_code\": \"nulla nisi\",\n \"error_message\": \"officia consequat\",\n \"display_message\": \"cupidatat sint minim in sit\",\n \"request_id\": \"aliqua reprehenderit\",\n \"status\": -64147566.75044932,\n \"documentation_url\": \"pariatur voluptate ut labore\",\n \"suggested_action\": \"non occaecat consequat\"\n}"
 								}
 							]
 						}
@@ -5925,38 +5960,6 @@
 					},
 					"response": [
 						{
-							"name": "Error response",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"bank_transfer_id\": \"<string>\"\n}"
-								},
-								"url": {
-									"raw": "{{baseUrl}}/bank_transfer/cancel",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"bank_transfer",
-										"cancel"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n \"error_type\": \"RATE_LIMIT_EXCEEDED\",\n \"error_code\": \"nulla nisi\",\n \"error_message\": \"officia consequat\",\n \"display_message\": \"cupidatat sint minim in sit\",\n \"request_id\": \"aliqua reprehenderit\",\n \"status\": -64147566.75044932,\n \"documentation_url\": \"pariatur voluptate ut labore\",\n \"suggested_action\": \"non occaecat consequat\"\n}"
-						},
-						{
 							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
@@ -5987,6 +5990,38 @@
 							],
 							"cookie": [],
 							"body": "{\n \"request_id\": \"saKrIBuEB9qJZno\"\n}"
+						},
+						{
+							"name": "Error response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"bank_transfer_id\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/bank_transfer/cancel",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"bank_transfer",
+										"cancel"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"error_type\": \"RATE_LIMIT_EXCEEDED\",\n \"error_code\": \"nulla nisi\",\n \"error_message\": \"officia consequat\",\n \"display_message\": \"cupidatat sint minim in sit\",\n \"request_id\": \"aliqua reprehenderit\",\n \"status\": -64147566.75044932,\n \"documentation_url\": \"pariatur voluptate ut labore\",\n \"suggested_action\": \"non occaecat consequat\"\n}"
 						}
 					]
 				},
@@ -6650,38 +6685,6 @@
 					},
 					"response": [
 						{
-							"name": "Error response",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"transfer_id\": \"<string>\"\n}"
-								},
-								"url": {
-									"raw": "{{baseUrl}}/transfer/cancel",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"transfer",
-										"cancel"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n \"error_type\": \"RATE_LIMIT_EXCEEDED\",\n \"error_code\": \"nulla nisi\",\n \"error_message\": \"officia consequat\",\n \"display_message\": \"cupidatat sint minim in sit\",\n \"request_id\": \"aliqua reprehenderit\",\n \"status\": -64147566.75044932,\n \"documentation_url\": \"pariatur voluptate ut labore\",\n \"suggested_action\": \"non occaecat consequat\"\n}"
-						},
-						{
 							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
@@ -6712,6 +6715,38 @@
 							],
 							"cookie": [],
 							"body": "{\n \"request_id\": \"saKrIBuEB9qJZno\"\n}"
+						},
+						{
+							"name": "Error response",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"transfer_id\": \"<string>\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/transfer/cancel",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"transfer",
+										"cancel"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"error_type\": \"RATE_LIMIT_EXCEEDED\",\n \"error_code\": \"nulla nisi\",\n \"error_message\": \"officia consequat\",\n \"display_message\": \"cupidatat sint minim in sit\",\n \"request_id\": \"aliqua reprehenderit\",\n \"status\": -64147566.75044932,\n \"documentation_url\": \"pariatur voluptate ut labore\",\n \"suggested_action\": \"non occaecat consequat\"\n}"
 						}
 					]
 				},
