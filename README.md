@@ -9,20 +9,7 @@ Follow these steps to quickly get started with the [Plaid API](https://plaid.com
 1. [Sign up](https://dashboard.plaid.com/signup) with Plaid to get a set of API keys that are required for interacting with the API.
 2. Click the "Run in Postman" button below.
   
-<div class="postman-run-button"
-data-postman-action="collection/fork"
-data-postman-var-1="12160321-d363b035-30ab-47b4-80c6-61ae5b8761b1"
-data-postman-collection-url="entityId=12160321-d363b035-30ab-47b4-80c6-61ae5b8761b1&entityType=collection&workspaceId=fbafb5a2-25a1-482a-a65b-1f637a19ed49"
-data-postman-param="env%5BSandbox%5D=W3sia2V5IjoiY2xpZW50X2lkIiwidmFsdWUiOiJZT1VSX0NMSUVOVF9JRCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic2VjcmV0X2tleSIsInZhbHVlIjoiWU9VUl9TRUNSRVQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImVudl91cmwiLCJ2YWx1ZSI6InNhbmRib3gucGxhaWQuY29tIiwiZW5hYmxlZCI6dHJ1ZX1d"></div>
-<script type="text/javascript">
-  (function (p,o,s,t,m,a,n) {
-    !p[s] && (p[s] = function () { (p[t] || (p[t] = [])).push(arguments); });
-    !o.getElementById(s+t) && o.getElementsByTagName("head")[0].appendChild((
-      (n = o.createElement("script")),
-      (n.id = s+t), (n.async = 1), (n.src = m), n
-    ));
-  }(window, document, "_pm", "PostmanRunObject", "https://run.pstmn.io/button.js"));
-</script>
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://god.gw.postman.com/run-collection/12160321-d363b035-30ab-47b4-80c6-61ae5b8761b1?action=collection%2Ffork&collection-url=entityId%3D12160321-d363b035-30ab-47b4-80c6-61ae5b8761b1%26entityType%3Dcollection%26workspaceId%3Dfbafb5a2-25a1-482a-a65b-1f637a19ed49#?env%5BSandbox%5D=W3sia2V5IjoiY2xpZW50X2lkIiwidmFsdWUiOiJZT1VSX0NMSUVOVF9JRCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic2VjcmV0X2tleSIsInZhbHVlIjoiWU9VUl9TRUNSRVQiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImVudl91cmwiLCJ2YWx1ZSI6InNhbmRib3gucGxhaWQuY29tIiwiZW5hYmxlZCI6dHJ1ZX1d)
 
 3. Once both the collection and the environment variables are imported into Postman, see the [Configuration](https://github.com/plaid/plaid-postman#configuration) section on how to correctly configure API keys with the collection.
 
