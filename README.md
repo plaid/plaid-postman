@@ -32,12 +32,11 @@ Once you have completed the steps in the Configuration section above, you are re
 1. Make sure the "Collection" pane is selected, then expand the "Plaid API Endpoints" folder on the left and navigate to Plaid API Endpoints -> Items -> Create Item [Sandbox Only].
 2. In the pane on the right, which has the options "Params", "Authorization", "Headers" etc. click on the "Body" tab. 
 3. If you want, update the product under `initial_products` to match the product you would like to try, such as "transactions" or "identity". Otherwise, click the blue "Send" button on the right.
-4. The response body should appear in Postman. Copy the `public_token` value (for example, "public-sandbox-00c6acae-9aab-4c3b-9f2d-d1ea710f3103"). 
-5. Select the "Exchange token" endpoint, click on the "Body" tab, and paste your public token into the request, then hit "Send".
-6. Copy the `access_token` value (for example, "access-sandbox-0128b38c-3219-4f8b-827a-c2e42b19c125").
-7. Select any product endpoint of your choice. If you are not sure which one to use, a good simple example is "Balance". Expand the product endpoint folder and click on the endpoint you would like to use ("Retrieve Balance", if we are using balance). 
-8. Click on the "Body" tab. Paste your access token into the `access_token` field. Complete any other required fields (for Balance, there are none) and click Send.
-9. You will receive a response containing your requested data!
+4. The response body should appear in Postman. The `public_token` returned will automatically be used in our next request.
+5. Select the "Exchange token" endpoint, click on the "Body" tab, then hit "Send". An `access_token` will be returned and will automatically be used in our next request.
+6. Select any product endpoint of your choice. If you are not sure which one to use, a good simple example is "Balance". Expand the product endpoint folder and click on the endpoint you would like to use ("Retrieve Balance", if we are using balance). 
+7. Click on the "Body" tab. Complete any other required fields (for Balance, there are none) and click Send.
+8. You will receive a response containing your requested data!
 
 ## Collection endpoints
 The following collection is a fully-featured set of pre-filled requests that allow you to test the [Plaid API](https://plaid.com/docs), and visualize the responses in a friendly format.
