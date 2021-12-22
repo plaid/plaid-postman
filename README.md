@@ -40,7 +40,7 @@ Once you have completed the steps in the Configuration section above, you are re
 
 ## Making calls in with real data in Production or Development
 
-In order to use the Postman collection to make calls with real data in either Production (which uses real data and is free, but has Item limits) or Development (which uses real data and is not free, but allows an unlimited numder of Items), you will need to use Plaid Link. One quick way to do this is as follows:
+In order to use the Postman collection to make calls with real data in either Production or Development, you will need to use Plaid Link. One quick way to do this is as follows:
 
 1. Re-visit the "Configuration" steps at the top of the page, but instead change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` (for Production) or `development.plaid.com` (for Development).
 2. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
