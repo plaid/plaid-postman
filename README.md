@@ -31,12 +31,13 @@ Once you have completed the steps in the Configuration section above, you are re
 
 1. Make sure the "Collection" pane is selected, then expand the "Plaid API Endpoints" folder on the left and navigate to Plaid API Endpoints -> Items -> Create Item [Sandbox Only].
 2. In the pane on the right, which has the options "Params", "Authorization", "Headers" etc. click on the "Body" tab. 
-3. If you want, update the product under `initial_products` to match the product you would like to try, such as "transactions" or "identity". Otherwise, click the blue "Send" button on the right.
-4. The response body should appear in Postman. The `public_token` returned will automatically be used in our next request.
-5. Select the "Exchange token" endpoint, click on the "Body" tab, then hit "Send". An `access_token` will be returned and will automatically be used in our next request.
-6. Select any product endpoint of your choice. If you are not sure which one to use, a good simple example is "Balance". Expand the product endpoint folder and click on the endpoint you would like to use ("Retrieve Balance", if we are using balance). 
-7. Click on the "Body" tab. Complete any other required fields (for Balance, there are none) and click Send.
-8. You will receive a response containing your requested data!
+3. (Optional) If you want, update the product under `initial_products` to match the product you would like to try, such as "transactions" or "identity". 
+4. Click the blue "Send" button on the right.
+5. The response body should appear in Postman. The `public_token` returned will automatically be used in our next request.
+6. Select the "Exchange token" endpoint, click on the "Body" tab, then hit "Send". An `access_token` will be returned and will automatically be used in our next request.
+7. Select any product endpoint of your choice. If you are not sure which one to use, a good simple example is "Balance". Expand the product endpoint folder and click on the endpoint you would like to use ("Retrieve Balance", if we are using balance). 
+8. Click on the "Body" tab. Complete any other required fields (for Balance, there are none) and click Send.
+9. You will receive a response containing your requested data!
 
 ## Making calls in with real data in Production or Development
 
@@ -44,16 +45,17 @@ In order to use the Postman collection to make calls with real data in either Pr
 
 1. Re-visit the "Configuration" steps at the top of the page, but instead change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` (for Production) or `development.plaid.com` (for Development).
 2. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
-3. If applicable, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity", then click the blue "Send" button.
-4. Copy the value of the `link_token` value from the response.
-5. Download the [link.html](/link.html) file included in this repo and open it in a text editor.
-6. Replace the text 'your-link-token-goes-here' in link.html with the value you copied in step 4, and save the file.
-7. Open link.html in a web browser.
-8. Open the web browser Developer Tools (for example, in Chrome, go to View->Developer->Developer Tools), then open the Console tab within Developer tools.
-9. Click the button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution.
-10. Once the prompts have completed and you have successfully logged in via Link, the Console tab from step 8 should contain text saying "the public token is" and then the value of the public token. Copy the public token value.
-11. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select `"{{public_token}}"`. Replace this value with your copied public token from the previous step, then hit Send.
-12. The response will contain an `access_token` suitable for making calls in Production (or Development)! You can then follow the same steps as you did in the Quickstart (starting with step 6) to make API calls with real data.
+3. If you want, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity". 
+4. Click the blue "Send" button.
+5. Copy the value of the `link_token` value from the response.
+6. Download the [link.html](/link.html) file included in this repo and open it in a text editor.
+7. Replace the text 'your-link-token-goes-here' in link.html with the value you copied in step 5, and save the file.
+8. Open link.html in a web browser.
+9. Open the web browser Developer Tools (for example, in Chrome, go to View->Developer->Developer Tools), then open the Console tab within Developer tools.
+10. Click the button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution.
+11. Once the prompts have completed and you have successfully logged in via Link, the Console tab from step 8 should contain text saying "the public token is" and then the value of the public token. Copy the public token value.
+12. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select `"{{public_token}}"`. Replace this value with your copied public token from the previous step, then hit Send.
+13. The response will contain an `access_token` suitable for making calls in Production (or Development)! You can then follow the same steps as you did in the Quickstart (starting with step 7) to make API calls with real data.
 
 ## Collection endpoints
 The following collection is a fully-featured set of pre-filled requests that allow you to test the [Plaid API](https://plaid.com/docs), and visualize the responses in a friendly format.
