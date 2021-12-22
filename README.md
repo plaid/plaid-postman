@@ -41,7 +41,7 @@ Once you have completed the steps in the Configuration section above, you are re
 
 ## Making Postman calls with real data in Production or Development
 
-For reasons of security and transparency, getting an access token for use with real data cannot be done entirely via Postman API calls -- you are required to use the Plaid Link UI component. You can easily do this via the following steps:
+For reasons of security and transparency, getting an access token for use with real data cannot be done entirely via Postman API calls -- you are required to use the Plaid Link UI component. You can do this as follows:
 
 1. Re-visit the "Configuration" steps at the top of the page, but instead change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` (for Production) or `development.plaid.com` (for Development).
 2. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
