@@ -1,0 +1,46 @@
+<html>
+<!--=================================================
+    STYLES AND PAGE INSTRUCTIONS. IGNORE THIS STUFF
+    =================================================-->
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+  <style>
+    .outer { justify-self: center; margin: 20% auto 120px auto; width: 60%; } a { text-decoration: underline; } li { padding-left: 1rem; }
+  </style>
+</head>
+<body style="background-color:#B1EEFC;">
+    <div class="outer">
+      This .html file is designed to be used with Plaid's Postman collection. Please note the "Link Account" button below will not work until you've followed the "Setup" steps in the guide above. </p>
+      <button id="link-button" style="background-color: white;border: #0A85EA;color: black;padding: 12px 32px;text-align: center;text-decoration: none;display: inline-block;font-size: 16px;margin: 4px 2px;box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">Link Account</button>
+
+    </div>
+​
+<!--=================================================
+    PLAID SCRIPTS. HERE'S THE STUFF YOU'LL EDIT!
+    =================================================-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
+  <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+  <script type="text/javascript">
+  (function($) {
+    var handler = Plaid.create({
+      token: 'your-link-token-goes-here',
+      onSuccess: function(public_token, metadata) {
+        console.log('public token is', public_token);
+        console.log(metadata)
+      },
+      onExit: function(err, metadata) {
+        console.log('onexit invoked');
+        console.log('onexit metadata', metadata);
+      },
+      onEvent: function(eventName, metadata) {
+        console.log('event name is', eventName);
+        console.log('onevent metadata', metadata);
+      }
+    });
+    $('#link-button').on('click', function(e) { handler.open() });
+  })(jQuery);
+  </script>
+​
+</body>
+</html>
