@@ -41,7 +41,7 @@ Once you have completed the steps in the Configuration section above, you are re
 
 ## Making calls in with real data in Production or Development
 
-In order to use the Postman collection to make calls with real data in either Production or Development, you will need to use Plaid Link. One quick way to do this is as follows:
+For reasons of security and transparency, getting an access token for use with real data cannot be done entirely via backend API calls -- you are required to use the Plaid Link UI component. So, in order to use the Postman collection to make calls with real data in either Production or Development, you will need to use Plaid Link. You can easily do this via the following steps:
 
 1. Re-visit the "Configuration" steps at the top of the page, but instead change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` (for Production) or `development.plaid.com` (for Development).
 2. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
@@ -52,9 +52,9 @@ In order to use the Postman collection to make calls with real data in either Pr
 7. Replace the text 'your-link-token-goes-here' in link.html with the value you copied in step 5, and save the file.
 8. Open link.html in a web browser.
 9. Open the web browser Developer Tools (for example, in Chrome, go to View->Developer->Developer Tools), then open the Console tab within Developer tools.
-10. Click the button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution.
+10. Click the "Link Account" button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution.
 11. Once the prompts have completed and you have successfully logged in via Link, the Console tab from step 8 should contain text saying "the public token is" and then the value of the public token. Copy the public token value.
-12. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select `"{{public_token}}"`. Replace this value with your copied public token from the previous step, then hit Send.
+12. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select the public token value -- by default, it is `"{{public_token}}"`. Replace this value with your copied public token from the previous step, then hit Send.
 13. The response will contain an `access_token` suitable for making calls in Production (or Development)! You can then follow the same steps as you did in the Quickstart (starting with step 7) to make API calls with real data.
 
 ## Collection endpoints
