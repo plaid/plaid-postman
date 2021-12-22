@@ -43,13 +43,13 @@ Once you have completed the steps in the Configuration section above, you are re
 
 For reasons of security and transparency, getting an access token for use with real data cannot be done entirely via Postman API calls -- you are required to use the Plaid Link UI component. You can do this as follows:
 
-1. Re-visit the "Configuration" steps at the top of the page, but instead change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` (for Production) or `development.plaid.com` (for Development).
-2. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
-3. If you want, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity". 
-4. Click the blue "Send" button.
-5. Copy the value of the `link_token` value from the response.
-6. Download the [link.html](/link.html) file included in this repo and open it in a text editor (alternatively, open a text editor, create a new file called link.html, and copy and paste the contents of [link.html](/link.html) into it). 
-7. Replace the text 'your-link-token-goes-here' in link.html with the value you copied in step 5, and save the file.
+1. Download the [link.html](/link.html) file included in this repo and open it in a text editor (alternatively, open a text editor, create a new file called link.html, and copy and paste the contents of [link.html](/link.html) into it). You will use this file later.
+2. Re-visit the "Configuration" steps at the top of this page, but instead change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` (for Production) or `development.plaid.com` (for Development).
+3. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
+4. If you want, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity". 
+5. Click the blue "Send" button.
+6. Copy the value of the `link_token` from the response.
+7. Return to your local copy of link.html. Replace the text 'your-link-token-goes-here' in link.html with the value you copied in the previous step, and save the file.
 8. Open link.html in a web browser.
 9. Open the web browser Developer Tools (for example, in Chrome, go to View->Developer->Developer Tools), then open the Console tab within Developer tools.
 10. Click the "Link Account" button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution.
