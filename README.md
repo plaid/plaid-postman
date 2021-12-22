@@ -48,7 +48,7 @@ For reasons of security and transparency, getting an access token for use with r
 3. If you want, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity". 
 4. Click the blue "Send" button.
 5. Copy the value of the `link_token` value from the response.
-6. Download the [link.html](/link.html) file included in this repo and open it in a text editor.
+6. Download the [link.html](/link.html) file included in this repo and open it in a text editor (alternatively, open a text editor, create a new file called link.html, and copy and paste the contents of [link.html](/link.html) into it). 
 7. Replace the text 'your-link-token-goes-here' in link.html with the value you copied in step 5, and save the file.
 8. Open link.html in a web browser.
 9. Open the web browser Developer Tools (for example, in Chrome, go to View->Developer->Developer Tools), then open the Console tab within Developer tools.
