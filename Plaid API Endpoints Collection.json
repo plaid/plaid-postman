@@ -151,9 +151,10 @@
 									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"link_token\": \"<string>\"\n}"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/link/token/get",
+									"raw": "https://{{env_url}}/link/token/get",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"{{env_url}}"
 									],
 									"path": [
 										"link",
@@ -227,7 +228,7 @@
 							},
 							"response": [
 								{
-									"name": "Create Item [Sandbox Only]",
+									"name": "OK",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -384,7 +385,7 @@
 							},
 							"response": [
 								{
-									"name": "Exchange Token Example",
+									"name": "OK",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -526,7 +527,7 @@
 							},
 							"response": [
 								{
-									"name": "Retrieve Item Example",
+									"name": "OK",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -675,7 +676,7 @@
 							},
 							"response": [
 								{
-									"name": "Retrieve an Item's Accounts Example",
+									"name": "OK",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -812,7 +813,7 @@
 							},
 							"response": [
 								{
-									"name": "Rotate Access Token Example",
+									"name": "OK",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -950,7 +951,7 @@
 							},
 							"response": [
 								{
-									"name": "Update an Item's Webhook Example",
+									"name": "OK",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -1088,7 +1089,7 @@
 							},
 							"response": [
 								{
-									"name": "Simulate ITEM_LOGIN_REQUIRED [Sandbox Only] Example",
+									"name": "OK",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -1225,7 +1226,7 @@
 							},
 							"response": [
 								{
-									"name": "Remove Item Example",
+									"name": "OK",
 									"originalRequest": {
 										"method": "POST",
 										"header": [
@@ -1439,7 +1440,7 @@
 					},
 					"response": [
 						{
-							"name": "Retrieve Auth ACH Example",
+							"name": "ACH Example",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -1545,7 +1546,7 @@
 							"body": "{\n  \"accounts\": [\n    {\n      \"account_id\": \"wp5rJy31NMfyEJNDvoqXhbwLlRaEGyCrwWWdy\",\n      \"balances\": {\n        \"available\": 100,\n        \"current\": 110,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"0000\",\n      \"name\": \"Plaid Checking\",\n      \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n      \"subtype\": \"checking\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"l418dp7olxiDAaok8E1pi5Q7n9NGkzfZQbbAp\",\n      \"balances\": {\n        \"available\": 200,\n        \"current\": 210,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"1111\",\n      \"name\": \"Plaid Saving\",\n      \"official_name\": \"Plaid Silver Standard 0.1% Interest Saving\",\n      \"subtype\": \"savings\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"5NVq637arPcAbDxWd7GZUd3g5pjXPWFZlNNLz\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 1000,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"2222\",\n      \"name\": \"Plaid CD\",\n      \"official_name\": \"Plaid Bronze Standard 0.2% Interest CD\",\n      \"subtype\": \"cd\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"kamgkLwoG3iMQPzlvEaZSGnMVR36rLiWnZZRW\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 410,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": 2000,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"3333\",\n      \"name\": \"Plaid Credit Card\",\n      \"official_name\": \"Plaid Diamond 12.5% APR Interest Credit Card\",\n      \"subtype\": \"credit card\",\n      \"type\": \"credit\"\n    },\n    {\n      \"account_id\": \"Jzbo9AkW8vcleKXgyPJ4cjva1KQw7qid3RRNb\",\n      \"balances\": {\n        \"available\": 43200,\n        \"current\": 43200,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"4444\",\n      \"name\": \"Plaid Money Market\",\n      \"official_name\": \"Plaid Platinum Standard 1.85% Interest Money Market\",\n      \"subtype\": \"money market\",\n      \"type\": \"depository\"\n    }\n  ],\n  \"item\": {\n    \"available_products\": [\n      \"assets\",\n      \"balance\",\n      \"credit_details\"\n    ],\n    \"billed_products\": [\n      \"auth\",\n      \"identity\",\n      \"income\",\n      \"transactions\"\n    ],\n    \"error\": null,\n    \"institution_id\": \"ins_3\",\n    \"item_id\": \"QNWnmvzAKwcx9RwPXqVMSoRBjkroVnhpge7bq\",\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  },\n  \"numbers\": {\n    \"ach\": [\n      {\n        \"account\": \"1111222233330000\",\n        \"account_id\": \"wp5rJy31NMfyEJNDvoqXhbwLlRaEGyCrwWWdy\",\n        \"routing\": \"011401533\",\n        \"wire_routing\": \"021000021\"\n      },\n      {\n        \"account\": \"1111222233331111\",\n        \"account_id\": \"l418dp7olxiDAaok8E1pi5Q7n9NGkzfZQbbAp\",\n        \"routing\": \"011401533\",\n        \"wire_routing\": \"021000021\"\n      }\n    ],\n    \"eft\": []\n  },\n  \"request_id\": \"snosJ\"\n}"
 						},
 						{
-							"name": "Retrieve Auth EFT Example",
+							"name": "EFT Example",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -1697,7 +1698,7 @@
 					},
 					"response": [
 						{
-							"name": "Retrieve Transactions Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -1842,9 +1843,10 @@
 									"raw": "{\n    \"client_id\": \"<string>\",\n    \"access_token\": \"<string>\",\n    \"secret\": \"<string>\"\n}"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/transactions/refresh",
+									"raw": "https://{{env_url}}/transactions/refresh",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"{{env_url}}"
 									],
 									"path": [
 										"transactions",
@@ -1863,38 +1865,6 @@
 							],
 							"cookie": [],
 							"body": "{\n \"request_id\": \"1vwmF5TBQwiqfwP\"\n}"
-						},
-						{
-							"name": "Error response",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n    \"client_id\": \"<string>\",\n    \"access_token\": \"<string>\",\n    \"secret\": \"<string>\"\n}"
-								},
-								"url": {
-									"raw": "{{baseUrl}}/transactions/refresh",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"transactions",
-										"refresh"
-									]
-								}
-							},
-							"status": "Internal Server Error",
-							"code": 500,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "Content-Type",
-									"value": "application/json"
-								}
-							],
-							"cookie": [],
-							"body": "{\n \"error_type\": \"RATE_LIMIT_EXCEEDED\",\n \"error_code\": \"nulla nisi\",\n \"error_message\": \"officia consequat\",\n \"display_message\": \"cupidatat sint minim in sit\",\n \"request_id\": \"aliqua reprehenderit\",\n \"status\": -64147566.75044932,\n \"documentation_url\": \"pariatur voluptate ut labore\",\n \"suggested_action\": \"non occaecat consequat\"\n}"
 						}
 					]
 				},
@@ -1927,7 +1897,7 @@
 					},
 					"response": [
 						{
-							"name": "Retrieve Categories Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -2063,7 +2033,7 @@
 					},
 					"response": [
 						{
-							"name": "Retrieve Balance Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -2205,7 +2175,7 @@
 					},
 					"response": [
 						{
-							"name": "Retrieve Identity Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -2347,7 +2317,7 @@
 					},
 					"response": [
 						{
-							"name": "Check compatibility with Income",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -2460,7 +2430,7 @@
 					},
 					"response": [
 						{
-							"name": "Get employment data example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -2575,7 +2545,7 @@
 					},
 					"response": [
 						{
-							"name": "Get taxform data example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -2691,7 +2661,7 @@
 					},
 					"response": [
 						{
-							"name": "Get paystubs data example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -2855,7 +2825,7 @@
 					},
 					"response": [
 						{
-							"name": "Create Asset Report Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3002,7 +2972,7 @@
 					},
 					"response": [
 						{
-							"name": "Retrieve an Asset Report (JSON) Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3108,7 +3078,7 @@
 							"body": "{\n  \"report\": {\n    \"asset_report_id\": \"67de6f27-dc59-4663-a5ec-f2e3c271d208\",\n    \"client_report_id\": \"example_report_id\",\n    \"date_generated\": \"2018-08-29T22:23:04Z\",\n    \"days_requested\": 30,\n    \"items\": [\n      {\n        \"accounts\": [\n          {\n            \"account_id\": \"3l6EVAdoxRhbzLQxyNnEHJj4RvWqyRiqv3QR1\",\n            \"balances\": {\n              \"available\": 43200,\n              \"current\": 43200,\n              \"iso_currency_code\": \"USD\",\n              \"unofficial_currency_code\": null\n            },\n            \"days_available\": 7,\n            \"historical_balances\": [\n              {\n                \"current\": 43200,\n                \"date\": \"2018-08-28\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 43200,\n                \"date\": \"2018-08-27\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 43200,\n                \"date\": \"2018-08-26\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 43200,\n                \"date\": \"2018-08-25\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 43200,\n                \"date\": \"2018-08-24\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 43200,\n                \"date\": \"2018-08-23\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 49050,\n                \"date\": \"2018-08-22\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              }\n            ],\n            \"mask\": \"4444\",\n            \"name\": \"Plaid Money Market\",\n            \"official_name\": \"Plaid Platinum Standard 1.85% Interest Money Market\",\n            \"owners\": [\n              {\n                \"addresses\": [\n                  {\n                    \"data\": {\n                      \"city\": \"Malakoff\",\n                      \"state\": \"NY\",\n                      \"street\": \"2992 Cameron Road\",\n                      \"zip\": \"14236\"\n                    },\n                    \"primary\": true\n                  },\n                  {\n                    \"data\": {\n                      \"city\": \"San Matias\",\n                      \"state\": \"CA\",\n                      \"street\": \"2493 Leisure Lane\",\n                      \"zip\": \"93405-2255\"\n                    },\n                    \"primary\": false\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"data\": \"accountholder0@example.com\",\n                    \"primary\": true,\n                    \"type\": \"primary\"\n                  },\n                  {\n                    \"data\": \"accountholder1@example.com\",\n                    \"primary\": false,\n                    \"type\": \"secondary\"\n                  },\n                  {\n                    \"data\": \"extraordinarily.long.email.username.123456@reallylonghostname.com\",\n                    \"primary\": false,\n                    \"type\": \"other\"\n                  }\n                ],\n                \"names\": [\n                  \"Alberta Bobbeth Charleson\"\n                ],\n                \"phone_numbers\": [\n                  {\n                    \"data\": \"1112223333\",\n                    \"primary\": false,\n                    \"type\": \"home\"\n                  },\n                  {\n                    \"data\": \"1112224444\",\n                    \"primary\": false,\n                    \"type\": \"work\"\n                  },\n                  {\n                    \"data\": \"1112225555\",\n                    \"primary\": false,\n                    \"type\": \"mobile1\"\n                  }\n                ]\n              }\n            ],\n            \"subtype\": \"money market\",\n            \"transactions\": [\n              {\n                \"account_id\": \"3l6EVAdoxRhbzLQxyNnEHJj4RvWqyRiqv3QR1\",\n                \"amount\": 5850,\n                \"date\": \"2018-08-23\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"ACH Electronic CreditGUSTO PAY 123456\",\n                \"pending\": false,\n                \"transaction_id\": \"DZNkKDV6GeHApZQN8E7dhLGjl7z8eXcveG8lB\",\n                \"unofficial_currency_code\": null\n              }\n            ],\n            \"type\": \"depository\"\n          },\n          {\n            \"account_id\": \"BeaBNb9AWjT8vp7alL1ZHbdJQezmWQCwRnXjG\",\n            \"balances\": {\n              \"available\": null,\n              \"current\": 410,\n              \"iso_currency_code\": \"USD\",\n              \"unofficial_currency_code\": null\n            },\n            \"days_available\": 27,\n            \"historical_balances\": [\n              {\n                \"current\": 410,\n                \"date\": \"2018-08-28\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 410,\n                \"date\": \"2018-08-27\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 410,\n                \"date\": \"2018-08-26\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 410,\n                \"date\": \"2018-08-25\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 410,\n                \"date\": \"2018-08-24\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 410,\n                \"date\": \"2018-08-23\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 410,\n                \"date\": \"2018-08-22\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-21\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-20\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-19\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-18\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-17\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-16\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-15\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-14\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-13\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-12\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-11\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-10\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 331.5,\n                \"date\": \"2018-08-09\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -168.5,\n                \"date\": \"2018-08-08\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -168.5,\n                \"date\": \"2018-08-07\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -168.5,\n                \"date\": \"2018-08-06\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -168.5,\n                \"date\": \"2018-08-05\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -168.5,\n                \"date\": \"2018-08-04\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -668.5,\n                \"date\": \"2018-08-03\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -3747,\n                \"date\": \"2018-08-02\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              }\n            ],\n            \"mask\": \"3333\",\n            \"name\": \"Plaid Credit Card\",\n            \"official_name\": \"Plaid Diamond 12.5% APR Interest Credit Card\",\n            \"owners\": [\n              {\n                \"addresses\": [\n                  {\n                    \"data\": {\n                      \"city\": \"Malakoff\",\n                      \"state\": \"NY\",\n                      \"street\": \"2992 Cameron Road\",\n                      \"zip\": \"14236\"\n                    },\n                    \"primary\": true\n                  },\n                  {\n                    \"data\": {\n                      \"city\": \"San Matias\",\n                      \"state\": \"CA\",\n                      \"street\": \"2493 Leisure Lane\",\n                      \"zip\": \"93405-2255\"\n                    },\n                    \"primary\": false\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"data\": \"accountholder0@example.com\",\n                    \"primary\": true,\n                    \"type\": \"primary\"\n                  },\n                  {\n                    \"data\": \"accountholder1@example.com\",\n                    \"primary\": false,\n                    \"type\": \"secondary\"\n                  },\n                  {\n                    \"data\": \"extraordinarily.long.email.username.123456@reallylonghostname.com\",\n                    \"primary\": false,\n                    \"type\": \"other\"\n                  }\n                ],\n                \"names\": [\n                  \"Alberta Bobbeth Charleson\"\n                ],\n                \"phone_numbers\": [\n                  {\n                    \"data\": \"1112223333\",\n                    \"primary\": false,\n                    \"type\": \"home\"\n                  },\n                  {\n                    \"data\": \"1112224444\",\n                    \"primary\": false,\n                    \"type\": \"work\"\n                  },\n                  {\n                    \"data\": \"1112225555\",\n                    \"primary\": false,\n                    \"type\": \"mobile1\"\n                  }\n                ]\n              }\n            ],\n            \"subtype\": \"credit card\",\n            \"transactions\": [\n              {\n                \"account_id\": \"BeaBNb9AWjT8vp7alL1ZHbdJQezmWQCwRnXjG\",\n                \"amount\": 500,\n                \"date\": \"2018-08-03\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"Madison Bicycle Shop\",\n                \"pending\": false,\n                \"transaction_id\": \"RmEpJDo6AKFZm3MJbQeVC4Rw7r3MjbCRj5QxD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"account_id\": \"BeaBNb9AWjT8vp7alL1ZHbdJQezmWQCwRnXjG\",\n                \"amount\": 500,\n                \"date\": \"2018-08-03\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"KFC\",\n                \"pending\": false,\n                \"transaction_id\": \"6rVGJEd54qH1wLK5jBRJUwgye4X37kTgJnRa4\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"account_id\": \"BeaBNb9AWjT8vp7alL1ZHbdJQezmWQCwRnXjG\",\n                \"amount\": 2078.5,\n                \"date\": \"2018-08-03\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"AUTOMATIC PAYMENT - THANK\",\n                \"pending\": false,\n                \"transaction_id\": \"XXmApWB6RdT36N1BXbPQhvZqwoM5gLtdg8RM3\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"account_id\": \"BeaBNb9AWjT8vp7alL1ZHbdJQezmWQCwRnXjG\",\n                \"amount\": 500,\n                \"date\": \"2018-08-04\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"Tectra Inc\",\n                \"pending\": false,\n                \"transaction_id\": \"vG1obnAyJNc3oN8jzErlhw7oWLjJMdTWxVDG8\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"account_id\": \"BeaBNb9AWjT8vp7alL1ZHbdJQezmWQCwRnXjG\",\n                \"amount\": 500,\n                \"date\": \"2018-08-09\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"United Airlines\",\n                \"pending\": false,\n                \"transaction_id\": \"93lmWEKDjzuZ3VBljNG8CpnZkKRQyqFR8Mm3P\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"account_id\": \"BeaBNb9AWjT8vp7alL1ZHbdJQezmWQCwRnXjG\",\n                \"amount\": 78.5,\n                \"date\": \"2018-08-22\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"Touchstone Climbing\",\n                \"pending\": false,\n                \"transaction_id\": \"ymoE9n5yR7FrLPovx9D6IV7MKLv8zouydpQZV\",\n                \"unofficial_currency_code\": null\n              }\n            ],\n            \"type\": \"credit\"\n          },\n          {\n            \"account_id\": \"K8M7wDZ6Woswb34MPp7ks6o8XBRLnXcV7bKNp\",\n            \"balances\": {\n              \"available\": null,\n              \"current\": 1000,\n              \"iso_currency_code\": \"USD\",\n              \"unofficial_currency_code\": null\n            },\n            \"days_available\": 7,\n            \"historical_balances\": [\n              {\n                \"current\": 1000,\n                \"date\": \"2018-08-28\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 1000,\n                \"date\": \"2018-08-27\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 1000,\n                \"date\": \"2018-08-26\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 1000,\n                \"date\": \"2018-08-25\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 1000,\n                \"date\": \"2018-08-24\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 1000,\n                \"date\": \"2018-08-23\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 2000,\n                \"date\": \"2018-08-22\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              }\n            ],\n            \"mask\": \"2222\",\n            \"name\": \"Plaid CD\",\n            \"official_name\": \"Plaid Bronze Standard 0.2% Interest CD\",\n            \"owners\": [\n              {\n                \"addresses\": [\n                  {\n                    \"data\": {\n                      \"city\": \"Malakoff\",\n                      \"state\": \"NY\",\n                      \"street\": \"2992 Cameron Road\",\n                      \"zip\": \"14236\"\n                    },\n                    \"primary\": true\n                  },\n                  {\n                    \"data\": {\n                      \"city\": \"San Matias\",\n                      \"state\": \"CA\",\n                      \"street\": \"2493 Leisure Lane\",\n                      \"zip\": \"93405-2255\"\n                    },\n                    \"primary\": false\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"data\": \"accountholder0@example.com\",\n                    \"primary\": true,\n                    \"type\": \"primary\"\n                  },\n                  {\n                    \"data\": \"accountholder1@example.com\",\n                    \"primary\": false,\n                    \"type\": \"secondary\"\n                  },\n                  {\n                    \"data\": \"extraordinarily.long.email.username.123456@reallylonghostname.com\",\n                    \"primary\": false,\n                    \"type\": \"other\"\n                  }\n                ],\n                \"names\": [\n                  \"Alberta Bobbeth Charleson\"\n                ],\n                \"phone_numbers\": [\n                  {\n                    \"data\": \"1112223333\",\n                    \"primary\": false,\n                    \"type\": \"home\"\n                  },\n                  {\n                    \"data\": \"1112224444\",\n                    \"primary\": false,\n                    \"type\": \"work\"\n                  },\n                  {\n                    \"data\": \"1112225555\",\n                    \"primary\": false,\n                    \"type\": \"mobile1\"\n                  }\n                ]\n              }\n            ],\n            \"subtype\": \"cd\",\n            \"transactions\": [\n              {\n                \"account_id\": \"K8M7wDZ6Woswb34MPp7ks6o8XBRLnXcV7bKNp\",\n                \"amount\": 1000,\n                \"date\": \"2018-08-23\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"CD DEPOSIT .INITIAL.\",\n                \"pending\": false,\n                \"transaction_id\": \"gjzxwWkd6gT8zvJ9pEdqHGn5mXjDoesgDdXGr\",\n                \"unofficial_currency_code\": null\n              }\n            ],\n            \"type\": \"depository\"\n          },\n          {\n            \"account_id\": \"r8eMXn91oxsJbrwalGX9UQxeBo4pDBTlWgpMR\",\n            \"balances\": {\n              \"available\": 100,\n              \"current\": 110,\n              \"iso_currency_code\": \"USD\",\n              \"unofficial_currency_code\": null\n            },\n            \"days_available\": 23,\n            \"historical_balances\": [\n              {\n                \"current\": 110,\n                \"date\": \"2018-08-28\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 110,\n                \"date\": \"2018-08-27\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 110,\n                \"date\": \"2018-08-26\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 110,\n                \"date\": \"2018-08-25\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 110,\n                \"date\": \"2018-08-24\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 115.4,\n                \"date\": \"2018-08-23\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 115.4,\n                \"date\": \"2018-08-22\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -384.6,\n                \"date\": \"2018-08-21\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -368.27,\n                \"date\": \"2018-08-20\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-19\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-18\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-17\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-16\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-15\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-14\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-13\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-12\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-11\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-10\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-09\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-08\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -278.87,\n                \"date\": \"2018-08-07\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": -272.54,\n                \"date\": \"2018-08-06\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              }\n            ],\n            \"mask\": \"0000\",\n            \"name\": \"Plaid Checking\",\n            \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n            \"owners\": [\n              {\n                \"addresses\": [\n                  {\n                    \"data\": {\n                      \"city\": \"Malakoff\",\n                      \"state\": \"NY\",\n                      \"street\": \"2992 Cameron Road\",\n                      \"zip\": \"14236\"\n                    },\n                    \"primary\": true\n                  },\n                  {\n                    \"data\": {\n                      \"city\": \"San Matias\",\n                      \"state\": \"CA\",\n                      \"street\": \"2493 Leisure Lane\",\n                      \"zip\": \"93405-2255\"\n                    },\n                    \"primary\": false\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"data\": \"accountholder0@example.com\",\n                    \"primary\": true,\n                    \"type\": \"primary\"\n                  },\n                  {\n                    \"data\": \"accountholder1@example.com\",\n                    \"primary\": false,\n                    \"type\": \"secondary\"\n                  },\n                  {\n                    \"data\": \"extraordinarily.long.email.username.123456@reallylonghostname.com\",\n                    \"primary\": false,\n                    \"type\": \"other\"\n                  }\n                ],\n                \"names\": [\n                  \"Alberta Bobbeth Charleson\"\n                ],\n                \"phone_numbers\": [\n                  {\n                    \"data\": \"1112223333\",\n                    \"primary\": false,\n                    \"type\": \"home\"\n                  },\n                  {\n                    \"data\": \"1112224444\",\n                    \"primary\": false,\n                    \"type\": \"work\"\n                  },\n                  {\n                    \"data\": \"1112225555\",\n                    \"primary\": false,\n                    \"type\": \"mobile1\"\n                  }\n                ]\n              }\n            ],\n            \"subtype\": \"checking\",\n            \"transactions\": [\n              {\n                \"account_id\": \"r8eMXn91oxsJbrwalGX9UQxeBo4pDBTlWgpMR\",\n                \"amount\": 6.33,\n                \"date\": \"2018-08-07\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"Uber 072515 SF**POOL**\",\n                \"pending\": false,\n                \"transaction_id\": \"nLN7mnwe9rhJjgwk3GQ1UP61pnk4j9c6kgBXp\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"account_id\": \"r8eMXn91oxsJbrwalGX9UQxeBo4pDBTlWgpMR\",\n                \"amount\": 89.4,\n                \"date\": \"2018-08-20\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"SparkFun\",\n                \"pending\": false,\n                \"transaction_id\": \"GL74bDoA6MhWGZ37oK86H3A4rpRxaXf19R4Lj\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"account_id\": \"r8eMXn91oxsJbrwalGX9UQxeBo4pDBTlWgpMR\",\n                \"amount\": 12,\n                \"date\": \"2018-08-21\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"McDonalds #3322\",\n                \"pending\": false,\n                \"transaction_id\": \"W6bWwDzVAxhMnRwLrkbzhKG81qm6AXHlMqG5x\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"account_id\": \"r8eMXn91oxsJbrwalGX9UQxeBo4pDBTlWgpMR\",\n                \"amount\": 4.33,\n                \"date\": \"2018-08-21\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"Starbucks\",\n                \"pending\": false,\n                \"transaction_id\": \"A7dz5Ep6WPUPv6jdqKmwFQWDyp9qwgc1w3vk3\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"account_id\": \"r8eMXn91oxsJbrwalGX9UQxeBo4pDBTlWgpMR\",\n                \"amount\": -500,\n                \"date\": \"2018-08-22\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"United Airlines **** REFUND ****\",\n                \"pending\": false,\n                \"transaction_id\": \"EMPdRDvbWQC4EyrPzkLgCaWoqz76BjhXQ3LM6\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"account_id\": \"r8eMXn91oxsJbrwalGX9UQxeBo4pDBTlWgpMR\",\n                \"amount\": 5.4,\n                \"date\": \"2018-08-24\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"Uber 063015 SF**POOL**\",\n                \"pending\": false,\n                \"transaction_id\": \"8B5b4EqAPrhPB4zXmwMVFbnzvoZQJXcwaeyRg\",\n                \"unofficial_currency_code\": null\n              }\n            ],\n            \"type\": \"depository\"\n          },\n          {\n            \"account_id\": \"zygWBX9V1eSljNKZRMgDs9q5DbvLyDCoZWMm5\",\n            \"balances\": {\n              \"available\": 200,\n              \"current\": 210,\n              \"iso_currency_code\": \"USD\",\n              \"unofficial_currency_code\": null\n            },\n            \"days_available\": 11,\n            \"historical_balances\": [\n              {\n                \"current\": 210,\n                \"date\": \"2018-08-28\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 210,\n                \"date\": \"2018-08-27\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 210,\n                \"date\": \"2018-08-26\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 210,\n                \"date\": \"2018-08-25\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 210,\n                \"date\": \"2018-08-24\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 235,\n                \"date\": \"2018-08-23\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 235,\n                \"date\": \"2018-08-22\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 235,\n                \"date\": \"2018-08-21\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 235,\n                \"date\": \"2018-08-20\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 235,\n                \"date\": \"2018-08-19\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"current\": 230.78,\n                \"date\": \"2018-08-18\",\n                \"iso_currency_code\": \"USD\",\n                \"unofficial_currency_code\": null\n              }\n            ],\n            \"mask\": \"1111\",\n            \"name\": \"Plaid Saving\",\n            \"official_name\": \"Plaid Silver Standard 0.1% Interest Saving\",\n            \"owners\": [\n              {\n                \"addresses\": [\n                  {\n                    \"data\": {\n                      \"city\": \"Malakoff\",\n                      \"state\": \"NY\",\n                      \"street\": \"2992 Cameron Road\",\n                      \"zip\": \"14236\"\n                    },\n                    \"primary\": true\n                  },\n                  {\n                    \"data\": {\n                      \"city\": \"San Matias\",\n                      \"state\": \"CA\",\n                      \"street\": \"2493 Leisure Lane\",\n                      \"zip\": \"93405-2255\"\n                    },\n                    \"primary\": false\n                  }\n                ],\n                \"emails\": [\n                  {\n                    \"data\": \"accountholder0@example.com\",\n                    \"primary\": true,\n                    \"type\": \"primary\"\n                  },\n                  {\n                    \"data\": \"accountholder1@example.com\",\n                    \"primary\": false,\n                    \"type\": \"secondary\"\n                  },\n                  {\n                    \"data\": \"extraordinarily.long.email.username.123456@reallylonghostname.com\",\n                    \"primary\": false,\n                    \"type\": \"other\"\n                  }\n                ],\n                \"names\": [\n                  \"Alberta Bobbeth Charleson\"\n                ],\n                \"phone_numbers\": [\n                  {\n                    \"data\": \"1112223333\",\n                    \"primary\": false,\n                    \"type\": \"home\"\n                  },\n                  {\n                    \"data\": \"1112224444\",\n                    \"primary\": false,\n                    \"type\": \"work\"\n                  },\n                  {\n                    \"data\": \"1112225555\",\n                    \"primary\": false,\n                    \"type\": \"mobile1\"\n                  }\n                ]\n              }\n            ],\n            \"subtype\": \"savings\",\n            \"transactions\": [\n              {\n                \"account_id\": \"zygWBX9V1eSljNKZRMgDs9q5DbvLyDCoZWMm5\",\n                \"amount\": -4.22,\n                \"date\": \"2018-08-19\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"INTRST PYMNT\",\n                \"pending\": false,\n                \"transaction_id\": \"m14jWnb7wKCjndgzQE4LHGoLWPz4D8sLj85lV\",\n                \"unofficial_currency_code\": null\n              },\n              {\n                \"account_id\": \"zygWBX9V1eSljNKZRMgDs9q5DbvLyDCoZWMm5\",\n                \"amount\": 25,\n                \"date\": \"2018-08-24\",\n                \"iso_currency_code\": \"USD\",\n                \"original_description\": \"CREDIT CARD 3333 PAYMENT *//\",\n                \"pending\": false,\n                \"transaction_id\": \"bd5KeWgroMS89nDPxGroHl5RzwdyZWCVLrwJR\",\n                \"unofficial_currency_code\": null\n              }\n            ],\n            \"type\": \"depository\"\n          }\n        ],\n        \"date_last_updated\": \"2018-08-29T22:23:03Z\",\n        \"institution_id\": \"ins_3\",\n        \"institution_name\": \"Chase\",\n        \"item_id\": \"axwqJb9KGZIDP17LyKoNcdq5EKo8BNC7En8wK\"\n      }\n    ],\n    \"user\": {\n      \"client_user_id\": \"example_user_id\",\n      \"email\": \"john@doe.com\",\n      \"first_name\": \"John\",\n      \"last_name\": \"Doe\",\n      \"middle_name\": \"Deere\",\n      \"phone_number\": \"3214560987\",\n      \"ssn\": \"123-45-7890\"\n    }\n  },\n  \"request_id\": \"vz6rS\",\n  \"warnings\": []\n}"
 						},
 						{
-							"name": "Retrieve an Asset Report (JSON) with Insights",
+							"name": "Example with Insights",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3275,7 +3245,7 @@
 					},
 					"response": [
 						{
-							"name": "Create Audit Copy Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3412,7 +3382,7 @@
 					},
 					"response": [
 						{
-							"name": "Remove Asset Report Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3549,7 +3519,7 @@
 					},
 					"response": [
 						{
-							"name": "Remove Audit Copy Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3686,7 +3656,7 @@
 					},
 					"response": [
 						{
-							"name": "Refresh Asset Report Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3840,7 +3810,7 @@
 					},
 					"response": [
 						{
-							"name": "Create Liabilities Report Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -3959,7 +3929,7 @@
 					},
 					"response": [
 						{
-							"name": "Retrieve Liabilities Report Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -4067,7 +4037,7 @@
 					},
 					"response": [
 						{
-							"name": "Remove Liabilities Report Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -4152,7 +4122,7 @@
 			"name": "Liabilities",
 			"item": [
 				{
-					"name": "Retrieve Liabilities",
+					"name": "OK",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -4280,7 +4250,7 @@
 					},
 					"response": [
 						{
-							"name": "Search Institution by Name Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -4409,7 +4379,7 @@
 					},
 					"response": [
 						{
-							"name": "Search Institution by ID Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -4539,7 +4509,7 @@
 					},
 					"response": [
 						{
-							"name": "Retrieve Insitution List Example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [
@@ -5077,9 +5047,10 @@
 									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"institution_id\": \"<string>\",\n    \"options\": {\n        \"override_username\": \"user_good\",\n        \"override_password\": \"pass_good\"\n    }\n}"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/sandbox/processor_token/create",
+									"raw": "https://{{env_url}}/sandbox/processor_token/create",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"{{env_url}}"
 									],
 									"path": [
 										"sandbox",
@@ -5154,9 +5125,10 @@
 									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"access_token\": \"<string>\",\n    \"account_id\": \"<string>\",\n    \"processor\": \"<string>\"\n}"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/processor/token/create",
+									"raw": "https://{{env_url}}/processor/token/create",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"{{env_url}}"
 									],
 									"path": [
 										"processor",
@@ -5219,9 +5191,10 @@
 									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"access_token\": \"<string>\",\n    \"account_id\": \"<string>\"\n}"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/processor/stripe/bank_account_token/create",
+									"raw": "https://{{env_url}}/processor/stripe/bank_account_token/create",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"{{env_url}}"
 									],
 									"path": [
 										"processor",
@@ -5275,7 +5248,7 @@
 					},
 					"response": [
 						{
-							"name": "success",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -5284,9 +5257,10 @@
 									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"processor_token\": \"<string>\"\n}"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/processor/auth/get",
+									"raw": "https://{{env_url}}/processor/auth/get",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"{{env_url}}"
 									],
 									"path": [
 										"processor",
@@ -5348,9 +5322,10 @@
 									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"processor_token\": \"<string>\"\n}"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/processor/identity/get",
+									"raw": "https://{{env_url}}/processor/identity/get",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"{{env_url}}"
 									],
 									"path": [
 										"processor",
@@ -5412,9 +5387,10 @@
 									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"processor_token\": \"<string>\"\n}"
 								},
 								"url": {
-									"raw": "{{baseUrl}}/processor/balance/get",
+									"raw": "https://{{env_url}}/processor/balance/get",
+									"protocol": "https",
 									"host": [
-										"{{baseUrl}}"
+										"{{env_url}}"
 									],
 									"path": [
 										"processor",
@@ -6136,7 +6112,7 @@
 							},
 							"response": [
 								{
-									"name": "List transfer events example",
+									"name": "OK",
 									"originalRequest": {
 										"method": "POST",
 										"header": [],
@@ -6200,7 +6176,7 @@
 							},
 							"response": [
 								{
-									"name": "Sync transfer events example",
+									"name": "OK",
 									"originalRequest": {
 										"method": "POST",
 										"header": [],
@@ -6401,7 +6377,7 @@
 					},
 					"response": [
 						{
-							"name": "Assess transfer risk example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -6478,7 +6454,7 @@
 					},
 					"response": [
 						{
-							"name": "Initiate a transfer example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -6541,7 +6517,7 @@
 					},
 					"response": [
 						{
-							"name": "Get transfer example",
+							"name": "OK",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
