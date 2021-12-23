@@ -37,7 +37,40 @@
 						},
 						"description": "Creates a link token with options. The link token can then be used to initialize Plaid Link."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"US\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"auth\"]\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/link/token/create",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"link",
+										"token",
+										"create"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"link_token\": \"link-sandbox-af1a0311-da53-4636-b754-dd15cc058176\",\n  \"expiration\": \"2020-03-27T12:56:34Z\",\n  \"request_id\": \"XQVgFigpGHXkb0b\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Link Token - Update Mode",
@@ -81,7 +114,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"GB\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"payment_initiation\"],\n  \"payment_initiation\": {\n    \"payment_id\": \"INSERT_PAYMENT_ID_HERE\"\n  }\n}"
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"GB\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"payment_initiation\"],\n  \"payment_initiation\": {\n    \"payment_id\": \"{{payment_id}}\"\n  }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/link/token/create",
@@ -4756,7 +4789,40 @@
 						},
 						"description": "In the sandbox environment, you can use the `/payment_initiation/recipient/create` endpoint to generate recipients. Programmatic recipient creation in the development and production environments can be done after approval by our compliance team.\n\nThe endpoint is idempotent: if a developer has already made a request with the same payment details, Plaid will return the same recipient_id. Recipients are scoped per environment."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"name\": \"Wonder Wallet\",\n  \"iban\": \"GB29NWBK60161331926819\",\n  \"address\": {\n    \"street\": [\n      \"96 Guild Street\",\n      \"9th Floor\"\n    ],\n    \"city\": \"London\",\n    \"postal_code\": \"SE14 8JW\",\n    \"country\": \"GB\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/recipient/create",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"recipient",
+										"create"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n  \"request_id\": \"4zlKapIkTm8p5KM\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Create Payment",
@@ -4804,7 +4870,40 @@
 						},
 						"description": "Create and configure a payment by specifying a `recipient_id`, `reference`, `amount`, and `currency` to create a Plaid payment resource. The Plaid API returns a `payment_id` to identify the created payment."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"recipient_id\": \"{{recipient_id}}\",\n  \"reference\": \"Test Funding\",\n  \"amount\": {\n    \"currency\": \"GBP\",\n    \"value\": 100.00\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/payment/create",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"payment",
+										"create"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
 				},
 				{
 					"name": "Create Link Token - Payment Initiation",
@@ -4834,43 +4933,40 @@
 						},
 						"description": "Creates a link token with options. The `payment_id` from `Create Payment` is passed with the creation of the link token. The link token can then be used to initialize Plaid Link."
 					},
-					"response": []
-				},
-				{
-					"name": "Create Payment Token",
-					"protocolProfileBehavior": {
-						"disabledSystemHeaders": {
-							"content-type": true
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n  \"client_name\": \"Insert Client name here\",\n  \"country_codes\": [\"GB\"],\n  \"language\": \"en\",\n  \"user\": {\n    \"client_user_id\": \"unique_user_id\"\n  },\n  \"products\": [\"payment_initiation\"],\n  \"payment_initiation\": {\n    \"payment_id\": \"{{payment_id}}\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/link/token/create",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"link",
+										"token",
+										"create"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"link_token\": \"link-sandbox-af1a0311-da53-4636-b754-dd15cc058176\",\n  \"expiration\": \"2020-03-27T12:56:34Z\",\n  \"request_id\": \"XQVgFigpGHXkb0b\"\n}"
 						}
-					},
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "Content-Type",
-								"value": "application/json"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"payment_id\": \"{{payment_id}}\"\n}"
-						},
-						"url": {
-							"raw": "https://{{env_url}}/payment_initiation/payment/token/create",
-							"protocol": "https",
-							"host": [
-								"{{env_url}}"
-							],
-							"path": [
-								"payment_initiation",
-								"payment",
-								"token",
-								"create"
-							]
-						},
-						"description": "In order to actually initiate a Payment, you must use the `payment_id` returned from `payment_initiation/payment/create` and create a `payment_token`.\n\nThe `payment_token` will allow for at most one payment initiation. If this attempt fails, the end user aborts the flow, or the token expires, the developer will need to create a new payment token. Creating a new payment token does not require end user input."
-					},
-					"response": []
+					]
 				},
 				{
 					"name": "Get Payment",
@@ -4905,7 +5001,40 @@
 						},
 						"description": "The endpoint `payment_initiation/payment/get` takes a `payment_id` and returns all of the payment details for a previously created payment."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"payment_id\": \"{{payment_id}}\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/payment/get",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"payment",
+										"get"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"payment_id\": \"payment-id-sandbox-feca8a7a-5591-4aef-9297-f3062bb735d3\",\n  \"payment_token\": \"payment-token-sandbox-c6a26505-42b4-46fe-8ecf-bf9edcafbebb\",\n  \"reference\": \"Account Funding 99744\",\n  \"amount\": {\n    \"currency\": \"GBP\",\n    \"value\": 100\n  },\n  \"status\": \"PAYMENT_STATUS_INPUT_NEEDED\",\n  \"last_status_update\": \"2019-11-06T21:10:52Z\",\n  \"payment_expiration_time\": \"2019-11-06T21:25:52Z\",\n  \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n  \"bacs\": null,\n  \"iban\": null,\n  \"request_id\": \"aEAQmewMzlVa1k6\"\n}"
+						}
+					]
 				},
 				{
 					"name": "List Payments",
@@ -4940,7 +5069,40 @@
 						},
 						"description": "The endpoint `payment_initiation/payment/get` list payment details for all of your previously created payments.\n\nThis endpoint accepts `count` and `cursor` as optional parameters in order to support pagination. `count` limits how many payments are returned and can be set between 0 and 200. `cursor` should be a string in RFC 3339 format (i.e. `\"2019-12-06T22:35:49Z\"`). Only payments created before the `cursor` will be returned."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"count\": 1\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/payment/list",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"payment",
+										"list"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"payments\": [\n    {\n      \"payment_id\": \"payment-id-sandbox-feca8a7a-5591-4aef-9297-f3062bb735d3\",\n      \"reference\": \"Account Funding 99744\",\n      \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 100\n      },\n      \"status\": \"PAYMENT_STATUS_INPUT_NEEDED\",\n      \"last_status_update\": \"2019-11-06T21:10:52Z\",\n      \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n      \"bacs\": null,\n      \"iban\": null\n    }\n  ],\n  \"next_cursor\": \"2020-01-01T00:00:00Z\",\n  \"request_id\": \"aEAQmewMzlVa1k6\"\n}"
+						}
+					]
 				},
 				{
 					"name": "Get Payment Recipient",
@@ -4970,7 +5132,40 @@
 						},
 						"description": "The `/payment_initiation/recipient/get` endpoint allows you to retrieve all of the details for a recipient that you have created."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"recipient_id\": \"{{recipient_id}}\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/recipient/get",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"recipient",
+										"get"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n  \"name\": \"Wonder Wallet\",\n  \"iban\": \"GB29NWBK60161331926819\",\n  \"address\": {\n    \"street\": [\n      \"96 Guild Street\",\n      \"9th Floor\"\n    ],\n    \"city\": \"London\",\n    \"postal_code\": \"SE14 8JW\",\n    \"country\": \"GB\"\n  },\n  \"request_id\": \"4zlKapIkTm8p5KM\"\n}"
+						}
+					]
 				},
 				{
 					"name": "List Payment Recipients",
@@ -5000,7 +5195,40 @@
 						},
 						"description": "The `/payment_initiation/recipient/list` endpoint allows you to retrieve details for all recipients that you have created."
 					},
-					"response": []
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/recipient/list",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"recipient",
+										"list"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": "{\n  \"recipients\": [\n    {\n      \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n      \"name\": \"Wonder Wallet\",\n      \"iban\": \"GB29NWBK60161331926819\",\n      \"address\": {\n        \"street\": [\n          \"96 Guild Street\",\n          \"9th Floor\"\n        ],\n        \"city\": \"London\",\n        \"postal_code\": \"SE14 8JW\",\n        \"country\": \"GB\"\n      }\n    }\n  ],\n  \"request_id\": \"4zlKapIkTm8p5KM\"\n}"
+						}
+					]
 				}
 			],
 			"description": "The UK Payment Initiation API enables payment transfers within your app. Plaid supports both domestic payments denominated in pound sterling (typically via the Faster Payments network, although this is up to the institution) and international payments denominated in euro (typically via SEPA Credit Transfer). Each time a client wants to receive a payment, the end user must authorize the payment in Link before the payment can be initiated.\n\n**Note:** The revised EU Directive on Payment Services (\"PSD2\") regulations require strong customer authentication (\"SCA\") for each payment order."
