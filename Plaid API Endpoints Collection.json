@@ -4261,7 +4261,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"query\": \"chase\",\n    \"products\": [\"auth\"],\n    \"public_key\": \"{{public_key}}\"\n }"
+									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"query\": \"chase\",\n    \"country_codes\": [\"US\"],\n    \"products\": [\"auth\"]\n }"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/institutions/search",
@@ -4390,7 +4390,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"institution_id\": \"ins_3\",\n    \"public_key\": \"{{public_key}}\"\n}"
+									"raw": "{\n    \"institution_id\": \"ins_3\",\n    \"country_codes\": [\"US\"],\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/institutions/get_by_id",
@@ -6792,11 +6792,8 @@
 		},
 		{
 			"key": "savedData",
-			"value": ""
-		},
-		{
-			"key": "public_key",
-			"value": ""
+			"value": "",
+			"disabled": true
 		}
 	]
 }
