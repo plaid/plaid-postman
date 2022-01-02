@@ -29,7 +29,7 @@ The Plaid Postman collection uses [Postman environment variables](https://learni
 
 Once you have completed the steps in the Configuration section above, you are ready to make API requests using Postman! The following steps are a quick walkthrough to making an API request. In this example, we will use the special capabilities of the Sandbox test environment to bypass the client-side Link UI and make all of our requests via the backend. 
 
-1. Make sure the "Collection" pane is selected, then expand the "Plaid API Endpoints" folder on the left and navigate to Plaid API Endpoints -> Items -> Create Item [Sandbox Only].
+1. Make sure the "Collection" pane is selected, then expand the "Plaid API Endpoints" folder on the left and navigate to Plaid API Endpoints -> Items -> Item Creation -> Create Item [Sandbox Only].
 2. In the pane on the right, which has the options "Params", "Authorization", "Headers" etc. click on the "Body" tab. 
 3. (Optional) If you want, update the product under `initial_products` to match the product you would like to try, such as "transactions" or "identity". 
 4. Click the blue "Send" button on the right.

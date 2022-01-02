@@ -2809,6 +2809,73 @@
 						"description": "Retrieve information from the paystubs used for income verification"
 					},
 					"response": []
+				},
+				{
+					"name": "Fire Income Webhook (Sandbox only)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\",\n\t\"webhook_code\": \"DEFAULT_UPDATE\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/sandbox/item/fire_webhook",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"sandbox",
+								"item",
+								"fire_webhook"
+							]
+						},
+						"description": "Fire sandbox webhook for item"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\",\n\t\"webhook_code\": \"DEFAULT_UPDATE\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/sandbox/item/fire_webhook",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"sandbox",
+										"item",
+										"fire_webhook"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
 				}
 			],
 			"description": "Verify anyone’s income and employment in seconds instead of days"
@@ -6254,7 +6321,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"client_id\": \"<string>\",\n    \"secret\": \"<string>\",\n    \"bank_transfer_id\": \"<string>\",\n    \"event_type\": \"<string>\",\n    \"failure_reason\": {\n        \"ach_return_code\": \"<string>\",\n        \"description\": \"<string>\"\n    }\n}"
+									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\",\n    \"bank_transfer_id\": \"ENTER_BANK_TRANSFER_ID\",\n    \"event_type\": \"failed\",\n    \"failure_reason\": {\n        \"ach_return_code\": \"R02\",\n        \"description\": \"account closed\"\n    }\n}"
 								},
 								"url": {
 									"raw": "{{baseUrl}}/sandbox/bank_transfer/simulate",
@@ -7020,8 +7087,7 @@
 		},
 		{
 			"key": "savedData",
-			"value": "",
-			"disabled": true
+			"value": ""
 		}
 	]
 }
