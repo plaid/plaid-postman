@@ -38,7 +38,7 @@ Once you have completed the steps in the Configuration section above, you are re
 
 7. Select any product endpoint of your choice. If you are not sure which one to use, a good simple example is "Balance". Expand the product endpoint folder and click on the endpoint you would like to use ("Retrieve Balance", if we are using balance).
 
-8. Click on the "Body" tab. Complete any other required fields (for Balance, there are none) and click Send.
+8. Click on the "Body" tab. Complete any other required fields (for Balance, there are none) and click "Send".
 9. You will receive a response containing your requested data!
 
 ## Making Postman calls with real data in Production or Development
