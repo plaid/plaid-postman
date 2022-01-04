@@ -55,7 +55,7 @@ For reasons of security and transparency, getting an access token for use with r
 8. Open link.html in a web browser.
 9. Open the web browser Developer Tools (for example, in Chrome, go to View->Developer->Developer Tools), then open the Console tab within Developer tools.
 10. Click the "Link Account" button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution.
-11. Once the prompts have completed and you have successfully logged in via Link, the Console tab from step 8 should contain text saying "the public token is" and then the value of the public token. Copy the public token value.
+11. Once the prompts have completed and you have successfully logged in via Link, the Console tab from step 8 should contain text saying "the public token is:" followed by the value of the public token. Copy the public token value.
 12. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select the public token value -- by default, it is `"{{public_token}}"`. Replace this value with your copied public token from the previous step, then hit Send.
 13. The response will contain an `access_token` suitable for making calls in Production (or Development)! You can then follow the same steps as you did in the Quickstart (starting with step 7) to make API requests for real data.
 
