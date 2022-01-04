@@ -26,7 +26,7 @@
     var handler = Plaid.create({
       token: 'link-sandbox-95d5435b-d8e0-438c-8387-23d937b80da8',
       onSuccess: function(public_token, metadata) {
-        console.log('public token is', public_token);
+        console.log('public token is:', public_token);
       //  console.log(metadata)
       },
       onExit: function(err, metadata) {
