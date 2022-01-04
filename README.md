@@ -34,6 +34,7 @@ Once you have completed the steps in the Configuration section above, you are re
 3. (Optional) If you want, update the product under `initial_products` to match the product you would like to try, such as "transactions" or "identity". 
 4. Click the blue "Send" button on the right.
 5. The response body should appear in Postman. The `public_token` returned will automatically be used in our next request.
+
 6. Select the "Exchange token" endpoint, click on the "Body" tab, then hit "Send". An `access_token` will be returned and will automatically be used in our next request.
 
 7. Select any product endpoint of your choice. If you are not sure which one to use, a good simple example is "Balance". Expand the product endpoint folder and click on the endpoint you would like to use ("Retrieve Balance", if we are using balance).
