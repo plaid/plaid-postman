@@ -34,9 +34,7 @@ Once you have completed the steps in the Configuration section above, you are re
 3. (Optional) If you want, update the product under `initial_products` to match the product you would like to try, such as "transactions" or "identity". 
 4. Click the blue "Send" button on the right.
 5. The response body should appear in Postman. The `public_token` returned will automatically be used in our next request.
-
 6. Select the "Exchange token" endpoint, click on the "Body" tab, then hit "Send". An `access_token` will be returned and will automatically be used in our next request.
-
 7. Select any product endpoint of your choice. If you are not sure which one to use, a good simple example is "Balance". Expand the product endpoint folder and click on the endpoint you would like to use ("Retrieve Balance", if we are using balance).
 
 8. Click on the "Body" tab. Complete any other required fields (for Balance, there are none) and click "Send".
@@ -49,7 +47,7 @@ For reasons of security and transparency, getting an access token for use with r
 1. Download the [link.html](/link.html) file included in this repo and open it in a text editor (alternatively, open a text editor, create a new file called link.html, and copy and paste the contents of [link.html](/link.html) into it). You will use this file later.
 2. Re-visit the "Configuration" steps at the top of this page, but instead change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` (for Production) or `development.plaid.com` (for Development).
 3. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
-4. If you want, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity". 
+4. If you want, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity". Note that only institutions that support ALL the products you specify here will appear in Link -- if you don't see the institution you want when Link is launched, make sure you have listed the right product. For example, an institution that only supports credit cards (e.g. American Express) will not appear in Link if a product that doesn't support credit cards (like auth) is specified.
 5. Click the blue "Send" button.
 6. Copy the value of the `link_token` from the response.
 7. Return to your local copy of link.html. Replace the text 'your-link-token-goes-here' in link.html with the value you copied in the previous step, and save the file.
