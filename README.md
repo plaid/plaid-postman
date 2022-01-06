@@ -35,8 +35,7 @@ Once you have completed the steps in the Configuration section above, you are re
 4. Click the blue "Send" button on the right.
 5. The response body should appear in Postman. The `public_token` returned will automatically be used in our next request.
 6. Select the "Exchange token" endpoint, click on the "Body" tab, then hit "Send". An `access_token` will be returned and will automatically be used in our next request.
-7. Select any product endpoint of your choice. If you are not sure which one to use, a good simple example is "Balance". Expand the product endpoint folder and click on the endpoint you would like to use ("Retrieve Balance", if we are using balance).
-
+7. Select any product endpoint of your choice. If you are not sure which one to use, a good simple example is "Balance". Expand the product endpoint folder and click on the endpoint you would like to use ("Retrieve Balance", if you are using balance).
 8. Click on the "Body" tab. Complete any other required fields (for Balance, there are none) and click "Send".
 9. You will receive a response containing your requested data!
 
@@ -45,18 +44,20 @@ Once you have completed the steps in the Configuration section above, you are re
 For reasons of security and transparency, getting an access token for use with real data cannot be done entirely via Postman API calls -- you are required to use the Plaid Link UI component. You can do this as follows:
 
 1. Download the [link.html](/link.html) file included in this repo and open it in a text editor (alternatively, open a text editor, create a new file called link.html, and copy and paste the contents of [link.html](/link.html) into it). You will use this file later.
-2. Re-visit the "Configuration" steps at the top of this page, but instead change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` (for Production) or `development.plaid.com` (for Development).
-3. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
-4. If you want, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity". Note that only institutions that support ALL the products you specify here will appear in Link -- if you don't see the institution you want when Link is launched, make sure you have listed the right product. For example, an institution that only supports credit cards (e.g. American Express) will not appear in Link if a product that doesn't support credit cards (like auth) is specified.
-5. Click the blue "Send" button.
-6. Copy the value of the `link_token` from the response.
-7. Return to your local copy of link.html. Replace the text 'your-link-token-goes-here' in link.html with the value you copied in the previous step, and save the file.
-8. Open link.html in a web browser.
-9. Open the web browser Developer Tools (for example, in Chrome, go to View->Developer->Developer Tools), then open the Console tab within Developer tools.
-10. Click the "Link Account" button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution.
-11. Once the prompts have completed and you have successfully logged in via Link, the Console tab from step 8 should contain text saying "the public token is:" followed by the value of the public token. Copy the public token value.
-12. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select the public token value -- by default, it is `"{{public_token}}"`. Replace this value with your copied public token from the previous step, then hit Send.
-13. The response will contain an `access_token` suitable for making calls in Production (or Development)! You can then follow the same steps as you did in the Quickstart (starting with step 7) to make API requests for real data.
+2. Re-visit the "Configuration" steps at the top of this page, but after opening the environment settings, click the "..." button in the upper right and select "Duplicate". This will create a new environment called "Sandbox copy" -- to rename it, click the pencil icon next to the name and name it either "Development" or "Production" as appropriate. 
+3. On your newly created environment, change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` (for Production) or `development.plaid.com` (for Development).
+4. To apply these new settings, select your new environment from the drop-down in the upper right. Alternatively, while editing the new environment, you can click "..." and select "Set as active environment".
+5. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
+6. If you want, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity". Note that only institutions that support ALL the products you specify here will appear in Link -- if you don't see the institution you want when Link is launched, make sure you have listed the right product. For example, an institution that only supports credit cards (e.g. American Express) will not appear in Link if a product that doesn't support credit cards (like auth) is specified.
+7. Click the blue "Send" button.
+8. Copy the value of the `link_token` from the response.
+9. Return to your local copy of link.html. Replace the text 'your-link-token-goes-here' in link.html with the value you copied in the previous step, and save the file.
+10. Open link.html in a web browser.
+11. Open the web browser Developer Tools (for example, in Chrome, go to View->Developer->Developer Tools), then open the Console tab within Developer tools.
+12. Click the "Link Account" button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution. Make sure to use a real username and password, not the Sandbox credentials.
+13. Once the prompts have completed and you have successfully logged in via Link, the Console tab from step 8 should contain text saying "the public token is:" followed by the value of the public token. Copy the public token value.
+14. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select the public token value -- by default, it is `"{{public_token}}"`. Replace this value with your copied public token from the previous step, then hit Send.
+15. The response will contain an `access_token` suitable for making calls in Production (or Development)! You can then follow the same steps as you did in the Quickstart (starting with step 7) to make API requests for real data.
 
 ## Useful Tools
 [Webhook Tester](https://webhook.site/) and [Request Bin](https://requestbin.com/) are useful tools for receiving webhook calls. You can use them to generate a webhook url and use that url for any Postman requests that require you to specify a webhook url, then use the sites to inspect the content of any webhooks they received.

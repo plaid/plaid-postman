@@ -24,18 +24,15 @@
   <script type="text/javascript">
   (function($) {
     var handler = Plaid.create({
-      token: 'link-sandbox-95d5435b-d8e0-438c-8387-23d937b80da8',
+      token: 'your-link-token-goes-here',
       onSuccess: function(public_token, metadata) {
         console.log('public token is:', public_token);
-      //  console.log(metadata)
       },
       onExit: function(err, metadata) {
-     //   console.log('onexit invoked');
-     //   console.log('onexit metadata:', metadata);
+        console.log('onexit invoked');
       },
       onEvent: function(eventName, metadata) {
-     //   console.log('event name is:', eventName);
-     //   console.log('onevent metadata', metadata);
+        console.log('event name is:', eventName);
       }
     });
     $('#link-button').on('click', function(e) { handler.open() });
