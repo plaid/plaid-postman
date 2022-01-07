@@ -9,7 +9,7 @@ Follow these steps to quickly get started with the [Plaid API](https://plaid.com
 1. [Sign up](https://dashboard.plaid.com/signup) with Plaid to get a set of API keys that are required for interacting with the API.
 2. Click the "Run in Postman" button below.
   
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/300b6d41be01cbd6a882?action=collection%2Fimport)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/300b6d41be01cbd6a882?action=collection%2Fimport#?env%5BSandbox%5D=W3sia2V5IjoiY2xpZW50X2lkIiwidmFsdWUiOiJZT1VSX0NMSUVOVF9JRCIsImVuYWJsZWQiOnRydWV9LHsia2V5Ijoic2VjcmV0X2tleSIsInZhbHVlIjoiWU9VUl9TRUNSRVRfS0VZIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InNlY3JldCJ9LHsia2V5IjoicHVibGljX3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY2Vzc190b2tlbiIsInZhbHVlIjoiIiwiZW5hYmxlZCI6dHJ1ZX0seyJrZXkiOiJhc3NldF9yZXBvcnRfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoiZW52X3VybCIsInZhbHVlIjoic2FuZGJveC5wbGFpZC5jb20iLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6ImFjY291bnRfaWQiLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWV9LHsia2V5IjoicHJvY2Vzc29yX3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfSx7ImtleSI6InRyYW5zZmVyX2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlfV0=)
 
 3. Once both the collection and the environment variables are imported into Postman, see the [Configuration](https://github.com/plaid/plaid-postman#configuration) section on how to correctly configure API keys with the collection.
 
@@ -29,81 +29,35 @@ The Plaid Postman collection uses [Postman environment variables](https://learni
 
 Once you have completed the steps in the Configuration section above, you are ready to make API requests using Postman! The following steps are a quick walkthrough to making an API request. In this example, we will use the special capabilities of the Sandbox test environment to bypass the client-side Link UI and make all of our requests via the backend. 
 
-1. Make sure the "Collection" pane is selected, then expand the "Plaid API Endpoints" folder on the left and navigate to Plaid API Endpoints -> Items -> Create Item [Sandbox Only].
+1. Make sure the "Collection" pane is selected, then expand the "Plaid API Endpoints" folder on the left and navigate to Plaid API Endpoints -> Items -> Item Creation -> Create Item [Sandbox Only].
 2. In the pane on the right, which has the options "Params", "Authorization", "Headers" etc. click on the "Body" tab. 
-3. If you want, update the product under `initial_products` to match the product you would like to try, such as "transactions" or "identity". Otherwise, click the blue "Send" button on the right.
-4. The response body should appear in Postman. Copy the `public_token` value (for example, "public-sandbox-00c6acae-9aab-4c3b-9f2d-d1ea710f3103"). 
-5. Select the "Exchange token" endpoint, click on the "Body" tab, and paste your public token into the request, then hit "Send".
-6. Copy the `access_token` value (for example, "access-sandbox-0128b38c-3219-4f8b-827a-c2e42b19c125").
-7. Select any product endpoint of your choice. If you are not sure which one to use, a good simple example is "Balance". Expand the product endpoint folder and click on the endpoint you would like to use ("Retrieve Balance", if we are using balance). 
-8. Click on the "Body" tab. Paste your access token into the `access_token` field. Complete any other required fields (for Balance, there are none) and click Send.
+3. (Optional) If you want, update the product under `initial_products` to match the product you would like to try, such as "transactions" or "identity". 
+4. Click the blue "Send" button on the right.
+5. The response body should appear in Postman. The `public_token` returned will automatically be used in our next request.
+6. Select the "Exchange token" endpoint, click on the "Body" tab, then hit "Send". An `access_token` will be returned and will automatically be used in our next request.
+7. Select any product endpoint of your choice. If you are not sure which one to use, a good simple example is "Balance". Expand the product endpoint folder and click on the endpoint you would like to use ("Retrieve Balance", if you are using balance).
+8. Click on the "Body" tab. Complete any other required fields (for Balance, there are none) and click "Send".
 9. You will receive a response containing your requested data!
 
-## Collection endpoints
-The following collection is a fully-featured set of pre-filled requests that allow you to test the [Plaid API](https://plaid.com/docs), and visualize the responses in a friendly format.
+## Making Postman calls with real data in Production or Development
 
-* **Link Tokens**
-  * **Create Link Token** - Creates a `link_token` for the default Link flow.
-  * **Create Link Token - Update Mode** - Creates a `link_token` for the update mode Link flow.
-  * **Create Link Token - Payment Initiation** - Creates a `link_token` for the payment initiation Link flow.
-  * **Create Link Token - OAuth** - Creates a `link_token` for the OAuth Link flow.
+For reasons of security and transparency, getting an access token for use with real data cannot be done entirely via Postman API calls -- you are required to use the Plaid Link UI component. You can do this as follows:
 
-* **Items**
-  * **Create Item [Sandbox Only]** - Creates an Item by generating a public token. This endpoint only works in the Sandbox environment. Items can only be created through Plaid Link in the development and production environments.
-  * **Exchange Token** - Exchanges a public token for an access token.
-  * **Retrieve Item** - Retrieves information about an Item.
-  * **Retrieve an Item's Accounts** - Retrieves all available accounts for an Item.
-  * **Create a `public_token`** - Generates a `public_token` for an existing Item for use in Plaid Link's [update mode](https://plaid.com/docs/#updating-items-via-link).
-  * **Rotate Access Token** - Returns a new access token and invalidates the old one.
-  * **Update an Item's Webhook** - Updates an Item's webhook url.
-  * **Simulate ITEM_LOGIN_REQUIRED [Sandbox Only]** - Sets an Item in an ITEM_LOGIN_REQUIRED state. Check our [Errors](https://plaid.com/docs/#errors-overview) section in our docs for more information.
-  * **Remove Item** - Deletes an Item using its access token.
-
-* **Auth**
-  * **Retrieve Auth** - Retrieves the bank account and routing numbers associated with an Item’s checking and savings accounts, along with high-level account data and balances.
-
-* **Transactions**
-  * **Retrieve Transactions** - Retrieves user-authorized transaction data for credit and depository-type Accounts. Transaction data is standardized across financial institutions, and in many cases transactions are linked to a clean name, entity type, location, and category. Similarly, account data is standardized and returned with a clean name, number, balance, and other meta information where available.
-
-* **Balance**
-  * **Retrieve Balance** - Retrieves the real-time balance for each of an Item’s accounts.
-
-* **Identity**
-  * **Retrieve Identity** -  Retrieves various account holder information on file with the financial institution, including names, emails, phone numbers, and addresses.
-
-* **Income / Employment**
-  * **Income Item Creation** - Simulate creating an Income Item in Sandbox without going through the actual user Link experience.
-  * **Retrieve Paystubs Info** - Retrieve paystubs related data from user's income verification
-  * **Retrieve Taxform Data** - Retrieve taxforms (W2, etc.) related data from user's income verification
-  * **Retrieve Employment Info** - Retrieve employment related data (job title, starting date) from user's payroll information
-
-* **Liabilities**
-  * **Retrieve Liabilities** - Retrieves information pertaining to an Item's liabilities.
-
-* **Investments**
-  * **Retrieve Investments Holdings** - Retrieves information pertaining to an Item's Holdings for the Investments product.
-  * **Retrieve Investments Transactions** - Retrieves information pertaining to an Item's Transactions for the Investments product.
-
-* **Assets**
-  * **Create Asset Report** - Creates an Asset Report.
-  * **Retrieve an Asset Report (JSON)** - Retrieves an Asset Report in JSON.
-  * **Retrieve an Asset Report (PDF)** - Retrieves an Asset Report in PDF.
-  * **Create Audit Copy** - Plaid can provide an Audit Copy of any Asset Report directly to a participating third party on your behalf. This endpoint creates that Audit Copy.
-  * **Remove Asset Report** - Removes an Asset Report.
-  * **Remove Audit Copy** - Removes an Audit Copy.
-  * **Refresh Asset Report** - Create a new Asset Report based on the old one, but with the most recent data available from the financial institution(s).
-
-* **Institutions**
-  * **Search Institution by Name** - Retrieves information about a specific institution by name.
-  * **Search Institution by ID** - Retrieves information about a specific institution by ID.
-  * **Retrieve Institution List** - Retrieves a list of all supported institutions.
-
-* **Categories**
-  * **Retrieve Categories** - Retrieves detailed information on categories returned by Plaid. This endpoint does not require authentication.
+1. Download the [link.html](/link.html) file included in this repo and open it in a text editor (alternatively, open a text editor, create a new file called link.html, and copy and paste the contents of [link.html](/link.html) into it). You will use this file later.
+2. Re-visit the "Configuration" steps at the top of this page, but after opening the environment settings, click the "..." button in the upper right and select "Duplicate". This will create a new environment called "Sandbox copy" -- to rename it, click the pencil icon next to the name and name it either "Development" or "Production" as appropriate. 
+3. On your newly created environment, change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` (for Production) or `development.plaid.com` (for Development).
+4. To apply these new settings, select your new environment from the drop-down in the upper right. Alternatively, while editing the new environment, you can click "..." and select "Set as active environment".
+5. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
+6. If you want, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity". Note that only institutions that support ALL the products you specify here will appear in Link -- if you don't see the institution you want when Link is launched, make sure you have listed the right product. For example, an institution that only supports credit cards (e.g. American Express) will not appear in Link if a product that doesn't support credit cards (like auth) is specified.
+7. Click the blue "Send" button.
+8. Copy the value of the `link_token` from the response.
+9. Return to your local copy of link.html. Replace the text 'your-link-token-goes-here' in link.html with the value you copied in the previous step, and save the file.
+10. Open link.html in a web browser.
+11. Open the web browser Developer Tools (for example, in Chrome, go to View->Developer->Developer Tools), then open the Console tab within Developer tools.
+12. Click the "Link Account" button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution. Make sure to use a real username and password, not the Sandbox credentials.
+13. Once the prompts have completed and you have successfully logged in via Link, the Console tab from step 8 should contain text saying "the public token is:" followed by the value of the public token. Copy the public token value.
+14. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select the public token value -- by default, it is `"{{public_token}}"`. Replace this value with your copied public token from the previous step, then hit Send.
+15. The response will contain an `access_token` suitable for making calls in Production (or Development)! As in the Quickstart, it will be automatically saved for you to use in future requests. You can then follow the same steps as you did in the Quickstart (starting with step 7) to make API requests for real data.
 
 ## Useful Tools
-[Webhook Tester](https://webhook.site/) is a great tool for receiving webhook calls. Generate a webhook url on this site and use that url for any Postman requests that require you to specify a webhook url. You can go on Webhook Tester to see a list of all requests being made to that url.
-
-
-## Important Note
-The `/public_token/create` endpoint is only available in the `sandbox` environment. It exists only for testing purposes and simulates an Item Creation via the Plaid Link module. Items cannot be created directly via an endpoint for the `development` and `production` environments and can only be created through Plaid Link.
+[Webhook Tester](https://webhook.site/) and [Request Bin](https://requestbin.com/) are useful tools for receiving webhook calls. You can use them to generate a webhook url and use that url for any Postman requests that require you to specify a webhook url, then use the sites to inspect the content of any webhooks they received.
