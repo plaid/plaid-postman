@@ -11,6 +11,19 @@
 			"item": [
 				{
 					"name": "Create Link Token",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();",
+									"linkToken = response.link_token;",
+									"pm.environment.set(\"link_token\", linkToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
