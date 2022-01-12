@@ -1,5 +1,5 @@
 {
-	"id": "ab6a1fbf-1ef5-4541-b7e4-5f53b569f5ad",
+	"id": "501b1298-0f65-4442-a0dc-5c9fc93ccb82",
 	"name": "Sandbox",
 	"values": [
 		{
@@ -10,6 +10,7 @@
 		{
 			"key": "secret_key",
 			"value": "YOUR_SECRET_KEY",
+			"type": "secret",
 			"enabled": true
 		},
 		{
@@ -36,9 +37,19 @@
 			"key": "account_id",
 			"value": "",
 			"enabled": true
+		},
+		{
+			"key": "processor_token",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "transfer_id",
+			"value": "",
+			"enabled": true
 		}
 	],
 	"_postman_variable_scope": "environment",
-	"_postman_exported_at": "2020-07-25T01:39:35.777Z",
-	"_postman_exported_using": "Postman/7.29.1"
+	"_postman_exported_at": "2022-01-11T23:18:50.070Z",
+	"_postman_exported_using": "Postman/9.8.3"
 }
