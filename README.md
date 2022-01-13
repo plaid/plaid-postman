@@ -14,11 +14,11 @@ Follow these steps to quickly get started with the [Plaid API](https://plaid.com
 3. Once both the collection and the environment variables are imported into Postman, see the [Configuration](https://github.com/plaid/plaid-postman#configuration) section on how to correctly configure API keys with the collection.
 
 ### Configuration
-The Plaid Postman collection uses [Postman environment variables](https://learning.getpostman.com/docs/postman/environments_and_globals/intro_to_environments_and_globals/) to simplify each API request. More information on managing Postman environments can be found at [Setting up an environment with variables](https://learning.getpostman.com/docs/postman/environments_and_globals/manage_environments/).
+The Plaid Postman collection uses [Postman environment variables](https://learning.getpostman.com/docs/postman/environments_and_globals/intro_to_environments_and_globals/) to simplify each API request.
 
 ![plaid-postman-configuration](/images/plaid-postman-config.png)
 
-1. Select the `Sandbox Public` environment in the top right corner
+1. Select the `Sandbox` environment in the top right corner
 2. Click the `eye` icon to open the environment settings
 3. Copy in your [Plaid API keys from your Plaid Dashboard](https://dashboard.plaid.com/account/keys), into each field:
   - `client_id`
