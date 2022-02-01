@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "029fcda5-4c0c-478f-8fe4-0431f99e213e",
+		"_postman_id": "58550b06-779e-4c53-ad57-37aee9edb136",
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -15,12 +15,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"linkToken = response.link_token;",
 									"pm.environment.set(\"link_token\", linkToken);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -78,7 +78,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": "{\n  \"link_token\": \"link-sandbox-af1a0311-da53-4636-b754-dd15cc058176\",\n  \"expiration\": \"2020-03-27T12:56:34Z\",\n  \"request_id\": \"XQVgFigpGHXkb0b\"\n}"
@@ -151,12 +151,12 @@
 						{
 							"listen": "prerequest",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"linkToken = response.link_token;",
 									"pm.environment.set(\"link_token\", linkToken);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -237,12 +237,12 @@
 								{
 									"listen": "test",
 									"script": {
+										"type": "text/javascript",
 										"exec": [
 											"let response = pm.response.json();",
 											"publicToken = response.public_token;",
 											"pm.environment.set(\"public_token\", publicToken);"
-										],
-										"type": "text/javascript"
+										]
 									}
 								}
 							],
@@ -394,12 +394,12 @@
 								{
 									"listen": "test",
 									"script": {
+										"type": "text/javascript",
 										"exec": [
 											"let response = pm.response.json();",
 											"accessToken = response.access_token;",
 											"pm.environment.set(\"access_token\", accessToken);"
-										],
-										"type": "text/javascript"
+										]
 									}
 								}
 							],
@@ -686,12 +686,12 @@
 								{
 									"listen": "test",
 									"script": {
+										"type": "text/javascript",
 										"exec": [
 											"let response = pm.response.json();",
 											"accountId = response.accounts[0].account_id;",
 											"pm.environment.set(\"account_id\", accountId);"
-										],
-										"type": "text/javascript"
+										]
 									}
 								}
 							],
@@ -2883,7 +2883,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": null
@@ -2902,12 +2902,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"assetReportToken = response.asset_report_token;",
 									"pm.environment.set(\"asset_report_token\", assetReportToken);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -3887,12 +3887,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"liabilitiesReportToken = response.liabilities_report_token;",
 									"pm.environment.set(\"liabilities_report_token\", liabilitiesReportToken);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -4289,7 +4289,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": "{\n  \"accounts\": [\n    {\n      \"account_id\": \"BxBXxLj1m4HMXBm9WZZmCWVbPjX16EHwv99vp\",\n      \"balances\": {\n        \"available\": 100,\n        \"current\": 110,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"0000\",\n      \"name\": \"Plaid Checking\",\n      \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n      \"subtype\": \"checking\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"dVzbVMLjrxTnLjX4G66XUp5GLklm4oiZy88yK\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 410,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": 2000,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"3333\",\n      \"name\": \"Plaid Credit Card\",\n      \"official_name\": \"Plaid Diamond 12.5% APR Interest Credit Card\",\n      \"subtype\": \"credit card\",\n      \"type\": \"credit\"\n    },\n    {\n      \"account_id\": \"Pp1Vpkl9w8sajvK6oEEKtr7vZxBnGpf7LxxLE\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 65262,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"7777\",\n      \"name\": \"Plaid Student Loan\",\n      \"official_name\": null,\n      \"subtype\": \"student\",\n      \"type\": \"loan\"\n    },\n    {\n      \"account_id\": \"BxBXxLj1m4HMXBm9WZJyUg9XLd4rKEhw8Pb1J\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 56302.06,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"8888\",\n      \"name\": \"Plaid Mortgage\",\n      \"official_name\": null,\n      \"subtype\": \"mortgage\",\n      \"type\": \"loan\"\n    }\n  ],\n  \"item\": {\n    \"available_products\": [\n      \"balance\",\n      \"investments\"\n    ],\n    \"billed_products\": [\n      \"assets\",\n      \"auth\",\n      \"identity\",\n      \"liabilities\",\n      \"transactions\"\n    ],\n    \"consent_expiration_time\": null,\n    \"error\": null,\n    \"institution_id\": \"ins_3\",\n    \"item_id\": \"eVBnVMp7zdTJLkRNr33Rs6zr7KNJqBFL9DrE6\",\n    \"update_type\": \"background\",\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  },\n  \"liabilities\": {\n    \"credit\": [\n      {\n        \"account_id\": \"dVzbVMLjrxTnLjX4G66XUp5GLklm4oiZy88yK\",\n        \"aprs\": [\n          {\n            \"apr_percentage\": 15.24,\n            \"apr_type\": \"balance_transfer_apr\",\n            \"balance_subject_to_apr\": 1562.32,\n            \"interest_charge_amount\": 130.22\n          },\n          {\n            \"apr_percentage\": 27.95,\n            \"apr_type\": \"cash_apr\",\n            \"balance_subject_to_apr\": 56.22,\n            \"interest_charge_amount\": 14.81\n          },\n          {\n            \"apr_percentage\": 12.5,\n            \"apr_type\": \"purchase_apr\",\n            \"balance_subject_to_apr\": 157.01,\n            \"interest_charge_amount\": 25.66\n          },\n          {\n            \"apr_percentage\": 0,\n            \"apr_type\": \"special\",\n            \"balance_subject_to_apr\": 1000,\n            \"interest_charge_amount\": 0\n          }\n        ],\n        \"is_overdue\": false,\n        \"last_payment_amount\": 168.25,\n        \"last_payment_date\": \"2019-05-22\",\n        \"last_statement_issue_date\": \"2019-05-28\",\n        \"last_statement_balance\": 1708.77,\n        \"minimum_payment_amount\": 20,\n        \"next_payment_due_date\": \"2020-05-28\"\n      }\n    ],\n    \"mortgage\": [\n      {\n        \"account_id\": \"BxBXxLj1m4HMXBm9WZJyUg9XLd4rKEhw8Pb1J\",\n        \"account_number\": \"3120194154\",\n        \"current_late_fee\": 25,\n        \"escrow_balance\": 3141.54,\n        \"has_pmi\": true,\n        \"has_prepayment_penalty\": true,\n        \"interest_rate\": {\n          \"percentage\": 3.99,\n          \"type\": \"fixed\"\n        },\n        \"last_payment_amount\": 3141.54,\n        \"last_payment_date\": \"2019-08-01\",\n        \"loan_term\": \"30 year\",\n        \"loan_type_description\": \"conventional\",\n        \"maturity_date\": \"2045-07-31\",\n        \"next_monthly_payment\": 3141.54,\n        \"next_payment_due_date\": \"2019-11-15\",\n        \"origination_date\": \"2015-08-01\",\n        \"origination_principal_amount\": 425000,\n        \"past_due_amount\": 2304,\n        \"property_address\": {\n          \"city\": \"Malakoff\",\n          \"country\": \"US\",\n          \"postal_code\": \"14236\",\n          \"region\": \"NY\",\n          \"street\": \"2992 Cameron Road\"\n        },\n        \"ytd_interest_paid\": 12300.4,\n        \"ytd_principal_paid\": 12340.5\n      }\n    ],\n    \"student\": [\n      {\n        \"account_id\": \"Pp1Vpkl9w8sajvK6oEEKtr7vZxBnGpf7LxxLE\",\n        \"account_number\": \"4277075694\",\n        \"disbursement_dates\": [\n          \"2002-08-28\"\n        ],\n        \"expected_payoff_date\": \"2032-07-28\",\n        \"guarantor\": \"DEPT OF ED\",\n        \"interest_rate_percentage\": 5.25,\n        \"is_overdue\": false,\n        \"last_payment_amount\": 138.05,\n        \"last_payment_date\": \"2019-04-22\",\n        \"last_statement_issue_date\": \"2019-04-28\",\n        \"loan_name\": \"Consolidation\",\n        \"loan_status\": {\n          \"end_date\": \"2032-07-28\",\n          \"type\": \"repayment\"\n        },\n        \"minimum_payment_amount\": 25,\n        \"next_payment_due_date\": \"2019-05-28\",\n        \"origination_date\": \"2002-08-28\",\n        \"origination_principal_amount\": 25000,\n        \"outstanding_interest_amount\": 6227.36,\n        \"payment_reference_number\": \"4277075694\",\n        \"pslf_status\": {\n          \"estimated_eligibility_date\": \"2021-01-01\",\n          \"payments_made\": 200,\n          \"payments_remaining\": 160\n        },\n        \"repayment_plan\": {\n          \"description\": \"Standard Repayment\",\n          \"type\": \"standard\"\n        },\n        \"sequence_number\": \"1\",\n        \"servicer_address\": {\n          \"city\": \"San Matias\",\n          \"country\": \"US\",\n          \"postal_code\": \"99415\",\n          \"region\": \"CA\",\n          \"street\": \"123 Relaxation Road\"\n        },\n        \"ytd_interest_paid\": 280.55,\n        \"ytd_principal_paid\": 271.65\n      }\n    ]\n  },\n  \"request_id\": \"dTnnm60WgKGLnKL\"\n}"
@@ -4358,7 +4358,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": "{\n  \"accounts\": [\n    {\n      \"account_id\": \"5Bvpj4QknlhVWk7GygpwfVKdd133GoCxB814g\",\n      \"balances\": {\n        \"available\": 43200,\n        \"current\": 43200,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"4444\",\n      \"name\": \"Plaid Money Market\",\n      \"official_name\": \"Plaid Platinum Standard 1.85% Interest Money Market\",\n      \"subtype\": \"money market\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"JqMLm4rJwpF6gMPJwBqdh9ZjjPvvpDcb7kDK1\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 320.76,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"5555\",\n      \"name\": \"Plaid IRA\",\n      \"official_name\": null,\n      \"subtype\": \"ira\",\n      \"type\": \"investment\"\n    },\n    {\n      \"account_id\": \"k67E4xKvMlhmleEa4pg9hlwGGNnnEeixPolGm\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 23631.9805,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"6666\",\n      \"name\": \"Plaid 401k\",\n      \"official_name\": null,\n      \"subtype\": \"401k\",\n      \"type\": \"investment\"\n    }\n  ],\n  \"holdings\": [\n    {\n      \"account_id\": \"JqMLm4rJwpF6gMPJwBqdh9ZjjPvvpDcb7kDK1\",\n      \"cost_basis\": 1,\n      \"institution_price\": 1,\n      \"institution_price_as_of\": \"2021-04-13\",\n      \"institution_value\": 0.01,\n      \"iso_currency_code\": \"USD\",\n      \"quantity\": 0.01,\n      \"security_id\": \"d6ePmbPxgWCWmMVv66q9iPV94n91vMtov5Are\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"account_id\": \"k67E4xKvMlhmleEa4pg9hlwGGNnnEeixPolGm\",\n      \"cost_basis\": 1.5,\n      \"institution_price\": 2.11,\n      \"institution_price_as_of\": null,\n      \"institution_value\": 2.11,\n      \"iso_currency_code\": \"USD\",\n      \"quantity\": 1,\n      \"security_id\": \"KDwjlXj1Rqt58dVvmzRguxJybmyQL8FgeWWAy\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"account_id\": \"k67E4xKvMlhmleEa4pg9hlwGGNnnEeixPolGm\",\n      \"cost_basis\": 10,\n      \"institution_price\": 10.42,\n      \"institution_price_as_of\": null,\n      \"institution_value\": 20.84,\n      \"iso_currency_code\": \"USD\",\n      \"quantity\": 2,\n      \"security_id\": \"NDVQrXQoqzt5v3bAe8qRt4A7mK7wvZCLEBBJk\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"account_id\": \"JqMLm4rJwpF6gMPJwBqdh9ZjjPvvpDcb7kDK1\",\n      \"cost_basis\": 0.01,\n      \"institution_price\": 0.011,\n      \"institution_price_as_of\": null,\n      \"institution_value\": 110,\n      \"iso_currency_code\": \"USD\",\n      \"quantity\": 10000,\n      \"security_id\": \"8E4L9XLl6MudjEpwPAAgivmdZRdBPJuvMPlPb\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"account_id\": \"k67E4xKvMlhmleEa4pg9hlwGGNnnEeixPolGm\",\n      \"cost_basis\": 23,\n      \"institution_price\": 27,\n      \"institution_price_as_of\": null,\n      \"institution_value\": 636.309,\n      \"iso_currency_code\": \"USD\",\n      \"quantity\": 23.567,\n      \"security_id\": \"JDdP7XPMklt5vwPmDN45t3KAoWAPmjtpaW7DP\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"account_id\": \"k67E4xKvMlhmleEa4pg9hlwGGNnnEeixPolGm\",\n      \"cost_basis\": 15,\n      \"institution_price\": 13.73,\n      \"institution_price_as_of\": null,\n      \"institution_value\": 1373.6865,\n      \"iso_currency_code\": \"USD\",\n      \"quantity\": 100.05,\n      \"security_id\": \"nnmo8doZ4lfKNEDe3mPJipLGkaGw3jfPrpxoN\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"account_id\": \"k67E4xKvMlhmleEa4pg9hlwGGNnnEeixPolGm\",\n      \"cost_basis\": 1,\n      \"institution_price\": 1,\n      \"institution_price_as_of\": null,\n      \"institution_value\": 12345.67,\n      \"iso_currency_code\": \"USD\",\n      \"quantity\": 12345.67,\n      \"security_id\": \"d6ePmbPxgWCWmMVv66q9iPV94n91vMtov5Are\",\n      \"unofficial_currency_code\": null\n    }\n  ],\n  \"item\": {\n    \"available_products\": [\n      \"balance\",\n      \"identity\",\n      \"liabilities\",\n      \"transactions\"\n    ],\n    \"billed_products\": [\n      \"assets\",\n      \"auth\",\n      \"investments\"\n    ],\n    \"consent_expiration_time\": null,\n    \"error\": null,\n    \"institution_id\": \"ins_3\",\n    \"item_id\": \"4z9LPae1nRHWy8pvg9jrsgbRP4ZNQvIdbLq7g\",\n    \"update_type\": \"background\",\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  },\n  \"request_id\": \"l68wb8zpS0hqmsJ\",\n  \"securities\": [\n    {\n      \"close_price\": 0.011,\n      \"close_price_as_of\": \"2021-04-13\",\n      \"cusip\": null,\n      \"institution_id\": null,\n      \"institution_security_id\": null,\n      \"is_cash_equivalent\": false,\n      \"isin\": null,\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"Nflx Feb 01'18 $355 Call\",\n      \"proxy_security_id\": null,\n      \"security_id\": \"8E4L9XLl6MudjEpwPAAgivmdZRdBPJuvMPlPb\",\n      \"sedol\": null,\n      \"ticker_symbol\": \"NFLX180201C00355000\",\n      \"type\": \"derivative\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"close_price\": 27,\n      \"close_price_as_of\": null,\n      \"cusip\": \"577130834\",\n      \"institution_id\": null,\n      \"institution_security_id\": null,\n      \"is_cash_equivalent\": false,\n      \"isin\": \"US5771308344\",\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"Matthews Pacific Tiger Fund Insti Class\",\n      \"proxy_security_id\": null,\n      \"security_id\": \"JDdP7XPMklt5vwPmDN45t3KAoWAPmjtpaW7DP\",\n      \"sedol\": null,\n      \"ticker_symbol\": \"MIPTX\",\n      \"type\": \"mutual fund\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"close_price\": 2.11,\n      \"close_price_as_of\": null,\n      \"cusip\": \"00448Q201\",\n      \"institution_id\": null,\n      \"institution_security_id\": null,\n      \"is_cash_equivalent\": false,\n      \"isin\": \"US00448Q2012\",\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"Achillion Pharmaceuticals Inc.\",\n      \"proxy_security_id\": null,\n      \"security_id\": \"KDwjlXj1Rqt58dVvmzRguxJybmyQL8FgeWWAy\",\n      \"sedol\": null,\n      \"ticker_symbol\": \"ACHN\",\n      \"type\": \"equity\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"close_price\": 10.42,\n      \"close_price_as_of\": null,\n      \"cusip\": \"258620103\",\n      \"institution_id\": null,\n      \"institution_security_id\": null,\n      \"is_cash_equivalent\": false,\n      \"isin\": \"US2586201038\",\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"DoubleLine Total Return Bond Fund\",\n      \"proxy_security_id\": null,\n      \"security_id\": \"NDVQrXQoqzt5v3bAe8qRt4A7mK7wvZCLEBBJk\",\n      \"sedol\": null,\n      \"ticker_symbol\": \"DBLTX\",\n      \"type\": \"mutual fund\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"close_price\": 1,\n      \"close_price_as_of\": null,\n      \"cusip\": null,\n      \"institution_id\": null,\n      \"institution_security_id\": null,\n      \"is_cash_equivalent\": true,\n      \"isin\": null,\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"U S Dollar\",\n      \"proxy_security_id\": null,\n      \"security_id\": \"d6ePmbPxgWCWmMVv66q9iPV94n91vMtov5Are\",\n      \"sedol\": null,\n      \"ticker_symbol\": \"USD\",\n      \"type\": \"cash\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"close_price\": 13.73,\n      \"close_price_as_of\": null,\n      \"cusip\": null,\n      \"institution_id\": \"ins_3\",\n      \"institution_security_id\": \"NHX105509\",\n      \"is_cash_equivalent\": false,\n      \"isin\": null,\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"NH PORTFOLIO 1055 (FIDELITY INDEX)\",\n      \"proxy_security_id\": null,\n      \"security_id\": \"nnmo8doZ4lfKNEDe3mPJipLGkaGw3jfPrpxoN\",\n      \"sedol\": null,\n      \"ticker_symbol\": \"NHX105509\",\n      \"type\": \"etf\",\n      \"unofficial_currency_code\": null\n    }\n  ]\n}"
@@ -4422,7 +4422,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": "{\n  \"accounts\": [\n    {\n      \"account_id\": \"5e66Dl6jNatx3nXPGwZ7UkJed4z6KBcZA4Rbe\",\n      \"balances\": {\n        \"available\": 100,\n        \"current\": 110,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"0000\",\n      \"name\": \"Plaid Checking\",\n      \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n      \"subtype\": \"checking\",\n      \"type\": \"depository\"\n    },\n    {\n      \"account_id\": \"KqZZMoZmBWHJlz7yKaZjHZb78VNpaxfVa7e5z\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 320.76,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"5555\",\n      \"name\": \"Plaid IRA\",\n      \"official_name\": null,\n      \"subtype\": \"ira\",\n      \"type\": \"investment\"\n    },\n    {\n      \"account_id\": \"rz99ex9ZQotvnjXdgQLEsR81e3ArPgulVWjGj\",\n      \"balances\": {\n        \"available\": null,\n        \"current\": 23631.9805,\n        \"iso_currency_code\": \"USD\",\n        \"limit\": null,\n        \"unofficial_currency_code\": null\n      },\n      \"mask\": \"6666\",\n      \"name\": \"Plaid 401k\",\n      \"official_name\": null,\n      \"subtype\": \"401k\",\n      \"type\": \"investment\"\n    }\n  ],\n  \"investment_transactions\": [\n    {\n      \"account_id\": \"rz99ex9ZQotvnjXdgQLEsR81e3ArPgulVWjGj\",\n      \"amount\": -8.72,\n      \"cancel_transaction_id\": null,\n      \"date\": \"2020-05-29\",\n      \"fees\": 0,\n      \"investment_transaction_id\": \"oq99Pz97joHQem4BNjXECev1E4B6L6sRzwANW\",\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"INCOME DIV DIVIDEND RECEIVED\",\n      \"price\": 0,\n      \"quantity\": 0,\n      \"security_id\": \"eW4jmnjd6AtjxXVrjmj6SX1dNEdZp3Cy8RnRQ\",\n      \"subtype\": \"dividend\",\n      \"type\": \"cash\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"account_id\": \"rz99ex9ZQotvnjXdgQLEsR81e3ArPgulVWjGj\",\n      \"amount\": -1289.01,\n      \"cancel_transaction_id\": null,\n      \"date\": \"2020-05-28\",\n      \"fees\": 7.99,\n      \"investment_transaction_id\": \"pK99jB9e7mtwjA435GpVuMvmWQKVbVFLWme57\",\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"SELL Matthews Pacific Tiger Fund Insti Class\",\n      \"price\": 27.53,\n      \"quantity\": -47.74104242992852,\n      \"security_id\": \"JDdP7XPMklt5vwPmDN45t3KAoWAPmjtpaW7DP\",\n      \"subtype\": \"sell\",\n      \"type\": \"sell\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"account_id\": \"rz99ex9ZQotvnjXdgQLEsR81e3ArPgulVWjGj\",\n      \"amount\": 7.7,\n      \"cancel_transaction_id\": null,\n      \"date\": \"2020-05-27\",\n      \"fees\": 7.99,\n      \"investment_transaction_id\": \"LKoo1ko93wtreBwM7yQnuQ3P5DNKbKSPRzBNv\",\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"BUY DoubleLine Total Return Bond Fund\",\n      \"price\": 10.42,\n      \"quantity\": 0.7388014749727547,\n      \"security_id\": \"NDVQrXQoqzt5v3bAe8qRt4A7mK7wvZCLEBBJk\",\n      \"subtype\": \"buy\",\n      \"type\": \"buy\",\n      \"unofficial_currency_code\": null\n    }\n  ],\n  \"item\": {\n    \"available_products\": [\n      \"assets\",\n      \"balance\",\n      \"identity\",\n      \"transactions\"\n    ],\n    \"billed_products\": [\n      \"auth\",\n      \"investments\"\n    ],\n    \"consent_expiration_time\": null,\n    \"error\": null,\n    \"institution_id\": \"ins_12\",\n    \"item_id\": \"8Mqq5rqQ7Pcxq9MGDv3JULZ6yzZDLMCwoxGDq\",\n    \"update_type\": \"background\",\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  },\n  \"request_id\": \"iv4q3ZlytOOthkv\",\n  \"securities\": [\n    {\n      \"close_price\": 27,\n      \"close_price_as_of\": null,\n      \"cusip\": \"577130834\",\n      \"institution_id\": null,\n      \"institution_security_id\": null,\n      \"is_cash_equivalent\": false,\n      \"isin\": \"US5771308344\",\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"Matthews Pacific Tiger Fund Insti Class\",\n      \"proxy_security_id\": null,\n      \"security_id\": \"JDdP7XPMklt5vwPmDN45t3KAoWAPmjtpaW7DP\",\n      \"sedol\": null,\n      \"ticker_symbol\": \"MIPTX\",\n      \"type\": \"mutual fund\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"close_price\": 10.42,\n      \"close_price_as_of\": null,\n      \"cusip\": \"258620103\",\n      \"institution_id\": null,\n      \"institution_security_id\": null,\n      \"is_cash_equivalent\": false,\n      \"isin\": \"US2586201038\",\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"DoubleLine Total Return Bond Fund\",\n      \"proxy_security_id\": null,\n      \"security_id\": \"NDVQrXQoqzt5v3bAe8qRt4A7mK7wvZCLEBBJk\",\n      \"sedol\": null,\n      \"ticker_symbol\": \"DBLTX\",\n      \"type\": \"mutual fund\",\n      \"unofficial_currency_code\": null\n    },\n    {\n      \"close_price\": 34.73,\n      \"close_price_as_of\": null,\n      \"cusip\": \"84470P109\",\n      \"institution_id\": null,\n      \"institution_security_id\": null,\n      \"is_cash_equivalent\": false,\n      \"isin\": \"US84470P1093\",\n      \"iso_currency_code\": \"USD\",\n      \"name\": \"Southside Bancshares Inc.\",\n      \"proxy_security_id\": null,\n      \"security_id\": \"eW4jmnjd6AtjxXVrjmj6SX1dNEdZp3Cy8RnRQ\",\n      \"sedol\": null,\n      \"ticker_symbol\": \"SBSI\",\n      \"type\": \"equity\",\n      \"unofficial_currency_code\": null\n    }\n  ],\n  \"total_investment_transactions\": 3\n}"
@@ -4930,12 +4930,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"recipientId = response.recipient_id;",
 									"pm.environment.set(\"recipient_id\", recipientId);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -4998,7 +4998,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": "{\n  \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n  \"request_id\": \"4zlKapIkTm8p5KM\"\n}"
@@ -5011,12 +5011,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"paymentId = response.payment_id;",
 									"pm.environment.set(\"payment_id\", paymentId);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -5079,7 +5079,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": null
@@ -5142,7 +5142,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": "{\n  \"link_token\": \"link-sandbox-af1a0311-da53-4636-b754-dd15cc058176\",\n  \"expiration\": \"2020-03-27T12:56:34Z\",\n  \"request_id\": \"XQVgFigpGHXkb0b\"\n}"
@@ -5210,7 +5210,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": "{\n  \"payment_id\": \"payment-id-sandbox-feca8a7a-5591-4aef-9297-f3062bb735d3\",\n  \"payment_token\": \"payment-token-sandbox-c6a26505-42b4-46fe-8ecf-bf9edcafbebb\",\n  \"reference\": \"Account Funding 99744\",\n  \"amount\": {\n    \"currency\": \"GBP\",\n    \"value\": 100\n  },\n  \"status\": \"PAYMENT_STATUS_INPUT_NEEDED\",\n  \"last_status_update\": \"2019-11-06T21:10:52Z\",\n  \"payment_expiration_time\": \"2019-11-06T21:25:52Z\",\n  \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n  \"bacs\": null,\n  \"iban\": null,\n  \"request_id\": \"aEAQmewMzlVa1k6\"\n}"
@@ -5278,7 +5278,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": "{\n  \"payments\": [\n    {\n      \"payment_id\": \"payment-id-sandbox-feca8a7a-5591-4aef-9297-f3062bb735d3\",\n      \"reference\": \"Account Funding 99744\",\n      \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 100\n      },\n      \"status\": \"PAYMENT_STATUS_INPUT_NEEDED\",\n      \"last_status_update\": \"2019-11-06T21:10:52Z\",\n      \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n      \"bacs\": null,\n      \"iban\": null\n    }\n  ],\n  \"next_cursor\": \"2020-01-01T00:00:00Z\",\n  \"request_id\": \"aEAQmewMzlVa1k6\"\n}"
@@ -5341,7 +5341,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": "{\n  \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n  \"name\": \"Wonder Wallet\",\n  \"iban\": \"GB29NWBK60161331926819\",\n  \"address\": {\n    \"street\": [\n      \"96 Guild Street\",\n      \"9th Floor\"\n    ],\n    \"city\": \"London\",\n    \"postal_code\": \"SE14 8JW\",\n    \"country\": \"GB\"\n  },\n  \"request_id\": \"4zlKapIkTm8p5KM\"\n}"
@@ -5404,7 +5404,7 @@
 									]
 								}
 							},
-							"_postman_previewlanguage": null,
+							"_postman_previewlanguage": "Text",
 							"header": null,
 							"cookie": [],
 							"body": "{\n  \"recipients\": [\n    {\n      \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n      \"name\": \"Wonder Wallet\",\n      \"iban\": \"GB29NWBK60161331926819\",\n      \"address\": {\n        \"street\": [\n          \"96 Guild Street\",\n          \"9th Floor\"\n        ],\n        \"city\": \"London\",\n        \"postal_code\": \"SE14 8JW\",\n        \"country\": \"GB\"\n      }\n    }\n  ],\n  \"request_id\": \"4zlKapIkTm8p5KM\"\n}"
@@ -5488,12 +5488,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"processorToken = response.processor_token;",
 									"pm.environment.set(\"processor_token\", processorToken);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -6107,7 +6107,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"{{access_token}}\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"ach_class\": \"ppd\",\n    \"amount\": \".50\",\n    \"description\": \"test\",\n    \"user\": {\n        \"legal_name\": \"Anna Bobbeth Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    }\n}"
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"{{access_token}}\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"ach_class\": \"ppd\",\n    \"amount\": \"50.00\",\n    \"user\": {\n        \"legal_name\": \"Anna Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/transfer/authorization/create",
@@ -6166,12 +6166,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"transferId = response.transfer_id;",
 									"pm.environment.set(\"transfer_id\", transferId);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -6185,7 +6185,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"idempotency_key\": \"ENTER_UNIQUE_RANDOM_STRING_HERE\",\n    \"access_token\": \"{{access_token}}\",\n    \"authorization_id\": \"ENTER_AUTHORIZATION_ID\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"ach_class\": \"ppd\",\n    \"amount\": \".50\",\n    \"description\": \"test\",\n    \"user\": {\n        \"legal_name\": \"Anna Bobbeth Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    }\n}"
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"idempotency_key\": \"ENTER_UNIQUE_RANDOM_STRING_HERE\",\n    \"access_token\": \"{{access_token}}\",\n    \"authorization_id\": \"ENTER_AUTHORIZATION_ID\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"ach_class\": \"ppd\",\n    \"amount\": \"50.00\",\n    \"description\": \"test\",\n    \"user\": {\n        \"legal_name\": \"Anna Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/transfer/create",
