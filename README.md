@@ -6,6 +6,8 @@ For the Plaid Quickstart guide that uses code, see the [Plaid Quickstart](https:
 
 ## Getting started
 
+> Don't feel like reading? Want your information in video format instead? Check out our [Plaid and Postman in Three Minutes](https://www.youtube.com/watch?v=f4NhgHpp5aA) video tutorial.
+
 Follow these steps to quickly get started with the [Plaid API](https://plaid.com/docs):
 
 1. [Sign up](https://dashboard.plaid.com/signup) with Plaid to get a set of API keys that are required for interacting with the API.
