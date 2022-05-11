@@ -21,7 +21,7 @@ Make sure to rename examples to "OK" rather than using the default name.
 
 When you are ready to publish the collection, do the following:
 
-Click on the "..." next to the collection name and select "export" and then "Collection 2.1". Rename the resulting JSON file to match the name of the file used in the collection and add it to your commit.
+Click on the "..." next to the collection name and select "export" and then "Collection 2.1". Rename the resulting JSON file to match the name of the file used on GitHub (currently "Plaid API Endpoints Collection.json") and add it to your commit. While this JSON file isn't used by Postman directly, it's a good way to keep track of your changes within GitHub.
 
 Click on the "..." next to the collection name and click "share" -> "Via run in Postman" -> "Embed a static version" -> "Generate code" -> "Add an environment" (select Sandbox) -> "Markdown friendly" 
 
