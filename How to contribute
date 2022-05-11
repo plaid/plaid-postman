@@ -23,7 +23,7 @@ When you are ready to publish the collection, do the following:
 
 Click on the "..." next to the collection name and select "export" and then "Collection 2.1". Rename the resulting JSON file to match the name of the file used in the collection and add it to your commit.
 
-Click on the "..." next to the collection name and click "share" -> "Via run in Postman" -> embed a static version -> generate code -> add an environment (select Sandbox) -> markdown version. 
+Click on the "..." next to the collection name and click "share" -> "Via run in Postman" -> "Embed a static version" -> "Generate code" -> "Add an environment" (select Sandbox) -> "Markdown friendly" 
 
 Test the link generated to make sure it works correctly! If it doesn't, try restarting Postman and following the steps above. If it does work, copy and paste the markdown into the README, replacing the old button. Add the README to your commit.
 
