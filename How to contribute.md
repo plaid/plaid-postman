@@ -35,6 +35,6 @@ If someone merges to `master` before you land your changes, you may clobber thei
 Suggested course of action:
 1. Merge `origin/master` into your branch. The Plaid API Endpoints Collection JSON should merge cleanly, incorporating new changes with your unmerged changes, EXCEPT for the `_postman_id`, which is fine. We will regenerate this in the next step.
 1. Import the Postman collection from the merged Plaid API Endpoints Collection JSON. You should replace the existing postman collection (since we want the collection to have the same name).
-1. From here, everything in the GUI is good to go and you should proceed as normal in [publishing the Plaid Postman collection](####Publishing the Plaid Postman collection)
+1. From here, everything in the GUI is good to go and you should proceed as normal in [publishing the Plaid Postman collection](####publishing-the-plaid-postman-collection)
   - Re-export the Postman collection to the Plaid API Endpoints Collection JSON (fixes the `_postman_id`)
   - Fix the README button (regenerate within Postman + replace in README)
