@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "24922ba1-8389-44af-bbf7-f73355a3bfbc",
+		"_postman_id": "af77df51-cd2d-4083-8ba3-25acda240768",
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -5368,6 +5368,72 @@
 					]
 				},
 				{
+					"name": "Repayments",
+					"item": [
+						{
+							"name": "List historical repayments",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"start_date\": \"2019-12-06T22:35:49Z\",\n    \"end_date\": \"2019-12-12T22:35:49Z\",\n    \"count\": 25,\n    \"offset\": 0\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/transfer/repayment/list",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"transfer",
+										"repayment",
+										"list"
+									]
+								},
+								"description": "Use the `/transfer/repayment/list` endpoint to get a list of repayments based on specified filter criteria."
+							},
+							"response": []
+						},
+						{
+							"name": "List returns included in repayment",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"repayment_id\": \"ENTER_REPAYMENT_ID_HERE\",\n    \"count\": 25,\n    \"offset\": 0\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/transfer/repayment/return/list",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"transfer",
+										"repayment",
+										"return",
+										"list"
+									]
+								},
+								"description": "Use the `/transfer/repayment/return/list` endpoint to retrieve the set of returns that were batched together into the specified repayment."
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "Assess transfer risk",
 					"request": {
 						"method": "POST",
@@ -5379,7 +5445,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"{{access_token}}\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"ach_class\": \"ppd\",\n    \"amount\": \".50\",\n    \"description\": \"test\",\n    \"user\": {\n        \"legal_name\": \"Anna Bobbeth Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    }\n}"
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"{{access_token}}\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"ach_class\": \"ppd\",\n    \"amount\": \"0.50\",\n    \"user\": {\n        \"legal_name\": \"Anna Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/transfer/authorization/create",
@@ -5438,12 +5504,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"transferId = response.transfer_id;",
 									"pm.environment.set(\"transfer_id\", transferId);"
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -5457,7 +5523,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"idempotency_key\": \"ENTER_UNIQUE_RANDOM_STRING_HERE\",\n    \"access_token\": \"{{access_token}}\",\n    \"authorization_id\": \"ENTER_AUTHORIZATION_ID\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"ach_class\": \"ppd\",\n    \"amount\": \".50\",\n    \"description\": \"test\",\n    \"user\": {\n        \"legal_name\": \"Anna Bobbeth Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    }\n}"
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"{{access_token}}\",\n    \"authorization_id\": \"ENTER_AUTHORIZATION_ID\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"ach_class\": \"ppd\",\n    \"amount\": \"0.50\",\n    \"description\": \"test\",\n    \"user\": {\n        \"legal_name\": \"Anna Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/transfer/create",
@@ -5759,6 +5825,66 @@
 							],
 							"cookie": [],
 							"body": "{\n \"request_id\": \"mdqfuVxeoza6mhu\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Simulate a repayment in Sandbox",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/sandbox/transfer/repayment/simulate",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"sandbox",
+								"transfer",
+								"repayment",
+								"simulate"
+							]
+						},
+						"description": "Use the `/sandbox/transfer/repayment/simulate` endpoint to trigger the creation of a repayment. As a side effect of calling this route, a repayment is created that includes all unreimbursed returns of guaranteed transfers. If there are no such returns, an 400 error is returned."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"client_id\": \"{{client_id}}\",\n\t\"secret\": \"{{secret_key}}\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/sandbox/transfer/repayment/simulate",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"sandbox",
+										"transfer",
+										"repayment",
+										"simulate"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"request_id\": \"ci9r5eHDGleSoto\"\n}"
 						}
 					]
 				},
