@@ -1,10 +1,6 @@
 {
 	"info": {
-<<<<<<< HEAD
-		"_postman_id": "af77df51-cd2d-4083-8ba3-25acda240768",
-=======
 		"_postman_id": "4f1088cb-7678-4099-b3c6-4a1156364f03",
->>>>>>> master
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
