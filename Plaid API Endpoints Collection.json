@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "3594e1c9-8e6c-46a3-88eb-d304a5e67fd0",
+		"_postman_id": "d72698eb-2e8e-4b6a-8e3d-1a403a8fc4ca",
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "7910186"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -5505,12 +5504,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"transferId = response.transfer_id;",
 									"pm.environment.set(\"transfer_id\", transferId);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -6341,12 +6340,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"pm.environment.set(\"identity_verification_id\", response.id);",
 									"pm.environment.set(\"client_user_id\", response.client_user_id);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -6738,11 +6737,11 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"pm.environment.set(\"watchlist_screening_id\", response.id);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -7062,11 +7061,11 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"pm.environment.set(\"watchlist_screening_hit_id\", response.watchlist_screening_hits[0].id);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -7394,11 +7393,11 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"pm.environment.set(\"entity_watchlist_screening_id\", response.id);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -7718,11 +7717,11 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"pm.environment.set(\"entity_watchlist_screening_hit_id\", response.entity_watchlist_screening_hits[0].id);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -7913,6 +7912,138 @@
 							"header": [],
 							"cookie": [],
 							"body": "{\n    \"entity_watchlist_screening_reviews\": [\n        {\n            \"audit_trail\": {\n                \"dashboard_user_id\": null,\n                \"source\": \"api\",\n                \"timestamp\": \"2022-05-18T20:46:07Z\"\n            },\n            \"comment\": null,\n            \"confirmed_hits\": [\n                \"enthit_9GbKu2JRHSk1ku\"\n            ],\n            \"dismissed_hits\": [],\n            \"id\": \"entrev_9G8DYuuFVst8we\"\n        }\n    ],\n    \"next_cursor\": null,\n    \"request_id\": \"315fSKm1rIWOt4T\"\n}"
+						}
+					]
+				},
+				{
+					"name": "List dashboard users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();",
+									"pm.environment.set(\"dashboard_user_id\", response.dashboard_users[0].id);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{env_url}}/dashboard_user/list",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"dashboard_user",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/dashboard_user/list",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"dashboard_user",
+										"list"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"dashboard_users\": [\n        {\n            \"created_at\": \"2022-05-09T18:42:35Z\",\n            \"email_address\": \"user@example.com\",\n            \"id\": \"5d51af4e8fd6470012c1c664\",\n            \"status\": \"active\"\n        },\n        {\n            \"created_at\": \"2022-05-13T00:11:22Z\",\n            \"email_address\": \"user2@example.com\",\n            \"id\": \"58bf70054e95b845e522e123\",\n            \"status\": \"active\"\n        }\n    ],\n    \"next_cursor\": null,\n    \"request_id\": \"YsGCLAUIhTLsSb6\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Retrieve a dashboard user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"dashboard_user_id\": \"{{dashboard_user_id}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{env_url}}/dashboard_user/get",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"dashboard_user",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"dashboard_user_id\": \"{{dashboard_user_id}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/dashboard_user/get",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"dashboard_user",
+										"get"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"created_at\": \"2022-05-09T18:42:35Z\",\n    \"email_address\": \"user@example.com\",\n    \"id\": \"5d51af4e8fd6470012c1c664\",\n    \"request_id\": \"98Z6JN49tKnTKVW\",\n    \"status\": \"active\"\n}"
 						}
 					]
 				}
