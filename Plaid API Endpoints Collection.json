@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "d72698eb-2e8e-4b6a-8e3d-1a403a8fc4ca",
+		"_postman_id": "eabd6eb4-6067-488a-9645-d7a208bcc944",
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12160321"
 	},
 	"item": [
 		{
@@ -6340,12 +6341,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"pm.environment.set(\"identity_verification_id\", response.id);",
 									"pm.environment.set(\"client_user_id\", response.client_user_id);"
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -6354,7 +6355,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"template_id\": \"flwtmp_cSX5fHG7CtzxCU\",\n  \"consent\": true,\n  \"shareable\": true,\n  \"user\": {\n    \"client_user_id\": \"your-db-id-3b24114\",\n    \"email_address\": \"user@example.com\",\n    \"phone_number\": \"+19876543212\",\n    \"date_of_birth\": \"1975-01-18\",\n    \"name\": {\n      \"given_name\": \"Leslie\",\n      \"family_name\": \"Knope\"\n    },\n    \"address\": {\n      \"street\": \"123 Main St.\",\n      \"street2\": \"Unit 42\",\n      \"city\": \"Pawnee\",\n      \"region\": \"IN\",\n      \"postal_code\": \"46001\",\n      \"country\": \"US\"\n    },\n    \"id_number\": {\n      \"value\": \"123456789\",\n      \"type\": \"us_ssn\"\n    }\n  }\n}",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"template_id\": \"flwtmp_cSX5fHG7CtzxCU\",\n  \"gave_consent\": true,\n  \"is_shareable\": true,\n  \"user\": {\n    \"client_user_id\": \"your-db-id-3b24114\",\n    \"email_address\": \"user@example.com\",\n    \"phone_number\": \"+19876543212\",\n    \"date_of_birth\": \"1975-01-18\",\n    \"name\": {\n      \"given_name\": \"Leslie\",\n      \"family_name\": \"Knope\"\n    },\n    \"address\": {\n      \"street\": \"123 Main St.\",\n      \"street2\": \"Unit 42\",\n      \"city\": \"Pawnee\",\n      \"region\": \"IN\",\n      \"postal_code\": \"46001\",\n      \"country\": \"US\"\n    },\n    \"id_number\": {\n      \"value\": \"123456789\",\n      \"type\": \"us_ssn\"\n    }\n  }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7921,11 +7922,11 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"pm.environment.set(\"dashboard_user_id\", response.dashboard_users[0].id);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
