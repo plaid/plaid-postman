@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "eabd6eb4-6067-488a-9645-d7a208bcc944",
+		"_postman_id": "4b226a69-9cd8-4078-a7bb-5af27084145a",
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "12160321"
+		"_exporter_id": "19691786"
 	},
 	"item": [
 		{
@@ -4683,6 +4683,305 @@
 							"body": "{\n  \"recipients\": [\n    {\n      \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n      \"name\": \"Wonder Wallet\",\n      \"iban\": \"GB29NWBK60161331926819\",\n      \"address\": {\n        \"street\": [\n          \"96 Guild Street\",\n          \"9th Floor\"\n        ],\n        \"city\": \"London\",\n        \"postal_code\": \"SE14 8JW\",\n        \"country\": \"GB\"\n      }\n    }\n  ],\n  \"request_id\": \"4zlKapIkTm8p5KM\"\n}"
 						}
 					]
+				},
+				{
+					"name": "Create Payment Consent",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();",
+									"paymentConsentId = response.consent_id;",
+									"pm.environment.set(\"payment_consent_id\", paymentConsentId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"recipient_id\": \"{{recipient_id}}\",\n    \"reference\": \"Test recurring\",\n    \"scopes\": [\n        \"ME_TO_ME\"\n    ],\n    \"constraints\": {\n        \"max_payment_amount\": {\n            \"currency\": \"GBP\",\n            \"value\": 10\n        },\n        \"periodic_amounts\": [\n            {\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 50\n                },\n                \"alignment\": \"CALENDAR\",\n                \"interval\": \"MONTH\"\n            },\n            {\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 130\n                },\n                \"alignment\": \"CONSENT\",\n                \"interval\": \"YEAR\"\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/consent/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"consent",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"recipient_id\": \"{{recipient_id}}\",\n    \"reference\": \"Test recurring\",\n    \"scopes\": [\n        \"ME_TO_ME\"\n    ],\n    \"constraints\": {\n        \"max_payment_amount\": {\n            \"currency\": \"GBP\",\n            \"value\": 10\n        },\n        \"periodic_amounts\": [\n            {\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 50\n                },\n                \"alignment\": \"CALENDAR\",\n                \"interval\": \"MONTH\"\n            },\n            {\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 130\n                },\n                \"alignment\": \"CONSENT\",\n                \"interval\": \"YEAR\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/consent/create",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"consent",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"consent_id\": \"payment-consent-id-sandbox-dc2a1e9a-6c69-4e44-8dd3-39eaac7db64a\",\n    \"request_id\": \"XgeoW8PAUtgIGze\",\n    \"status\": \"UNAUTHORISED\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Payment Consent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"consent_id\": \"{{payment_consent_id}}\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/consent/get",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"consent",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"consent_id\": \"payment-consent-id-sandbox-dc2a1e9a-6c69-4e44-8dd3-39eaac7db64a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/consent/get",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"consent",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"consent_id\": \"payment-consent-id-sandbox-dc2a1e9a-6c69-4e44-8dd3-39eaac7db64a\",\n    \"constraints\": {\n        \"max_payment_amount\": {\n            \"currency\": \"GBP\",\n            \"value\": 10\n        },\n        \"periodic_amounts\": [\n            {\n                \"alignment\": \"CALENDAR\",\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 50\n                },\n                \"interval\": \"MONTH\"\n            },\n            {\n                \"alignment\": \"CONSENT\",\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 130\n                },\n                \"interval\": \"YEAR\"\n            }\n        ]\n    },\n    \"created_at\": \"2022-08-29T14:09:24.774Z\",\n    \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n    \"reference\": \"Test recurring\",\n    \"request_id\": \"AKwlj7GRW8hRDE9\",\n    \"scopes\": [\n        \"ME_TO_ME\"\n    ],\n    \"status\": \"AUTHORISED\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Revoke Payment Consent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"consent_id\": \"{{payment_consent_id}}\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/consent/revoke",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"consent",
+								"revoke"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"consent_id\": \"payment-consent-id-sandbox-dc2a1e9a-6c69-4e44-8dd3-39eaac7db64a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/consent/revoke",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"consent",
+										"revoke"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"request_id\": \"yU2OZzwrqsXTXsq\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Execute Consent Based Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"consent_id\": \"{{payment_consent_id}}\",\n    \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 3\n    },\n    \"idempotency_key\": \"{{$randomUUID}}\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/consent/payment/execute",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"consent",
+								"payment",
+								"execute"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"consent_id\": \"payment-consent-id-sandbox-dc2a1e9a-6c69-4e44-8dd3-39eaac7db64a\",\n    \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 3\n    },\n    \"idempotency_key\": \"{{$randomUUID}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/consent/payment/execute",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"consent",
+										"payment",
+										"execute"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"payment_id\": \"payment-id-devenv-95b80dcd-3747-4984-820d-9b5062bcc555\",\n    \"request_id\": \"rOKmqryXRP5yoos\",\n    \"status\": \"PAYMENT_STATUS_EXECUTED\"\n}"
+						}
+					]
 				}
 			],
 			"description": "The UK Payment Initiation API enables payment transfers within your app. Plaid supports both domestic payments denominated in pound sterling (typically via the Faster Payments network, although this is up to the institution) and international payments denominated in euro (typically via SEPA Credit Transfer). Each time a client wants to receive a payment, the end user must authorize the payment in Link before the payment can be initiated.\n\n**Note:** The revised EU Directive on Payment Services (\"PSD2\") regulations require strong customer authentication (\"SCA\") for each payment order."
@@ -6341,12 +6640,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"pm.environment.set(\"identity_verification_id\", response.id);",
 									"pm.environment.set(\"client_user_id\", response.client_user_id);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
