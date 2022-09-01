@@ -4695,7 +4695,8 @@
 									"let response = pm.response.json();",
 									"paymentConsentId = response.consent_id;",
 									"pm.environment.set(\"payment_consent_id\", paymentConsentId);"
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
