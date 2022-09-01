@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "d72698eb-2e8e-4b6a-8e3d-1a403a8fc4ca",
+		"_postman_id": "64802d97-075c-414e-8f56-ac4cf6a66bd4",
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12160321"
 	},
 	"item": [
 		{
@@ -4682,6 +4683,305 @@
 							"body": "{\n  \"recipients\": [\n    {\n      \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n      \"name\": \"Wonder Wallet\",\n      \"iban\": \"GB29NWBK60161331926819\",\n      \"address\": {\n        \"street\": [\n          \"96 Guild Street\",\n          \"9th Floor\"\n        ],\n        \"city\": \"London\",\n        \"postal_code\": \"SE14 8JW\",\n        \"country\": \"GB\"\n      }\n    }\n  ],\n  \"request_id\": \"4zlKapIkTm8p5KM\"\n}"
 						}
 					]
+				},
+				{
+					"name": "Create Payment Consent",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"let response = pm.response.json();",
+									"paymentConsentId = response.consent_id;",
+									"pm.environment.set(\"payment_consent_id\", paymentConsentId);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"recipient_id\": \"{{recipient_id}}\",\n    \"reference\": \"Test recurring\",\n    \"scopes\": [\n        \"ME_TO_ME\"\n    ],\n    \"constraints\": {\n        \"max_payment_amount\": {\n            \"currency\": \"GBP\",\n            \"value\": 10\n        },\n        \"periodic_amounts\": [\n            {\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 50\n                },\n                \"alignment\": \"CALENDAR\",\n                \"interval\": \"MONTH\"\n            },\n            {\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 130\n                },\n                \"alignment\": \"CONSENT\",\n                \"interval\": \"YEAR\"\n            }\n        ]\n    }\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/consent/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"consent",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"recipient_id\": \"{{recipient_id}}\",\n    \"reference\": \"Test recurring\",\n    \"scopes\": [\n        \"ME_TO_ME\"\n    ],\n    \"constraints\": {\n        \"max_payment_amount\": {\n            \"currency\": \"GBP\",\n            \"value\": 10\n        },\n        \"periodic_amounts\": [\n            {\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 50\n                },\n                \"alignment\": \"CALENDAR\",\n                \"interval\": \"MONTH\"\n            },\n            {\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 130\n                },\n                \"alignment\": \"CONSENT\",\n                \"interval\": \"YEAR\"\n            }\n        ]\n    }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/consent/create",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"consent",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"consent_id\": \"payment-consent-id-sandbox-dc2a1e9a-6c69-4e44-8dd3-39eaac7db64a\",\n    \"request_id\": \"XgeoW8PAUtgIGze\",\n    \"status\": \"UNAUTHORISED\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get Payment Consent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"consent_id\": \"{{payment_consent_id}}\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/consent/get",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"consent",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"consent_id\": \"payment-consent-id-sandbox-dc2a1e9a-6c69-4e44-8dd3-39eaac7db64a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/consent/get",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"consent",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"consent_id\": \"payment-consent-id-sandbox-dc2a1e9a-6c69-4e44-8dd3-39eaac7db64a\",\n    \"constraints\": {\n        \"max_payment_amount\": {\n            \"currency\": \"GBP\",\n            \"value\": 10\n        },\n        \"periodic_amounts\": [\n            {\n                \"alignment\": \"CALENDAR\",\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 50\n                },\n                \"interval\": \"MONTH\"\n            },\n            {\n                \"alignment\": \"CONSENT\",\n                \"amount\": {\n                    \"currency\": \"GBP\",\n                    \"value\": 130\n                },\n                \"interval\": \"YEAR\"\n            }\n        ]\n    },\n    \"created_at\": \"2022-08-29T14:09:24.774Z\",\n    \"recipient_id\": \"recipient-id-sandbox-9b6b4679-914b-445b-9450-efbdb80296f6\",\n    \"reference\": \"Test recurring\",\n    \"request_id\": \"AKwlj7GRW8hRDE9\",\n    \"scopes\": [\n        \"ME_TO_ME\"\n    ],\n    \"status\": \"AUTHORISED\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Revoke Payment Consent",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"consent_id\": \"{{payment_consent_id}}\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/consent/revoke",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"consent",
+								"revoke"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"consent_id\": \"payment-consent-id-sandbox-dc2a1e9a-6c69-4e44-8dd3-39eaac7db64a\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/consent/revoke",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"consent",
+										"revoke"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"request_id\": \"yU2OZzwrqsXTXsq\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Execute Consent Based Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"consent_id\": \"{{payment_consent_id}}\",\n    \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 3\n    },\n    \"idempotency_key\": \"{{$randomUUID}}\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/payment_initiation/consent/payment/execute",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"payment_initiation",
+								"consent",
+								"payment",
+								"execute"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"consent_id\": \"payment-consent-id-sandbox-dc2a1e9a-6c69-4e44-8dd3-39eaac7db64a\",\n    \"amount\": {\n        \"currency\": \"GBP\",\n        \"value\": 3\n    },\n    \"idempotency_key\": \"{{$randomUUID}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_initiation/consent/payment/execute",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_initiation",
+										"consent",
+										"payment",
+										"execute"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": null,
+							"cookie": [],
+							"body": "{\n    \"payment_id\": \"payment-id-devenv-95b80dcd-3747-4984-820d-9b5062bcc555\",\n    \"request_id\": \"rOKmqryXRP5yoos\",\n    \"status\": \"PAYMENT_STATUS_EXECUTED\"\n}"
+						}
+					]
 				}
 			],
 			"description": "The UK Payment Initiation API enables payment transfers within your app. Plaid supports both domestic payments denominated in pound sterling (typically via the Faster Payments network, although this is up to the institution) and international payments denominated in euro (typically via SEPA Credit Transfer). Each time a client wants to receive a payment, the end user must authorize the payment in Link before the payment can be initiated.\n\n**Note:** The revised EU Directive on Payment Services (\"PSD2\") regulations require strong customer authentication (\"SCA\") for each payment order."
@@ -6328,6 +6628,142 @@
 							"body": "{\n    \"bank_income\": [\n        {\n            \"bank_income_id\": \"b0e8f482-ec22-4557-841a-76648f37267e\",\n            \"bank_income_summary\": {\n                \"end_date\": \"2022-03-31\",\n                \"historical_summary\": [\n                    {\n                        \"end_date\": \"2021-04-30\",\n                        \"iso_currency_code\": null,\n                        \"start_date\": \"2021-04-07\",\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2021-05-31\",\n                        \"iso_currency_code\": \"USD\",\n                        \"start_date\": \"2021-05-01\",\n                        \"total_amount\": 4.22,\n                        \"transactions\": [\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2021-05-05\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7fe\",\n                                \"unofficial_currency_code\": null\n                            }\n                        ],\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2021-06-30\",\n                        \"iso_currency_code\": \"USD\",\n                        \"start_date\": \"2021-06-01\",\n                        \"total_amount\": 4.22,\n                        \"transactions\": [\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2021-06-04\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7fc\",\n                                \"unofficial_currency_code\": null\n                            }\n                        ],\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2021-07-31\",\n                        \"iso_currency_code\": \"USD\",\n                        \"start_date\": \"2021-07-01\",\n                        \"total_amount\": 4.22,\n                        \"transactions\": [\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2021-07-04\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7fa\",\n                                \"unofficial_currency_code\": null\n                            }\n                        ],\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2021-08-31\",\n                        \"iso_currency_code\": \"USD\",\n                        \"start_date\": \"2021-08-01\",\n                        \"total_amount\": 4.22,\n                        \"transactions\": [\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2021-08-03\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7f8\",\n                                \"unofficial_currency_code\": null\n                            }\n                        ],\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2021-09-30\",\n                        \"iso_currency_code\": \"USD\",\n                        \"start_date\": \"2021-09-01\",\n                        \"total_amount\": 4.22,\n                        \"transactions\": [\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2021-09-02\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7f6\",\n                                \"unofficial_currency_code\": null\n                            }\n                        ],\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2021-10-31\",\n                        \"iso_currency_code\": \"USD\",\n                        \"start_date\": \"2021-10-01\",\n                        \"total_amount\": 4.22,\n                        \"transactions\": [\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2021-10-02\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7f4\",\n                                \"unofficial_currency_code\": null\n                            }\n                        ],\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2021-11-30\",\n                        \"iso_currency_code\": \"USD\",\n                        \"start_date\": \"2021-11-01\",\n                        \"total_amount\": 4.22,\n                        \"transactions\": [\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2021-11-01\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7f2\",\n                                \"unofficial_currency_code\": null\n                            }\n                        ],\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2021-12-31\",\n                        \"iso_currency_code\": \"USD\",\n                        \"start_date\": \"2021-12-01\",\n                        \"total_amount\": 8.44,\n                        \"transactions\": [\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2021-12-01\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7f0\",\n                                \"unofficial_currency_code\": null\n                            },\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2021-12-31\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7ee\",\n                                \"unofficial_currency_code\": null\n                            }\n                        ],\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2022-01-31\",\n                        \"iso_currency_code\": \"USD\",\n                        \"start_date\": \"2022-01-01\",\n                        \"total_amount\": 4.22,\n                        \"transactions\": [\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2022-01-30\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7ec\",\n                                \"unofficial_currency_code\": null\n                            }\n                        ],\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2022-02-28\",\n                        \"iso_currency_code\": null,\n                        \"start_date\": \"2022-02-01\",\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2022-03-31\",\n                        \"iso_currency_code\": \"USD\",\n                        \"start_date\": \"2022-03-01\",\n                        \"total_amount\": 8.44,\n                        \"transactions\": [\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2022-03-01\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7ea\",\n                                \"unofficial_currency_code\": null\n                            },\n                            {\n                                \"amount\": 4.22,\n                                \"check_number\": null,\n                                \"date\": \"2022-03-31\",\n                                \"iso_currency_code\": \"USD\",\n                                \"name\": \"INTRST PYMNT\",\n                                \"original_description\": \"INTRST PYMNT\",\n                                \"transaction_id\": \"624e3db6b9d36f002922b7e8\",\n                                \"unofficial_currency_code\": null\n                            }\n                        ],\n                        \"unofficial_currency_code\": null\n                    },\n                    {\n                        \"end_date\": \"2022-04-07\",\n                        \"iso_currency_code\": null,\n                        \"start_date\": \"2022-04-01\",\n                        \"unofficial_currency_code\": null\n                    }\n                ],\n                \"income_categories_count\": 1,\n                \"income_sources_count\": 1,\n                \"income_transactions_count\": 12,\n                \"iso_currency_code\": \"USD\",\n                \"start_date\": \"2021-05-05\",\n                \"total_amount\": 50.64,\n                \"unofficial_currency_code\": null\n            },\n            \"days_requested\": 365,\n            \"generated_time\": \"2022-04-07T01:26:03.985583Z\",\n            \"items\": [\n                {\n                    \"bank_income_accounts\": [\n                        {\n                            \"account_id\": \"L7djAgNz1VCbmq4lnBo8c95mj1yKArHlzaqn7\",\n                            \"mask\": \"0000\",\n                            \"name\": \"Plaid Checking\",\n                            \"official_name\": \"Plaid Gold Standard 0% Interest Checking\",\n                            \"owners\": [\n                                {\n                                    \"addresses\": [\n                                        {\n                                            \"data\": {\n                                                \"city\": \"Malakoff\",\n                                                \"country\": \"US\",\n                                                \"postal_code\": \"14236\",\n                                                \"region\": \"NY\",\n                                                \"street\": \"2992 Cameron Road\"\n                                            },\n                                            \"primary\": true\n                                        },\n                                        {\n                                            \"data\": {\n                                                \"city\": \"San Matias\",\n                                                \"country\": \"US\",\n                                                \"postal_code\": \"93405-2255\",\n                                                \"region\": \"CA\",\n                                                \"street\": \"2493 Leisure Lane\"\n                                            },\n                                            \"primary\": false\n                                        }\n                                    ],\n                                    \"emails\": [\n                                        {\n                                            \"data\": \"accountholder0@example.com\",\n                                            \"primary\": true,\n                                            \"type\": \"primary\"\n                                        },\n                                        {\n                                            \"data\": \"accountholder1@example.com\",\n                                            \"primary\": false,\n                                            \"type\": \"secondary\"\n                                        },\n                                        {\n                                            \"data\": \"extraordinarily.long.email.username.123456@reallylonghostname.com\",\n                                            \"primary\": false,\n                                            \"type\": \"other\"\n                                        }\n                                    ],\n                                    \"names\": [\n                                        \"Alberta Bobbeth Charleson\"\n                                    ],\n                                    \"phone_numbers\": [\n                                        {\n                                            \"data\": \"1112223333\",\n                                            \"primary\": false,\n                                            \"type\": \"home\"\n                                        },\n                                        {\n                                            \"data\": \"1112224444\",\n                                            \"primary\": false,\n                                            \"type\": \"work\"\n                                        },\n                                        {\n                                            \"data\": \"1112225555\",\n                                            \"primary\": false,\n                                            \"type\": \"mobile\"\n                                        }\n                                    ]\n                                }\n                            ],\n                            \"subtype\": \"checking\",\n                            \"type\": \"depository\"\n                        },\n                        {\n                            \"account_id\": \"p8rL6aRdj5uEWd6qVAaZF9W3a6EVrpHEmnbMv\",\n                            \"mask\": \"1111\",\n                            \"name\": \"Plaid Saving\",\n                            \"official_name\": \"Plaid Silver Standard 0.1% Interest Saving\",\n                            \"owners\": [\n                                {\n                                    \"addresses\": [\n                                        {\n                                            \"data\": {\n                                                \"city\": \"Malakoff\",\n                                                \"country\": \"US\",\n                                                \"postal_code\": \"14236\",\n                                                \"region\": \"NY\",\n                                                \"street\": \"2992 Cameron Road\"\n                                            },\n                                            \"primary\": true\n                                        },\n                                        {\n                                            \"data\": {\n                                                \"city\": \"San Matias\",\n                                                \"country\": \"US\",\n                                                \"postal_code\": \"93405-2255\",\n                                                \"region\": \"CA\",\n                                                \"street\": \"2493 Leisure Lane\"\n                                            },\n                                            \"primary\": false\n                                        }\n                                    ],\n                                    \"emails\": [\n                                        {\n                                            \"data\": \"accountholder0@example.com\",\n                                            \"primary\": true,\n                                            \"type\": \"primary\"\n                                        },\n                                        {\n                                            \"data\": \"accountholder1@example.com\",\n                                            \"primary\": false,\n                                            \"type\": \"secondary\"\n                                        },\n                                        {\n                                            \"data\": \"extraordinarily.long.email.username.123456@reallylonghostname.com\",\n                                            \"primary\": false,\n                                            \"type\": \"other\"\n                                        }\n                                    ],\n                                    \"names\": [\n                                        \"Alberta Bobbeth Charleson\"\n                                    ],\n                                    \"phone_numbers\": [\n                                        {\n                                            \"data\": \"1112223333\",\n                                            \"primary\": false,\n                                            \"type\": \"home\"\n                                        },\n                                        {\n                                            \"data\": \"1112224444\",\n                                            \"primary\": false,\n                                            \"type\": \"work\"\n                                        },\n                                        {\n                                            \"data\": \"1112225555\",\n                                            \"primary\": false,\n                                            \"type\": \"mobile\"\n                                        }\n                                    ]\n                                }\n                            ],\n                            \"subtype\": \"savings\",\n                            \"type\": \"depository\"\n                        },\n                        {\n                            \"account_id\": \"ogKX6xmkP5sG6wDlEmWniJE7x5k6MXukwy1eM\",\n                            \"mask\": \"2222\",\n                            \"name\": \"Plaid CD\",\n                            \"official_name\": \"Plaid Bronze Standard 0.2% Interest CD\",\n                            \"owners\": [\n                                {\n                                    \"addresses\": [\n                                        {\n                                            \"data\": {\n                                                \"city\": \"Malakoff\",\n                                                \"country\": \"US\",\n                                                \"postal_code\": \"14236\",\n                                                \"region\": \"NY\",\n                                                \"street\": \"2992 Cameron Road\"\n                                            },\n                                            \"primary\": true\n                                        },\n                                        {\n                                            \"data\": {\n                                                \"city\": \"San Matias\",\n                                                \"country\": \"US\",\n                                                \"postal_code\": \"93405-2255\",\n                                                \"region\": \"CA\",\n                                                \"street\": \"2493 Leisure Lane\"\n                                            },\n                                            \"primary\": false\n                                        }\n                                    ],\n                                    \"emails\": [\n                                        {\n                                            \"data\": \"accountholder0@example.com\",\n                                            \"primary\": true,\n                                            \"type\": \"primary\"\n                                        },\n                                        {\n                                            \"data\": \"accountholder1@example.com\",\n                                            \"primary\": false,\n                                            \"type\": \"secondary\"\n                                        },\n                                        {\n                                            \"data\": \"extraordinarily.long.email.username.123456@reallylonghostname.com\",\n                                            \"primary\": false,\n                                            \"type\": \"other\"\n                                        }\n                                    ],\n                                    \"names\": [\n                                        \"Alberta Bobbeth Charleson\"\n                                    ],\n                                    \"phone_numbers\": [\n                                        {\n                                            \"data\": \"1112223333\",\n                                            \"primary\": false,\n                                            \"type\": \"home\"\n                                        },\n                                        {\n                                            \"data\": \"1112224444\",\n                                            \"primary\": false,\n                                            \"type\": \"work\"\n                                        },\n                                        {\n                                            \"data\": \"1112225555\",\n                                            \"primary\": false,\n                                            \"type\": \"mobile\"\n                                        }\n                                    ]\n                                }\n                            ],\n                            \"subtype\": \"cd\",\n                            \"type\": \"depository\"\n                        },\n                        {\n                            \"account_id\": \"8LnwoWj85pCw8eo4J9zbilB3VAqnkrFKEmgo6\",\n                            \"mask\": \"4444\",\n                            \"name\": \"Plaid Money Market\",\n                            \"official_name\": \"Plaid Platinum Standard 1.85% Interest Money Market\",\n                            \"owners\": [\n                                {\n                                    \"addresses\": [\n                                        {\n                                            \"data\": {\n                                                \"city\": \"Malakoff\",\n                                                \"country\": \"US\",\n                                                \"postal_code\": \"14236\",\n                                                \"region\": \"NY\",\n                                                \"street\": \"2992 Cameron Road\"\n                                            },\n                                            \"primary\": true\n                                        },\n                                        {\n                                            \"data\": {\n                                                \"city\": \"San Matias\",\n                                                \"country\": \"US\",\n                                                \"postal_code\": \"93405-2255\",\n                                                \"region\": \"CA\",\n                                                \"street\": \"2493 Leisure Lane\"\n                                            },\n                                            \"primary\": false\n                                        }\n                                    ],\n                                    \"emails\": [\n                                        {\n                                            \"data\": \"accountholder0@example.com\",\n                                            \"primary\": true,\n                                            \"type\": \"primary\"\n                                        },\n                                        {\n                                            \"data\": \"accountholder1@example.com\",\n                                            \"primary\": false,\n                                            \"type\": \"secondary\"\n                                        },\n                                        {\n                                            \"data\": \"extraordinarily.long.email.username.123456@reallylonghostname.com\",\n                                            \"primary\": false,\n                                            \"type\": \"other\"\n                                        }\n                                    ],\n                                    \"names\": [\n                                        \"Alberta Bobbeth Charleson\"\n                                    ],\n                                    \"phone_numbers\": [\n                                        {\n                                            \"data\": \"1112223333\",\n                                            \"primary\": false,\n                                            \"type\": \"home\"\n                                        },\n                                        {\n                                            \"data\": \"1112224444\",\n                                            \"primary\": false,\n                                            \"type\": \"work\"\n                                        },\n                                        {\n                                            \"data\": \"1112225555\",\n                                            \"primary\": false,\n                                            \"type\": \"mobile\"\n                                        }\n                                    ]\n                                }\n                            ],\n                            \"subtype\": \"money market\",\n                            \"type\": \"depository\"\n                        }\n                    ],\n                    \"bank_income_sources\": [\n                        {\n                            \"account_id\": \"p8rL6aRdj5uEWd6qVAaZF9W3a6EVrpHEmnbMv\",\n                            \"end_date\": \"2022-03-31\",\n                            \"historical_summary\": [\n                                {\n                                    \"end_date\": \"2021-04-30\",\n                                    \"iso_currency_code\": null,\n                                    \"start_date\": \"2021-04-07\",\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2021-05-31\",\n                                    \"iso_currency_code\": \"USD\",\n                                    \"start_date\": \"2021-05-01\",\n                                    \"total_amount\": 4.22,\n                                    \"transactions\": [\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2021-05-05\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7fe\",\n                                            \"unofficial_currency_code\": null\n                                        }\n                                    ],\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2021-06-30\",\n                                    \"iso_currency_code\": \"USD\",\n                                    \"start_date\": \"2021-06-01\",\n                                    \"total_amount\": 4.22,\n                                    \"transactions\": [\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2021-06-04\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7fc\",\n                                            \"unofficial_currency_code\": null\n                                        }\n                                    ],\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2021-07-31\",\n                                    \"iso_currency_code\": \"USD\",\n                                    \"start_date\": \"2021-07-01\",\n                                    \"total_amount\": 4.22,\n                                    \"transactions\": [\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2021-07-04\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7fa\",\n                                            \"unofficial_currency_code\": null\n                                        }\n                                    ],\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2021-08-31\",\n                                    \"iso_currency_code\": \"USD\",\n                                    \"start_date\": \"2021-08-01\",\n                                    \"total_amount\": 4.22,\n                                    \"transactions\": [\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2021-08-03\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7f8\",\n                                            \"unofficial_currency_code\": null\n                                        }\n                                    ],\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2021-09-30\",\n                                    \"iso_currency_code\": \"USD\",\n                                    \"start_date\": \"2021-09-01\",\n                                    \"total_amount\": 4.22,\n                                    \"transactions\": [\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2021-09-02\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7f6\",\n                                            \"unofficial_currency_code\": null\n                                        }\n                                    ],\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2021-10-31\",\n                                    \"iso_currency_code\": \"USD\",\n                                    \"start_date\": \"2021-10-01\",\n                                    \"total_amount\": 4.22,\n                                    \"transactions\": [\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2021-10-02\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7f4\",\n                                            \"unofficial_currency_code\": null\n                                        }\n                                    ],\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2021-11-30\",\n                                    \"iso_currency_code\": \"USD\",\n                                    \"start_date\": \"2021-11-01\",\n                                    \"total_amount\": 4.22,\n                                    \"transactions\": [\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2021-11-01\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7f2\",\n                                            \"unofficial_currency_code\": null\n                                        }\n                                    ],\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2021-12-31\",\n                                    \"iso_currency_code\": \"USD\",\n                                    \"start_date\": \"2021-12-01\",\n                                    \"total_amount\": 8.44,\n                                    \"transactions\": [\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2021-12-01\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7f0\",\n                                            \"unofficial_currency_code\": null\n                                        },\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2021-12-31\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7ee\",\n                                            \"unofficial_currency_code\": null\n                                        }\n                                    ],\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2022-01-31\",\n                                    \"iso_currency_code\": \"USD\",\n                                    \"start_date\": \"2022-01-01\",\n                                    \"total_amount\": 4.22,\n                                    \"transactions\": [\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2022-01-30\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7ec\",\n                                            \"unofficial_currency_code\": null\n                                        }\n                                    ],\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2022-02-28\",\n                                    \"iso_currency_code\": null,\n                                    \"start_date\": \"2022-02-01\",\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2022-03-31\",\n                                    \"iso_currency_code\": \"USD\",\n                                    \"start_date\": \"2022-03-01\",\n                                    \"total_amount\": 8.44,\n                                    \"transactions\": [\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2022-03-01\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7ea\",\n                                            \"unofficial_currency_code\": null\n                                        },\n                                        {\n                                            \"amount\": 4.22,\n                                            \"check_number\": null,\n                                            \"date\": \"2022-03-31\",\n                                            \"iso_currency_code\": \"USD\",\n                                            \"name\": \"INTRST PYMNT\",\n                                            \"original_description\": \"INTRST PYMNT\",\n                                            \"transaction_id\": \"624e3db6b9d36f002922b7e8\",\n                                            \"unofficial_currency_code\": null\n                                        }\n                                    ],\n                                    \"unofficial_currency_code\": null\n                                },\n                                {\n                                    \"end_date\": \"2022-04-07\",\n                                    \"iso_currency_code\": null,\n                                    \"start_date\": \"2022-04-01\",\n                                    \"unofficial_currency_code\": null\n                                }\n                            ],\n                            \"income_category\": \"OTHER\",\n                            \"income_description\": \"INTRST PYMNT\",\n                            \"income_source_id\": \"9f6fc801-b825-4c71-96cf-acf2e452bc9e\",\n                            \"pay_frequency\": \"MONTHLY\",\n                            \"start_date\": \"2022-03-31\",\n                            \"total_amount\": 50.63,\n                            \"transaction_count\": 12\n                        }\n                    ],\n                    \"insitution_name\": \"Chase\",\n                    \"institution_id\": \"ins_3\",\n                    \"item_id\": \"qEzX6N1a7RhWa48KwJ1MCqnnPKb7g4IdVE9a3\",\n                    \"last_updated_time\": \"2022-04-07T01:26:11.018182Z\"\n                }\n            ]\n        }\n    ],\n    \"request_id\": \"HAFLNj6IYcsj6tB\"\n}"
 						}
 					]
+				},
+				{
+					"name": "Check Payroll Income Eligibility",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"user_token\": \"{{user_token}}\",\n  \"employer\": {\n    \"name\": \"Elm Publishing\",\n    \"address\": {\n      \"city\": \"New York\",\n      \"country\": \"US\",\n      \"postal_code\": \"10012\",\n      \"region\": \"NY\",\n      \"street\": \"123 Main Street\"\n    },\n    \"tax_id\": \"12-3456789\",\n    \"url\": \"https://elmpublishing.com\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{env_url}}/credit/payroll_income/precheck",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"credit",
+								"payroll_income",
+								"precheck"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \n   \"client_id\": \"7f57eb3d2a9j6480121fx361\",\n   \"secret\": \"79g03eoofwl8240v776r2h667442119\",\n   \"user_token\": \"user-sandbox-26347d58-5d61-4cc8-8d10-2b2217e1d8c9\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/credit/payroll_income/precheck",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"credit",
+										"payroll_income",
+										"precheck"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n  \"request_id\": \"lMjeOeu9X1VUh1F\",\n  \"confidence\": \"HIGH\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Simulate a verification status update in Sandbox",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"user_token\": \"{{user_token}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{env_url}}/credit/bank_income/get",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"credit",
+								"bank_income",
+								"get"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{  \n   \"client_id\": \"7f57eb3d2a9j6480121fx361\",\n   \"secret\": \"79g03eoofwl8240v776r2h667442119\",\n   \"user_token\": \"user-sandbox-26347d58-5d61-4cc8-8d10-2b2217e1d8c9\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/sandbox/income/fire_webhook",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"sandbox",
+										"income",
+										"fire_webhook"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n  \"request_id\": \"mdqfuVxeoza6mhu\"\n}"
+						}
+					]
 				}
 			]
 		},
@@ -6354,7 +6790,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"template_id\": \"flwtmp_cSX5fHG7CtzxCU\",\n  \"consent\": true,\n  \"shareable\": true,\n  \"user\": {\n    \"client_user_id\": \"your-db-id-3b24114\",\n    \"email_address\": \"user@example.com\",\n    \"phone_number\": \"+19876543212\",\n    \"date_of_birth\": \"1975-01-18\",\n    \"name\": {\n      \"given_name\": \"Leslie\",\n      \"family_name\": \"Knope\"\n    },\n    \"address\": {\n      \"street\": \"123 Main St.\",\n      \"street2\": \"Unit 42\",\n      \"city\": \"Pawnee\",\n      \"region\": \"IN\",\n      \"postal_code\": \"46001\",\n      \"country\": \"US\"\n    },\n    \"id_number\": {\n      \"value\": \"123456789\",\n      \"type\": \"us_ssn\"\n    }\n  }\n}",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"template_id\": \"flwtmp_cSX5fHG7CtzxCU\",\n  \"gave_consent\": true,\n  \"is_shareable\": true,\n  \"user\": {\n    \"client_user_id\": \"your-db-id-3b24114\",\n    \"email_address\": \"user@example.com\",\n    \"phone_number\": \"+19876543212\",\n    \"date_of_birth\": \"1975-01-18\",\n    \"name\": {\n      \"given_name\": \"Leslie\",\n      \"family_name\": \"Knope\"\n    },\n    \"address\": {\n      \"street\": \"123 Main St.\",\n      \"street2\": \"Unit 42\",\n      \"city\": \"Pawnee\",\n      \"region\": \"IN\",\n      \"postal_code\": \"46001\",\n      \"country\": \"US\"\n    },\n    \"id_number\": {\n      \"value\": \"123456789\",\n      \"type\": \"us_ssn\"\n    }\n  }\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -7921,11 +8357,11 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"pm.environment.set(\"dashboard_user_id\", response.dashboard_users[0].id);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
