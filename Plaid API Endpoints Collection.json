@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "4b226a69-9cd8-4078-a7bb-5af27084145a",
+		"_postman_id": "f0c404e3-89f7-4f07-b46a-748f23f81e95",
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "19691786"
+		"_exporter_id": "12160321"
 	},
 	"item": [
 		{
@@ -298,6 +298,36 @@
 					"name": "Item Creation",
 					"item": [
 						{
+							"name": "Create Item Custom [Sandbox Only]",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_custom\",\n    \"override_password\": \"{\\\"force_error\\\": \\\"USER_SETUP_REQUIRED\\\"}\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/sandbox/public_token/create",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"sandbox",
+										"public_token",
+										"create"
+									]
+								},
+								"description": "Creates an `Item` in the `sandbox` environment. You will get back a `public_token` and a `request_id`."
+							},
+							"response": []
+						},
+						{
 							"name": "Create Item [Sandbox Only]",
 							"event": [
 								{
@@ -423,36 +453,6 @@
 									"body": "{\n    \"public_token\": \"public-sandbox-e074761d-579a-4744-9f17-1729b92ded84\",\n    \"request_id\": \"d2fiTy8P44MDDaM\"\n}"
 								}
 							]
-						},
-						{
-							"name": "Create Item Custom [Sandbox Only]",
-							"request": {
-								"method": "POST",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_custom\",\n    \"override_password\": \"{\\\"force_error\\\": \\\"USER_SETUP_REQUIRED\\\"}\"\n  }\n}"
-								},
-								"url": {
-									"raw": "https://{{env_url}}/sandbox/public_token/create",
-									"protocol": "https",
-									"host": [
-										"{{env_url}}"
-									],
-									"path": [
-										"sandbox",
-										"public_token",
-										"create"
-									]
-								},
-								"description": "Creates an `Item` in the `sandbox` environment. You will get back a `public_token` and a `request_id`."
-							},
-							"response": []
 						},
 						{
 							"name": "Exchange Token",
@@ -4690,12 +4690,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"paymentConsentId = response.consent_id;",
 									"pm.environment.set(\"payment_consent_id\", paymentConsentId);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -6488,6 +6488,133 @@
 							"header": [],
 							"cookie": [],
 							"body": "{\n    \"request_id\": \"KRefbsJ9ovyz4y6\",\n    \"user_id\": \"4aa217483008ea1c4ce03a8daae55017d15af0dec80ab11a12f70fc12ac7007a\",\n    \"user_token\": \"user-sandbox-5277a9c9-5be9-44ce-9f17-3c6eb8f03043\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Initialize User Token for Payroll Income [Sandbox Only]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"let response = pm.response.json();",
+									"publicToken = response.public_token;",
+									"pm.environment.set(\"public_token\", publicToken);"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/sandbox/public_token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"sandbox",
+								"public_token",
+								"create"
+							]
+						},
+						"description": "Creates an `Item` in the `sandbox` environment. You will get back a `public_token` and a `request_id`."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/sandbox/public_token/create",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"sandbox",
+										"public_token",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Dec 2021 00:20:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "plaid-version",
+									"value": "2017-03-08"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"public_token\": \"public-sandbox-e074761d-579a-4744-9f17-1729b92ded84\",\n    \"request_id\": \"d2fiTy8P44MDDaM\"\n}"
 						}
 					]
 				},
