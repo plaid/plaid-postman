@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "cd0b0b65-4155-4210-9ce1-af2407f4b84f",
+		"_postman_id": "0dcfacb5-a818-4bfc-8186-6f4d6d38bcbd",
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -6516,7 +6516,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_90\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"user_token\": \"{{user_token}}\",\n  \"institution_id\": \"ins_90\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/sandbox/public_token/create",
