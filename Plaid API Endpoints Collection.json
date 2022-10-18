@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "0dcfacb5-a818-4bfc-8186-6f4d6d38bcbd",
+		"_postman_id": "b9d3b584-a8e9-4c85-8f74-f1aa294ad07b",
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -752,12 +752,21 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"let response = pm.response.json();",
 											"accountId = response.accounts[0].account_id;",
 											"pm.environment.set(\"account_id\", accountId);"
-										]
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
 									}
 								}
 							],
@@ -5735,6 +5744,19 @@
 				},
 				{
 					"name": "Assess transfer risk",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();",
+									"authorizationId = response.authorization.id;",
+									"pm.environment.set(\"authorization_id\", authorizationId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -5745,7 +5767,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"{{access_token}}\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"ach_class\": \"ppd\",\n    \"amount\": \"0.50\",\n    \"user\": {\n        \"legal_name\": \"Anna Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    }\n}"
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"{{access_token}}\",\n    \"account_id\": \"{{account_id}}\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"ach_class\": \"ppd\",\n    \"amount\": \"0.50\",\n    \"user\": {\n        \"legal_name\": \"Anna Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/transfer/authorization/create",
@@ -5804,12 +5826,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"transferId = response.transfer_id;",
 									"pm.environment.set(\"transfer_id\", transferId);"
-								]
+								],
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -5823,7 +5845,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"{{access_token}}\",\n    \"authorization_id\": \"ENTER_AUTHORIZATION_ID\",\n    \"account_id\": \"ENTER_ACCOUNT_ID_HERE\",\n    \"type\": \"credit\",\n    \"network\": \"ach\",\n    \"ach_class\": \"ppd\",\n    \"amount\": \"0.50\",\n    \"description\": \"test\",\n    \"user\": {\n        \"legal_name\": \"Anna Charleston\",\n        \"email_address\": \"anna.charleston@example.com\"\n    }\n}"
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"access_token\": \"{{access_token}}\",\n    \"authorization_id\": \"{{authorization_id}}\",\n    \"account_id\": \"{{account_id}}\",\n    \"amount\": \"0.50\",\n    \"description\": \"test\"\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/transfer/create",
@@ -6497,12 +6519,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"publicToken = response.public_token;",
 									"pm.environment.set(\"public_token\", publicToken);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
