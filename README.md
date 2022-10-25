@@ -57,17 +57,17 @@ The Bank Income flow cannot be tested using the Quickstart instructions above. T
 
 Using the Transfer endpoints requires you to be enrolled in the Transfer beta. Contact your Plaid Account manager or Plaid Sales to join the beta.
 
-To call Transfer endpoints, you will need either a payment profile token, or an both an access token and an account id. To obtain a payment profile token, call Transfer -> Create Payment Profile. To obtain an access token and account id, follow the Quickstart steps above, then call Items -> Item Management -> Retrieve an Item's accounts. 
+To call Transfer endpoints, you will need either a payment profile token, or both an access token and an account id. To obtain a payment profile token, call Transfer -> Create Payment Profile. To obtain an access token and account id, follow the Quickstart steps above, then call Items -> Item Management -> Retrieve an Item's accounts. 
 
-Once you have a payment profile token or an access token/account id pair, start by calling Transfer -> Authorize a transfer, then call Transfer -> Initiate a Transfer. Note that you will need to update the request bodies for these endpoints to use only the account identifying mechanism you are choosing -- for example, if you are using Payment Profiles, delete the `account_id` and `access_token` fields before making the request.
+Once you have a payment profile token or an access token / account id pair, start by calling Transfer -> Authorize a transfer, then call Transfer -> Initiate a transfer. Note that you will need to update the request bodies for these endpoints to use only the account identifying mechanism you are choosing -- for example, if you are using Payment Profiles, delete the `account_id` and `access_token` fields before making the request.
 
 ### Identity Verification and Monitor Quickstart notes
 
-New users are not enabled for Identity Verification or Monitor in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) to use the Postman collection.
+New Plaid customers are not enabled for Identity Verification or Monitor in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) to use the Postman collection.
 
 Identity Verification and Monitor cannot be tested using the Quickstart instructions above. To test Identity Verification or Monitor, use the instructions below for making Postman calls with real data; but you may optionally use Sandbox instead of Production (Identity Verification and Monitor cannot be used in Development). 
 
-In order to call `/link/token/create` in step 6 below when using Identity Verification, use the "Plaid API Endpoints -> Link Tokens -> Create Link Token (Identity Verification) endpoint. You will need to provide a `template_id` in the `identity_verification` object. This id can be obtained from the Dashboard -- in the upper-left corner, select **Identity Verification and Monitor** from the team selection drop-down list (if this does not exist, make sure to submit a product access request). Under **Identity Verification**, click the **Integration** button, and copy the `template_id.` 
+In order to call `/link/token/create` in step 6 below when using Identity Verification, use the "Plaid API Endpoints -> Link Tokens -> Create Link Token (Identity Verification)" endpoint. You will need to provide a `template_id` in the `identity_verification` object. This id can be obtained from the Dashboard -- in the upper-left corner, select **Identity Verification and Monitor** from the team selection drop-down list (if this does not exist, make sure to submit a product access request). Under **Identity Verification**, click the **Integration** button, and copy the `template_id.` 
 
 You do not need to complete steps 13-15 below, as a public token is not needed for Identity Verification or Monitor; instead, you can view the status of the verification within the Dashboard.
 
