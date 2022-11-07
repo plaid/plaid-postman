@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "9770bad4-f237-4ad6-8e92-e70ff429fdc1",
+		"_postman_id": "3f97070a-58cd-4c19-818f-8f79deb2686c",
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -81,12 +81,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"linkToken = response.link_token;",
 									"pm.environment.set(\"link_token\", linkToken);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -187,12 +187,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"linkToken = response.link_token;",
 									"pm.environment.set(\"link_token\", linkToken);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -375,6 +375,19 @@
 					"item": [
 						{
 							"name": "Create Item Custom [Sandbox Only]",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let response = pm.response.json();",
+											"publicToken = response.public_token;",
+											"pm.environment.set(\"public_token\", publicToken);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [
@@ -409,12 +422,12 @@
 								{
 									"listen": "test",
 									"script": {
+										"type": "text/javascript",
 										"exec": [
 											"let response = pm.response.json();",
 											"publicToken = response.public_token;",
 											"pm.environment.set(\"public_token\", publicToken);"
-										],
-										"type": "text/javascript"
+										]
 									}
 								}
 							],
@@ -1259,7 +1272,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\"\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n\t\"access_token\": \"{{access_token}}\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/item/reset_login",
@@ -5815,12 +5828,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"paymentProfileToken = response.payment_profile_token;",
 									"pm.environment.set(\"payment_profile_token\", paymentProfileToken);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -5891,12 +5904,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"authorizationId = response.authorization.id;",
 									"pm.environment.set(\"authorization_id\", authorizationId);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
@@ -5969,12 +5982,12 @@
 						{
 							"listen": "test",
 							"script": {
+								"type": "text/javascript",
 								"exec": [
 									"let response = pm.response.json();",
 									"transferId = response.transfer_id;",
 									"pm.environment.set(\"transfer_id\", transferId);"
-								],
-								"type": "text/javascript"
+								]
 							}
 						}
 					],
