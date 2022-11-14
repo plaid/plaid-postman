@@ -4,6 +4,17 @@ Welcome to the Postman Collections Quickstart Guide! If you're looking for a qui
 
 For the Plaid Quickstart guide that uses code, see the [Plaid Quickstart](https://github.com/plaid/quickstart).
 
+## Table of contents
+
+- [Getting started](#getting-started)
+  - [Configuration](#configuration)
+- [Making API calls in Sandbox](#making-api-calls-in-sandbox)
+  - [Income notes](#income-notes)
+  - [Transfer notes](#transfer-notes)
+  - [Identity Verification and Monitor notes](#identity-verification-and-monitor-notes)
+- [Making API calls with real data in Production or Development](#making-api-calls-with-real-data-in-production-or-development)
+- [Webhook testing tools](#webhook-testing-tools)
+
 ## Getting started
 
 > Don't feel like reading? Want your information in video format instead? Check out our [Plaid and Postman in Three Minutes](https://www.youtube.com/watch?v=f4NhgHpp5aA) video tutorial.
@@ -14,7 +25,7 @@ Follow these steps to quickly get started with the [Plaid API](https://plaid.com
 2. Click the "Run in Postman" button below.
 
 
-[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/a00741d8eb00f38e88d5?action=collection%2Fimport#?env%5BSandbox%5D=W3sia2V5IjoiY2xpZW50X2lkIiwidmFsdWUiOiJZT1VSX0NMSUVOVF9JRCIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiNWRmYWJkZWZlZGNiOTMwMDEyZWMxZTViIiwic2Vzc2lvbkluZGV4IjowfSx7ImtleSI6InNlY3JldF9rZXkiLCJ2YWx1ZSI6IllPVVJfU0VDUkVUX0tFWSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJzZWNyZXQiLCJzZXNzaW9uVmFsdWUiOiIxMDlkNTJmZWMyMzdhMzRmNjhiZDNmZTU4ZWE5MjgiLCJzZXNzaW9uSW5kZXgiOjF9LHsia2V5IjoicHVibGljX3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6Mn0seyJrZXkiOiJhY2Nlc3NfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoibnVsbCIsInNlc3Npb25JbmRleCI6M30seyJrZXkiOiJhc3NldF9yZXBvcnRfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo0fSx7ImtleSI6ImVudl91cmwiLCJ2YWx1ZSI6InNhbmRib3gucGxhaWQuY29tIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiJzYW5kYm94LnBsYWlkLmNvbSIsInNlc3Npb25JbmRleCI6NX0seyJrZXkiOiJhY2NvdW50X2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6Nn0seyJrZXkiOiJwcm9jZXNzb3JfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo3fSx7ImtleSI6InRyYW5zZmVyX2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6OH0seyJrZXkiOiJ1c2VyX3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6OX0seyJrZXkiOiJ1c2VyX2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6MTB9XQ==)
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/9f468a5d15ebcabfde4a?action=collection%2Fimport#?env%5BSandbox%5D=W3sia2V5IjoiY2xpZW50X2lkIiwidmFsdWUiOiJZT1VSX0NMSUVOVF9JRCIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiNWRmYWJkZWZlZGNiOTMwMDEyZWMxZTViIiwic2Vzc2lvbkluZGV4IjowfSx7ImtleSI6InNlY3JldF9rZXkiLCJ2YWx1ZSI6IllPVVJfU0VDUkVUX0tFWSIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJzZWNyZXQiLCJzZXNzaW9uVmFsdWUiOiIxMDlkNTJmZWMyMzdhMzRmNjhiZDNmZTU4ZWE5MjgiLCJzZXNzaW9uSW5kZXgiOjF9LHsia2V5IjoicHVibGljX3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6Mn0seyJrZXkiOiJhY2Nlc3NfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoibnVsbCIsInNlc3Npb25JbmRleCI6M30seyJrZXkiOiJhc3NldF9yZXBvcnRfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo0fSx7ImtleSI6ImVudl91cmwiLCJ2YWx1ZSI6InNhbmRib3gucGxhaWQuY29tIiwiZW5hYmxlZCI6dHJ1ZSwidHlwZSI6InRleHQiLCJzZXNzaW9uVmFsdWUiOiJzYW5kYm94LnBsYWlkLmNvbSIsInNlc3Npb25JbmRleCI6NX0seyJrZXkiOiJhY2NvdW50X2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6Nn0seyJrZXkiOiJwcm9jZXNzb3JfdG9rZW4iLCJ2YWx1ZSI6IiIsImVuYWJsZWQiOnRydWUsInR5cGUiOiJ0ZXh0Iiwic2Vzc2lvblZhbHVlIjoiIiwic2Vzc2lvbkluZGV4Ijo3fSx7ImtleSI6InRyYW5zZmVyX2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6OH0seyJrZXkiOiJ1c2VyX3Rva2VuIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6OX0seyJrZXkiOiJ1c2VyX2lkIiwidmFsdWUiOiIiLCJlbmFibGVkIjp0cnVlLCJ0eXBlIjoidGV4dCIsInNlc3Npb25WYWx1ZSI6IiIsInNlc3Npb25JbmRleCI6MTB9XQ==)
 
 3. Once both the collection and the environment variables are imported into Postman, see the [Configuration](https://github.com/plaid/plaid-postman#configuration) section on how to correctly configure API keys with the collection.
 
@@ -33,9 +44,9 @@ The Plaid Postman collection uses [Postman environment variables](https://learni
 
 4. Save your changes and start making Plaid API requests!
 
-## Quickstart
+## Making API calls in Sandbox
 
-Once you have completed the steps in the Configuration section above, you are ready to make API requests using Postman! The following steps are a quick walkthrough to making an API request. In this example, we will use the special capabilities of the Sandbox test environment to bypass the client-side Link UI and make all of our requests via the backend.
+Once you have completed the steps in the [Configuration](#configuration) section above, you are ready to make API requests using Postman! The following steps are a quick walkthrough to making an API request. In this example, we will use the special capabilities of the Sandbox test environment to bypass the client-side Link UI and make all of our requests via the backend.
 
 1. Make sure the "Collection" pane is selected, then expand the "Plaid API Endpoints" folder on the left and navigate to Plaid API Endpoints -> Items -> Item Creation -> Create Item [Sandbox Only].
 2. In the pane on the right, which has the options "Params", "Authorization", "Headers" etc. click on the "Body" tab.
@@ -47,33 +58,37 @@ Once you have completed the steps in the Configuration section above, you are re
 8. Click on the "Body" tab. Complete any other required fields (for Balance, there are none) and click "Send".
 9. You will receive a response containing your requested data!
 
-### Income Quickstart notes
+### Income notes
 
 Testing the Payroll Income flow requires modifying the steps above. Instead of calling "Create Item [Sandbox Only]", go to the Income folder and call "Create User Token", followed by "Initialize User Token for Payroll Income [Sandbox only]", and then finally "Retrieve Payroll Income".
 
 To test Bank Income in Sandbox, use the Create Item **Custom** [Sandbox Only] endpoint instead of the Create Item [Sandbox Only] endpoint and within the `options` request object, specify `override_username: "user_bank_income"` and `override_password: "{}"`. Alternatively, use the instructions below for making Postman calls with real data; but you may optionally use Sandbox instead of Production or Development. If using Sandbox, provide the username `user_bank_income` and the password `{}`.
 
-### Transfer Quickstart notes
+### Transfer notes
 
 Using the Transfer endpoints requires you to be enrolled in the Transfer beta. Contact your Plaid Account manager or Plaid Sales to join the beta.
 
-To call Transfer endpoints, you will need either a payment profile token, or both an access token and an account id. To obtain a payment profile token, call Transfer -> Create Payment Profile. To obtain an access token and account id, follow the Quickstart steps above, then call Items -> Item Management -> Retrieve an Item's accounts. 
+To call Transfer endpoints, you will need either a payment profile token, or both an access token and an account id. To obtain a payment profile token, call Transfer -> Create Payment Profile. To obtain an access token and account id, follow the [Making API calls in Sandbox](#making-api-calls-in-sandbox) steps above, then call Items -> Item Management -> Retrieve an Item's accounts. 
 
 Once you have a payment profile token or an access token / account id pair, start by calling Transfer -> Authorize a transfer, then call Transfer -> Initiate a transfer. Note that you will need to update the request bodies for these endpoints to use only the account identifying mechanism you are choosing -- for example, if you are using Payment Profiles, delete the `account_id` and `access_token` fields before making the request.
 
-### Identity Verification and Monitor Quickstart notes
+### Identity Verification and Monitor notes
 
-New Plaid customers are not enabled for Identity Verification or Monitor in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) to use the Postman collection.
+New Plaid customers are not enabled for Identity Verification or Monitor in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
 
-Identity Verification and Monitor cannot be tested using the Quickstart instructions above. To test Identity Verification or Monitor, use the instructions below for making Postman calls with real data; but you may optionally use Sandbox instead of Production (Identity Verification and Monitor cannot be used in Development). 
+Identity Verification and Monitor cannot be tested using the instructions above. To test Identity Verification or Monitor, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production-or-development); but you may optionally use Sandbox instead of Production (Identity Verification and Monitor cannot be used in Development). 
 
 In order to call `/link/token/create` in step 6 below when using Identity Verification, use the "Plaid API Endpoints -> Link Tokens -> Create Link Token (Identity Verification)" endpoint. You will need to provide a `template_id` in the `identity_verification` object. This id can be obtained from the Dashboard -- in the upper-left corner, select **Identity Verification and Monitor** from the team selection drop-down list (if this does not exist, make sure to submit a product access request). Under **Identity Verification**, click the **Integration** button, and copy the `template_id.` 
 
 You do not need to complete steps 13-15 below, as a public token is not needed for Identity Verification or Monitor; instead, you can view the status of the verification within the Dashboard.
 
-## Making Postman calls with real data in Production or Development
+### Signal notes
 
-For reasons of security and transparency, getting an access token for use with real data cannot be done entirely via Postman API calls -- you are required to use the Plaid Link UI component. You can do this as follows:
+New Plaid customers are not enabled for Signal in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
+
+## Making API calls with real data in Production or Development
+
+For reasons of security and transparency, getting an access token for use with real data cannot be done entirely via Postman API calls -- you are required to use the Plaid Link UI component to obtain a `public_token`, which you can then feed back into Postman. You can do this as follows:
 
 1. Download the [link.html](/link.html) file included in this repo and open it in a text editor (alternatively, open a text editor, create a new file called link.html, and copy and paste the contents of [link.html](/link.html) into it). You will use this file later.
 2. Re-visit the "Configuration" steps at the top of this page, but after opening the environment settings, click the "..." button in the upper right and select "Duplicate". This will create a new environment called "Sandbox copy" -- to rename it, click the pencil icon next to the name and name it either "Development" or "Production" as appropriate.
@@ -89,8 +104,8 @@ For reasons of security and transparency, getting an access token for use with r
 12. Click the "Link Account" button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution. Make sure to use a real username and password, not the Sandbox credentials.
 13. Once the prompts have completed and you have successfully logged in via Link, the Console tab should contain text saying "the public token is:" followed by the value of the public token. Copy the public token value.
 14. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select the public token value -- by default, it is `{{public_token}}`. Replace this value with your copied public token from the previous step, making sure the token value is inside the quotation marks, then hit Send.
-15. The response will contain an `access_token` suitable for making calls in Production (or Development)! As in the Quickstart, it will be automatically saved for you to use in future requests. You can then follow the same steps as you did in the Quickstart (starting with step 7) to make API requests for real data.
+15. The response will contain an `access_token` suitable for making calls in Production (or Development)! As in the [Making API calls in Sandbox](#making-api-calls-in-sandbox] directions, it will be automatically saved for you to use in future requests. You can then follow the same steps as you did in the that section (starting with step 7) to make API requests for real data.
 
-## Useful Tools
+## Webhook testing tools
 
 [Webhook Tester](https://webhook.site/) and [Request Bin](https://requestbin.com/) are useful tools for receiving webhook calls. You can use them to generate a webhook url and use that url for any Postman requests that require you to specify a webhook url, then use the sites to inspect the content of any webhooks they received.
