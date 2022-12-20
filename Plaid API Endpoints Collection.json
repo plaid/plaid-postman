@@ -6873,7 +6873,134 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"user_token\": \"{{user_token}}\",\n  \"institution_id\": \"ins_90\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/sandbox/public_token/create",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"sandbox",
+										"public_token",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Dec 2021 00:20:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "plaid-version",
+									"value": "2017-03-08"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"public_token\": \"public-sandbox-e074761d-579a-4744-9f17-1729b92ded84\",\n    \"request_id\": \"d2fiTy8P44MDDaM\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Initialize User Token for Bank Income [Sandbox Only]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();",
+									"publicToken = response.public_token;",
+									"pm.environment.set(\"public_token\", publicToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"user_token\": \"{{user_token}}\",\n  \"institution_id\": \"ins_90\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_bank_income\",\n    \"override_password\": \"{}\",\n    \"income_verification\": {\n      \"income_source_types\": [\"bank\"],\n      \"bank_income\": {\n          \"days_requested\": 180\n        }\n    }\n  }\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/sandbox/public_token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"sandbox",
+								"public_token",
+								"create"
+							]
+						},
+						"description": "Creates an `Item` in the `sandbox` environment. You will get back a `public_token` and a `request_id`."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"user_token\": \"{{user_token}}\",\n  \"institution_id\": \"ins_90\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_bank_income\",\n    \"override_password\": \"{}\",\n    \"income_verification\": {\n      \"income_source_types\": [\"bank\"],\n      \"bank_income\": {\n          \"days_requested\": 180\n        }\n    }\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",

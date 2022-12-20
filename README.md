@@ -60,9 +60,7 @@ Once you have completed the steps in the [Configuration](#configuration) section
 
 ### Income notes
 
-Testing the Payroll Income flow requires modifying the steps above. Instead of calling "Create Item [Sandbox Only]", go to the Income folder and call "Create User Token", followed by "Initialize User Token for Payroll Income [Sandbox only]", and then finally "Retrieve Payroll Income".
-
-To test Bank Income in Sandbox, use the Create Item **Custom** [Sandbox Only] endpoint instead of the Create Item [Sandbox Only] endpoint and within the `options` request object, specify `override_username: "user_bank_income"` and `override_password: "{}"`. Alternatively, use the instructions below for making Postman calls with real data; but you may optionally use Sandbox instead of Production or Development. If using Sandbox, provide the username `user_bank_income` and the password `{}`.
+Testing the Payroll Income or Document Income flows requires modifying the steps above. Instead of calling "Create Item [Sandbox Only]", go to the Income folder and call "Create User Token", followed by "Initialize User Token for Payroll Income [Sandbox only]", or "Initialize User Token for Bank Income [Sandbox only]" as appropriate, and then finally "Retrieve Payroll Income" or "Retrieve Bank Income".
 
 ### Transfer notes
 
