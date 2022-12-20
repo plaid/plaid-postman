@@ -6971,7 +6971,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"user_token\": \"{{user_token}}\",\n  \"institution_id\": \"ins_90\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_bank_income\",\n    \"override_password\": \"{}\",\n    \"income_verification\": {\n      \"income_source_types\": [\"bank\"],\n      \"bank_income\": {\n          \"days_requested\": 180\n        }\n    }\n  }\n}"
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"user_token\": \"{{user_token}}\",\n  \"institution_id\": \"ins_20\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_bank_income\",\n    \"override_password\": \"{}\",\n    \"income_verification\": {\n      \"income_source_types\": [\"bank\"],\n      \"bank_income\": {\n          \"days_requested\": 180\n        }\n    }\n  }\n}"
 						},
 						"url": {
 							"raw": "https://{{env_url}}/sandbox/public_token/create",
