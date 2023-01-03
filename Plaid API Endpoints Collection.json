@@ -9077,7 +9077,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{acccess_token}}\"\n}",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -9150,7 +9150,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{acccess_token}}\",\n  \"account_id\": \"{{account_id}}\",\n  \"client_transaction_id\": \"your_unique_identifier_goes_here\",\n  \"amount\": 100.12\n}",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\",\n  \"account_id\": \"{{account_id}}\",\n  \"client_transaction_id\": \"your_unique_identifier_goes_here\",\n  \"amount\": 100.12\n}",
 							"options": {
 								"raw": {
 									"language": "json"
