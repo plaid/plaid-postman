@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "3f97070a-58cd-4c19-818f-8f79deb2686c",
+		"_postman_id": "6c7d8d8a-5d80-40f2-9176-61f6f8222d3b",
 		"name": "Plaid API Endpoints",
 		"description": "Documentation for how to use this collection, including a Quickstart guide, is on the [Plaid Postman GitHub README](https://github.com/plaid/plaid-postman).\n\nDetailed documentation for Plaid API endpoints is at the [Plaid API reference guide](https://www.plaid.com/docs/api).\n\nBefore you begin, set your `client_id` and `secret_key` variables in the Sandbox environment. You can find them in your Plaid [dashboard](https://dashboard.plaid.com/account/keys). Set the variables by clicking on the 'eye' icon in the top-right corner of the screen.",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
@@ -379,12 +379,12 @@
 								{
 									"listen": "test",
 									"script": {
+										"type": "text/javascript",
 										"exec": [
 											"let response = pm.response.json();",
 											"publicToken = response.public_token;",
 											"pm.environment.set(\"public_token\", publicToken);"
-										],
-										"type": "text/javascript"
+										]
 									}
 								}
 							],
@@ -841,12 +841,12 @@
 								{
 									"listen": "test",
 									"script": {
-										"type": "text/javascript",
 										"exec": [
 											"let response = pm.response.json();",
 											"accountId = response.accounts[0].account_id;",
 											"pm.environment.set(\"account_id\", accountId);"
-										]
+										],
+										"type": "text/javascript"
 									}
 								}
 							],
@@ -6564,6 +6564,81 @@
 					]
 				},
 				{
+					"name": "Get a Payment Profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"client_id\": \"{{client_id}}\",\n    \"secret\": \"{{secret_key}}\",\n    \"payment_profile_token\": \"{{payment_profile_token}}\"\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/transfer/payment_profile/remove",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"transfer",
+								"payment_profile",
+								"remove"
+							]
+						},
+						"description": "Use the `/transfer/authorization/create` endpoint to determine transfer failure risk."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"client_id\": \"<client_id>\",\n    \"secret\": \"<secret>\",\n    \"payment_profile_token\": \"<payment_profile_token>\"\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/payment_profile/get",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"payment_profile",
+										"get"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"READY\",\n  \"updated_at\": \"2022-07-07T12:48:37Z\",\n  \"created_at\": \"2022-07-05T12:48:37Z\",\n  \"deleted_at\": null,\n  \"request_id\": \"4ciYmmesdqSiUAB\"\n}"
+						}
+					]
+				},
+				{
 					"name": "Delete Payment Profile",
 					"event": [
 						{
@@ -6610,7 +6685,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{  \n   \"client_id\": \"7f57eb3d2a9j6480121fx361\",\n   \"secret\": \"79g03eoofwl8240v776r2h667442119\",\n   \"access_token\": \"access-sandbox-71e02f71-0960-4a27-abd2-5631e04f2175\",\n   \"account_id\": \"3gE5gnRzNyfXpBK5wEEKcymJ5albGVUqg77gr\",\n   \"type\": \"credit\",\n   \"network\": \"ach\",\n   \"amount\": \"12.34\",\n   \"ach_class\": \"ppd\",\n   \"user\": {\n     \"legal_name\": \"FirstName LastName\",\n     \"email_address\": \"foobar@email.com\",\n     \"phone_number\": \"123-456-7890\",\n     \"address\": {\n       \"street\": \"123 Main St.\",\n       \"city\": \"San Francisco\",\n       \"region\": \"CA,\n       \"postal_code\": \"94053\",\n       \"country\": \"US\"\n     }\n   },\n   \"device\": {\n     \"ip_address\": \"198.30.2.2\",\n     \"user_agent\": \"Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.1.1 Mobile/15E148 Safari/604.1\"\n   },\n   \"origination_account_id\": \"1111-1111-1111-1111\"\n }"
+									"raw": "{\n    \"client_id\": \"<client_id>\",\n    \"secret\": \"<secret>\",\n    \"payment_profile_token\": \"<payment_profile_token>\"\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/payment_profile/remove",
@@ -6798,7 +6873,134 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"institution_id\": \"ins_3\",\n  \"initial_products\": [\"auth\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"user_token\": \"{{user_token}}\",\n  \"institution_id\": \"ins_90\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\"\n  }\n}"
+								},
+								"url": {
+									"raw": "https://{{env_url}}/sandbox/public_token/create",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"sandbox",
+										"public_token",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 21 Dec 2021 00:20:07 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "124"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "content-encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "plaid-version",
+									"value": "2017-03-08"
+								},
+								{
+									"key": "vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "1; mode=block"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"public_token\": \"public-sandbox-e074761d-579a-4744-9f17-1729b92ded84\",\n    \"request_id\": \"d2fiTy8P44MDDaM\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Initialize User Token for Bank Income [Sandbox Only]",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.response.json();",
+									"publicToken = response.public_token;",
+									"pm.environment.set(\"public_token\", publicToken);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"user_token\": \"{{user_token}}\",\n  \"institution_id\": \"ins_20\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_bank_income\",\n    \"override_password\": \"{}\",\n    \"income_verification\": {\n      \"income_source_types\": [\"bank\"],\n      \"bank_income\": {\n          \"days_requested\": 180\n        }\n    }\n  }\n}"
+						},
+						"url": {
+							"raw": "https://{{env_url}}/sandbox/public_token/create",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"sandbox",
+								"public_token",
+								"create"
+							]
+						},
+						"description": "Creates an `Item` in the `sandbox` environment. You will get back a `public_token` and a `request_id`."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"user_token\": \"{{user_token}}\",\n  \"institution_id\": \"ins_90\",\n  \"initial_products\": [\"income_verification\"],\n  \"options\": {\n    \"webhook\": \"https://www.genericwebhookurl.com/webhook\",\n    \"override_username\": \"user_bank_income\",\n    \"override_password\": \"{}\",\n    \"income_verification\": {\n      \"income_source_types\": [\"bank\"],\n      \"bank_income\": {\n          \"days_requested\": 180\n        }\n    }\n  }\n}"
 								},
 								"url": {
 									"raw": "https://{{env_url}}/sandbox/public_token/create",
@@ -8860,6 +9062,234 @@
 							"header": null,
 							"cookie": [],
 							"body": "{\n    \"created_at\": \"2022-05-09T18:42:35Z\",\n    \"email_address\": \"user@example.com\",\n    \"id\": \"5d51af4e8fd6470012c1c664\",\n    \"request_id\": \"98Z6JN49tKnTKVW\",\n    \"status\": \"active\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Signal",
+			"item": [
+				{
+					"name": "Initialize an Item with Signal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{env_url}}/signal/prepare",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"signal",
+								"prepare"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{acccess_token}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/signal/prepare",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"signal",
+										"prepare"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n  \"request_id\": \"mdqfuVxeoza6mhu\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Evaluate a planned ACH transaction",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let response = pm.request.json();",
+									"clientTransactionId = request.clientTransactionId;",
+									"pm.environment.set(\"client_transaction_id\", clientTransactionId);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"access_token\": \"{{access_token}}\",\n  \"account_id\": \"{{account_id}}\",\n  \"client_transaction_id\": \"your_unique_identifier_goes_here\",\n  \"amount\": 100.12\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{env_url}}/signal/evaluate",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"signal",
+								"evaluate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Report whether you initiated an ACH transaction",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"client_transaction_id\": \"{{client_transaction_id}}\",\n  \"initiated\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{env_url}}/signal/report",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"signal",
+								"report"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"client_transaction_id\": \"my_unique_transaction_id\",\n  \"initiated\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/signal/report",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"signal",
+										"report"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n  \"request_id\": \"mdqfuVxeoza6mhu\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Report an ACH return",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"client_transaction_id\": \"{{client_transaction_id}}\",\n  \"return_code\": \"R16\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{env_url}}/signal/return/report",
+							"protocol": "https",
+							"host": [
+								"{{env_url}}"
+							],
+							"path": [
+								"signal",
+								"return",
+								"report"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"client_id\": \"{{client_id}}\",\n  \"secret\": \"{{secret_key}}\",\n  \"client_transaction_id\": \"my_unique_transaction_id\",\n  \"return_code\": \"R16\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://{{env_url}}/signal/return/report",
+									"protocol": "https",
+									"host": [
+										"{{env_url}}"
+									],
+									"path": [
+										"signal",
+										"return",
+										"report"
+									]
+								}
+							},
+							"_postman_previewlanguage": "json",
+							"header": [],
+							"cookie": [],
+							"body": "{\n  \"request_id\": \"mdqfuVxeoza6mhu\"\n}"
 						}
 					]
 				}
