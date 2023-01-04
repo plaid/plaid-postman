@@ -9137,8 +9137,8 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									"let response = pm.request.json();",
-									"clientTransactionId = request.clientTransactionId;",
+									"request = JSON.parse(pm.request.body.raw);",
+									"clientTransactionId = request.client_transaction_id;",
 									"pm.environment.set(\"client_transaction_id\", clientTransactionId);"
 								],
 								"type": "text/javascript"
