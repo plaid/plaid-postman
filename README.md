@@ -63,11 +63,13 @@ Testing the Payroll Income or Document Income flows requires modifying the steps
 
 ### Transfer notes
 
-Using the Transfer endpoints requires you to be enrolled in the Transfer beta. Contact your Plaid Account manager or Plaid Sales to join the beta.
+To call Transfer endpoints, you will need either a payment profile token, or both an access token and an account id. 
 
-To call Transfer endpoints, you will need either a payment profile token, or both an access token and an account id. To obtain a payment profile token, call Transfer -> Create Payment Profile. To obtain an access token and account id, follow the [Making API calls in Sandbox](#making-api-calls-in-sandbox) steps above, then call Items -> Item Management -> Retrieve an Item's accounts. 
+The easiest method is to use an access token an account id. To obtain an access token and account id, follow the [Making API calls in Sandbox](#making-api-calls-in-sandbox) steps above, then call Items -> Item Management -> Retrieve an Item's accounts. 
 
-Once you have a payment profile token or an access token / account id pair, start by calling Transfer -> Authorize a transfer, then call Transfer -> Initiate a transfer. Note that you will need to update the request bodies for these endpoints to use only the account identifying mechanism you are choosing -- for example, if you are using Payment Profiles, delete the `account_id` and `access_token` fields before making the request.
+Once you have the access token / account id pair, start by calling Transfer -> Authorize a transfer, then call Transfer -> Initiate a transfer. Note that you will need to update the request bodies for these endpoints to use only the account identifying mechanism you are choosing -- for example, if you are using the account id and access token approach, delete the `payment_profile` field before making the request.
+
+If you want to use the Payment Profile approach instead of using an access token and account id, create the Payment Profile by calling Transfer -> Create Payment Profile.  If you are using this approach, you will not be able to complete the entire flow in Postman without using Link; after creating the payment profile token, you will need to activate the token by completing a Link session as described in [Making API calls with real data in Production or Development](#making-api-calls-with-real-data-in-production-or-development). You will only need to complete the process through step 12; it is not required to exchange the `public_token`. At step 6, where you call `/link/token/create` in Postman, you will need to add your payment profile token to the `/link/token/create` request body, by adding the following to the request body: `transfer: {payment_profile_token: your_payment_profile_token_goes_here}`. (Replace `your_payment_profile_token_goes_here` with the actual payment profile token returned by calling Create Payment Profile.) If you are not comfortable modifying request bodies in Postman, it is recommended to use the access token / account id approach instead.
 
 ### Identity Verification and Monitor notes
 
@@ -78,10 +80,6 @@ Identity Verification and Monitor cannot be tested using the instructions above.
 In order to call `/link/token/create` in step 6 below when using Identity Verification, use the "Plaid API Endpoints -> Link Tokens -> Create Link Token (Identity Verification)" endpoint. You will need to provide a `template_id` in the `identity_verification` object. This id can be obtained from the Dashboard -- in the upper-left corner, select **Identity Verification and Monitor** from the team selection drop-down list (if this does not exist, make sure to submit a product access request). Under **Identity Verification**, click the **Integration** button, and copy the `template_id.` 
 
 You do not need to complete steps 13-15 below, as a public token is not needed for Identity Verification or Monitor; instead, you can view the status of the verification within the Dashboard.
-
-### Signal notes
-
-New Plaid customers are not enabled for Signal in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
 
 ## Making API calls with real data in Production or Development
 
