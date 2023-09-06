@@ -17,7 +17,7 @@ For the Plaid Quickstart guide that uses code, see the [Plaid Quickstart](https:
 
 ## Getting started
 
-> Don't feel like reading? Want your information in video format instead? Check out our [Plaid and Postman in Three Minutes](https://www.youtube.com/watch?v=f4NhgHpp5aA) video tutorial.
+> Don't feel like reading? Want your information in video format instead? Check out our [Plaid and Postman in Three Minutes](https://www.youtube.com/watch?v=f4NhgHpp5aA) video tutorial, or for a more detailed walkthrough of the Postman Collection, see [Plaid and Postman full tutorial](https://www.youtube.com/watch?v=dJds8Qc7we).
 
 Follow these steps to quickly get started with the [Plaid API](https://plaid.com/docs):
 
