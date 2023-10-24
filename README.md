@@ -4,20 +4,19 @@ Welcome to the Postman Collections Quickstart Guide! If you're looking for a qui
 
 For the Plaid Quickstart guide that uses code, see the [Plaid Quickstart](https://github.com/plaid/quickstart).
 
+Don't feel like reading? Check out our [Plaid and Postman in Three Minutes Quickstart video](https://www.youtube.com/watch?v=f4NhgHpp5aA). Or, for a more detailed walkthrough, watch the [Plaid Postman Full tutorial video](https://www.youtube.com/watch?v=dJds8Qc7weQ).
+
 ## Table of contents
 
 - [Getting started](#getting-started)
   - [Configuration](#configuration)
 - [Making API calls in Sandbox](#making-api-calls-in-sandbox)
   - [Income notes](#income-notes)
-  - [Transfer notes](#transfer-notes)
   - [Identity Verification and Monitor notes](#identity-verification-and-monitor-notes)
 - [Making API calls with real data in Production or Development](#making-api-calls-with-real-data-in-production-or-development)
 - [Webhook testing tools](#webhook-testing-tools)
 
 ## Getting started
-
-> Don't feel like reading? Want your information in video format instead? Check out our [Plaid and Postman in Three Minutes](https://www.youtube.com/watch?v=f4NhgHpp5aA) video tutorial.
 
 Follow these steps to quickly get started with the [Plaid API](https://plaid.com/docs):
 
@@ -61,16 +60,6 @@ Once you have completed the steps in the [Configuration](#configuration) section
 
 Testing the Payroll Income or Document Income flows requires modifying the steps above. Instead of calling "Create Item [Sandbox Only]", go to the Income folder and call "Create User Token", followed by "Initialize User Token for Payroll Income [Sandbox only]", or "Initialize User Token for Bank Income [Sandbox only]" as appropriate, and then finally "Retrieve Payroll Income" or "Retrieve Bank Income".
 
-### Transfer notes
-
-To call Transfer endpoints, you will need either a payment profile token, or both an access token and an account id. 
-
-The easiest method is to use an access token an account id. To obtain an access token and account id, follow the [Making API calls in Sandbox](#making-api-calls-in-sandbox) steps above, then call Items -> Item Management -> Retrieve an Item's accounts. 
-
-Once you have the access token / account id pair, start by calling Transfer -> Authorize a transfer, then call Transfer -> Initiate a transfer. Note that you will need to update the request bodies for these endpoints to use only the account identifying mechanism you are choosing -- for example, if you are using the account id and access token approach, delete the `payment_profile` field before making the request.
-
-If you want to use the Payment Profile approach instead of using an access token and account id, create the Payment Profile by calling Transfer -> Create Payment Profile.  If you are using this approach, you will not be able to complete the entire flow in Postman without using Link; after creating the payment profile token, you will need to activate the token by completing a Link session as described in [Making API calls with real data in Production or Development](#making-api-calls-with-real-data-in-production-or-development). You will only need to complete the process through step 12; it is not required to exchange the `public_token`. At step 6, where you call `/link/token/create` in Postman, you will need to add your payment profile token to the `/link/token/create` request body, by adding the following to the request body: `transfer: {payment_profile_token: your_payment_profile_token_goes_here}`. (Replace `your_payment_profile_token_goes_here` with the actual payment profile token returned by calling Create Payment Profile.) If you are not comfortable modifying request bodies in Postman, it is recommended to use the access token / account id approach instead. If using Payment Profiles, make sure to delete the `account_id` and `access_token` fields from the request bodies when calling Transfer -> Authorize a transfer or Transfer -> Initiate a transfer.
-
 ### Identity Verification and Monitor notes
 
 New Plaid customers are not enabled for Identity Verification or Monitor in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
@@ -87,7 +76,7 @@ For reasons of security and transparency, getting an access token for use with r
 
 1. Download the [link.html](/link.html) file included in this repo and open it in a text editor (alternatively, open a text editor, create a new file called link.html, and copy and paste the contents of [link.html](/link.html) into it). You will use this file later.
 2. Re-visit the "Configuration" steps at the top of this page, but after opening the environment settings, click the "..." button in the upper right and select "Duplicate". This will create a new environment called "Sandbox copy" -- to rename it, click the pencil icon next to the name and name it either "Development" or "Production" as appropriate.
-3. On your newly created environment, change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` (for Production) or `development.plaid.com` (for Development).
+3. On your newly created environment, change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` or `development.plaid.com`.
 4. To apply these new settings, select your new environment from the drop-down in the upper right. Alternatively, while editing the new environment, you can click "..." and select "Set as active environment".
 5. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
 6. If you want, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity". Note that only institutions that support ALL the products you specify here will appear in Link -- if you don't see the institution you want when Link is launched, make sure you have listed the right product. For example, an institution that only supports credit cards (e.g. American Express) will not appear in Link if a product that doesn't support credit cards (like auth) is specified.
