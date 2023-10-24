@@ -4,7 +4,7 @@ Welcome to the Postman Collections Quickstart Guide! If you're looking for a qui
 
 For the Plaid Quickstart guide that uses code, see the [Plaid Quickstart](https://github.com/plaid/quickstart).
 
-> Don't feel like reading? Want your information in video format instead? Check out our [Plaid and Postman in Three Minutes](https://www.youtube.com/watch?v=f4NhgHpp5aA) short-form video tutorial, or [Plaid Postman Full tutorial](https://www.youtube.com/watch?v=dJds8Qc7weQ) for a more detailed tutorial.
+> Don't feel like reading? Want your information in video format instead? Check out our [Plaid and Postman in Three Minutes](https://www.youtube.com/watch?v=f4NhgHpp5aA) short-form video guide, or [Plaid Postman Full tutorial](https://www.youtube.com/watch?v=dJds8Qc7weQ) for a more detailed video walkthrough.
 
 
 ## Table of contents
