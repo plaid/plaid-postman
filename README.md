@@ -35,7 +35,7 @@ The Plaid Postman collection uses [Postman environment variables](https://learni
 
 1. Select the `Sandbox` environment in the top right corner
 2. Click the `eye` icon to open the environment settings
-3. Copy in your [Plaid API keys from your Plaid Dashboard](https://dashboard.plaid.com/account/keys), into each field:
+3. Copy in your [Plaid API keys from your Plaid Dashboard](https://dashboard.plaid.com/developers/keys), into each field:
 
 - `client_id`
 - `secret`
