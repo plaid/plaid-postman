@@ -2,6 +2,8 @@
 
 Welcome to the Postman Collections Quickstart Guide! If you're looking for a quick and easy way to get started with the Plaid API with no additional code, this is the place for you.
 
+To skip the instructions, you can go directly to [the Plaid Postman collection](https://www.postman.com/plaid-api/workspace/plaid/collection/12160321-04d27ed8-aed4-4d46-a1f8-70a72ec9a78a).
+
 For the Plaid Quickstart guide that uses code, see the [Plaid Quickstart](https://github.com/plaid/quickstart).
 
 Don't feel like reading? Check out our [Plaid and Postman in Three Minutes Quickstart video](https://www.youtube.com/watch?v=f4NhgHpp5aA). Or, for a more detailed walkthrough, watch the [Plaid Postman Full tutorial video](https://www.youtube.com/watch?v=dJds8Qc7weQ).
