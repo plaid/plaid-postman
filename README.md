@@ -15,7 +15,7 @@ Don't feel like reading? Check out our [Plaid and Postman in Three Minutes Quick
 - [Making API calls in Sandbox](#making-api-calls-in-sandbox)
   - [Income notes](#income-notes)
   - [Identity Verification and Monitor notes](#identity-verification-and-monitor-notes)
-- [Making API calls with real data in Production or Development](#making-api-calls-with-real-data-in-production-or-development)
+- [Making API calls with real data in Production](#making-api-calls-with-real-data-in-production)
 - [Webhook testing tools](#webhook-testing-tools)
 
 ## Getting started
@@ -66,19 +66,19 @@ Testing the Payroll Income or Document Income flows requires modifying the steps
 
 New Plaid customers are not enabled for Identity Verification or Monitor in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
 
-Identity Verification and Monitor cannot be tested using the instructions above. To test Identity Verification or Monitor, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production-or-development); but you may optionally use Sandbox instead of Production (Identity Verification and Monitor cannot be used in Development). 
+Identity Verification and Monitor cannot be tested using the instructions above. To test Identity Verification or Monitor, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production-or-development); but you may optionally use Sandbox instead of Production. 
 
 In order to call `/link/token/create` in step 6 below when using Identity Verification, use the "Plaid API Endpoints -> Link Tokens -> Create Link Token (Identity Verification)" endpoint. You will need to provide a `template_id` in the `identity_verification` object. This id can be obtained from the Dashboard -- in the upper-left corner, select **Identity Verification and Monitor** from the team selection drop-down list (if this does not exist, make sure to submit a product access request). Under **Identity Verification**, click the **Integration** button, and copy the `template_id.` 
 
 You do not need to complete steps 13-15 below, as a public token is not needed for Identity Verification or Monitor; instead, you can view the status of the verification within the Dashboard.
 
-## Making API calls with real data in Production or Development
+## Making API calls with real data in Production
 
 For reasons of security and transparency, getting an access token for use with real data cannot be done entirely via Postman API calls -- you are required to use the Plaid Link UI component to obtain a `public_token`, which you can then feed back into Postman. You can do this as follows:
 
 1. Download the [link.html](/link.html) file included in this repo and open it in a text editor (alternatively, open a text editor, create a new file called link.html, and copy and paste the contents of [link.html](/link.html) into it). You will use this file later.
-2. Re-visit the "Configuration" steps at the top of this page, but after opening the environment settings, click the "..." button in the upper right and select "Duplicate". This will create a new environment called "Sandbox copy" -- to rename it, click the pencil icon next to the name and name it either "Development" or "Production" as appropriate.
-3. On your newly created environment, change the `client_id` and `secret_key` environment variables to your client ID and secret for Production (or Development) instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com` or `development.plaid.com`.
+2. Re-visit the "Configuration" steps at the top of this page, but after opening the environment settings, click the "..." button in the upper right and select "Duplicate". This will create a new environment called "Sandbox copy" -- to rename it, click the pencil icon next to the name and name it "Production".
+3. On your newly created environment, change the `client_id` and `secret_key` environment variables to your client ID and secret for Production instead of for Sandbox, then set the `env_url` environment variable to `production.plaid.com`.
 4. To apply these new settings, select your new environment from the drop-down in the upper right. Alternatively, while editing the new environment, you can click "..." and select "Set as active environment".
 5. Navigate to Plaid API Endpoints -> Link Tokens -> Create Link Token and click on the "Body" tab.
 6. If you want, replace "auth" with the name of the product you would like to try, such as "transactions" or "identity". Note that only institutions that support ALL the products you specify here will appear in Link -- if you don't see the institution you want when Link is launched, make sure you have listed the right product. For example, an institution that only supports credit cards (e.g. American Express) will not appear in Link if a product that doesn't support credit cards (like auth) is specified.
@@ -90,7 +90,7 @@ For reasons of security and transparency, getting an access token for use with r
 12. Click the "Link Account" button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution. Make sure to use a real username and password, not the Sandbox credentials.
 13. Once the prompts have completed and you have successfully logged in via Link, the Console tab should contain text saying "the public token is:" followed by the value of the public token. Copy the public token value.
 14. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select the public token value -- by default, it is `{{public_token}}`. Replace this value with your copied public token from the previous step, making sure the token value is inside the quotation marks, then hit Send.
-15. The response will contain an `access_token` suitable for making calls in Production (or Development)! As in the [Making API calls in Sandbox](#making-api-calls-in-sandbox) directions, it will be automatically saved for you to use in future requests. You can then follow the same steps as you did in the that section (starting with step 7) to make API requests for real data.
+15. The response will contain an `access_token` suitable for making calls in Production! As in the [Making API calls in Sandbox](#making-api-calls-in-sandbox) directions, it will be automatically saved for you to use in future requests. You can then follow the same steps as you did in the that section (starting with step 7) to make API requests for real data.
 
 ## Webhook testing tools
 
