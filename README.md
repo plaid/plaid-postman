@@ -13,8 +13,9 @@ Don't feel like reading? Check out our [Plaid and Postman in Three Minutes Quick
 - [Getting started](#getting-started)
   - [Configuration](#configuration)
 - [Making API calls in Sandbox](#making-api-calls-in-sandbox)
-  - [Income notes](#income-notes)
-  - [Identity Verification and Monitor notes](#identity-verification-and-monitor-notes)
+  - [Income](#income)
+  - [Identity Verification and Monitor](#identity-verification-and-monitor)
+  - [Layer](#layer)
 - [Making API calls with real data in Production](#making-api-calls-with-real-data-in-production)
 - [Webhook testing tools](#webhook-testing-tools)
 
@@ -58,11 +59,11 @@ Once you have completed the steps in the [Configuration](#configuration) section
 8. Click on the "Body" tab. Complete any other required fields (for Balance, there are none) and click "Send".
 9. You will receive a response containing your requested data!
 
-### Income notes
+### Income
 
 Testing the Payroll Income or Document Income flows requires modifying the steps above. Instead of calling "Create Item [Sandbox Only]", go to the Income folder and call "Create User Token", followed by "Initialize User Token for Payroll Income [Sandbox only]", or "Initialize User Token for Bank Income [Sandbox only]" as appropriate, and then finally "Retrieve Payroll Income" or "Retrieve Bank Income".
 
-### Identity Verification and Monitor notes
+### Identity Verification and Monitor
 
 New Plaid customers are not enabled for Identity Verification or Monitor in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
 
@@ -71,6 +72,14 @@ Identity Verification and Monitor cannot be tested using the instructions above.
 In order to call `/link/token/create` in step 6 below when using Identity Verification, use the "Plaid API Endpoints -> Link Tokens -> Create Link Token (Identity Verification)" endpoint. You will need to provide a `template_id` in the `identity_verification` object. This id can be obtained from the Dashboard -- in the upper-left corner, select **Identity Verification and Monitor** from the team selection drop-down list (if this does not exist, make sure to submit a product access request). Under **Identity Verification**, click the **Integration** button, and copy the `template_id.` 
 
 You do not need to complete steps 13-15 below, as a public token is not needed for Identity Verification or Monitor; instead, you can view the status of the verification within the Dashboard.
+
+### Layer
+
+New Plaid customers are not enabled for Layer in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
+
+Layer cannot be tested using the instructions above. To test Layer, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production-or-development); but you may optionally use Sandbox instead of Production. 
+
+Once you have obtained the public token, instead of following steps 14-15 to exchange it for an access token, call `/user_account/session/get`.
 
 ## Making API calls with real data in Production
 
