@@ -67,7 +67,7 @@ Testing the Payroll Income or Document Income flows requires modifying the steps
 
 New Plaid customers are not enabled for Identity Verification or Monitor in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
 
-Identity Verification and Monitor cannot be tested using the instructions above. To test Identity Verification or Monitor, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production-or-development); but you may optionally use Sandbox instead of Production. 
+Identity Verification and Monitor cannot be tested using the instructions above. To test Identity Verification or Monitor, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production); but you may optionally use Sandbox instead of Production. 
 
 In order to call `/link/token/create` in step 6 below when using Identity Verification, use the "Plaid API Endpoints -> Link Tokens -> Create Link Token (Identity Verification)" endpoint. You will need to provide a `template_id` in the `identity_verification` object. This id can be obtained from the Dashboard -- in the upper-left corner, select **Identity Verification and Monitor** from the team selection drop-down list (if this does not exist, make sure to submit a product access request). Under **Identity Verification**, click the **Integration** button, and copy the `template_id.` 
 
@@ -77,7 +77,7 @@ You do not need to complete steps 13-15 below, as a public token is not needed f
 
 New Plaid customers are not enabled for Layer in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
 
-Layer cannot be tested using the instructions above. To test Layer, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production-or-development); but you may optionally use Sandbox instead of Production. 
+Layer cannot be tested using the instructions above. To test Layer, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production); but you may optionally use Sandbox instead of Production. 
 
 Once you have obtained the public token, instead of following steps 14-15 to exchange it for an access token, call `/user_account/session/get`.
 
