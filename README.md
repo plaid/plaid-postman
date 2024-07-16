@@ -63,6 +63,12 @@ Once you have completed the steps in the [Configuration](#configuration) section
 
 Testing the Payroll Income or Document Income flows requires modifying the steps above. Instead of calling "Create Item [Sandbox Only]", go to the Income folder and call "Create User Token", followed by "Initialize User Token for Payroll Income [Sandbox only]", or "Initialize User Token for Bank Income [Sandbox only]" as appropriate, and then finally "Retrieve Payroll Income" or "Retrieve Bank Income".
 
+### Plaid Check Consumer Reports
+
+New customers are not enabled for Consumer Reports by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
+
+Testing the Plaid Check Consumer Reports flows requires modifying the steps above. Instead of calling "Create Item [Sandbox Only]", go to the Plaid Check folder and call "Create User Token", followed by "Create Link Token". Next, following the instructions for [Making API calls with real data in Production](#making-api-calls-with-real-data-in-production), paste this Link token into the link.html file and go through the Link flow; you do not need to complete steps 13-15, as a public token is not needed for Consumer Reports. Once you have completed the Link flow, you can make API calls to Consumer Report endpoints such as `/cra/check_report/base_report/get`.
+
 ### Identity Verification and Monitor
 
 New Plaid customers are not enabled for Identity Verification or Monitor in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
