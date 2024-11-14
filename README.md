@@ -89,6 +89,10 @@ Once you have obtained the public token, instead of following steps 14-15 to exc
 
 ## Making API calls with real data in Production
 
+> [!IMPORTANT]  
+> To use Plaid in Production, you must first add a Link use case in the Dashboard, under [Link->Customization->Data Transparency](https://dashboard.plaid.com/link/data-transparency-v5).
+
+
 For reasons of security and transparency, getting an access token for use with real data cannot be done entirely via Postman API calls -- you are required to use the Plaid Link UI component to obtain a `public_token`, which you can then feed back into Postman. You can do this as follows:
 
 1. Download the [link.html](/link.html) file included in this repo and open it in a text editor (alternatively, open a text editor, create a new file called link.html, and copy and paste the contents of [link.html](/link.html) into it). You will use this file later.
