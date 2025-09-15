@@ -104,7 +104,7 @@ For reasons of security and transparency, getting an access token for use with r
 7. Click the blue "Send" button.
 8. Copy the value of the `link_token` from the response.
 9. Return to your local copy of link.html. Replace the text 'your-link-token-goes-here' in link.html with the value you copied in the previous step, and save the file.
-10. Open link.html in a web browser.
+10. Open link.html in a web browser. Safari or Chrome is recommended. Firefox will not work if you are opening link.html locally, if using Firefox you must first host link.html on a local server and access it via the server. 
 11. Open the web browser Developer Tools (for example, in Chrome, go to View->Developer->Developer Tools), then open the Console tab within Developer tools.
 12. Click the "Link Account" button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution. Make sure to use a real username and password, not the Sandbox credentials.
 13. Once the prompts have completed and you have successfully logged in via Link, the Console tab should contain text saying "the public token is:" followed by the value of the public token. Copy the public token value.
