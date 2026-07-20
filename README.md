@@ -14,6 +14,7 @@ Don't feel like reading? Check out our [Plaid and Postman in Three Minutes Quick
   - [Configuration](#configuration)
 - [Making API calls in Sandbox](#making-api-calls-in-sandbox)
   - [Income](#income)
+  - [Plaid Check Consumer Reports](#plaid-check-consumer-reports)
   - [Identity Verification and Monitor](#identity-verification-and-monitor)
   - [Layer](#layer)
 - [Making API calls with real data in Production](#making-api-calls-with-real-data-in-production)
@@ -65,13 +66,13 @@ Testing the Payroll Income or Document Income flows requires modifying the steps
 
 ### Plaid Check Consumer Reports
 
-New customers are not enabled for Consumer Reports by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
+New customers are not enabled for Consumer Reports by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](https://www.plaid.com/contact) to use the Postman collection.
 
 Testing the Plaid Check Consumer Reports flows requires modifying the steps above. Instead of calling "Create Item [Sandbox Only]", go to the Plaid Check folder and call "Create User Token", followed by "Create Link Token". Next, following the instructions for [Making API calls with real data in Production](#making-api-calls-with-real-data-in-production), paste this Link token into the link.html file and go through the Link flow; you do not need to complete steps 13-15, as a public token is not needed for Consumer Reports. Once you have completed the Link flow, you can make API calls to Consumer Report endpoints such as `/cra/check_report/base_report/get`.
 
 ### Identity Verification and Monitor
 
-New Plaid customers are not enabled for Identity Verification or Monitor in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
+New Plaid customers are not enabled for Identity Verification or Monitor in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](https://www.plaid.com/contact) to use the Postman collection.
 
 Identity Verification and Monitor cannot be tested using the instructions above. To test Identity Verification or Monitor, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production); but you may optionally use Sandbox instead of Production. 
 
@@ -81,7 +82,7 @@ You do not need to complete steps 13-15 below, as a public token is not needed f
 
 ### Layer
 
-New Plaid customers are not enabled for Layer in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](http://www.plaid.com/contact) to use the Postman collection.
+New Plaid customers are not enabled for Layer in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](https://www.plaid.com/contact) to use the Postman collection.
 
 Layer cannot be tested using the instructions above. To test Layer, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production); but you may optionally use Sandbox instead of Production. 
 
@@ -108,7 +109,7 @@ For reasons of security and transparency, getting an access token for use with r
 11. Open the web browser Developer Tools (for example, in Chrome, go to View->Developer->Developer Tools), then open the Console tab within Developer tools.
 12. Click the "Link Account" button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution. Make sure to use a real username and password, not the Sandbox credentials.
 13. Once the prompts have completed and you have successfully logged in via Link, the Console tab should contain text saying "the public token is:" followed by the value of the public token. Copy the public token value.
-14. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select the public token value -- by default, it is `{{public_token}}`. Replace this value with your copied public token from the previous step, making sure the token value is inside the quotation marks, then hit Send.
+14. Return to Postman and go to Plaid API Endpoints -> Items -> Item Creation -> Exchange Token, click on the Body tab, and select the public token value -- by default, it is `{{public_token}}`. Replace this value with your copied public token from the previous step, making sure the token value is inside the quotation marks, then hit Send.
 15. The response will contain an `access_token` suitable for making calls in Production! As in the [Making API calls in Sandbox](#making-api-calls-in-sandbox) directions, it will be automatically saved for you to use in future requests. You can then follow the same steps as you did in that section (starting with step 7) to make API requests for real data.
 
 ## Webhook testing tools
