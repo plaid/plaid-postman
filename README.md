@@ -41,7 +41,7 @@ The Plaid Postman collection uses [Postman environment variables](https://learni
 3. Copy in your [Plaid API keys from your Plaid Dashboard](https://dashboard.plaid.com/developers/keys), into each field:
 
 - `client_id`
-- `secret`
+- `secret_key`
 
 4. Save your changes and start making Plaid API requests!
 
@@ -109,7 +109,7 @@ For reasons of security and transparency, getting an access token for use with r
 12. Click the "Link Account" button on link.html to launch Link. The Plaid Link component should launch. Follow the prompts and log into a financial institution. Make sure to use a real username and password, not the Sandbox credentials.
 13. Once the prompts have completed and you have successfully logged in via Link, the Console tab should contain text saying "the public token is:" followed by the value of the public token. Copy the public token value.
 14. Return to Postman and go to API Endpoints -> Item Creation -> Exchange Token, click on the Body tab, and select the public token value -- by default, it is `{{public_token}}`. Replace this value with your copied public token from the previous step, making sure the token value is inside the quotation marks, then hit Send.
-15. The response will contain an `access_token` suitable for making calls in Production! As in the [Making API calls in Sandbox](#making-api-calls-in-sandbox) directions, it will be automatically saved for you to use in future requests. You can then follow the same steps as you did in the that section (starting with step 7) to make API requests for real data.
+15. The response will contain an `access_token` suitable for making calls in Production! As in the [Making API calls in Sandbox](#making-api-calls-in-sandbox) directions, it will be automatically saved for you to use in future requests. You can then follow the same steps as you did in that section (starting with step 7) to make API requests for real data.
 
 ## Webhook testing tools
 
