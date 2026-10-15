@@ -68,7 +68,7 @@ Testing the Payroll Income or Document Income flows requires modifying the steps
 
 New customers are not enabled for Consumer Reports by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](https://www.plaid.com/contact) to use the Postman collection.
 
-Testing the Plaid Check Consumer Reports flows requires modifying the steps above. Instead of calling "Create Item [Sandbox Only]", go to the Plaid Check folder and call "Create User Token", followed by "Create Link Token". Next, following the instructions for [Making API calls with real data in Production](#making-api-calls-with-real-data-in-production), paste this Link token into the link.html file and go through the Link flow; you do not need to complete steps 13-15, as a public token is not needed for Consumer Reports. Once you have completed the Link flow, you can make API calls to Consumer Report endpoints such as `/cra/check_report/base_report/get`.
+Testing the Plaid Check Consumer Reports flows requires modifying the steps above. Instead of calling "Create Item [Sandbox Only]", go to the Consumer Report by Plaid Check folder and call "(New) Create User", followed by "Create Link Token". Next, following the instructions for [Making API calls with real data in Production](#making-api-calls-with-real-data-in-production), paste this Link token into the link.html file and go through the Link flow; you do not need to complete steps 13-15, as a public token is not needed for Consumer Reports. Once you have completed the Link flow, you can make API calls to Consumer Report endpoints such as `/cra/check_report/base_report/get`.
 
 ### Identity Verification and Monitor
 
@@ -76,7 +76,7 @@ New Plaid customers are not enabled for Identity Verification or Monitor in the 
 
 Identity Verification and Monitor cannot be tested using the instructions above. To test Identity Verification or Monitor, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production); but you may optionally use Sandbox instead of Production. 
 
-In order to call `/link/token/create` in step 6 below when using Identity Verification, use the "Plaid API Endpoints -> Link Tokens -> Create Link Token (Identity Verification)" endpoint. You will need to provide a `template_id` in the `identity_verification` object. This id can be obtained from the Dashboard -- select **Identity Verification** from the left navigation (if this does not exist, make sure to submit a product access request), find your template in the list and click **Edit template**, then click the **Integration** button in the upper right and copy the `template_id`.
+In order to call `/link/token/create` in step 6 below when using Identity Verification, use the "Plaid API Endpoints -> Link Tokens -> Create Link Token - Identity Verification" endpoint. You will need to provide a `template_id` in the `identity_verification` object. This id can be obtained from the Dashboard -- select **Identity Verification** from the left navigation (if this does not exist, make sure to submit a product access request), find your template in the list and click **Edit template**, then click the **Integration** button in the upper right and copy the `template_id`.
 
 You do not need to complete steps 13-15 below, as a public token is not needed for Identity Verification or Monitor; instead, you can view the status of the verification within the Dashboard.
 
@@ -85,6 +85,8 @@ You do not need to complete steps 13-15 below, as a public token is not needed f
 New Plaid customers are not enabled for Layer in the Sandbox by default. Submit an [Access Request](https://dashboard.plaid.com/support/new/product-and-development) or [contact Sales](https://www.plaid.com/contact) to use the Postman collection.
 
 Layer cannot be tested using the instructions above. To test Layer, use the instructions below for [making Postman calls with real data](#making-api-calls-with-real-data-in-production); but you may optionally use Sandbox instead of Production. 
+
+Layer uses `/session/token/create` instead of `/link/token/create`. In steps 5-8, use the "Plaid API Endpoints -> Layer -> Create Session Token" endpoint, replace `template_id_goes_here` with the ID of a Layer template from the Dashboard, and copy the value of `link.link_token` from the response.
 
 Once you have obtained the public token, instead of following steps 14-15 to exchange it for an access token, call `/user_account/session/get`.
 
@@ -114,4 +116,4 @@ For reasons of security and transparency, getting an access token for use with r
 
 ## Webhook testing tools
 
-[Webhook Tester](https://webhook.site/) and [Request Bin](https://requestbin.com/) are useful tools for receiving webhook calls. You can use them to generate a webhook url and use that url for any Postman requests that require you to specify a webhook url, then use the sites to inspect the content of any webhooks they received.
+[Webhook Tester](https://webhook.site/) is a useful tool for receiving webhook calls. You can use it to generate a webhook url and use that url for any Postman requests that require you to specify a webhook url, then use the site to inspect the content of any webhooks it received.
